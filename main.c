@@ -28,10 +28,9 @@ int32_t TarPos[3];
 int32_t CtrlVel[3];
 int32_t Acc[3];
 int32_t Mode[3];
-uint8_t Dir[3];
-uint8_t Ena[3];
 
-uint8_t Flg[3];
+uint8_t Dir[3];
+
 int32_t StartPos[3];
 int32_t ProcessPos[3];
 int32_t Config;
@@ -53,7 +52,7 @@ int32_t Config;
 		uint8_t n = 0;
 		ActPos[n] = (Dir[n]==0)?ActPos[n]+1:ActPos[n]-1;
 		if ((Mode[n] == 1) && (ActPos[0] == TarPos[n])){
-			ActVel[n] = 0;
+			ActVel[0] = 0;
 			CtrlVel[n] = 0;
 			TarVel[n] = 0;
 			PWM_CCU4_Stop(&PWM_0);
@@ -96,23 +95,23 @@ int32_t Config;
 	}
 
 //Position Control
-	int32_t PosCtrl(int32_t targetpos, int32_t actualpos, int32_t targetvel, int32_t actualvel, int32_t acc, uint8_t Channel)
+	int32_t PosCtrl(uint8_t Channel)
 	{
-		int32_t vel = actualvel;
-		int32_t time = abs(vel) / acc;
-		int32_t accpos = ((time+ 20)* abs(vel) ) / 2000;
+		int32_t time = abs(ActVel[Channel]) / Acc[Channel];
+		// #FIXME IDK why but it works fine for me, The pulse in down range is not ideal. add some time will fix it.
+		int32_t accpos = ((time + 20)* abs(ActVel[Channel]) ) / 2000;
 
-		if (targetpos > actualpos){//Position Movement
-			if (targetpos < (actualpos + accpos)){
+		if (TarPos[Channel] > ActPos[Channel]){//Position Movement
+			if (TarPos[Channel] < (ActPos[Channel] + accpos)){
 				return 30;
 			}else{
-				return targetvel;
+				return TarVel[Channel];
 			}
-		}else if (targetpos < actualpos){//Negative Movement
-			if (targetpos > (actualpos - accpos)){
+		}else if (TarPos[Channel] < ActPos[Channel]){//Negative Movement
+			if (TarPos[Channel] > (ActPos[Channel] - accpos)){
 				return -30;
 			}else{
-				return (-targetvel);
+				return (-TarVel[Channel]);
 			}
 		}
 		//StandStill
@@ -122,16 +121,10 @@ int32_t Config;
 //Tick
 	void Tick()
 	{
-		//Motor Position Control
-		for (uint8_t i=0; i<3; i++){
-			if (Mode[i] == 1){
-				CtrlVel[i] = PosCtrl(TarPos[i], ActPos[i], TarVel[i], ActVel[i], Acc[i], i);
-			}
-		}
-
 		//Run every millisecond;
 		for (uint8_t i=0; i<3; i++){
 			if (Mode[i] == 1){
+				CtrlVel[i] = PosCtrl(i);
 				ActVel[i] = ramp(CtrlVel[i], ActVel[i], Acc[i]);//Profile Position
 			}else if (Mode[i] == 3){
 				ActVel[i] = ramp(TarVel[i], ActVel[i], Acc[i]);//Profile Velocity

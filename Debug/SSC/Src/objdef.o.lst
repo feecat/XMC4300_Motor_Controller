@@ -5310,8 +5310,8 @@
  3567              	 .file 3 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
  3568              	 .file 4 "../SSC/Src/sdoserv.h"
  3569              	 .file 5 "../SSC/Src/objdef.h"
- 3570              	 .file 6 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/cmsis_gcc.h"
- 3571              	 .file 7 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/core_cm4.h"
+ 3570              	 .file 6 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 3571              	 .file 7 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Include/core_cm4.h"
  3572              	 .file 8 "../SSC/Src/ecatslv.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 objdef.c

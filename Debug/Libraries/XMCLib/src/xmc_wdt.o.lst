@@ -242,12 +242,12 @@
  154              	.Letext0:
  155              	 .file 2 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
  156              	 .file 3 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
- 157              	 .file 4 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Infineon/XMC4300_series/Include/XMC4300.h"
- 158              	 .file 5 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc/xmc4_scu.h"
- 159              	 .file 6 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc/xmc_wdt.h"
- 160              	 .file 7 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/cmsis_gcc.h"
- 161              	 .file 8 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/core_cm4.h"
- 162              	 .file 9 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Infineon/XMC4300_series/Include/system_XMC4300.h"
+ 157              	 .file 4 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Infineon/XMC4300_series/Include/XMC4300.h"
+ 158              	 .file 5 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc/xmc4_scu.h"
+ 159              	 .file 6 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc/xmc_wdt.h"
+ 160              	 .file 7 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 161              	 .file 8 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Include/core_cm4.h"
+ 162              	 .file 9 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Infineon/XMC4300_series/Include/system_XMC4300.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 xmc_wdt.c
     {standard input}:20     .text.XMC_WDT_Enable:00000000 $t

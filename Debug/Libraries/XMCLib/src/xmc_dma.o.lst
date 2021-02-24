@@ -22,541 +22,541 @@
   22              	 .thumb_func
   24              	XMC_DMA_GetEventStatus:
   25              	.LFB137:
-  26              	 .file 1 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc/xmc_dma.h"
-   1:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
-   2:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @file xmc_dma.h
-   3:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @date 2018-09-18
-   4:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
-   5:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @cond
-   6:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  **************************************************************************************************
-   7:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * XMClib v2.1.24 - XMC Peripheral Driver Library
-   8:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
-   9:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Copyright (c) 2015-2019, Infineon Technologies AG
-  10:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * All rights reserved.                        
-  11:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *                                             
-  12:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
-  13:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * following conditions are met:   
-  14:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *                                                                              
-  15:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Redistributions of source code must retain the above copyright notice, this list of conditions a
-  16:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * disclaimer.                        
-  17:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * 
-  18:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Redistributions in binary form must reproduce the above copyright notice, this list of condition
-  19:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * disclaimer in the documentation and/or other materials provided with the distribution.          
-  20:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * 
-  21:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Neither the name of the copyright holders nor the names of its contributors may be used to endor
-  22:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * products derived from this software without specific prior written permission.                  
-  23:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *                                                                              
-  24:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
-  25:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
-  26:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
-  27:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
-  28:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
-  29:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
-  30:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                            
-  31:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *                                                                              
-  32:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
-  33:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Infineon Technologies AG dave@infineon.com).                                                    
-  34:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  **************************************************************************************************
-  35:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
-  36:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Change History
-  37:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * --------------
-  38:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
-  39:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * 2015-02-20:
-  40:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *     - Initial <br>
-  41:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
-  42:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * 2015-06-20:
-  43:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *     - Add the declarations for the following APIs: <br>
-  44:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *       XMC_DMA_DisableRequestLine, XMC_DMA_ClearRequestLine, <br>
-  45:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *       XMC_DMA_CH_ClearSourcePeripheralRequest, <br>
-  46:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *       XMC_DMA_CH_ClearDestinationPeripheralRequest <br>
-  47:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *     - Documentation updates <br>
-  48:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *     - Removed version macros and declaration of GetDriverVersion API <br>
-  49:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
-  50:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * 2016-10-28:
-  51:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *     - Fix documentation on maximum block size
-  52:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
-  53:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * 2017-09-28:
-  54:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *     - Improved documentation and added XMC_DMA_CH_EnableFifo() and XMC_DMA_CH_DisableFifo()
-  55:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
-  56:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * 2018-09-18:
-  57:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *     - Added XMC_DMA_CH_GetTransferredData()
-  58:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
-  59:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @endcond
-  60:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
-  61:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
-  62:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** #ifndef XMC_DMA_H
-  63:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** #define XMC_DMA_H
-  64:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
-  65:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /*******************************************************************************
-  66:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * HEADER FILES
-  67:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *******************************************************************************/
-  68:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
-  69:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** #include "xmc_common.h"
-  70:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
-  71:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** #if defined (GPDMA0)
-  72:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
-  73:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** #include "xmc_dma_map.h"
-  74:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
-  75:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
-  76:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @addtogroup XMClib XMC Peripheral Library
-  77:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @{
-  78:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
-  79:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
-  80:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
-  81:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @addtogroup DMA
-  82:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @brief General purpose DMA (GPDMA) driver for the XMC4000 microcontroller family
-  83:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
-  84:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * The GPDMA is a highly configurable DMA controller that allows high-speed data transfers
-  85:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * between peripherals and memories. Complex data transfers can be done with minimal
-  86:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * intervention of the processor, making CPU available for other operations.
-  87:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
-  88:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * GPDMA provides extensive support for XMC microcontroller peripherals like A/D, D/A
-  89:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * converters and timers. Data transfers through communication interfaces (USIC) using the
-  90:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * GPDMA increase efficiency and parallelism for real-time applications.
-  91:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
-  92:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * The DMA low level driver provides functions to configure and initialize the GPDMA
-  93:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * hardware peripheral.
-  94:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @{
-  95:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
-  96:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
-  97:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /*******************************************************************************
-  98:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * MACROS
-  99:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *******************************************************************************/
- 100:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 101:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** #if defined (GPDMA0)
- 102:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** #define XMC_DMA0 ((XMC_DMA_t *)GPDMA0_CH0_BASE) /**< DMA module 0 */
- 103:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** #define XMC_DMA0_NUM_CHANNELS 8
- 104:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** #endif
- 105:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 106:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** #if defined (GPDMA1)
- 107:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** #define XMC_DMA1 ((XMC_DMA_t *)GPDMA1_CH0_BASE) /**< DMA module 1, only available in XMC45xx series
- 108:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** #define XMC_DMA1_NUM_CHANNELS 4
- 109:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** #endif
- 110:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 111:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /*******************************************************************************
- 112:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * ENUMS
- 113:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *******************************************************************************/
- 114:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 115:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 116:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA transfer types
- 117:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 118:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_TRANSFER_TYPE
- 119:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** {
- 120:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_TYPE_SINGLE_BLOCK,                                /**< Single block */
- 121:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_TYPE_MULTI_BLOCK_SRCADR_CONTIGUOUS_DSTADR_RELOAD, /**< Multi-block: src addre
- 122:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_TYPE_MULTI_BLOCK_SRCADR_RELOAD_DSTADR_CONTIGUOUS, /**< Multi-block: src addre
- 123:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_TYPE_MULTI_BLOCK_SRCADR_RELOAD_DSTADR_RELOAD,     /**< Multi-block: src addre
- 124:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_TYPE_MULTI_BLOCK_SRCADR_CONTIGUOUS_DSTADR_LINKED, /**< Multi-block: src addre
- 125:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_TYPE_MULTI_BLOCK_SRCADR_RELOAD_DSTADR_LINKED,     /**< Multi-block: src addre
- 126:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_TYPE_MULTI_BLOCK_SRCADR_LINKED_DSTADR_CONTIGUOUS, /**< Multi-block: src addre
- 127:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_TYPE_MULTI_BLOCK_SRCADR_LINKED_DSTADR_RELOAD,     /**< Multi-block: src addre
- 128:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_TYPE_MULTI_BLOCK_SRCADR_LINKED_DSTADR_LINKED      /**< Multi-block: src addre
- 129:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_TRANSFER_TYPE_t;
- 130:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 131:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 132:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA transfer flow modes
- 133:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 134:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_TRANSFER_FLOW
- 135:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** {
- 136:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_FLOW_M2M_DMA    = 0x0UL, /**< Memory to memory (DMA flow controller) */
- 137:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_FLOW_M2P_DMA    = 0x1UL, /**< Memory to peripheral (DMA flow controller) */
- 138:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_FLOW_P2M_DMA    = 0x2UL, /**< Peripheral to memory (DMA flow controller) */
- 139:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_FLOW_P2P_DMA    = 0x3UL, /**< Peripheral to peripheral (DMA flow controller) 
- 140:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_FLOW_P2M_PER    = 0x4UL, /**< Peripheral to memory (Peripheral flow controlle
- 141:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_FLOW_P2P_SRCPER = 0x5UL, /**< Peripheral to peripheral (Source peripheral flo
- 142:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_FLOW_M2P_PER    = 0x6UL, /**< Memory to peripheral (Peripheral flow controlle
- 143:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_FLOW_P2P_DSTPER = 0x7UL  /**< Peripheral to peripheral (Destination periphera
- 144:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_TRANSFER_FLOW_t;
- 145:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 146:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 147:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Valid burst length values
- 148:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 149:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_BURST_LENGTH
- 150:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** {
- 151:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_BURST_LENGTH_1 = 0x0UL, /**< Burst length: 1 word */
- 152:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_BURST_LENGTH_4 = 0x1UL, /**< Burst length: 4 words */
- 153:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_BURST_LENGTH_8 = 0x2UL  /**< Burst length: 8 words */
- 154:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_BURST_LENGTH_t;
- 155:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 156:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 157:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Valid transfer width values
- 158:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 159:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_TRANSFER_WIDTH
- 160:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** {
- 161:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_WIDTH_8  = 0x0UL, /**< 8-bit transfer width */
- 162:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_WIDTH_16 = 0x1UL, /**< 16-bit transfer width */
- 163:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_WIDTH_32 = 0x2UL  /**< 32-bit transfer width */
- 164:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_TRANSFER_WIDTH_t;
- 165:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 166:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 167:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA address count mode
- 168:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 169:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_ADDRESS_COUNT_MODE
- 170:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** {
- 171:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_ADDRESS_COUNT_MODE_INCREMENT = 0x0UL, /**< Address count mode: increment */
- 172:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_ADDRESS_COUNT_MODE_DECREMENT = 0x1UL, /**< Address count mode: decrement */
- 173:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_ADDRESS_COUNT_MODE_NO_CHANGE = 0x2UL  /**< Address count mode: no change */
- 174:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_ADDRESS_COUNT_MODE_t;
- 175:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 176:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 177:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA channel priorities
- 178:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 179:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_PRIORITY
- 180:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** {
- 181:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_PRIORITY_0 = 0x0UL << GPDMA0_CH_CFGL_CH_PRIOR_Pos, /**< DMA channel priority 0 (low) *
- 182:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_PRIORITY_1 = 0x1UL << GPDMA0_CH_CFGL_CH_PRIOR_Pos, /**< DMA channel priority 1 */
- 183:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_PRIORITY_2 = 0x2UL << GPDMA0_CH_CFGL_CH_PRIOR_Pos, /**< DMA channel priority 2 */
- 184:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_PRIORITY_3 = 0x3UL << GPDMA0_CH_CFGL_CH_PRIOR_Pos, /**< DMA channel priority 3 */
- 185:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_PRIORITY_4 = 0x4UL << GPDMA0_CH_CFGL_CH_PRIOR_Pos, /**< DMA channel priority 4 */
- 186:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_PRIORITY_5 = 0x5UL << GPDMA0_CH_CFGL_CH_PRIOR_Pos, /**< DMA channel priority 5 */
- 187:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_PRIORITY_6 = 0x6UL << GPDMA0_CH_CFGL_CH_PRIOR_Pos, /**< DMA channel priority 6 */
- 188:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_PRIORITY_7 = 0x7UL << GPDMA0_CH_CFGL_CH_PRIOR_Pos  /**< DMA channel priority 7 (high) 
- 189:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_PRIORITY_t;
- 190:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 191:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 192:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Source handshake interface
- 193:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 194:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_SRC_HANDSHAKING
- 195:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** {
- 196:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_SRC_HANDSHAKING_HARDWARE = 0x0UL << GPDMA0_CH_CFGL_HS_SEL_SRC_Pos, /**< Source: hardwa
- 197:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_SRC_HANDSHAKING_SOFTWARE = 0x1UL << GPDMA0_CH_CFGL_HS_SEL_SRC_Pos  /**< Source: softwa
- 198:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_SRC_HANDSHAKING_t;
- 199:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 200:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 201:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Destination handshake interface
- 202:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 203:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_DST_HANDSHAKING
- 204:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** {
- 205:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_DST_HANDSHAKING_HARDWARE = 0x0UL << GPDMA0_CH_CFGL_HS_SEL_DST_Pos, /**< Destination: h
- 206:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_DST_HANDSHAKING_SOFTWARE = 0x1UL << GPDMA0_CH_CFGL_HS_SEL_DST_Pos  /**< Destination: s
- 207:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_DST_HANDSHAKING_t;
- 208:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 209:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 210:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA hardware handshaking interface
- 211:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Hardware handshaking available only if DMA is flow controller
- 212:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 213:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_HARDWARE_HANDSHAKING_IF
- 214:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** {
- 215:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_HARDWARE_HANDSHAKING_IF_0 = 0x0UL, /**< Hardware handshaking interface 0 */
- 216:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_HARDWARE_HANDSHAKING_IF_1 = 0x1UL, /**< Hardware handshaking interface 1 */
- 217:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_HARDWARE_HANDSHAKING_IF_2 = 0x2UL, /**< Hardware handshaking interface 2 */
- 218:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_HARDWARE_HANDSHAKING_IF_3 = 0x3UL, /**< Hardware handshaking interface 3 */
- 219:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_HARDWARE_HANDSHAKING_IF_4 = 0x4UL, /**< Hardware handshaking interface 4 */
- 220:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_HARDWARE_HANDSHAKING_IF_5 = 0x5UL, /**< Hardware handshaking interface 5 */
- 221:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_HARDWARE_HANDSHAKING_IF_6 = 0x6UL, /**< Hardware handshaking interface 6 */
- 222:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_HARDWARE_HANDSHAKING_IF_7 = 0x7UL  /**< Hardware handshaking interface 7 */
- 223:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_HARDWARE_HANDSHAKING_IF_t;
- 224:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 225:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 226:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA events
- 227:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 228:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_EVENT
- 229:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** {
- 230:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_EVENT_TRANSFER_COMPLETE        = 0x1UL, /**< Transfer complete event */
- 231:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_EVENT_BLOCK_TRANSFER_COMPLETE  = 0x2UL, /**< Block transfer complete event */
- 232:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_EVENT_SRC_TRANSACTION_COMPLETE = 0x4UL, /**< Source transaction complete event */
- 233:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_EVENT_DST_TRANSACTION_COMPLETE = 0x8UL, /**< Destination transaction complete event */
- 234:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_EVENT_ERROR                    = 0x10UL /**< DMA error event */
- 235:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_EVENT_t;
- 236:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 237:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 238:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Transaction types
- 239:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 240:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_TRANSACTION_TYPE
- 241:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** {
- 242:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSACTION_TYPE_SINGLE, /**< Single DMA transaction */
- 243:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSACTION_TYPE_BURST   /**< Burst transaction */
- 244:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_TRANSACTION_TYPE_t;
- 245:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 246:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 247:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA channel status values
- 248:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 249:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_STATUS
- 250:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** {
- 251:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_STATUS_OK,    /**< DMA status OK */
- 252:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_STATUS_ERROR, /**< DMA status error */
- 253:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_STATUS_BUSY   /**< DMA is busy */
- 254:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_STATUS_t;
- 255:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 256:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /*******************************************************************************
- 257:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * DATA STRUCTURES
- 258:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *******************************************************************************/
- 259:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 260:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 261:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA channel configuration structure <br>
- 262:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 263:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * The structure represents a collection of all hardware registers used
- 264:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * to configure the DMA channel. It is contained within the ::XMC_DMA_t
- 265:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * structure. It's registers can be used to configure DMA transfer details
- 266:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * like source address, destination address, block size, incrementation
- 267:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * modes and the like.
- 268:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 269:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  
- 270:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** typedef struct {
- 271:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  SAR;
- 272:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED0;
- 273:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  DAR;
- 274:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED1;
- 275:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  LLP;
- 276:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED2;
- 277:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  CTLL;
- 278:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  CTLH;
- 279:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  SSTAT;
- 280:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED3;
- 281:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  DSTAT;
- 282:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED4;
- 283:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  SSTATAR;
- 284:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED5;
- 285:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  DSTATAR;
- 286:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED6;
- 287:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  CFGL;
- 288:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  CFGH;
- 289:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  SGR;
- 290:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED7;
- 291:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  DSR;
- 292:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED8;
- 293:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** } GPDMA_CH_t;
- 294:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 295:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 296:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA device structure <br>
- 297:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 298:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * The structure represents a collection of all hardware registers used
- 299:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * to configure the GPDMA peripheral on the XMC4000 series of microcontrollers.
- 300:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * The registers can be accessed with ::XMC_DMA0 and ::XMC_DMA1.
- 301:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 302:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** typedef struct {
- 303:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   GPDMA_CH_t CH[8];
- 304:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 305:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  RAWCHEV[10];
- 306:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  STATUSCHEV[10];
- 307:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  MASKCHEV[10];
- 308:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __O  uint32_t  CLEARCHEV[10];
- 309:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  STATUSGLEV;
- 310:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED20;
- 311:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  REQSRCREG;
- 312:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED21;
- 313:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  REQDSTREG;
- 314:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED22;
- 315:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  SGLREQSRCREG;
- 316:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED23;
- 317:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  SGLREQDSTREG;
- 318:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED24;
- 319:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  LSTSRCREG;
- 320:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED25;
- 321:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  LSTDSTREG;
- 322:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED26;
- 323:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  DMACFGREG;
- 324:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED27;
- 325:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  CHENREG;
- 326:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED28;
- 327:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  ID;
- 328:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED29[19];
- 329:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  TYPE;
- 330:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  VERSION;
- 331:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_t;
- 332:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 333:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /* Anonymous structure/union guard start */
- 334:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** #if defined (__CC_ARM)
- 335:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   #pragma push
- 336:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   #pragma anon_unions
- 337:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** #elif defined (__TASKING__)
- 338:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   #pragma warning 586
- 339:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** #endif
- 340:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 341:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 342:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA channel linked list item.
- 343:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Note: Needs to be word aligned
- 344:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 345:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** typedef struct XMC_DMA_LLI
- 346:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** {
- 347:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   uint32_t src_addr;                            /**< Source address */
- 348:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   uint32_t dst_addr;                            /**< Destination address */
- 349:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   struct XMC_DMA_LLI *llp;                      /**< Linked list pointer of type XMC_DMA_LLI_t */
- 350:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   union
- 351:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   {
- 352:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****     struct
- 353:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****     {
- 354:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t enable_interrupt: 1;             /**< Enable interrupts? */
- 355:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t dst_transfer_width: 3;           /**< Destination transfer width (:: XMC_DMA_CH_TRAN
- 356:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t src_transfer_width: 3;           /**< Source transfer width (:: XMC_DMA_CH_TRANSFER_
- 357:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t dst_address_count_mode: 2;       /**< Destination address count mode (:: XMC_DMA_CH_
- 358:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t src_address_count_mode: 2;       /**< Source address count mode (:: XMC_DMA_CH_ADDRE
- 359:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t dst_burst_length: 3;             /**< Destination burst length (:: XMC_DMA_CH_BURST_
- 360:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t src_burst_length: 3;             /**< Source burst length (:: XMC_DMA_CH_BURST_LENGT
- 361:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t enable_src_gather: 1;            /**< Enable source gather? */
- 362:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t enable_dst_scatter: 1;           /**< Enable destination scatter? */
- 363:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t : 1;                             /**< Reserved bits */
- 364:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t transfer_flow: 3;                /**< DMA transfer flow (:: XMC_DMA_CH_TRANSFER_FLOW
- 365:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t : 4;                             /**< Reserved bits */
- 366:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t enable_dst_linked_list: 1;       /**< Enable destination linked list? */
- 367:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t enable_src_linked_list: 1;       /**< Enable source linked list? */
- 368:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t : 3;                             /**< Reserved bits */
- 369:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****     };
- 370:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****     uint32_t control;
- 371:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   };
- 372:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   uint32_t block_size;                          /**< Transfer block size */
- 373:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   uint32_t src_status;                          /**< Source status */
- 374:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   uint32_t dst_status;                          /**< Destination status */
- 375:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_LLI_t;
- 376:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 377:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** typedef XMC_DMA_LLI_t **XMC_DMA_LIST_t;         /**< Type definition for a linked list pointer */
- 378:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 379:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 380:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA channel configuration structure
- 381:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 382:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** typedef struct XMC_DMA_CH_CONFIG
- 383:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** {
- 384:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   union
- 385:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   {
- 386:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****     uint32_t control;
- 387:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****     struct
- 388:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****     {
- 389:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t enable_interrupt: 1;             /**< Enable interrupts? */
- 390:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t dst_transfer_width: 3;           /**< Destination transfer width (:: XMC_DMA_CH_TRAN
- 391:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t src_transfer_width: 3;           /**< Source transfer width (:: XMC_DMA_CH_TRANSFER_
- 392:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t dst_address_count_mode: 2;       /**< Destination address count mode (:: XMC_DMA_CH_
- 393:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t src_address_count_mode: 2;       /**< Source address count mode (:: XMC_DMA_CH_ADDRE
- 394:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t dst_burst_length: 3;             /**< Destination burst length (:: XMC_DMA_CH_BURST_
- 395:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t src_burst_length: 3;             /**< Source burst length (:: XMC_DMA_CH_BURST_LENGT
- 396:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t enable_src_gather: 1;            /**< Enable source gather? */
- 397:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t enable_dst_scatter: 1;           /**< Enable destination scatter? */
- 398:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t : 1;                             
- 399:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t transfer_flow: 3;                /**< DMA transfer flow (:: XMC_DMA_CH_TRANSFER_FLOW
- 400:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t : 9;                             
- 401:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****     };
- 402:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   };
- 403:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 404:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   uint32_t src_addr;                            /**< Source address */
- 405:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   uint32_t dst_addr;                            /**< Destination address */
- 406:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_LLI_t *linked_list_pointer;           /**< Linked list pointer */
- 407:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   
- 408:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   union
- 409:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   {
- 410:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****     uint32_t src_gather_control;
- 411:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****     struct
- 412:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****     {
- 413:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t src_gather_interval: 20;         /**< Source gather interval */
- 414:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t src_gather_count: 12;            /**< Source gather count */
- 415:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****     };
- 416:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   };
- 417:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 418:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   union
- 419:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   {
- 420:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****     uint32_t dst_scatter_control;
- 421:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****     struct
- 422:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****     {
- 423:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t dst_scatter_interval: 20;        /**< Destination scatter interval */
- 424:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t dst_scatter_count: 12;           /**< Destination scatter count */
- 425:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****     };
- 426:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   };
- 427:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   
- 428:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   uint16_t block_size;                          /**< Block size for DMA controlled transfers [max. 
- 429:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_TYPE_t transfer_type;     /**< DMA transfer type (:: XMC_DMA_CH_TRANSFER_TYPE
- 430:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_PRIORITY_t priority;               /**< DMA channel priority (::XMC_DMA_CH_PRIORITY_t)
- 431:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_SRC_HANDSHAKING_t src_handshaking; /**< DMA source handshaking interface (:: XMC_DMA_C
- 432:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   uint8_t src_peripheral_request;               /**< Source peripheral request. See xmc_dma_map.h *
- 433:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_DST_HANDSHAKING_t dst_handshaking; /**< DMA destination handshaking interface (:: XMC_
- 434:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   uint8_t dst_peripheral_request;               /**< Destination peripheral request. See xmc_dma_ma
- 435:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_CONFIG_t;
- 436:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 437:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /* Anonymous structure/union guard end */
- 438:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** #if defined (__CC_ARM)
- 439:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   #pragma pop
- 440:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** #elif defined (__TASKING__)
- 441:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   #pragma warning restore
- 442:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** #endif
- 443:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 444:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 445:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA channel event handler
- 446:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 447:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** typedef void (*XMC_DMA_CH_EVENT_HANDLER_t)(XMC_DMA_CH_EVENT_t event);
- 448:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 449:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /*******************************************************************************
- 450:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * API PROTOTYPES
- 451:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *******************************************************************************/
- 452:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 453:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** #ifdef __cplusplus
- 454:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** extern "C" {
- 455:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** #endif
- 456:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 457:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 458:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @param dma A constant pointer to XMC_DMA_t, pointing to the GPDMA base address
- 459:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @return None
- 460:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 461:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Description: </b><br>
- 462:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Initialize the GPDMA peripheral <br>
- 463:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 464:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * \par
- 465:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * The function initializes a prioritized list of DMA channels and enables the GPDMA
- 466:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * peripheral.
- 467:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 468:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** void XMC_DMA_Init(XMC_DMA_t *const dma);
- 469:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 470:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 471:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @param dma A constant pointer to XMC_DMA_t, pointing to the GPDMA base address
- 472:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @return None
- 473:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 474:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Description: </b><br>
- 475:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Enable the GPDMA peripheral <br>
- 476:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 477:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * \par
- 478:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * The function de-asserts the GPDMA peripheral reset. In addition, it un-gates the
- 479:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * GPDMA0 peripheral clock for all XMC4000 series of microcontrollers with an exception
- 480:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * of the XMC4500 microcontroller. The XMC4500 doesn't support gating.
- 481:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 482:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** void XMC_DMA_Enable(XMC_DMA_t *const dma);
- 483:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 484:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 485:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @param dma A constant pointer to XMC_DMA_t, pointing to the GPDMA base address
- 486:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @return None
- 487:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 488:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Description: </b><br>
- 489:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Disable the GPDMA peripheral <br>
- 490:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 491:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * \par
- 492:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * The function asserts the GPDMA peripheral reset. In addition, it gates the GPDMA0
- 493:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * peripheral clock for all XMC4000 series of microcontrollers with an exception of
- 494:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * the XMC4500 microcontroller. The XMC4500 doesn't support gating.
- 495:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 496:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** void XMC_DMA_Disable(XMC_DMA_t *const dma);
- 497:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 498:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 499:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @param dma A constant pointer to XMC_DMA_t, pointing to the GPDMA base address
- 500:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @return bool
- 501:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 502:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Description: </b><br>
- 503:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Check if the GPDMA peripheral is enabled <br>
- 504:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 505:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * \par
- 506:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * For the XMC4500 microcontroller, the function checks if the GPDMA module is asserted
- 507:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * and returns "false" if it is. In addition, it also checks if the clock is gated
- 508:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * for the other XMC4000 series of microcontrollers. It returns "true" if the peripheral
- 509:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * is enabled.
- 510:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 511:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** bool XMC_DMA_IsEnabled(const XMC_DMA_t *const dma);
- 512:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 513:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 514:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @param dma A constant pointer to XMC_DMA_t, pointing to the GPDMA base address
- 515:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @return uint32_t DMA event status
- 516:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 517:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Description: </b><br>
- 518:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Get DMA event status <br>
- 519:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 520:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * \par
- 521:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * The function returns the collective (global) status of GPDMA events. The following
- 522:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * lists the various DMA events and their corresponding enumeration. The return value
- 523:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * of this function may then be masked with any one of the following enumerations to
- 524:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * obtain the status of individual DMA events. <br>
- 525:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 526:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * \par
- 527:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Transfer complete -> ::XMC_DMA_CH_EVENT_TRANSFER_COMPLETE                       <br>
- 528:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Block transfer complete -> ::XMC_DMA_CH_EVENT_BLOCK_TRANSFER_COMPLETE           <br>
- 529:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Source transaction complete -> ::XMC_DMA_CH_EVENT_SRC_TRANSACTION_COMPLETE      <br>
- 530:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Destination transaction complete -> ::XMC_DMA_CH_EVENT_DST_TRANSACTION_COMPLETE <br>
- 531:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA error event -> ::XMC_DMA_CH_EVENT_ERROR                                     <br>
- 532:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 533:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** __STATIC_INLINE uint32_t XMC_DMA_GetEventStatus(XMC_DMA_t *const dma)
- 534:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** {
+  26              	 .file 1 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc/xmc_dma.h"
+   1:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+   2:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @file xmc_dma.h
+   3:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @date 2018-09-18
+   4:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+   5:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @cond
+   6:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  **************************************************************************************************
+   7:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * XMClib v2.1.24 - XMC Peripheral Driver Library
+   8:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+   9:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Copyright (c) 2015-2019, Infineon Technologies AG
+  10:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * All rights reserved.                        
+  11:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *                                             
+  12:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
+  13:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * following conditions are met:   
+  14:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *                                                                              
+  15:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Redistributions of source code must retain the above copyright notice, this list of conditions a
+  16:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * disclaimer.                        
+  17:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * 
+  18:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Redistributions in binary form must reproduce the above copyright notice, this list of condition
+  19:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * disclaimer in the documentation and/or other materials provided with the distribution.          
+  20:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * 
+  21:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Neither the name of the copyright holders nor the names of its contributors may be used to endor
+  22:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * products derived from this software without specific prior written permission.                  
+  23:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *                                                                              
+  24:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
+  25:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
+  26:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
+  27:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
+  28:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
+  29:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+  30:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                            
+  31:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *                                                                              
+  32:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
+  33:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Infineon Technologies AG dave@infineon.com).                                                    
+  34:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  **************************************************************************************************
+  35:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+  36:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Change History
+  37:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * --------------
+  38:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+  39:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * 2015-02-20:
+  40:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *     - Initial <br>
+  41:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+  42:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * 2015-06-20:
+  43:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *     - Add the declarations for the following APIs: <br>
+  44:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *       XMC_DMA_DisableRequestLine, XMC_DMA_ClearRequestLine, <br>
+  45:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *       XMC_DMA_CH_ClearSourcePeripheralRequest, <br>
+  46:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *       XMC_DMA_CH_ClearDestinationPeripheralRequest <br>
+  47:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *     - Documentation updates <br>
+  48:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *     - Removed version macros and declaration of GetDriverVersion API <br>
+  49:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+  50:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * 2016-10-28:
+  51:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *     - Fix documentation on maximum block size
+  52:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+  53:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * 2017-09-28:
+  54:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *     - Improved documentation and added XMC_DMA_CH_EnableFifo() and XMC_DMA_CH_DisableFifo()
+  55:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+  56:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * 2018-09-18:
+  57:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *     - Added XMC_DMA_CH_GetTransferredData()
+  58:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+  59:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @endcond
+  60:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+  61:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+  62:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** #ifndef XMC_DMA_H
+  63:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** #define XMC_DMA_H
+  64:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+  65:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /*******************************************************************************
+  66:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * HEADER FILES
+  67:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *******************************************************************************/
+  68:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+  69:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** #include "xmc_common.h"
+  70:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+  71:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** #if defined (GPDMA0)
+  72:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+  73:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** #include "xmc_dma_map.h"
+  74:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+  75:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+  76:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @addtogroup XMClib XMC Peripheral Library
+  77:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @{
+  78:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+  79:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+  80:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+  81:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @addtogroup DMA
+  82:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @brief General purpose DMA (GPDMA) driver for the XMC4000 microcontroller family
+  83:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+  84:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * The GPDMA is a highly configurable DMA controller that allows high-speed data transfers
+  85:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * between peripherals and memories. Complex data transfers can be done with minimal
+  86:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * intervention of the processor, making CPU available for other operations.
+  87:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+  88:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * GPDMA provides extensive support for XMC microcontroller peripherals like A/D, D/A
+  89:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * converters and timers. Data transfers through communication interfaces (USIC) using the
+  90:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * GPDMA increase efficiency and parallelism for real-time applications.
+  91:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+  92:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * The DMA low level driver provides functions to configure and initialize the GPDMA
+  93:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * hardware peripheral.
+  94:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @{
+  95:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+  96:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+  97:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /*******************************************************************************
+  98:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * MACROS
+  99:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *******************************************************************************/
+ 100:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 101:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** #if defined (GPDMA0)
+ 102:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** #define XMC_DMA0 ((XMC_DMA_t *)GPDMA0_CH0_BASE) /**< DMA module 0 */
+ 103:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** #define XMC_DMA0_NUM_CHANNELS 8
+ 104:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** #endif
+ 105:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 106:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** #if defined (GPDMA1)
+ 107:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** #define XMC_DMA1 ((XMC_DMA_t *)GPDMA1_CH0_BASE) /**< DMA module 1, only available in XMC45xx series
+ 108:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** #define XMC_DMA1_NUM_CHANNELS 4
+ 109:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** #endif
+ 110:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 111:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /*******************************************************************************
+ 112:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * ENUMS
+ 113:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *******************************************************************************/
+ 114:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 115:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 116:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA transfer types
+ 117:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 118:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_TRANSFER_TYPE
+ 119:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** {
+ 120:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_TYPE_SINGLE_BLOCK,                                /**< Single block */
+ 121:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_TYPE_MULTI_BLOCK_SRCADR_CONTIGUOUS_DSTADR_RELOAD, /**< Multi-block: src addre
+ 122:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_TYPE_MULTI_BLOCK_SRCADR_RELOAD_DSTADR_CONTIGUOUS, /**< Multi-block: src addre
+ 123:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_TYPE_MULTI_BLOCK_SRCADR_RELOAD_DSTADR_RELOAD,     /**< Multi-block: src addre
+ 124:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_TYPE_MULTI_BLOCK_SRCADR_CONTIGUOUS_DSTADR_LINKED, /**< Multi-block: src addre
+ 125:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_TYPE_MULTI_BLOCK_SRCADR_RELOAD_DSTADR_LINKED,     /**< Multi-block: src addre
+ 126:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_TYPE_MULTI_BLOCK_SRCADR_LINKED_DSTADR_CONTIGUOUS, /**< Multi-block: src addre
+ 127:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_TYPE_MULTI_BLOCK_SRCADR_LINKED_DSTADR_RELOAD,     /**< Multi-block: src addre
+ 128:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_TYPE_MULTI_BLOCK_SRCADR_LINKED_DSTADR_LINKED      /**< Multi-block: src addre
+ 129:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_TRANSFER_TYPE_t;
+ 130:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 131:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 132:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA transfer flow modes
+ 133:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 134:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_TRANSFER_FLOW
+ 135:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** {
+ 136:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_FLOW_M2M_DMA    = 0x0UL, /**< Memory to memory (DMA flow controller) */
+ 137:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_FLOW_M2P_DMA    = 0x1UL, /**< Memory to peripheral (DMA flow controller) */
+ 138:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_FLOW_P2M_DMA    = 0x2UL, /**< Peripheral to memory (DMA flow controller) */
+ 139:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_FLOW_P2P_DMA    = 0x3UL, /**< Peripheral to peripheral (DMA flow controller) 
+ 140:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_FLOW_P2M_PER    = 0x4UL, /**< Peripheral to memory (Peripheral flow controlle
+ 141:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_FLOW_P2P_SRCPER = 0x5UL, /**< Peripheral to peripheral (Source peripheral flo
+ 142:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_FLOW_M2P_PER    = 0x6UL, /**< Memory to peripheral (Peripheral flow controlle
+ 143:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_FLOW_P2P_DSTPER = 0x7UL  /**< Peripheral to peripheral (Destination periphera
+ 144:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_TRANSFER_FLOW_t;
+ 145:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 146:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 147:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Valid burst length values
+ 148:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 149:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_BURST_LENGTH
+ 150:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** {
+ 151:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_BURST_LENGTH_1 = 0x0UL, /**< Burst length: 1 word */
+ 152:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_BURST_LENGTH_4 = 0x1UL, /**< Burst length: 4 words */
+ 153:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_BURST_LENGTH_8 = 0x2UL  /**< Burst length: 8 words */
+ 154:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_BURST_LENGTH_t;
+ 155:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 156:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 157:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Valid transfer width values
+ 158:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 159:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_TRANSFER_WIDTH
+ 160:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** {
+ 161:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_WIDTH_8  = 0x0UL, /**< 8-bit transfer width */
+ 162:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_WIDTH_16 = 0x1UL, /**< 16-bit transfer width */
+ 163:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_WIDTH_32 = 0x2UL  /**< 32-bit transfer width */
+ 164:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_TRANSFER_WIDTH_t;
+ 165:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 166:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 167:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA address count mode
+ 168:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 169:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_ADDRESS_COUNT_MODE
+ 170:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** {
+ 171:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_ADDRESS_COUNT_MODE_INCREMENT = 0x0UL, /**< Address count mode: increment */
+ 172:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_ADDRESS_COUNT_MODE_DECREMENT = 0x1UL, /**< Address count mode: decrement */
+ 173:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_ADDRESS_COUNT_MODE_NO_CHANGE = 0x2UL  /**< Address count mode: no change */
+ 174:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_ADDRESS_COUNT_MODE_t;
+ 175:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 176:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 177:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA channel priorities
+ 178:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 179:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_PRIORITY
+ 180:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** {
+ 181:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_PRIORITY_0 = 0x0UL << GPDMA0_CH_CFGL_CH_PRIOR_Pos, /**< DMA channel priority 0 (low) *
+ 182:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_PRIORITY_1 = 0x1UL << GPDMA0_CH_CFGL_CH_PRIOR_Pos, /**< DMA channel priority 1 */
+ 183:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_PRIORITY_2 = 0x2UL << GPDMA0_CH_CFGL_CH_PRIOR_Pos, /**< DMA channel priority 2 */
+ 184:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_PRIORITY_3 = 0x3UL << GPDMA0_CH_CFGL_CH_PRIOR_Pos, /**< DMA channel priority 3 */
+ 185:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_PRIORITY_4 = 0x4UL << GPDMA0_CH_CFGL_CH_PRIOR_Pos, /**< DMA channel priority 4 */
+ 186:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_PRIORITY_5 = 0x5UL << GPDMA0_CH_CFGL_CH_PRIOR_Pos, /**< DMA channel priority 5 */
+ 187:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_PRIORITY_6 = 0x6UL << GPDMA0_CH_CFGL_CH_PRIOR_Pos, /**< DMA channel priority 6 */
+ 188:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_PRIORITY_7 = 0x7UL << GPDMA0_CH_CFGL_CH_PRIOR_Pos  /**< DMA channel priority 7 (high) 
+ 189:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_PRIORITY_t;
+ 190:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 191:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 192:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Source handshake interface
+ 193:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 194:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_SRC_HANDSHAKING
+ 195:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** {
+ 196:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_SRC_HANDSHAKING_HARDWARE = 0x0UL << GPDMA0_CH_CFGL_HS_SEL_SRC_Pos, /**< Source: hardwa
+ 197:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_SRC_HANDSHAKING_SOFTWARE = 0x1UL << GPDMA0_CH_CFGL_HS_SEL_SRC_Pos  /**< Source: softwa
+ 198:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_SRC_HANDSHAKING_t;
+ 199:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 200:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 201:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Destination handshake interface
+ 202:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 203:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_DST_HANDSHAKING
+ 204:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** {
+ 205:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_DST_HANDSHAKING_HARDWARE = 0x0UL << GPDMA0_CH_CFGL_HS_SEL_DST_Pos, /**< Destination: h
+ 206:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_DST_HANDSHAKING_SOFTWARE = 0x1UL << GPDMA0_CH_CFGL_HS_SEL_DST_Pos  /**< Destination: s
+ 207:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_DST_HANDSHAKING_t;
+ 208:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 209:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 210:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA hardware handshaking interface
+ 211:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Hardware handshaking available only if DMA is flow controller
+ 212:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 213:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_HARDWARE_HANDSHAKING_IF
+ 214:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** {
+ 215:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_HARDWARE_HANDSHAKING_IF_0 = 0x0UL, /**< Hardware handshaking interface 0 */
+ 216:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_HARDWARE_HANDSHAKING_IF_1 = 0x1UL, /**< Hardware handshaking interface 1 */
+ 217:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_HARDWARE_HANDSHAKING_IF_2 = 0x2UL, /**< Hardware handshaking interface 2 */
+ 218:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_HARDWARE_HANDSHAKING_IF_3 = 0x3UL, /**< Hardware handshaking interface 3 */
+ 219:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_HARDWARE_HANDSHAKING_IF_4 = 0x4UL, /**< Hardware handshaking interface 4 */
+ 220:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_HARDWARE_HANDSHAKING_IF_5 = 0x5UL, /**< Hardware handshaking interface 5 */
+ 221:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_HARDWARE_HANDSHAKING_IF_6 = 0x6UL, /**< Hardware handshaking interface 6 */
+ 222:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_HARDWARE_HANDSHAKING_IF_7 = 0x7UL  /**< Hardware handshaking interface 7 */
+ 223:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_HARDWARE_HANDSHAKING_IF_t;
+ 224:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 225:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 226:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA events
+ 227:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 228:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_EVENT
+ 229:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** {
+ 230:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_EVENT_TRANSFER_COMPLETE        = 0x1UL, /**< Transfer complete event */
+ 231:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_EVENT_BLOCK_TRANSFER_COMPLETE  = 0x2UL, /**< Block transfer complete event */
+ 232:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_EVENT_SRC_TRANSACTION_COMPLETE = 0x4UL, /**< Source transaction complete event */
+ 233:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_EVENT_DST_TRANSACTION_COMPLETE = 0x8UL, /**< Destination transaction complete event */
+ 234:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_EVENT_ERROR                    = 0x10UL /**< DMA error event */
+ 235:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_EVENT_t;
+ 236:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 237:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 238:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Transaction types
+ 239:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 240:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_TRANSACTION_TYPE
+ 241:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** {
+ 242:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSACTION_TYPE_SINGLE, /**< Single DMA transaction */
+ 243:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSACTION_TYPE_BURST   /**< Burst transaction */
+ 244:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_TRANSACTION_TYPE_t;
+ 245:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 246:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 247:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA channel status values
+ 248:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 249:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** typedef enum XMC_DMA_CH_STATUS
+ 250:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** {
+ 251:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_STATUS_OK,    /**< DMA status OK */
+ 252:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_STATUS_ERROR, /**< DMA status error */
+ 253:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_STATUS_BUSY   /**< DMA is busy */
+ 254:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_STATUS_t;
+ 255:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 256:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /*******************************************************************************
+ 257:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * DATA STRUCTURES
+ 258:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *******************************************************************************/
+ 259:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 260:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 261:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA channel configuration structure <br>
+ 262:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 263:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * The structure represents a collection of all hardware registers used
+ 264:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * to configure the DMA channel. It is contained within the ::XMC_DMA_t
+ 265:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * structure. It's registers can be used to configure DMA transfer details
+ 266:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * like source address, destination address, block size, incrementation
+ 267:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * modes and the like.
+ 268:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 269:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  
+ 270:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** typedef struct {
+ 271:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  SAR;
+ 272:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED0;
+ 273:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  DAR;
+ 274:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED1;
+ 275:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  LLP;
+ 276:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED2;
+ 277:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  CTLL;
+ 278:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  CTLH;
+ 279:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  SSTAT;
+ 280:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED3;
+ 281:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  DSTAT;
+ 282:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED4;
+ 283:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  SSTATAR;
+ 284:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED5;
+ 285:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  DSTATAR;
+ 286:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED6;
+ 287:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  CFGL;
+ 288:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  CFGH;
+ 289:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  SGR;
+ 290:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED7;
+ 291:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  DSR;
+ 292:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED8;
+ 293:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** } GPDMA_CH_t;
+ 294:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 295:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 296:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA device structure <br>
+ 297:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 298:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * The structure represents a collection of all hardware registers used
+ 299:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * to configure the GPDMA peripheral on the XMC4000 series of microcontrollers.
+ 300:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * The registers can be accessed with ::XMC_DMA0 and ::XMC_DMA1.
+ 301:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 302:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** typedef struct {
+ 303:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   GPDMA_CH_t CH[8];
+ 304:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 305:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  RAWCHEV[10];
+ 306:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  STATUSCHEV[10];
+ 307:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  MASKCHEV[10];
+ 308:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __O  uint32_t  CLEARCHEV[10];
+ 309:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  STATUSGLEV;
+ 310:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED20;
+ 311:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  REQSRCREG;
+ 312:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED21;
+ 313:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  REQDSTREG;
+ 314:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED22;
+ 315:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  SGLREQSRCREG;
+ 316:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED23;
+ 317:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  SGLREQDSTREG;
+ 318:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED24;
+ 319:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  LSTSRCREG;
+ 320:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED25;
+ 321:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  LSTDSTREG;
+ 322:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED26;
+ 323:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  DMACFGREG;
+ 324:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED27;
+ 325:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __IO uint32_t  CHENREG;
+ 326:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED28;
+ 327:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  ID;
+ 328:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  RESERVED29[19];
+ 329:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  TYPE;
+ 330:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   __I  uint32_t  VERSION;
+ 331:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_t;
+ 332:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 333:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /* Anonymous structure/union guard start */
+ 334:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** #if defined (__CC_ARM)
+ 335:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   #pragma push
+ 336:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   #pragma anon_unions
+ 337:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** #elif defined (__TASKING__)
+ 338:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   #pragma warning 586
+ 339:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** #endif
+ 340:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 341:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 342:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA channel linked list item.
+ 343:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Note: Needs to be word aligned
+ 344:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 345:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** typedef struct XMC_DMA_LLI
+ 346:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** {
+ 347:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   uint32_t src_addr;                            /**< Source address */
+ 348:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   uint32_t dst_addr;                            /**< Destination address */
+ 349:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   struct XMC_DMA_LLI *llp;                      /**< Linked list pointer of type XMC_DMA_LLI_t */
+ 350:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   union
+ 351:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   {
+ 352:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****     struct
+ 353:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****     {
+ 354:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t enable_interrupt: 1;             /**< Enable interrupts? */
+ 355:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t dst_transfer_width: 3;           /**< Destination transfer width (:: XMC_DMA_CH_TRAN
+ 356:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t src_transfer_width: 3;           /**< Source transfer width (:: XMC_DMA_CH_TRANSFER_
+ 357:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t dst_address_count_mode: 2;       /**< Destination address count mode (:: XMC_DMA_CH_
+ 358:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t src_address_count_mode: 2;       /**< Source address count mode (:: XMC_DMA_CH_ADDRE
+ 359:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t dst_burst_length: 3;             /**< Destination burst length (:: XMC_DMA_CH_BURST_
+ 360:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t src_burst_length: 3;             /**< Source burst length (:: XMC_DMA_CH_BURST_LENGT
+ 361:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t enable_src_gather: 1;            /**< Enable source gather? */
+ 362:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t enable_dst_scatter: 1;           /**< Enable destination scatter? */
+ 363:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t : 1;                             /**< Reserved bits */
+ 364:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t transfer_flow: 3;                /**< DMA transfer flow (:: XMC_DMA_CH_TRANSFER_FLOW
+ 365:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t : 4;                             /**< Reserved bits */
+ 366:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t enable_dst_linked_list: 1;       /**< Enable destination linked list? */
+ 367:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t enable_src_linked_list: 1;       /**< Enable source linked list? */
+ 368:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t : 3;                             /**< Reserved bits */
+ 369:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****     };
+ 370:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****     uint32_t control;
+ 371:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   };
+ 372:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   uint32_t block_size;                          /**< Transfer block size */
+ 373:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   uint32_t src_status;                          /**< Source status */
+ 374:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   uint32_t dst_status;                          /**< Destination status */
+ 375:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_LLI_t;
+ 376:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 377:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** typedef XMC_DMA_LLI_t **XMC_DMA_LIST_t;         /**< Type definition for a linked list pointer */
+ 378:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 379:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 380:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA channel configuration structure
+ 381:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 382:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** typedef struct XMC_DMA_CH_CONFIG
+ 383:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** {
+ 384:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   union
+ 385:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   {
+ 386:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****     uint32_t control;
+ 387:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****     struct
+ 388:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****     {
+ 389:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t enable_interrupt: 1;             /**< Enable interrupts? */
+ 390:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t dst_transfer_width: 3;           /**< Destination transfer width (:: XMC_DMA_CH_TRAN
+ 391:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t src_transfer_width: 3;           /**< Source transfer width (:: XMC_DMA_CH_TRANSFER_
+ 392:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t dst_address_count_mode: 2;       /**< Destination address count mode (:: XMC_DMA_CH_
+ 393:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t src_address_count_mode: 2;       /**< Source address count mode (:: XMC_DMA_CH_ADDRE
+ 394:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t dst_burst_length: 3;             /**< Destination burst length (:: XMC_DMA_CH_BURST_
+ 395:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t src_burst_length: 3;             /**< Source burst length (:: XMC_DMA_CH_BURST_LENGT
+ 396:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t enable_src_gather: 1;            /**< Enable source gather? */
+ 397:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t enable_dst_scatter: 1;           /**< Enable destination scatter? */
+ 398:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t : 1;                             
+ 399:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t transfer_flow: 3;                /**< DMA transfer flow (:: XMC_DMA_CH_TRANSFER_FLOW
+ 400:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t : 9;                             
+ 401:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****     };
+ 402:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   };
+ 403:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 404:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   uint32_t src_addr;                            /**< Source address */
+ 405:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   uint32_t dst_addr;                            /**< Destination address */
+ 406:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_LLI_t *linked_list_pointer;           /**< Linked list pointer */
+ 407:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   
+ 408:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   union
+ 409:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   {
+ 410:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****     uint32_t src_gather_control;
+ 411:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****     struct
+ 412:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****     {
+ 413:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t src_gather_interval: 20;         /**< Source gather interval */
+ 414:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t src_gather_count: 12;            /**< Source gather count */
+ 415:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****     };
+ 416:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   };
+ 417:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 418:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   union
+ 419:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   {
+ 420:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****     uint32_t dst_scatter_control;
+ 421:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****     struct
+ 422:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****     {
+ 423:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t dst_scatter_interval: 20;        /**< Destination scatter interval */
+ 424:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****       uint32_t dst_scatter_count: 12;           /**< Destination scatter count */
+ 425:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****     };
+ 426:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   };
+ 427:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   
+ 428:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   uint16_t block_size;                          /**< Block size for DMA controlled transfers [max. 
+ 429:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_TRANSFER_TYPE_t transfer_type;     /**< DMA transfer type (:: XMC_DMA_CH_TRANSFER_TYPE
+ 430:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_PRIORITY_t priority;               /**< DMA channel priority (::XMC_DMA_CH_PRIORITY_t)
+ 431:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_SRC_HANDSHAKING_t src_handshaking; /**< DMA source handshaking interface (:: XMC_DMA_C
+ 432:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   uint8_t src_peripheral_request;               /**< Source peripheral request. See xmc_dma_map.h *
+ 433:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   XMC_DMA_CH_DST_HANDSHAKING_t dst_handshaking; /**< DMA destination handshaking interface (:: XMC_
+ 434:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   uint8_t dst_peripheral_request;               /**< Destination peripheral request. See xmc_dma_ma
+ 435:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** } XMC_DMA_CH_CONFIG_t;
+ 436:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 437:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /* Anonymous structure/union guard end */
+ 438:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** #if defined (__CC_ARM)
+ 439:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   #pragma pop
+ 440:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** #elif defined (__TASKING__)
+ 441:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   #pragma warning restore
+ 442:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** #endif
+ 443:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 444:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 445:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA channel event handler
+ 446:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 447:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** typedef void (*XMC_DMA_CH_EVENT_HANDLER_t)(XMC_DMA_CH_EVENT_t event);
+ 448:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 449:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /*******************************************************************************
+ 450:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * API PROTOTYPES
+ 451:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *******************************************************************************/
+ 452:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 453:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** #ifdef __cplusplus
+ 454:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** extern "C" {
+ 455:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** #endif
+ 456:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 457:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 458:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @param dma A constant pointer to XMC_DMA_t, pointing to the GPDMA base address
+ 459:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @return None
+ 460:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 461:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Description: </b><br>
+ 462:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Initialize the GPDMA peripheral <br>
+ 463:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 464:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * \par
+ 465:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * The function initializes a prioritized list of DMA channels and enables the GPDMA
+ 466:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * peripheral.
+ 467:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 468:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** void XMC_DMA_Init(XMC_DMA_t *const dma);
+ 469:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 470:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 471:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @param dma A constant pointer to XMC_DMA_t, pointing to the GPDMA base address
+ 472:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @return None
+ 473:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 474:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Description: </b><br>
+ 475:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Enable the GPDMA peripheral <br>
+ 476:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 477:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * \par
+ 478:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * The function de-asserts the GPDMA peripheral reset. In addition, it un-gates the
+ 479:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * GPDMA0 peripheral clock for all XMC4000 series of microcontrollers with an exception
+ 480:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * of the XMC4500 microcontroller. The XMC4500 doesn't support gating.
+ 481:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 482:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** void XMC_DMA_Enable(XMC_DMA_t *const dma);
+ 483:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 484:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 485:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @param dma A constant pointer to XMC_DMA_t, pointing to the GPDMA base address
+ 486:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @return None
+ 487:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 488:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Description: </b><br>
+ 489:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Disable the GPDMA peripheral <br>
+ 490:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 491:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * \par
+ 492:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * The function asserts the GPDMA peripheral reset. In addition, it gates the GPDMA0
+ 493:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * peripheral clock for all XMC4000 series of microcontrollers with an exception of
+ 494:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * the XMC4500 microcontroller. The XMC4500 doesn't support gating.
+ 495:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 496:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** void XMC_DMA_Disable(XMC_DMA_t *const dma);
+ 497:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 498:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 499:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @param dma A constant pointer to XMC_DMA_t, pointing to the GPDMA base address
+ 500:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @return bool
+ 501:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 502:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Description: </b><br>
+ 503:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Check if the GPDMA peripheral is enabled <br>
+ 504:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 505:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * \par
+ 506:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * For the XMC4500 microcontroller, the function checks if the GPDMA module is asserted
+ 507:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * and returns "false" if it is. In addition, it also checks if the clock is gated
+ 508:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * for the other XMC4000 series of microcontrollers. It returns "true" if the peripheral
+ 509:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * is enabled.
+ 510:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 511:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** bool XMC_DMA_IsEnabled(const XMC_DMA_t *const dma);
+ 512:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 513:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 514:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @param dma A constant pointer to XMC_DMA_t, pointing to the GPDMA base address
+ 515:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @return uint32_t DMA event status
+ 516:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 517:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Description: </b><br>
+ 518:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Get DMA event status <br>
+ 519:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 520:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * \par
+ 521:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * The function returns the collective (global) status of GPDMA events. The following
+ 522:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * lists the various DMA events and their corresponding enumeration. The return value
+ 523:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * of this function may then be masked with any one of the following enumerations to
+ 524:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * obtain the status of individual DMA events. <br>
+ 525:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 526:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * \par
+ 527:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Transfer complete -> ::XMC_DMA_CH_EVENT_TRANSFER_COMPLETE                       <br>
+ 528:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Block transfer complete -> ::XMC_DMA_CH_EVENT_BLOCK_TRANSFER_COMPLETE           <br>
+ 529:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Source transaction complete -> ::XMC_DMA_CH_EVENT_SRC_TRANSACTION_COMPLETE      <br>
+ 530:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Destination transaction complete -> ::XMC_DMA_CH_EVENT_DST_TRANSACTION_COMPLETE <br>
+ 531:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * DMA error event -> ::XMC_DMA_CH_EVENT_ERROR                                     <br>
+ 532:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 533:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** __STATIC_INLINE uint32_t XMC_DMA_GetEventStatus(XMC_DMA_t *const dma)
+ 534:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** {
   27              	 .loc 1 534 0
   28              	 .cfi_startproc
   29              	 
@@ -573,11 +573,11 @@
   40              	.LCFI2:
   41              	 .cfi_def_cfa_register 7
   42 0006 7860     	 str r0,[r7,#4]
- 535:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   return (dma->STATUSGLEV);
+ 535:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   return (dma->STATUSGLEV);
   43              	 .loc 1 535 0
   44 0008 7B68     	 ldr r3,[r7,#4]
   45 000a D3F86033 	 ldr r3,[r3,#864]
- 536:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** }
+ 536:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** }
   46              	 .loc 1 536 0
   47 000e 1846     	 mov r0,r3
   48 0010 0C37     	 adds r7,r7,#12
@@ -600,19 +600,19 @@
   66              	 .thumb_func
   68              	XMC_DMA_GetChannelsTransferCompleteStatus:
   69              	.LFB138:
- 537:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 538:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 539:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @param dma A constant pointer to XMC_DMA_t, pointing to the GPDMA base address
- 540:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @return uint32_t DMA transfer complete status
- 541:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 542:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Description: </b><br>
- 543:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Get transfer complete status <br>
- 544:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 545:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * \par
- 546:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * The function returns GPDMA transfer complete interrupt status. <br>
- 547:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 548:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** __STATIC_INLINE uint32_t XMC_DMA_GetChannelsTransferCompleteStatus(XMC_DMA_t *const dma)
- 549:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** {
+ 537:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 538:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 539:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @param dma A constant pointer to XMC_DMA_t, pointing to the GPDMA base address
+ 540:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @return uint32_t DMA transfer complete status
+ 541:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 542:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Description: </b><br>
+ 543:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Get transfer complete status <br>
+ 544:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 545:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * \par
+ 546:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * The function returns GPDMA transfer complete interrupt status. <br>
+ 547:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 548:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** __STATIC_INLINE uint32_t XMC_DMA_GetChannelsTransferCompleteStatus(XMC_DMA_t *const dma)
+ 549:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** {
   70              	 .loc 1 549 0
   71              	 .cfi_startproc
   72              	 
@@ -629,11 +629,11 @@
   83              	.LCFI8:
   84              	 .cfi_def_cfa_register 7
   85 0006 7860     	 str r0,[r7,#4]
- 550:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   return (dma->STATUSCHEV[0]);
+ 550:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   return (dma->STATUSCHEV[0]);
   86              	 .loc 1 550 0
   87 0008 7B68     	 ldr r3,[r7,#4]
   88 000a D3F8E832 	 ldr r3,[r3,#744]
- 551:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** }
+ 551:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** }
   89              	 .loc 1 551 0
   90 000e 1846     	 mov r0,r3
   91 0010 0C37     	 adds r7,r7,#12
@@ -656,19 +656,19 @@
  109              	 .thumb_func
  111              	XMC_DMA_GetChannelsBlockCompleteStatus:
  112              	.LFB139:
- 552:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 553:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 554:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @param dma A constant pointer to XMC_DMA_t, pointing to the GPDMA base address
- 555:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @return uint32_t DMA block complete status
- 556:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 557:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Description: </b><br>
- 558:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Get block transfer complete status <br>
- 559:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 560:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * \par
- 561:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * The function returns GPDMA block transfer complete interrupt status. <br>
- 562:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 563:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** __STATIC_INLINE uint32_t XMC_DMA_GetChannelsBlockCompleteStatus(XMC_DMA_t *const dma)
- 564:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** {
+ 552:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 553:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 554:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @param dma A constant pointer to XMC_DMA_t, pointing to the GPDMA base address
+ 555:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @return uint32_t DMA block complete status
+ 556:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 557:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Description: </b><br>
+ 558:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Get block transfer complete status <br>
+ 559:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 560:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * \par
+ 561:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * The function returns GPDMA block transfer complete interrupt status. <br>
+ 562:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 563:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** __STATIC_INLINE uint32_t XMC_DMA_GetChannelsBlockCompleteStatus(XMC_DMA_t *const dma)
+ 564:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** {
  113              	 .loc 1 564 0
  114              	 .cfi_startproc
  115              	 
@@ -685,11 +685,11 @@
  126              	.LCFI14:
  127              	 .cfi_def_cfa_register 7
  128 0006 7860     	 str r0,[r7,#4]
- 565:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   return (dma->STATUSCHEV[2]);
+ 565:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   return (dma->STATUSCHEV[2]);
  129              	 .loc 1 565 0
  130 0008 7B68     	 ldr r3,[r7,#4]
  131 000a D3F8F032 	 ldr r3,[r3,#752]
- 566:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** }
+ 566:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** }
  132              	 .loc 1 566 0
  133 000e 1846     	 mov r0,r3
  134 0010 0C37     	 adds r7,r7,#12
@@ -712,23 +712,23 @@
  152              	 .thumb_func
  154              	XMC_DMA_GetChannelsSourceTransactionCompleteStatus:
  155              	.LFB140:
- 567:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 568:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 569:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @param dma A constant pointer to XMC_DMA_t, pointing to the GPDMA base address
- 570:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @return uint32_t DMA event status
- 571:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 572:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Description: </b><br>
- 573:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Get source transaction complete status <br>
- 574:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 575:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * \par
- 576:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * The function returns the source transaction complete interrupt status. <br>
- 577:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 578:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Note: </b><br>
- 579:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * If the source peripheral is memory, the source transaction complete interrupt is
- 580:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * ignored.
- 581:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 582:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** __STATIC_INLINE uint32_t XMC_DMA_GetChannelsSourceTransactionCompleteStatus(XMC_DMA_t *const dma)
- 583:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** {
+ 567:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 568:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 569:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @param dma A constant pointer to XMC_DMA_t, pointing to the GPDMA base address
+ 570:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @return uint32_t DMA event status
+ 571:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 572:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Description: </b><br>
+ 573:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Get source transaction complete status <br>
+ 574:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 575:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * \par
+ 576:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * The function returns the source transaction complete interrupt status. <br>
+ 577:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 578:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Note: </b><br>
+ 579:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * If the source peripheral is memory, the source transaction complete interrupt is
+ 580:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * ignored.
+ 581:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 582:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** __STATIC_INLINE uint32_t XMC_DMA_GetChannelsSourceTransactionCompleteStatus(XMC_DMA_t *const dma)
+ 583:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** {
  156              	 .loc 1 583 0
  157              	 .cfi_startproc
  158              	 
@@ -745,11 +745,11 @@
  169              	.LCFI20:
  170              	 .cfi_def_cfa_register 7
  171 0006 7860     	 str r0,[r7,#4]
- 584:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   return (dma->STATUSCHEV[4]);
+ 584:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   return (dma->STATUSCHEV[4]);
  172              	 .loc 1 584 0
  173 0008 7B68     	 ldr r3,[r7,#4]
  174 000a D3F8F832 	 ldr r3,[r3,#760]
- 585:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** }
+ 585:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** }
  175              	 .loc 1 585 0
  176 000e 1846     	 mov r0,r3
  177 0010 0C37     	 adds r7,r7,#12
@@ -772,23 +772,23 @@
  195              	 .thumb_func
  197              	XMC_DMA_GetChannelsDestinationTransactionCompleteStatus:
  198              	.LFB141:
- 586:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 587:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 588:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @param dma A constant pointer to XMC_DMA_t, pointing to the GPDMA base address
- 589:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @return uint32_t DMA event status
- 590:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 591:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Description: </b><br>
- 592:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Get destination transaction complete status <br>
- 593:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 594:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * \par
- 595:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * The function returns the destination transaction complete interrupt status <br>
- 596:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 597:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Note: </b><br>
- 598:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * If the destination peripheral is memory, the destination transaction complete
- 599:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * interrupt is ignored.
- 600:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 601:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** __STATIC_INLINE uint32_t XMC_DMA_GetChannelsDestinationTransactionCompleteStatus(XMC_DMA_t *const d
- 602:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** {
+ 586:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 587:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 588:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @param dma A constant pointer to XMC_DMA_t, pointing to the GPDMA base address
+ 589:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @return uint32_t DMA event status
+ 590:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 591:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Description: </b><br>
+ 592:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Get destination transaction complete status <br>
+ 593:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 594:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * \par
+ 595:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * The function returns the destination transaction complete interrupt status <br>
+ 596:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 597:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Note: </b><br>
+ 598:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * If the destination peripheral is memory, the destination transaction complete
+ 599:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * interrupt is ignored.
+ 600:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 601:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** __STATIC_INLINE uint32_t XMC_DMA_GetChannelsDestinationTransactionCompleteStatus(XMC_DMA_t *const d
+ 602:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** {
  199              	 .loc 1 602 0
  200              	 .cfi_startproc
  201              	 
@@ -805,11 +805,11 @@
  212              	.LCFI26:
  213              	 .cfi_def_cfa_register 7
  214 0006 7860     	 str r0,[r7,#4]
- 603:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   return (dma->STATUSCHEV[6]);
+ 603:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   return (dma->STATUSCHEV[6]);
  215              	 .loc 1 603 0
  216 0008 7B68     	 ldr r3,[r7,#4]
  217 000a D3F80033 	 ldr r3,[r3,#768]
- 604:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** }
+ 604:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** }
  218              	 .loc 1 604 0
  219 000e 1846     	 mov r0,r3
  220 0010 0C37     	 adds r7,r7,#12
@@ -832,19 +832,19 @@
  238              	 .thumb_func
  240              	XMC_DMA_GetChannelsErrorStatus:
  241              	.LFB142:
- 605:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** 
- 606:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** /**
- 607:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @param dma A constant pointer to XMC_DMA_t, pointing to the GPDMA base address
- 608:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * @return uint32_t DMA error event status
- 609:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 610:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Description: </b><br>
- 611:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * Get DMA error event status <br>
- 612:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  *
- 613:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * \par
- 614:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  * The function returns error interrupt status. <br>
- 615:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****  */
- 616:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** __STATIC_INLINE uint32_t XMC_DMA_GetChannelsErrorStatus(XMC_DMA_t *const dma)
- 617:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** {
+ 605:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** 
+ 606:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** /**
+ 607:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @param dma A constant pointer to XMC_DMA_t, pointing to the GPDMA base address
+ 608:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * @return uint32_t DMA error event status
+ 609:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 610:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * \par<b>Description: </b><br>
+ 611:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * Get DMA error event status <br>
+ 612:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  *
+ 613:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * \par
+ 614:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  * The function returns error interrupt status. <br>
+ 615:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****  */
+ 616:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** __STATIC_INLINE uint32_t XMC_DMA_GetChannelsErrorStatus(XMC_DMA_t *const dma)
+ 617:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** {
  242              	 .loc 1 617 0
  243              	 .cfi_startproc
  244              	 
@@ -861,11 +861,11 @@
  255              	.LCFI32:
  256              	 .cfi_def_cfa_register 7
  257 0006 7860     	 str r0,[r7,#4]
- 618:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h ****   return (dma->STATUSCHEV[8]);
+ 618:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h ****   return (dma->STATUSCHEV[8]);
  258              	 .loc 1 618 0
  259 0008 7B68     	 ldr r3,[r7,#4]
  260 000a D3F80833 	 ldr r3,[r3,#776]
- 619:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_dma.h **** }
+ 619:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_dma.h **** }
  261              	 .loc 1 619 0
  262 000e 1846     	 mov r0,r3
  263 0010 0C37     	 adds r7,r7,#12
@@ -4579,11 +4579,11 @@
  3209              	.Letext0:
  3210              	 .file 3 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
  3211              	 .file 4 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
- 3212              	 .file 5 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Infineon/XMC4300_series/Include/XMC4300.h"
- 3213              	 .file 6 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc/xmc4_scu.h"
- 3214              	 .file 7 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/cmsis_gcc.h"
- 3215              	 .file 8 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/core_cm4.h"
- 3216              	 .file 9 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Infineon/XMC4300_series/Include/system_XMC4300.h"
+ 3212              	 .file 5 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Infineon/XMC4300_series/Include/XMC4300.h"
+ 3213              	 .file 6 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc/xmc4_scu.h"
+ 3214              	 .file 7 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 3215              	 .file 8 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Include/core_cm4.h"
+ 3216              	 .file 9 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Infineon/XMC4300_series/Include/system_XMC4300.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 xmc_dma.c
     {standard input}:20     .text.XMC_DMA_GetEventStatus:00000000 $t

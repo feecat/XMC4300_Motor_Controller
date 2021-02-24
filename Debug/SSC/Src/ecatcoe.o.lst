@@ -416,8 +416,8 @@
  247              	 .file 4 "../SSC/Src/mailbox.h"
  248              	 .file 5 "../SSC/Src/ecatcoe.h"
  249              	 .file 6 "../SSC/Src/sdoserv.h"
- 250              	 .file 7 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/cmsis_gcc.h"
- 251              	 .file 8 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/core_cm4.h"
+ 250              	 .file 7 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 251              	 .file 8 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Include/core_cm4.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 ecatcoe.c
                             *COM*:00000004 pCoeSendStored

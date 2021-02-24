@@ -245,11 +245,11 @@
  148              	.Letext0:
  149              	 .file 2 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
  150              	 .file 3 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
- 151              	 .file 4 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc/xmc_eru.h"
- 152              	 .file 5 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/DAVE_Common.h"
+ 151              	 .file 4 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc/xmc_eru.h"
+ 152              	 .file 5 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/DAVE_Common.h"
  153              	 .file 6 "../Dave/Generated/EVENT_DETECTOR/event_detector.h"
- 154              	 .file 7 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/cmsis_gcc.h"
- 155              	 .file 8 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/core_cm4.h"
+ 154              	 .file 7 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 155              	 .file 8 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Include/core_cm4.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 event_detector.c
     {standard input}:20     .text.EVENT_DETECTOR_GetAppVersion:00000000 $t

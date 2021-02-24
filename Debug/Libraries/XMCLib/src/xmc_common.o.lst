@@ -22,273 +22,273 @@
   22              	 .thumb_func
   24              	XMC_PRIOARRAY_GetHead:
   25              	.LFB132:
-  26              	 .file 1 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc/xmc_common.h"
-   1:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /**
-   2:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * @file xmc_common.h
-   3:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * @date 2019-07-12
-   4:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
-   5:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * @cond
-   6:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****   *************************************************************************************************
-   7:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * XMClib v2.1.24 - XMC Peripheral Driver Library 
-   8:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
-   9:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * Copyright (c) 2015-2019, Infineon Technologies AG
-  10:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * All rights reserved.                        
-  11:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *                                             
-  12:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
-  13:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * following conditions are met:   
-  14:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *                                                                              
-  15:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * Redistributions of source code must retain the above copyright notice, this list of conditions a
-  16:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * disclaimer.                        
-  17:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * 
-  18:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * Redistributions in binary form must reproduce the above copyright notice, this list of condition
-  19:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * disclaimer in the documentation and/or other materials provided with the distribution.          
-  20:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * 
-  21:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * Neither the name of the copyright holders nor the names of its contributors may be used to endor
-  22:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * products derived from this software without specific prior written permission.                  
-  23:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *                                                                              
-  24:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
-  25:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
-  26:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
-  27:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
-  28:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
-  29:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
-  30:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                            
-  31:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *                                                                              
-  32:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
-  33:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * Infineon Technologies AG dave@infineon.com).                                                    
-  34:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  **************************************************************************************************
-  35:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
-  36:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * Change History
-  37:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * --------------
-  38:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
-  39:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * 2015-06-20:
-  40:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *     - Initial
-  41:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *     - Brief section updated
-  42:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *     - Added XMC_LIB_VERSION macro
-  43:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
-  44:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * 2016-02-26:
-  45:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *     - Updated XMC_LIB_VERSION macro to v2.1.6
-  46:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *      
-  47:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * 2016-05-30:
-  48:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *     - Updated XMC_LIB_VERSION macro to v2.1.8
-  49:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
-  50:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * 2016-11-18:
-  51:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *     - Updated XMC_LIB_VERSION macro to v2.1.10
-  52:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *     - Changed type of size in XMC_PRIOARRAY_t to fix compilation warnings
-  53:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
-  54:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * 2017-04-04:
-  55:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *     - Updated XMC_LIB_VERSION macro to v2.1.12
-  56:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
-  57:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * 2017-06-24:
-  58:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *     - Updated XMC_LIB_VERSION macro to v2.1.14
-  59:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
-  60:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * 2017-08-03:
-  61:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *     - Updated XMC_LIB_VERSION macro to v2.1.16
-  62:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *     - Added __RAM_FUNC macro
-  63:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
-  64:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * 2018-06-29:
-  65:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *     - Updated XMC_LIB_VERSION macro to v2.1.20
-  66:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
-  67:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * 2019-05-29:
-  68:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *     - Updated XMC_LIB_VERSION macro to v2.1.22
-  69:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
-  70:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * 2019-07-12:
-  71:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *     - Updated XMC_LIB_VERSION macro to v2.1.24
-  72:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
-  73:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * @endcond 
-  74:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
-  75:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  */
-  76:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
-  77:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #ifndef XMC_COMMON_H
-  78:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #define XMC_COMMON_H
-  79:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
-  80:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #include <stddef.h>
-  81:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #include <stdint.h>
-  82:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #include <stdbool.h>
-  83:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #include <string.h>
-  84:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
-  85:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #include "xmc_device.h"
-  86:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
-  87:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /**
-  88:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * @addtogroup XMClib XMC Peripheral Library
-  89:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * @{
-  90:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  */
-  91:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
-  92:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /**
-  93:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * @addtogroup COMMON
-  94:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * @brief Common APIs to all peripherals for XMC microcontroller family 
-  95:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * @{
-  96:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  */
-  97:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
-  98:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /**************************************************************************************************
-  99:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * MACROS
- 100:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  **************************************************************************************************
- 101:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #define XMC_LIB_MAJOR_VERSION	(2U)
- 102:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #define XMC_LIB_MINOR_VERSION	(1U)
- 103:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #define XMC_LIB_PATCH_VERSION	(24U)
- 104:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  
- 105:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #define XMC_LIB_VERSION         ((XMC_LIB_MAJOR_VERSION << 16U) + (XMC_LIB_MINOR_VERSION << 8U) + X
- 106:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 107:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /* Define WEAK attribute */
- 108:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #if !defined(__WEAK)
- 109:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #if defined ( __CC_ARM )
- 110:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #define __WEAK __attribute__ ((weak))
- 111:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #elif defined (__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
- 112:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #define __WEAK __attribute__ ((weak))
- 113:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #elif defined ( __ICCARM__ )
- 114:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #define __WEAK __weak
- 115:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #elif defined ( __GNUC__ )
- 116:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #define __WEAK __attribute__ ((weak))
- 117:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #elif defined ( __TASKING__ )
- 118:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #define __WEAK __attribute__ ((weak))
- 119:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #endif
- 120:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #endif
- 121:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 122:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #if !defined(__RAM_FUNC)
- 123:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #if defined ( __CC_ARM )
- 124:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** // http://www.keil.com/support/docs/3723.htm
- 125:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #define __RAM_FUNC __attribute__((section("RAMCODESECTION")))
- 126:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #elif defined (__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
- 127:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #define __RAM_FUNC __attribute__((section("RAMCODESECTION")))
- 128:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #elif defined ( __ICCARM__ )
- 129:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** // https://www.iar.com/support/tech-notes/linker/controlling-placement-of-the-section-where-__ramfu
- 130:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #define __RAM_FUNC __ramfunc
- 131:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #elif defined ( __GNUC__ )
- 132:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #define __RAM_FUNC __attribute__((section(".ram_code"), long_call))
- 133:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #elif defined ( __TASKING__ )
- 134:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #define __RAM_FUNC __attribute__((section(".ram_code")))
- 135:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #endif
- 136:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #endif
- 137:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 138:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #ifdef XMC_ASSERT_ENABLE
- 139:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  #define XMC_ASSERT(msg, exp) { if(!(exp)) {XMC_AssertHandler(msg, __FILE__, __LINE__);} }
- 140:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #else
- 141:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  #define XMC_ASSERT(msg, exp) { ; }
- 142:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #endif
- 143:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 144:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #ifdef XMC_DEBUG_ENABLE
- 145:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  #include <stdio.h>
- 146:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  #define XMC_DEBUG(...) { printf(__VA_ARGS__); }
- 147:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #else
- 148:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  #define XMC_DEBUG(...) { ; }
- 149:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #endif
- 150:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 151:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #define XMC_UNUSED_ARG(x) (void)x
- 152:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 153:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #define XMC_STRUCT_INIT(m) memset(&m, 0, sizeof(m))
- 154:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 155:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #define XMC_PRIOARRAY_DEF(name, size) \
- 156:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** XMC_PRIOARRAY_ITEM_t prioarray_m_##name[size + 2]; \
- 157:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** XMC_PRIOARRAY_t prioarray_def_##name = {(size), (prioarray_m_##name)};
- 158:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 159:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #define XMC_PRIOARRAY(name) \
- 160:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** &prioarray_def_##name
- 161:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 162:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /**************************************************************************************************
- 163:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * DATA STRUCTURES
- 164:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  **************************************************************************************************
- 165:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /*
- 166:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
- 167:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  */
- 168:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** typedef struct XMC_DRIVER_VERSION 
- 169:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** {
- 170:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****   uint8_t major;
- 171:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****   uint8_t minor;
- 172:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****   uint8_t patch;
- 173:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** } XMC_DRIVER_VERSION_t;
- 174:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 175:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /*
- 176:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
- 177:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  */
- 178:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** typedef void *XMC_LIST_t;
- 179:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 180:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /*
- 181:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
- 182:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  */
- 183:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** typedef struct XMC_PRIOARRAY_ITEM
- 184:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** {
- 185:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****   int32_t priority;
- 186:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****   int32_t previous;
- 187:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****   int32_t next;
- 188:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** } XMC_PRIOARRAY_ITEM_t;
- 189:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 190:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /*
- 191:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
- 192:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  */
- 193:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** typedef struct XMC_PRIOARRAY
- 194:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** {
- 195:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****   int32_t size;
- 196:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****   XMC_PRIOARRAY_ITEM_t *items;
- 197:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** } XMC_PRIOARRAY_t;
- 198:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 199:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /**************************************************************************************************
- 200:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  * API PROTOTYPES
- 201:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  **************************************************************************************************
- 202:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 203:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #ifdef __cplusplus
- 204:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** extern "C" {
- 205:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** #endif
- 206:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 207:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /*
- 208:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
- 209:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  */
- 210:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** void XMC_AssertHandler(const char *const msg, const char *const file, uint32_t line);
- 211:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 212:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /*
- 213:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
- 214:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  */
- 215:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** void XMC_LIST_Init(XMC_LIST_t *list);
- 216:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 217:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /*
- 218:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
- 219:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  */
- 220:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** void XMC_LIST_Add(XMC_LIST_t *list, void *const item);
- 221:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 222:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /*
- 223:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
- 224:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  */
- 225:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** void XMC_LIST_Remove(XMC_LIST_t *list, void *const item);
- 226:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 227:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /*
- 228:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
- 229:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  */
- 230:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** uint32_t XMC_LIST_GetLength(XMC_LIST_t *list);
- 231:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 232:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /*
- 233:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
- 234:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  */
- 235:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** void *XMC_LIST_GetHead(XMC_LIST_t *list);
- 236:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 237:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /*
- 238:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
- 239:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  */
- 240:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** void *XMC_LIST_GetTail(XMC_LIST_t *list);
- 241:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 242:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /*
- 243:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
- 244:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  */
- 245:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** void XMC_LIST_Insert(XMC_LIST_t *list, void *prev_item, void *new_item);
- 246:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 247:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /*
- 248:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
- 249:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  */
- 250:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** void XMC_PRIOARRAY_Init(XMC_PRIOARRAY_t *prioarray);
- 251:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 252:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /*
- 253:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
- 254:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  */
- 255:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** void XMC_PRIOARRAY_Add(XMC_PRIOARRAY_t *prioarray, int32_t item, int32_t priority);
- 256:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 257:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /*
- 258:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
- 259:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  */
- 260:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** void XMC_PRIOARRAY_Remove(XMC_PRIOARRAY_t *prioarray, int32_t item);
- 261:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 262:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /*
- 263:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
- 264:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  */
- 265:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** __STATIC_INLINE int32_t XMC_PRIOARRAY_GetHead(XMC_PRIOARRAY_t *prioarray)
- 266:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** {
+  26              	 .file 1 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc/xmc_common.h"
+   1:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /**
+   2:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * @file xmc_common.h
+   3:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * @date 2019-07-12
+   4:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+   5:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * @cond
+   6:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****   *************************************************************************************************
+   7:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * XMClib v2.1.24 - XMC Peripheral Driver Library 
+   8:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+   9:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * Copyright (c) 2015-2019, Infineon Technologies AG
+  10:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * All rights reserved.                        
+  11:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *                                             
+  12:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
+  13:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * following conditions are met:   
+  14:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *                                                                              
+  15:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * Redistributions of source code must retain the above copyright notice, this list of conditions a
+  16:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * disclaimer.                        
+  17:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * 
+  18:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * Redistributions in binary form must reproduce the above copyright notice, this list of condition
+  19:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * disclaimer in the documentation and/or other materials provided with the distribution.          
+  20:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * 
+  21:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * Neither the name of the copyright holders nor the names of its contributors may be used to endor
+  22:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * products derived from this software without specific prior written permission.                  
+  23:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *                                                                              
+  24:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
+  25:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
+  26:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
+  27:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
+  28:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
+  29:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+  30:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                            
+  31:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *                                                                              
+  32:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
+  33:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * Infineon Technologies AG dave@infineon.com).                                                    
+  34:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  **************************************************************************************************
+  35:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+  36:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * Change History
+  37:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * --------------
+  38:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+  39:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * 2015-06-20:
+  40:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *     - Initial
+  41:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *     - Brief section updated
+  42:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *     - Added XMC_LIB_VERSION macro
+  43:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+  44:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * 2016-02-26:
+  45:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *     - Updated XMC_LIB_VERSION macro to v2.1.6
+  46:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *      
+  47:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * 2016-05-30:
+  48:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *     - Updated XMC_LIB_VERSION macro to v2.1.8
+  49:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+  50:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * 2016-11-18:
+  51:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *     - Updated XMC_LIB_VERSION macro to v2.1.10
+  52:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *     - Changed type of size in XMC_PRIOARRAY_t to fix compilation warnings
+  53:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+  54:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * 2017-04-04:
+  55:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *     - Updated XMC_LIB_VERSION macro to v2.1.12
+  56:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+  57:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * 2017-06-24:
+  58:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *     - Updated XMC_LIB_VERSION macro to v2.1.14
+  59:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+  60:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * 2017-08-03:
+  61:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *     - Updated XMC_LIB_VERSION macro to v2.1.16
+  62:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *     - Added __RAM_FUNC macro
+  63:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+  64:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * 2018-06-29:
+  65:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *     - Updated XMC_LIB_VERSION macro to v2.1.20
+  66:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+  67:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * 2019-05-29:
+  68:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *     - Updated XMC_LIB_VERSION macro to v2.1.22
+  69:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+  70:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * 2019-07-12:
+  71:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *     - Updated XMC_LIB_VERSION macro to v2.1.24
+  72:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+  73:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * @endcond 
+  74:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+  75:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  */
+  76:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+  77:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #ifndef XMC_COMMON_H
+  78:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #define XMC_COMMON_H
+  79:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+  80:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #include <stddef.h>
+  81:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #include <stdint.h>
+  82:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #include <stdbool.h>
+  83:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #include <string.h>
+  84:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+  85:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #include "xmc_device.h"
+  86:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+  87:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /**
+  88:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * @addtogroup XMClib XMC Peripheral Library
+  89:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * @{
+  90:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  */
+  91:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+  92:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /**
+  93:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * @addtogroup COMMON
+  94:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * @brief Common APIs to all peripherals for XMC microcontroller family 
+  95:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * @{
+  96:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  */
+  97:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+  98:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /**************************************************************************************************
+  99:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * MACROS
+ 100:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  **************************************************************************************************
+ 101:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #define XMC_LIB_MAJOR_VERSION	(2U)
+ 102:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #define XMC_LIB_MINOR_VERSION	(1U)
+ 103:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #define XMC_LIB_PATCH_VERSION	(24U)
+ 104:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  
+ 105:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #define XMC_LIB_VERSION         ((XMC_LIB_MAJOR_VERSION << 16U) + (XMC_LIB_MINOR_VERSION << 8U) + X
+ 106:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 107:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /* Define WEAK attribute */
+ 108:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #if !defined(__WEAK)
+ 109:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #if defined ( __CC_ARM )
+ 110:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #define __WEAK __attribute__ ((weak))
+ 111:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #elif defined (__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+ 112:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #define __WEAK __attribute__ ((weak))
+ 113:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #elif defined ( __ICCARM__ )
+ 114:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #define __WEAK __weak
+ 115:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #elif defined ( __GNUC__ )
+ 116:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #define __WEAK __attribute__ ((weak))
+ 117:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #elif defined ( __TASKING__ )
+ 118:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #define __WEAK __attribute__ ((weak))
+ 119:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #endif
+ 120:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #endif
+ 121:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 122:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #if !defined(__RAM_FUNC)
+ 123:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #if defined ( __CC_ARM )
+ 124:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** // http://www.keil.com/support/docs/3723.htm
+ 125:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #define __RAM_FUNC __attribute__((section("RAMCODESECTION")))
+ 126:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #elif defined (__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+ 127:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #define __RAM_FUNC __attribute__((section("RAMCODESECTION")))
+ 128:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #elif defined ( __ICCARM__ )
+ 129:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** // https://www.iar.com/support/tech-notes/linker/controlling-placement-of-the-section-where-__ramfu
+ 130:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #define __RAM_FUNC __ramfunc
+ 131:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #elif defined ( __GNUC__ )
+ 132:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #define __RAM_FUNC __attribute__((section(".ram_code"), long_call))
+ 133:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #elif defined ( __TASKING__ )
+ 134:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #define __RAM_FUNC __attribute__((section(".ram_code")))
+ 135:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #endif
+ 136:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #endif
+ 137:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 138:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #ifdef XMC_ASSERT_ENABLE
+ 139:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  #define XMC_ASSERT(msg, exp) { if(!(exp)) {XMC_AssertHandler(msg, __FILE__, __LINE__);} }
+ 140:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #else
+ 141:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  #define XMC_ASSERT(msg, exp) { ; }
+ 142:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #endif
+ 143:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 144:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #ifdef XMC_DEBUG_ENABLE
+ 145:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  #include <stdio.h>
+ 146:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  #define XMC_DEBUG(...) { printf(__VA_ARGS__); }
+ 147:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #else
+ 148:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  #define XMC_DEBUG(...) { ; }
+ 149:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #endif
+ 150:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 151:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #define XMC_UNUSED_ARG(x) (void)x
+ 152:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 153:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #define XMC_STRUCT_INIT(m) memset(&m, 0, sizeof(m))
+ 154:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 155:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #define XMC_PRIOARRAY_DEF(name, size) \
+ 156:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** XMC_PRIOARRAY_ITEM_t prioarray_m_##name[size + 2]; \
+ 157:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** XMC_PRIOARRAY_t prioarray_def_##name = {(size), (prioarray_m_##name)};
+ 158:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 159:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #define XMC_PRIOARRAY(name) \
+ 160:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** &prioarray_def_##name
+ 161:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 162:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /**************************************************************************************************
+ 163:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * DATA STRUCTURES
+ 164:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  **************************************************************************************************
+ 165:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /*
+ 166:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+ 167:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  */
+ 168:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** typedef struct XMC_DRIVER_VERSION 
+ 169:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** {
+ 170:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****   uint8_t major;
+ 171:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****   uint8_t minor;
+ 172:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****   uint8_t patch;
+ 173:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** } XMC_DRIVER_VERSION_t;
+ 174:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 175:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /*
+ 176:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+ 177:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  */
+ 178:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** typedef void *XMC_LIST_t;
+ 179:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 180:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /*
+ 181:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+ 182:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  */
+ 183:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** typedef struct XMC_PRIOARRAY_ITEM
+ 184:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** {
+ 185:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****   int32_t priority;
+ 186:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****   int32_t previous;
+ 187:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****   int32_t next;
+ 188:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** } XMC_PRIOARRAY_ITEM_t;
+ 189:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 190:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /*
+ 191:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+ 192:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  */
+ 193:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** typedef struct XMC_PRIOARRAY
+ 194:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** {
+ 195:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****   int32_t size;
+ 196:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****   XMC_PRIOARRAY_ITEM_t *items;
+ 197:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** } XMC_PRIOARRAY_t;
+ 198:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 199:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /**************************************************************************************************
+ 200:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  * API PROTOTYPES
+ 201:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  **************************************************************************************************
+ 202:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 203:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #ifdef __cplusplus
+ 204:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** extern "C" {
+ 205:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** #endif
+ 206:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 207:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /*
+ 208:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+ 209:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  */
+ 210:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** void XMC_AssertHandler(const char *const msg, const char *const file, uint32_t line);
+ 211:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 212:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /*
+ 213:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+ 214:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  */
+ 215:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** void XMC_LIST_Init(XMC_LIST_t *list);
+ 216:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 217:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /*
+ 218:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+ 219:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  */
+ 220:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** void XMC_LIST_Add(XMC_LIST_t *list, void *const item);
+ 221:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 222:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /*
+ 223:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+ 224:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  */
+ 225:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** void XMC_LIST_Remove(XMC_LIST_t *list, void *const item);
+ 226:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 227:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /*
+ 228:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+ 229:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  */
+ 230:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** uint32_t XMC_LIST_GetLength(XMC_LIST_t *list);
+ 231:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 232:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /*
+ 233:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+ 234:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  */
+ 235:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** void *XMC_LIST_GetHead(XMC_LIST_t *list);
+ 236:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 237:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /*
+ 238:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+ 239:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  */
+ 240:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** void *XMC_LIST_GetTail(XMC_LIST_t *list);
+ 241:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 242:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /*
+ 243:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+ 244:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  */
+ 245:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** void XMC_LIST_Insert(XMC_LIST_t *list, void *prev_item, void *new_item);
+ 246:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 247:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /*
+ 248:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+ 249:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  */
+ 250:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** void XMC_PRIOARRAY_Init(XMC_PRIOARRAY_t *prioarray);
+ 251:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 252:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /*
+ 253:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+ 254:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  */
+ 255:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** void XMC_PRIOARRAY_Add(XMC_PRIOARRAY_t *prioarray, int32_t item, int32_t priority);
+ 256:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 257:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /*
+ 258:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+ 259:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  */
+ 260:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** void XMC_PRIOARRAY_Remove(XMC_PRIOARRAY_t *prioarray, int32_t item);
+ 261:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 262:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /*
+ 263:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+ 264:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  */
+ 265:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** __STATIC_INLINE int32_t XMC_PRIOARRAY_GetHead(XMC_PRIOARRAY_t *prioarray)
+ 266:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** {
   27              	 .loc 1 266 0
   28              	 .cfi_startproc
   29              	 
@@ -305,8 +305,8 @@
   40              	.LCFI2:
   41              	 .cfi_def_cfa_register 7
   42 0006 7860     	 str r0,[r7,#4]
- 267:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****   XMC_ASSERT("XMC_PRIOARRAY_Init: NULL pointer", prioarray != NULL);
- 268:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****   return prioarray->items[prioarray->size].next;
+ 267:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****   XMC_ASSERT("XMC_PRIOARRAY_Init: NULL pointer", prioarray != NULL);
+ 268:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****   return prioarray->items[prioarray->size].next;
   43              	 .loc 1 268 0
   44 0008 7B68     	 ldr r3,[r7,#4]
   45 000a 5A68     	 ldr r2,[r3,#4]
@@ -319,7 +319,7 @@
   52 0018 9B00     	 lsls r3,r3,#2
   53 001a 1344     	 add r3,r3,r2
   54 001c 9B68     	 ldr r3,[r3,#8]
- 269:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** }
+ 269:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** }
   55              	 .loc 1 269 0
   56 001e 1846     	 mov r0,r3
   57 0020 0C37     	 adds r7,r7,#12
@@ -342,21 +342,21 @@
   75              	 .thumb_func
   77              	XMC_PRIOARRAY_GetItemPriority:
   78              	.LFB134:
- 270:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 271:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /*
- 272:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
- 273:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  */
- 274:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** __STATIC_INLINE int32_t XMC_PRIOARRAY_GetTail(XMC_PRIOARRAY_t *prioarray)
- 275:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** {
- 276:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****   XMC_ASSERT("XMC_PRIOARRAY_Init: NULL pointer", prioarray != NULL);
- 277:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****   return prioarray->items[prioarray->size + 1].previous;
- 278:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** }
- 279:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 280:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /*
- 281:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
- 282:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  */
- 283:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** __STATIC_INLINE int32_t XMC_PRIOARRAY_GetItemPriority(XMC_PRIOARRAY_t *prioarray, int32_t item)
- 284:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** {
+ 270:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 271:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /*
+ 272:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+ 273:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  */
+ 274:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** __STATIC_INLINE int32_t XMC_PRIOARRAY_GetTail(XMC_PRIOARRAY_t *prioarray)
+ 275:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** {
+ 276:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****   XMC_ASSERT("XMC_PRIOARRAY_Init: NULL pointer", prioarray != NULL);
+ 277:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****   return prioarray->items[prioarray->size + 1].previous;
+ 278:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** }
+ 279:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 280:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /*
+ 281:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+ 282:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  */
+ 283:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** __STATIC_INLINE int32_t XMC_PRIOARRAY_GetItemPriority(XMC_PRIOARRAY_t *prioarray, int32_t item)
+ 284:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** {
   79              	 .loc 1 284 0
   80              	 .cfi_startproc
   81              	 
@@ -374,8 +374,8 @@
   93              	 .cfi_def_cfa_register 7
   94 0006 7860     	 str r0,[r7,#4]
   95 0008 3960     	 str r1,[r7]
- 285:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****   XMC_ASSERT("XMC_PRIOARRAY_GetItemPriority: item out of range", (item >= 0) && (item < prioarray->
- 286:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****   return prioarray->items[item].priority;
+ 285:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****   XMC_ASSERT("XMC_PRIOARRAY_GetItemPriority: item out of range", (item >= 0) && (item < prioarray->
+ 286:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****   return prioarray->items[item].priority;
   96              	 .loc 1 286 0
   97 000a 7B68     	 ldr r3,[r7,#4]
   98 000c 5968     	 ldr r1,[r3,#4]
@@ -386,7 +386,7 @@
  103 0016 9B00     	 lsls r3,r3,#2
  104 0018 0B44     	 add r3,r3,r1
  105 001a 1B68     	 ldr r3,[r3]
- 287:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** }
+ 287:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** }
  106              	 .loc 1 287 0
  107 001c 1846     	 mov r0,r3
  108 001e 0C37     	 adds r7,r7,#12
@@ -409,12 +409,12 @@
  126              	 .thumb_func
  128              	XMC_PRIOARRAY_GetItemNext:
  129              	.LFB135:
- 288:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** 
- 289:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** /*
- 290:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  *
- 291:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****  */
- 292:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** __STATIC_INLINE int32_t XMC_PRIOARRAY_GetItemNext(XMC_PRIOARRAY_t *prioarray, int32_t item)
- 293:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** {
+ 288:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** 
+ 289:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** /*
+ 290:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  *
+ 291:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****  */
+ 292:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** __STATIC_INLINE int32_t XMC_PRIOARRAY_GetItemNext(XMC_PRIOARRAY_t *prioarray, int32_t item)
+ 293:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** {
  130              	 .loc 1 293 0
  131              	 .cfi_startproc
  132              	 
@@ -432,8 +432,8 @@
  144              	 .cfi_def_cfa_register 7
  145 0006 7860     	 str r0,[r7,#4]
  146 0008 3960     	 str r1,[r7]
- 294:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****   XMC_ASSERT("XMC_PRIOARRAY_GetItemNext: item out of range", (item >= 0) && (item < prioarray->size
- 295:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h ****   return prioarray->items[item].next;
+ 294:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****   XMC_ASSERT("XMC_PRIOARRAY_GetItemNext: item out of range", (item >= 0) && (item < prioarray->size
+ 295:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h ****   return prioarray->items[item].next;
  147              	 .loc 1 295 0
  148 000a 7B68     	 ldr r3,[r7,#4]
  149 000c 5968     	 ldr r1,[r3,#4]
@@ -444,7 +444,7 @@
  154 0016 9B00     	 lsls r3,r3,#2
  155 0018 0B44     	 add r3,r3,r1
  156 001a 9B68     	 ldr r3,[r3,#8]
- 296:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_common.h **** }
+ 296:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_common.h **** }
  157              	 .loc 1 296 0
  158 001c 1846     	 mov r0,r3
  159 001e 0C37     	 adds r7,r7,#12
@@ -1381,8 +1381,8 @@
  889              	.Letext0:
  890              	 .file 3 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
  891              	 .file 4 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
- 892              	 .file 5 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/cmsis_gcc.h"
- 893              	 .file 6 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/core_cm4.h"
+ 892              	 .file 5 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 893              	 .file 6 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Include/core_cm4.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 xmc_common.c
     {standard input}:20     .text.XMC_PRIOARRAY_GetHead:00000000 $t

@@ -22,420 +22,420 @@
   22              	 .thumb_func
   24              	XMC_ECAT_GetALEventRegister:
   25              	.LFB138:
-  26              	 .file 1 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc/xmc_ecat.h"
-   1:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
-   2:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**
-   3:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @file xmc_ecat.h
-   4:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @date 2015-12-27
-   5:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
-   6:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @cond
-   7:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  **************************************************************************************************
-   8:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * XMClib v2.1.24 - XMC Peripheral Driver Library 
-   9:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
-  10:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * Copyright (c) 2015-2019, Infineon Technologies AG
-  11:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * All rights reserved.                        
-  12:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *                                             
-  13:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
-  14:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * following conditions are met:   
-  15:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *                                                                              
-  16:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * Redistributions of source code must retain the above copyright notice, this list of conditions a
-  17:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * disclaimer.                        
-  18:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * 
-  19:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * Redistributions in binary form must reproduce the above copyright notice, this list of condition
-  20:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * disclaimer in the documentation and/or other materials provided with the distribution.          
-  21:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * 
-  22:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * Neither the name of the copyright holders nor the names of its contributors may be used to endor
-  23:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * products derived from this software without specific prior written permission.                  
-  24:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *                                                                              
-  25:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
-  26:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
-  27:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
-  28:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
-  29:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
-  30:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
-  31:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                            
-  32:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *                                                                              
-  33:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
-  34:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * Infineon Technologies AG dave@infineon.com).                                                    
-  35:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  **************************************************************************************************
-  36:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
-  37:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * Change History
-  38:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * --------------
-  39:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
-  40:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * 2015-12-27:
-  41:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *     - Initial Version<br>
-  42:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
-  43:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @endcond
-  44:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  */
-  45:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
-  46:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**
-  47:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @addtogroup XMClib XMC Peripheral Library
-  48:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @{
-  49:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  */
-  50:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
-  51:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**
-  52:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @addtogroup ECAT
-  53:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @brief EtherCAT Low level driver for XMC4800/XMC4300 series.
-  54:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
-  55:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * EtherCAT is an Ethernet-based fieldbus system.
-  56:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * The EtherCAT Slave Controller (ECAT) read the data addressed to them while the telegram passes t
-  57:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * An EtherCAT Slave Controller (ESC) takes care of the EtherCAT communication as an interface betw
-  58:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * fieldbus and the slave application. EtherCAT uses standard IEEE 802.3 Ethernet frames, thus a st
-  59:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * controller can be used and no special hardware is required on master side. EtherCAT has a reserv
-  60:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * 0x88A4 that distinguishes it from other Ethernet frames. Thus, EtherCAT can run in parallel to o
-  61:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * protocols. EtherCAT does not require the IP protocol, however it can be encapsulated in IP/UDP. 
-  62:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * Slave Controller processes the frame in hardware. Thus, communication performance is independent
-  63:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * power.
-  64:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
-  65:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * The XMC_ECAT low level driver provides functions to configure and initialize the ECAT hardware p
-  66:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * For EHTERCAT stack integration, the necessary hardware accees layer APIs shall be explicitly imp
-  67:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * upon the stack provider. The XMC_ECAT lld layer provides only the hardware initialization functi
-  68:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * basic functionalities.
-  69:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @{
-  70:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  */
-  71:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
-  72:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** #ifndef XMC_ECAT_H
-  73:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** #define XMC_ECAT_H
-  74:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
-  75:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**************************************************************************************************
-  76:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * HEADER FILES
-  77:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  **************************************************************************************************
-  78:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
-  79:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** #include "xmc_common.h"
-  80:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
-  81:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** #if defined (ECAT0)
-  82:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
-  83:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** #include "xmc_ecat_map.h"
-  84:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
-  85:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**************************************************************************************************
-  86:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * MACROS
-  87:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  **************************************************************************************************
-  88:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
-  89:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**************************************************************************************************
-  90:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * ENUMS
-  91:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  **************************************************************************************************
-  92:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
-  93:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**
-  94:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * ECAT status return values
-  95:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  */
-  96:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** typedef enum XMC_ECAT_STATUS
-  97:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** {
-  98:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_STATUS_OK    = 0U, /**< Driver accepted application request */
-  99:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_STATUS_BUSY  = 1U, /**< Driver is busy and cannot handle request */
- 100:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_STATUS_ERROR = 2U  /**< Driver could not fulfil application request */
- 101:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** } XMC_ECAT_STATUS_t;
- 102:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 103:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**
- 104:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * EtherCAT event enumeration types
- 105:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  */
- 106:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** typedef enum XMC_ECAT_EVENT
- 107:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** {
- 108:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_AL_CONTROL = ECAT_AL_EVENT_MASK_AL_CE_MASK_Msk, /**< Application control event mas
- 109:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_DC_LATCH = ECAT_AL_EVENT_MASK_DC_LE_MASK_Msk,  /**< Distributed Clock latch event 
- 110:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_DC_SYNC0 = ECAT_AL_EVENT_MASK_ST_S0_MASK_Msk, /**< State of distributed clock sync
- 111:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_DC_SYNC1 = ECAT_AL_EVENT_MASK_ST_S1_MASK_Msk, /**< State of distributed clock sync
- 112:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_SM_ACTIVATION_REGISTER = ECAT_AL_EVENT_MASK_SM_A_MASK_Msk, /**< SyncManager activa
- 113:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_EEPROM = ECAT_AL_EVENT_MASK_EEP_E_MASK_Msk, /**< EEPROM Emulation event mask*/
- 114:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_WATCHDOG = ECAT_AL_EVENT_MASK_WP_D_MASK_Msk, /**< WATCHDOG process data event mask
- 115:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_SM0 = ECAT_AL_EVENT_MASK_SMI_0_MASK_Msk, /**< Sync Manager 0 event mask*/
- 116:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_SM1 = ECAT_AL_EVENT_MASK_SMI_1_MASK_Msk, /**< Sync Manager 1 event mask*/
- 117:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_SM2 = ECAT_AL_EVENT_MASK_SMI_2_MASK_Msk, /**< Sync Manager 2 event mask*/
- 118:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_SM3 = ECAT_AL_EVENT_MASK_SMI_3_MASK_Msk, /**< Sync Manager 3 event mask*/
- 119:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_SM4 = ECAT_AL_EVENT_MASK_SMI_4_MASK_Msk, /**< Sync Manager 4 event mask*/
- 120:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_SM5 = ECAT_AL_EVENT_MASK_SMI_5_MASK_Msk, /**< Sync Manager 5 event mask*/
- 121:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_SM6 = ECAT_AL_EVENT_MASK_SMI_6_MASK_Msk, /**< Sync Manager 6 event mask*/
- 122:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_SM7 = ECAT_AL_EVENT_MASK_SMI_7_MASK_Msk  /**< Sync Manager 7 event mask*/
- 123:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** } XMC_ECAT_EVENT_t;
- 124:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 125:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**************************************************************************************************
- 126:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * DATA STRUCTURES
- 127:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  **************************************************************************************************
- 128:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 129:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /* Anonymous structure/union guard start */
- 130:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** #if defined (__CC_ARM)
- 131:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** #pragma push
- 132:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** #pragma anon_unions
- 133:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** #elif defined (__TASKING__)
- 134:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** #pragma warning 586
- 135:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** #endif
- 136:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 137:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**
- 138:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * ECAT port control data structure
- 139:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  */
- 140:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** typedef struct XMC_ECAT_PORT_CTRL
- 141:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** {
- 142:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   union 
- 143:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   {
- 144:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     struct
- 145:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     {
- 146:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t enable_rstreq: 1;     /**< Master can trigger a reset of the XMC4700 / XMC4800 (::bo
- 147:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t: 7;                   /**< Reserved bits */
- 148:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t latch_input0: 2;      /**< Latch input 0 selection (::XMC_ECAT_PORT_LATCHIN0_t) */
- 149:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t: 2;                   /**< Reserved bits */
- 150:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t latch_input1: 2;      /**< Latch input 1 selection (::XMC_ECAT_PORT_LATCHIN1_t) */
- 151:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t: 2;                   /**< Reserved bits */
- 152:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t phyaddr_offset: 5;    /**< Ethernet PHY address offset, address of port 0 */
- 153:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t: 1;                   /**< Reserved bits */
- 154:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t mdio: 2;              /**< Bidirectional, push-pull management data I/O line (::XMC_
- 155:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t: 8;                   /**< Reserved bits */
- 156:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     };
- 157:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 158:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t raw;
- 159:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   } common;
- 160:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 161:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   union 
- 162:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   {  
- 163:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     struct
- 164:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     {
- 165:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rxd0: 2;     /**< Receive data bit 0 (::XMC_ECAT_PORT0_CTRL_RXD0_t) */
- 166:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rxd1: 2;     /**< Receive data bit 1 (::XMC_ECAT_PORT0_CTRL_RXD1_t) */
- 167:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rxd2: 2;     /**< Receive data bit 2 (::XMC_ECAT_PORT0_CTRL_RXD2_t) */
- 168:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rxd3: 2;     /**< Receive data bit 3 (::XMC_ECAT_PORT0_CTRL_RXD3_t) */
- 169:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rx_err: 2;   /**< RX Error (::XMC_ECAT_PORT0_CTRL_RX_ERR_t) */
- 170:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rx_dv: 2;    /**< RX Data valid (::XMC_ECAT_PORT0_CTRL_RX_DV_t) */
- 171:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rx_clk: 2;   /**< RX Clock (::XMC_ECAT_PORT0_CTRL_RX_CLK_t) */
- 172:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t: 2;          /**< Reserved bits */
- 173:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t link: 2;     /**< Link status (::XMC_ECAT_PORT0_CTRL_LINK_t) */
- 174:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t: 10;         /**< Reserved bits */
- 175:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t tx_clk: 2;   /**< TX Clock (::XMC_ECAT_PORT0_CTRL_TX_CLK_t) */
- 176:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t tx_shift: 2; /**< TX signal delay (::XMC_ECAT_PORT0_CTRL_TX_SHIFT_t) */
- 177:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     };
- 178:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 179:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t raw;
- 180:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   } port0;
- 181:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 182:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   union 
- 183:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   {      
- 184:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     struct
- 185:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     {
- 186:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rxd0: 2;     /**< Receive data bit 0 (::XMC_ECAT_PORT_CTRL_RXD0_t) */
- 187:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rxd1: 2;     /**< Receive data bit 1 (::XMC_ECAT_PORT_CTRL_RXD1_t) */
- 188:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rxd2: 2;     /**< Receive data bit 2 (::XMC_ECAT_PORT_CTRL_RXD2_t) */
- 189:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rxd3: 2;     /**< Receive data bit 3 (::XMC_ECAT_PORT_CTRL_RXD3_t) */
- 190:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rx_err: 2;   /**< RX Error (::XMC_ECAT_PORT_CTRL_RX_ERR_t) */
- 191:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rx_dv: 2;    /**< RX Data valid (::XMC_ECAT_PORT_CTRL_RX_DV_t) */
- 192:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rx_clk: 2;   /**< RX Clock (::XMC_ECAT_PORT_CTRL_RX_CLK_t) */
- 193:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t: 2;          /**< Reserved bits */
- 194:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t link: 2;     /**< Link status (::XMC_ECAT_PORT_CTRL_LINK_t) */
- 195:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t: 10;         /**< Reserved bits */
- 196:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t tx_clk: 2;   /**< TX Clock (::XMC_ECAT_PORT_CTRL_TX_CLK_t) */
- 197:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t tx_shift: 2; /**< TX signal delay (::XMC_ECAT_PORT1_CTRL_TX_SHIFT_t) */
- 198:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     };
- 199:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 200:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t raw;
- 201:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   } port1;
- 202:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   
- 203:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** } XMC_ECAT_PORT_CTRL_t;
- 204:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 205:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**
- 206:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * ECAT EEPROM configuration area data structure
- 207:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  */
- 208:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** typedef union XMC_ECAT_CONFIG
- 209:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** {
- 210:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   struct
- 211:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   {
- 212:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t : 8;
- 213:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 214:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t : 2;
- 215:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t enable_dc_sync_out : 1;
- 216:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t enable_dc_latch_in : 1;
- 217:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t enable_enhanced_link_p0 : 1;
- 218:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t enable_enhanced_link_p1 : 1;
- 219:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t : 2;
- 220:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 221:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t : 16;
- 222:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 223:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     uint16_t sync_pulse_length; /**< Initialization value for Pulse Length of SYNC Signals register
- 224:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 225:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t : 16;
- 226:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 227:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     uint16_t station_alias; /**< Initialization value for Configured Station Alias Address register
- 228:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 229:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     uint16_t : 16;
- 230:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 231:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     uint16_t : 16;
- 232:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 233:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****     uint16_t checksum;
- 234:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   };
- 235:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 236:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   uint32_t dword[4]; /**< Four 32 bit double word equivalent to 8 16 bit configuration area word. *
- 237:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** } XMC_ECAT_CONFIG_t;
- 238:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 239:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /* Anonymous structure/union guard end */
- 240:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** #if defined (__CC_ARM)
- 241:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** #pragma pop
- 242:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** #elif defined (__TASKING__)
- 243:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** #pragma warning restore
- 244:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** #endif
- 245:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 246:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**************************************************************************************************
- 247:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * API PROTOTYPES
- 248:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  **************************************************************************************************
- 249:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 250:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** #ifdef __cplusplus
- 251:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** extern "C" {
- 252:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** #endif
- 253:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 254:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**
- 255:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param config XMC_ECAT_CONFIG_t
- 256:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return XMC_ECAT_STATUS_t ECAT Initialization status
- 257:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 258:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
- 259:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * Initialize the Ethernet MAC peripheral <br>
- 260:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 261:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
- 262:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * The function sets the link speed, applies the duplex mode, sets auto-negotiation
- 263:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * and loop-back settings.
- 264:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  */
- 265:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** void XMC_ECAT_Init(XMC_ECAT_CONFIG_t *const config);
- 266:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 267:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**
- 268:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param None
- 269:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return None
- 270:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 271:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
- 272:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * Enable the EtherCAT peripheral <br>
- 273:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 274:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
- 275:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * The function de-asserts the peripheral reset.
- 276:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  */
- 277:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** void XMC_ECAT_Enable(void);
- 278:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 279:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**
- 280:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param None
- 281:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return None
- 282:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 283:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
- 284:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * Disable the EtherCAT peripheral <br>
- 285:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 286:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
- 287:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * The function asserts the peripheral reset.
- 288:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  */
- 289:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** void XMC_ECAT_Disable(void);
- 290:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 291:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**
- 292:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param phy_addr PHY address
- 293:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param reg_addr Register address
- 294:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param data The destination to which the read data needs to be copied to.
- 295:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 296:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return XMC_ECAT_STATUS_t EtherCAT Read PHY API return status
- 297:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 298:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
- 299:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * Read a PHY register <br>
- 300:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 301:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
- 302:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * The function reads a PHY register. It essentially polls busy bit during max
- 303:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * PHY_TIMEOUT time and reads the information into 'data' when not busy.
- 304:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  */
- 305:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** XMC_ECAT_STATUS_t XMC_ECAT_ReadPhy(uint8_t phy_addr, uint8_t reg_addr, uint16_t *data);
- 306:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 307:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**
- 308:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param phy_addr PHY address
- 309:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param reg_addr Register address
- 310:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param data The data to write
- 311:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return XMC_ECAT_STATUS_t EtherCAT Write PHY API return status
- 312:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 313:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
- 314:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * Write a PHY register <br>
- 315:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 316:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
- 317:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * The function reads a PHY register. It essentially writes the data and polls
- 318:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * the busy bit until it is no longer busy.
- 319:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  */
- 320:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** XMC_ECAT_STATUS_t XMC_ECAT_WritePhy(uint8_t phy_addr, uint8_t reg_addr, uint16_t data);
- 321:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 322:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**
- 323:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param port_ctrl Port control configuration
- 324:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return None
- 325:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 326:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
- 327:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * Set port control configuration <br>
- 328:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 329:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
- 330:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * The function sets the port control by writing the configuration into the ECAT CON register.
- 331:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 332:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  */
- 333:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** __STATIC_INLINE void XMC_ECAT_SetPortControl(const XMC_ECAT_PORT_CTRL_t port_ctrl)
- 334:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** {
- 335:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   ECAT0_CON->CON = (uint32_t)port_ctrl.common.raw;
- 336:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   ECAT0_CON->CONP0 = (uint32_t)port_ctrl.port0.raw;
- 337:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   ECAT0_CON->CONP1 = (uint32_t)port_ctrl.port1.raw;
- 338:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** }
- 339:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 340:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**
- 341:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param event Single or logically OR'd events specified in the enum type @refXMC_ECAT_EVENT_t
- 342:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return None
- 343:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 344:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
- 345:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * Enable ECAT event(s) <br>
- 346:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 347:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
- 348:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * The function can be used to enable ECAT event(s).
- 349:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  */
- 350:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** void XMC_ECAT_EnableEvent(uint32_t event);
- 351:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 352:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**
- 353:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param event Single or logically OR'd events specified in the enum type @refXMC_ECAT_EVENT_t
- 354:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return None
- 355:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 356:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
- 357:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * Disable an ECAT event(s) <br>
- 358:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 359:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
- 360:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * The function can be used to disable ECAT event(s).
- 361:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  */
- 362:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** void XMC_ECAT_DisableEvent(uint32_t event);
- 363:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 364:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**
- 365:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param None
- 366:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return uint32_t Event status
- 367:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 368:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
- 369:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * Get event status <br>
- 370:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 371:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
- 372:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * The function returns the ECAT status and interrupt status as a single word. The user
- 373:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * can then check the status of the events by using an appropriate mask.
- 374:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  */
- 375:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** uint32_t XMC_ECAT_GetEventStatus(void);
- 376:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 377:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 378:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**
- 379:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param channel SyncManager channel number.
- 380:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return None
- 381:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 382:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
- 383:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * Disables selected SyncManager channel <br>
- 384:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 385:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
- 386:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * Sets bit 0 of the corresponding 0x807 register.
- 387:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  */
- 388:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** void XMC_ECAT_DisableSyncManChannel(const uint8_t channel);
- 389:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 390:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**
- 391:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param channel SyncManager channel number.
- 392:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return None
- 393:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 394:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
- 395:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * Enables selected SyncManager channel <br>
- 396:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 397:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
- 398:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * Resets bit 0 of the corresponding 0x807 register.
- 399:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  */
- 400:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** void XMC_ECAT_EnableSyncManChannel(const uint8_t channel);
- 401:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** 
- 402:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** /**
- 403:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param None
- 404:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return uint16_t Content of register 0x220-0x221
- 405:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 406:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
- 407:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * Get content of AL event register <br>
- 408:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  *
- 409:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
- 410:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  * Get the first two bytes of the AL Event register (0x220-0x221).
- 411:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****  */
- 412:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** __STATIC_INLINE uint16_t XMC_ECAT_GetALEventRegister(void)
- 413:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** {
+  26              	 .file 1 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc/xmc_ecat.h"
+   1:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+   2:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**
+   3:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @file xmc_ecat.h
+   4:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @date 2015-12-27
+   5:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+   6:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @cond
+   7:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  **************************************************************************************************
+   8:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * XMClib v2.1.24 - XMC Peripheral Driver Library 
+   9:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+  10:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * Copyright (c) 2015-2019, Infineon Technologies AG
+  11:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * All rights reserved.                        
+  12:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *                                             
+  13:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
+  14:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * following conditions are met:   
+  15:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *                                                                              
+  16:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * Redistributions of source code must retain the above copyright notice, this list of conditions a
+  17:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * disclaimer.                        
+  18:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * 
+  19:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * Redistributions in binary form must reproduce the above copyright notice, this list of condition
+  20:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * disclaimer in the documentation and/or other materials provided with the distribution.          
+  21:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * 
+  22:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * Neither the name of the copyright holders nor the names of its contributors may be used to endor
+  23:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * products derived from this software without specific prior written permission.                  
+  24:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *                                                                              
+  25:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
+  26:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
+  27:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
+  28:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
+  29:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
+  30:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+  31:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                            
+  32:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *                                                                              
+  33:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
+  34:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * Infineon Technologies AG dave@infineon.com).                                                    
+  35:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  **************************************************************************************************
+  36:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+  37:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * Change History
+  38:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * --------------
+  39:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+  40:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * 2015-12-27:
+  41:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *     - Initial Version<br>
+  42:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+  43:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @endcond
+  44:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  */
+  45:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+  46:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**
+  47:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @addtogroup XMClib XMC Peripheral Library
+  48:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @{
+  49:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  */
+  50:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+  51:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**
+  52:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @addtogroup ECAT
+  53:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @brief EtherCAT Low level driver for XMC4800/XMC4300 series.
+  54:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+  55:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * EtherCAT is an Ethernet-based fieldbus system.
+  56:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * The EtherCAT Slave Controller (ECAT) read the data addressed to them while the telegram passes t
+  57:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * An EtherCAT Slave Controller (ESC) takes care of the EtherCAT communication as an interface betw
+  58:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * fieldbus and the slave application. EtherCAT uses standard IEEE 802.3 Ethernet frames, thus a st
+  59:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * controller can be used and no special hardware is required on master side. EtherCAT has a reserv
+  60:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * 0x88A4 that distinguishes it from other Ethernet frames. Thus, EtherCAT can run in parallel to o
+  61:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * protocols. EtherCAT does not require the IP protocol, however it can be encapsulated in IP/UDP. 
+  62:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * Slave Controller processes the frame in hardware. Thus, communication performance is independent
+  63:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * power.
+  64:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+  65:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * The XMC_ECAT low level driver provides functions to configure and initialize the ECAT hardware p
+  66:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * For EHTERCAT stack integration, the necessary hardware accees layer APIs shall be explicitly imp
+  67:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * upon the stack provider. The XMC_ECAT lld layer provides only the hardware initialization functi
+  68:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * basic functionalities.
+  69:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @{
+  70:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  */
+  71:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+  72:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** #ifndef XMC_ECAT_H
+  73:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** #define XMC_ECAT_H
+  74:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+  75:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**************************************************************************************************
+  76:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * HEADER FILES
+  77:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  **************************************************************************************************
+  78:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+  79:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** #include "xmc_common.h"
+  80:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+  81:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** #if defined (ECAT0)
+  82:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+  83:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** #include "xmc_ecat_map.h"
+  84:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+  85:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**************************************************************************************************
+  86:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * MACROS
+  87:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  **************************************************************************************************
+  88:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+  89:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**************************************************************************************************
+  90:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * ENUMS
+  91:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  **************************************************************************************************
+  92:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+  93:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**
+  94:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * ECAT status return values
+  95:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  */
+  96:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** typedef enum XMC_ECAT_STATUS
+  97:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** {
+  98:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_STATUS_OK    = 0U, /**< Driver accepted application request */
+  99:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_STATUS_BUSY  = 1U, /**< Driver is busy and cannot handle request */
+ 100:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_STATUS_ERROR = 2U  /**< Driver could not fulfil application request */
+ 101:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** } XMC_ECAT_STATUS_t;
+ 102:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 103:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**
+ 104:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * EtherCAT event enumeration types
+ 105:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  */
+ 106:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** typedef enum XMC_ECAT_EVENT
+ 107:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** {
+ 108:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_AL_CONTROL = ECAT_AL_EVENT_MASK_AL_CE_MASK_Msk, /**< Application control event mas
+ 109:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_DC_LATCH = ECAT_AL_EVENT_MASK_DC_LE_MASK_Msk,  /**< Distributed Clock latch event 
+ 110:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_DC_SYNC0 = ECAT_AL_EVENT_MASK_ST_S0_MASK_Msk, /**< State of distributed clock sync
+ 111:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_DC_SYNC1 = ECAT_AL_EVENT_MASK_ST_S1_MASK_Msk, /**< State of distributed clock sync
+ 112:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_SM_ACTIVATION_REGISTER = ECAT_AL_EVENT_MASK_SM_A_MASK_Msk, /**< SyncManager activa
+ 113:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_EEPROM = ECAT_AL_EVENT_MASK_EEP_E_MASK_Msk, /**< EEPROM Emulation event mask*/
+ 114:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_WATCHDOG = ECAT_AL_EVENT_MASK_WP_D_MASK_Msk, /**< WATCHDOG process data event mask
+ 115:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_SM0 = ECAT_AL_EVENT_MASK_SMI_0_MASK_Msk, /**< Sync Manager 0 event mask*/
+ 116:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_SM1 = ECAT_AL_EVENT_MASK_SMI_1_MASK_Msk, /**< Sync Manager 1 event mask*/
+ 117:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_SM2 = ECAT_AL_EVENT_MASK_SMI_2_MASK_Msk, /**< Sync Manager 2 event mask*/
+ 118:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_SM3 = ECAT_AL_EVENT_MASK_SMI_3_MASK_Msk, /**< Sync Manager 3 event mask*/
+ 119:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_SM4 = ECAT_AL_EVENT_MASK_SMI_4_MASK_Msk, /**< Sync Manager 4 event mask*/
+ 120:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_SM5 = ECAT_AL_EVENT_MASK_SMI_5_MASK_Msk, /**< Sync Manager 5 event mask*/
+ 121:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_SM6 = ECAT_AL_EVENT_MASK_SMI_6_MASK_Msk, /**< Sync Manager 6 event mask*/
+ 122:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   XMC_ECAT_EVENT_SM7 = ECAT_AL_EVENT_MASK_SMI_7_MASK_Msk  /**< Sync Manager 7 event mask*/
+ 123:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** } XMC_ECAT_EVENT_t;
+ 124:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 125:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**************************************************************************************************
+ 126:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * DATA STRUCTURES
+ 127:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  **************************************************************************************************
+ 128:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 129:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /* Anonymous structure/union guard start */
+ 130:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** #if defined (__CC_ARM)
+ 131:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** #pragma push
+ 132:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** #pragma anon_unions
+ 133:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** #elif defined (__TASKING__)
+ 134:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** #pragma warning 586
+ 135:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** #endif
+ 136:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 137:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**
+ 138:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * ECAT port control data structure
+ 139:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  */
+ 140:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** typedef struct XMC_ECAT_PORT_CTRL
+ 141:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** {
+ 142:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   union 
+ 143:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   {
+ 144:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     struct
+ 145:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     {
+ 146:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t enable_rstreq: 1;     /**< Master can trigger a reset of the XMC4700 / XMC4800 (::bo
+ 147:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t: 7;                   /**< Reserved bits */
+ 148:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t latch_input0: 2;      /**< Latch input 0 selection (::XMC_ECAT_PORT_LATCHIN0_t) */
+ 149:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t: 2;                   /**< Reserved bits */
+ 150:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t latch_input1: 2;      /**< Latch input 1 selection (::XMC_ECAT_PORT_LATCHIN1_t) */
+ 151:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t: 2;                   /**< Reserved bits */
+ 152:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t phyaddr_offset: 5;    /**< Ethernet PHY address offset, address of port 0 */
+ 153:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t: 1;                   /**< Reserved bits */
+ 154:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t mdio: 2;              /**< Bidirectional, push-pull management data I/O line (::XMC_
+ 155:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t: 8;                   /**< Reserved bits */
+ 156:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     };
+ 157:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 158:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t raw;
+ 159:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   } common;
+ 160:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 161:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   union 
+ 162:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   {  
+ 163:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     struct
+ 164:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     {
+ 165:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rxd0: 2;     /**< Receive data bit 0 (::XMC_ECAT_PORT0_CTRL_RXD0_t) */
+ 166:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rxd1: 2;     /**< Receive data bit 1 (::XMC_ECAT_PORT0_CTRL_RXD1_t) */
+ 167:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rxd2: 2;     /**< Receive data bit 2 (::XMC_ECAT_PORT0_CTRL_RXD2_t) */
+ 168:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rxd3: 2;     /**< Receive data bit 3 (::XMC_ECAT_PORT0_CTRL_RXD3_t) */
+ 169:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rx_err: 2;   /**< RX Error (::XMC_ECAT_PORT0_CTRL_RX_ERR_t) */
+ 170:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rx_dv: 2;    /**< RX Data valid (::XMC_ECAT_PORT0_CTRL_RX_DV_t) */
+ 171:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rx_clk: 2;   /**< RX Clock (::XMC_ECAT_PORT0_CTRL_RX_CLK_t) */
+ 172:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t: 2;          /**< Reserved bits */
+ 173:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t link: 2;     /**< Link status (::XMC_ECAT_PORT0_CTRL_LINK_t) */
+ 174:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t: 10;         /**< Reserved bits */
+ 175:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t tx_clk: 2;   /**< TX Clock (::XMC_ECAT_PORT0_CTRL_TX_CLK_t) */
+ 176:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t tx_shift: 2; /**< TX signal delay (::XMC_ECAT_PORT0_CTRL_TX_SHIFT_t) */
+ 177:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     };
+ 178:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 179:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t raw;
+ 180:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   } port0;
+ 181:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 182:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   union 
+ 183:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   {      
+ 184:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     struct
+ 185:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     {
+ 186:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rxd0: 2;     /**< Receive data bit 0 (::XMC_ECAT_PORT_CTRL_RXD0_t) */
+ 187:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rxd1: 2;     /**< Receive data bit 1 (::XMC_ECAT_PORT_CTRL_RXD1_t) */
+ 188:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rxd2: 2;     /**< Receive data bit 2 (::XMC_ECAT_PORT_CTRL_RXD2_t) */
+ 189:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rxd3: 2;     /**< Receive data bit 3 (::XMC_ECAT_PORT_CTRL_RXD3_t) */
+ 190:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rx_err: 2;   /**< RX Error (::XMC_ECAT_PORT_CTRL_RX_ERR_t) */
+ 191:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rx_dv: 2;    /**< RX Data valid (::XMC_ECAT_PORT_CTRL_RX_DV_t) */
+ 192:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t rx_clk: 2;   /**< RX Clock (::XMC_ECAT_PORT_CTRL_RX_CLK_t) */
+ 193:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t: 2;          /**< Reserved bits */
+ 194:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t link: 2;     /**< Link status (::XMC_ECAT_PORT_CTRL_LINK_t) */
+ 195:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t: 10;         /**< Reserved bits */
+ 196:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t tx_clk: 2;   /**< TX Clock (::XMC_ECAT_PORT_CTRL_TX_CLK_t) */
+ 197:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****       uint32_t tx_shift: 2; /**< TX signal delay (::XMC_ECAT_PORT1_CTRL_TX_SHIFT_t) */
+ 198:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     };
+ 199:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 200:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t raw;
+ 201:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   } port1;
+ 202:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   
+ 203:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** } XMC_ECAT_PORT_CTRL_t;
+ 204:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 205:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**
+ 206:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * ECAT EEPROM configuration area data structure
+ 207:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  */
+ 208:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** typedef union XMC_ECAT_CONFIG
+ 209:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** {
+ 210:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   struct
+ 211:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   {
+ 212:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t : 8;
+ 213:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 214:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t : 2;
+ 215:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t enable_dc_sync_out : 1;
+ 216:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t enable_dc_latch_in : 1;
+ 217:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t enable_enhanced_link_p0 : 1;
+ 218:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t enable_enhanced_link_p1 : 1;
+ 219:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t : 2;
+ 220:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 221:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t : 16;
+ 222:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 223:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     uint16_t sync_pulse_length; /**< Initialization value for Pulse Length of SYNC Signals register
+ 224:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 225:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     uint32_t : 16;
+ 226:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 227:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     uint16_t station_alias; /**< Initialization value for Configured Station Alias Address register
+ 228:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 229:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     uint16_t : 16;
+ 230:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 231:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     uint16_t : 16;
+ 232:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 233:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****     uint16_t checksum;
+ 234:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   };
+ 235:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 236:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   uint32_t dword[4]; /**< Four 32 bit double word equivalent to 8 16 bit configuration area word. *
+ 237:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** } XMC_ECAT_CONFIG_t;
+ 238:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 239:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /* Anonymous structure/union guard end */
+ 240:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** #if defined (__CC_ARM)
+ 241:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** #pragma pop
+ 242:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** #elif defined (__TASKING__)
+ 243:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** #pragma warning restore
+ 244:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** #endif
+ 245:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 246:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**************************************************************************************************
+ 247:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * API PROTOTYPES
+ 248:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  **************************************************************************************************
+ 249:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 250:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** #ifdef __cplusplus
+ 251:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** extern "C" {
+ 252:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** #endif
+ 253:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 254:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**
+ 255:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param config XMC_ECAT_CONFIG_t
+ 256:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return XMC_ECAT_STATUS_t ECAT Initialization status
+ 257:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 258:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
+ 259:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * Initialize the Ethernet MAC peripheral <br>
+ 260:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 261:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
+ 262:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * The function sets the link speed, applies the duplex mode, sets auto-negotiation
+ 263:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * and loop-back settings.
+ 264:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  */
+ 265:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** void XMC_ECAT_Init(XMC_ECAT_CONFIG_t *const config);
+ 266:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 267:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**
+ 268:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param None
+ 269:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return None
+ 270:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 271:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
+ 272:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * Enable the EtherCAT peripheral <br>
+ 273:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 274:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
+ 275:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * The function de-asserts the peripheral reset.
+ 276:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  */
+ 277:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** void XMC_ECAT_Enable(void);
+ 278:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 279:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**
+ 280:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param None
+ 281:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return None
+ 282:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 283:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
+ 284:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * Disable the EtherCAT peripheral <br>
+ 285:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 286:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
+ 287:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * The function asserts the peripheral reset.
+ 288:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  */
+ 289:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** void XMC_ECAT_Disable(void);
+ 290:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 291:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**
+ 292:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param phy_addr PHY address
+ 293:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param reg_addr Register address
+ 294:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param data The destination to which the read data needs to be copied to.
+ 295:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 296:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return XMC_ECAT_STATUS_t EtherCAT Read PHY API return status
+ 297:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 298:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
+ 299:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * Read a PHY register <br>
+ 300:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 301:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
+ 302:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * The function reads a PHY register. It essentially polls busy bit during max
+ 303:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * PHY_TIMEOUT time and reads the information into 'data' when not busy.
+ 304:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  */
+ 305:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** XMC_ECAT_STATUS_t XMC_ECAT_ReadPhy(uint8_t phy_addr, uint8_t reg_addr, uint16_t *data);
+ 306:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 307:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**
+ 308:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param phy_addr PHY address
+ 309:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param reg_addr Register address
+ 310:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param data The data to write
+ 311:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return XMC_ECAT_STATUS_t EtherCAT Write PHY API return status
+ 312:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 313:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
+ 314:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * Write a PHY register <br>
+ 315:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 316:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
+ 317:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * The function reads a PHY register. It essentially writes the data and polls
+ 318:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * the busy bit until it is no longer busy.
+ 319:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  */
+ 320:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** XMC_ECAT_STATUS_t XMC_ECAT_WritePhy(uint8_t phy_addr, uint8_t reg_addr, uint16_t data);
+ 321:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 322:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**
+ 323:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param port_ctrl Port control configuration
+ 324:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return None
+ 325:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 326:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
+ 327:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * Set port control configuration <br>
+ 328:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 329:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
+ 330:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * The function sets the port control by writing the configuration into the ECAT CON register.
+ 331:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 332:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  */
+ 333:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** __STATIC_INLINE void XMC_ECAT_SetPortControl(const XMC_ECAT_PORT_CTRL_t port_ctrl)
+ 334:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** {
+ 335:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   ECAT0_CON->CON = (uint32_t)port_ctrl.common.raw;
+ 336:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   ECAT0_CON->CONP0 = (uint32_t)port_ctrl.port0.raw;
+ 337:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   ECAT0_CON->CONP1 = (uint32_t)port_ctrl.port1.raw;
+ 338:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** }
+ 339:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 340:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**
+ 341:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param event Single or logically OR'd events specified in the enum type @refXMC_ECAT_EVENT_t
+ 342:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return None
+ 343:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 344:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
+ 345:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * Enable ECAT event(s) <br>
+ 346:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 347:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
+ 348:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * The function can be used to enable ECAT event(s).
+ 349:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  */
+ 350:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** void XMC_ECAT_EnableEvent(uint32_t event);
+ 351:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 352:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**
+ 353:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param event Single or logically OR'd events specified in the enum type @refXMC_ECAT_EVENT_t
+ 354:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return None
+ 355:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 356:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
+ 357:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * Disable an ECAT event(s) <br>
+ 358:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 359:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
+ 360:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * The function can be used to disable ECAT event(s).
+ 361:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  */
+ 362:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** void XMC_ECAT_DisableEvent(uint32_t event);
+ 363:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 364:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**
+ 365:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param None
+ 366:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return uint32_t Event status
+ 367:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 368:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
+ 369:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * Get event status <br>
+ 370:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 371:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
+ 372:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * The function returns the ECAT status and interrupt status as a single word. The user
+ 373:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * can then check the status of the events by using an appropriate mask.
+ 374:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  */
+ 375:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** uint32_t XMC_ECAT_GetEventStatus(void);
+ 376:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 377:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 378:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**
+ 379:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param channel SyncManager channel number.
+ 380:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return None
+ 381:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 382:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
+ 383:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * Disables selected SyncManager channel <br>
+ 384:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 385:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
+ 386:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * Sets bit 0 of the corresponding 0x807 register.
+ 387:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  */
+ 388:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** void XMC_ECAT_DisableSyncManChannel(const uint8_t channel);
+ 389:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 390:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**
+ 391:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param channel SyncManager channel number.
+ 392:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return None
+ 393:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 394:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
+ 395:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * Enables selected SyncManager channel <br>
+ 396:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 397:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
+ 398:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * Resets bit 0 of the corresponding 0x807 register.
+ 399:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  */
+ 400:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** void XMC_ECAT_EnableSyncManChannel(const uint8_t channel);
+ 401:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** 
+ 402:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** /**
+ 403:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @param None
+ 404:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * @return uint16_t Content of register 0x220-0x221
+ 405:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 406:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par<b>Description: </b><br>
+ 407:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * Get content of AL event register <br>
+ 408:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  *
+ 409:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * \par
+ 410:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  * Get the first two bytes of the AL Event register (0x220-0x221).
+ 411:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****  */
+ 412:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** __STATIC_INLINE uint16_t XMC_ECAT_GetALEventRegister(void)
+ 413:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** {
   27              	 .loc 1 413 0
   28              	 .cfi_startproc
   29              	 
@@ -448,12 +448,12 @@
   36 0002 00AF     	 add r7,sp,#0
   37              	.LCFI1:
   38              	 .cfi_def_cfa_register 7
- 414:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h ****   return ((uint16_t)ECAT0->AL_EVENT_REQ);
+ 414:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h ****   return ((uint16_t)ECAT0->AL_EVENT_REQ);
   39              	 .loc 1 414 0
   40 0004 044B     	 ldr r3,.L3
   41 0006 D3F82032 	 ldr r3,[r3,#544]
   42 000a 9BB2     	 uxth r3,r3
- 415:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ecat.h **** }
+ 415:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_ecat.h **** }
   43              	 .loc 1 415 0
   44 000c 1846     	 mov r0,r3
   45 000e BD46     	 mov sp,r7
@@ -477,131 +477,131 @@
   64              	 .thumb_func
   66              	HW_EscRead:
   67              	.LFB171:
-  68              	 .file 2 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC/xmc_eschw.h"
-   1:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**
-   2:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @file xmc_eschw.h
-   3:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @date 2018-01-24
-   4:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
-   5:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * NOTE:
-   6:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * This file is copied by DAVE. Any manual modification done to this file will be lost when the cod
-   7:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
-   8:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @cond
-   9:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  **************************************************************************************************
-  10:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * ECAT_SSC v4.0.26 - ECAT_SSC APP initializes the XMC ESC and sets up the interface for Beckhoff E
-  11:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
-  12:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * Copyright (c) 2016-2019, Infineon Technologies AG
-  13:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * All rights reserved.
-  14:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
-  15:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
-  16:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * following conditions are met:
-  17:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
-  18:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *   Redistributions of source code must retain the above copyright notice, this list of conditions
-  19:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *   disclaimer.
-  20:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
-  21:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *   Redistributions in binary form must reproduce the above copyright notice, this list of conditi
-  22:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *   disclaimer in the documentation and/or other materials provided with the distribution.
-  23:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
-  24:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *   Neither the name of the copyright holders nor the names of its contributors may be used to end
-  25:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *   products derived from this software without specific prior written permission.
-  26:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
-  27:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
-  28:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
-  29:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
-  30:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
-  31:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
-  32:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
-  33:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  34:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
-  35:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
-  36:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * with Infineon Technologies AG (dave@infineon.com).
-  37:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  **************************************************************************************************
-  38:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
-  39:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * Change History
-  40:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * --------------
-  41:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
-  42:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * 2016-02-05:
-  43:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *     - Initial version
-  44:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
-  45:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * 2018-01-24:
-  46:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *     - Added HW_ClearTimer()
-  47:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
-  48:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @endcond
-  49:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
-  50:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  */
-  51:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
-  52:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #ifndef XMC_ESCHW_H
-  53:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define XMC_ESCHW_H
-  54:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
-  55:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**************************************************************************************************
-  56:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * HEADER FILES
-  57:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  **************************************************************************************************
-  58:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #include "SSC/Src/esc.h"
-  59:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #include "xmc_ecat.h"
-  60:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #include "../E_EEPROM_XMC4/e_eeprom_xmc4.h"
-  61:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
-  62:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  /*************************************************************************************************
-  63:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****   * MACROS
-  64:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****   *************************************************************************************************
-  65:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
-  66:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define ECAT_TIMER_INC_P_MS (1U) /**< Timer increment value */
-  67:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
-  68:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define pEsc ((uint8_t *)ECAT0)  /**< EtherCAT module address */
-  69:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
-  70:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** extern uint8_t aEepromData[];
-  71:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
-  72:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**************************************************************************************************
-  73:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * API Prototypes
-  74:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  **************************************************************************************************
-  75:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
-  76:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #ifdef __cplusplus
-  77:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** extern "C" {
-  78:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #endif
-  79:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
-  80:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**
-  81:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @ingroup ECAT_SSC_apidoc
-  82:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @{
-  83:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  */
-  84:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
-  85:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscReadDWord(DWordValue, Address)     ((DWordValue) = (UINT32)(((volatile UINT32 *)pEsc)
-  86:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
-  87:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscReadDWordIsr(DWordValue, Address)  HW_EscReadDWord(DWordValue, Address)              
-  88:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
-  89:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscReadWord(WordValue, Address)       ((WordValue) = (((volatile UINT16 *)pEsc)[((Addres
-  90:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
-  91:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscReadWordIsr(WordValue, Address)    HW_EscReadWord(WordValue, Address)                
-  92:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
-  93:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscReadByte(ByteValue, Address)       ((ByteValue) = (((volatile UINT8 *)pEsc)[(Address)
-  94:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
-  95:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscReadByteIsr(ByteValue, Address)    HW_EscReadByte(ByteValue, Address)                
-  96:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
-  97:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscWriteDWord(DWordValue, Address)    ((((volatile UINT32 *)pEsc)[(Address>>2)]) = (DWor
-  98:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
-  99:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscWriteDWordIsr(DWordValue, Address) HW_EscWriteWord(DWordValue, Address)              
- 100:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
- 101:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscWriteWord(WordValue, Address)      ((((volatile UINT16 *)pEsc)[((Address)>>1)]) = (Wo
- 102:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
- 103:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscWriteWordIsr(WordValue, Address)   HW_EscWriteWord(WordValue, Address)               
- 104:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
- 105:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscWriteByte(ByteValue, Address)      ((((volatile UINT8 *)pEsc)[(Address)]) = (ByteValu
- 106:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
- 107:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscWriteByteIsr(ByteValue, Address)   HW_EscWriteByte(ByteValue, Address)               
- 108:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
- 109:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**
- 110:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @brief 16Bit ESC read access
- 111:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 112:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param pData Pointer to local destination buffer.
- 113:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Address EtherCAT Slave Controller address. Specifies the offset within the ESC memory are
- 114:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Len Access size in Bytes
- 115:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 116:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @return None
- 117:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * <BR>
- 118:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 119:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * \par<b>Description:</b><br>
- 120:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * Reads from the EtherCAT Slave Controller. This function is used to access ESC registers and the 
- 121:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 122:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  */
- 123:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** __STATIC_INLINE void HW_EscRead(MEM_ADDR *pData, UINT16 Address, UINT16 Len)
- 124:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** {
+  68              	 .file 2 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC/xmc_eschw.h"
+   1:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**
+   2:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @file xmc_eschw.h
+   3:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @date 2018-01-24
+   4:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+   5:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * NOTE:
+   6:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * This file is copied by DAVE. Any manual modification done to this file will be lost when the cod
+   7:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+   8:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @cond
+   9:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  **************************************************************************************************
+  10:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * ECAT_SSC v4.0.26 - ECAT_SSC APP initializes the XMC ESC and sets up the interface for Beckhoff E
+  11:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+  12:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * Copyright (c) 2016-2019, Infineon Technologies AG
+  13:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * All rights reserved.
+  14:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+  15:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
+  16:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * following conditions are met:
+  17:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+  18:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *   Redistributions of source code must retain the above copyright notice, this list of conditions
+  19:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *   disclaimer.
+  20:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+  21:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *   Redistributions in binary form must reproduce the above copyright notice, this list of conditi
+  22:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *   disclaimer in the documentation and/or other materials provided with the distribution.
+  23:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+  24:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *   Neither the name of the copyright holders nor the names of its contributors may be used to end
+  25:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *   products derived from this software without specific prior written permission.
+  26:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+  27:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
+  28:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
+  29:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
+  30:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
+  31:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
+  32:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+  33:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  34:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+  35:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
+  36:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * with Infineon Technologies AG (dave@infineon.com).
+  37:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  **************************************************************************************************
+  38:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+  39:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * Change History
+  40:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * --------------
+  41:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+  42:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * 2016-02-05:
+  43:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *     - Initial version
+  44:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+  45:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * 2018-01-24:
+  46:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *     - Added HW_ClearTimer()
+  47:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+  48:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @endcond
+  49:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+  50:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  */
+  51:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+  52:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #ifndef XMC_ESCHW_H
+  53:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define XMC_ESCHW_H
+  54:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+  55:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**************************************************************************************************
+  56:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * HEADER FILES
+  57:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  **************************************************************************************************
+  58:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #include "SSC/Src/esc.h"
+  59:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #include "xmc_ecat.h"
+  60:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #include "../E_EEPROM_XMC4/e_eeprom_xmc4.h"
+  61:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+  62:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  /*************************************************************************************************
+  63:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****   * MACROS
+  64:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****   *************************************************************************************************
+  65:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+  66:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define ECAT_TIMER_INC_P_MS (1U) /**< Timer increment value */
+  67:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+  68:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define pEsc ((uint8_t *)ECAT0)  /**< EtherCAT module address */
+  69:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+  70:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** extern uint8_t aEepromData[];
+  71:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+  72:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**************************************************************************************************
+  73:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * API Prototypes
+  74:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  **************************************************************************************************
+  75:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+  76:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #ifdef __cplusplus
+  77:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** extern "C" {
+  78:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #endif
+  79:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+  80:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**
+  81:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @ingroup ECAT_SSC_apidoc
+  82:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @{
+  83:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  */
+  84:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+  85:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscReadDWord(DWordValue, Address)     ((DWordValue) = (UINT32)(((volatile UINT32 *)pEsc)
+  86:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+  87:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscReadDWordIsr(DWordValue, Address)  HW_EscReadDWord(DWordValue, Address)              
+  88:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+  89:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscReadWord(WordValue, Address)       ((WordValue) = (((volatile UINT16 *)pEsc)[((Addres
+  90:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+  91:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscReadWordIsr(WordValue, Address)    HW_EscReadWord(WordValue, Address)                
+  92:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+  93:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscReadByte(ByteValue, Address)       ((ByteValue) = (((volatile UINT8 *)pEsc)[(Address)
+  94:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+  95:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscReadByteIsr(ByteValue, Address)    HW_EscReadByte(ByteValue, Address)                
+  96:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+  97:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscWriteDWord(DWordValue, Address)    ((((volatile UINT32 *)pEsc)[(Address>>2)]) = (DWor
+  98:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+  99:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscWriteDWordIsr(DWordValue, Address) HW_EscWriteWord(DWordValue, Address)              
+ 100:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+ 101:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscWriteWord(WordValue, Address)      ((((volatile UINT16 *)pEsc)[((Address)>>1)]) = (Wo
+ 102:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+ 103:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscWriteWordIsr(WordValue, Address)   HW_EscWriteWord(WordValue, Address)               
+ 104:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+ 105:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscWriteByte(ByteValue, Address)      ((((volatile UINT8 *)pEsc)[(Address)]) = (ByteValu
+ 106:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+ 107:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** #define HW_EscWriteByteIsr(ByteValue, Address)   HW_EscWriteByte(ByteValue, Address)               
+ 108:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+ 109:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**
+ 110:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @brief 16Bit ESC read access
+ 111:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 112:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param pData Pointer to local destination buffer.
+ 113:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Address EtherCAT Slave Controller address. Specifies the offset within the ESC memory are
+ 114:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Len Access size in Bytes
+ 115:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 116:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @return None
+ 117:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * <BR>
+ 118:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 119:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * \par<b>Description:</b><br>
+ 120:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * Reads from the EtherCAT Slave Controller. This function is used to access ESC registers and the 
+ 121:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 122:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  */
+ 123:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** __STATIC_INLINE void HW_EscRead(MEM_ADDR *pData, UINT16 Address, UINT16 Len)
+ 124:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** {
   69              	 .loc 2 124 0
   70              	 .cfi_startproc
   71              	 
@@ -622,7 +622,7 @@
   86 000a 7B80     	 strh r3,[r7,#2]
   87 000c 1346     	 mov r3,r2
   88 000e 3B80     	 strh r3,[r7]
- 125:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****   memcpy(pData, &pEsc[Address], Len);
+ 125:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****   memcpy(pData, &pEsc[Address], Len);
   89              	 .loc 2 125 0
   90 0010 7B88     	 ldrh r3,[r7,#2]
   91 0012 03F1A843 	 add r3,r3,#1409286144
@@ -631,7 +631,7 @@
   94 001c 7868     	 ldr r0,[r7,#4]
   95 001e 1946     	 mov r1,r3
   96 0020 FFF7FEFF 	 bl memcpy
- 126:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** }
+ 126:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** }
   97              	 .loc 2 126 0
   98 0024 0837     	 adds r7,r7,#8
   99              	.LCFI7:
@@ -649,23 +649,23 @@
  112              	 .thumb_func
  114              	HW_EscReadIsr:
  115              	.LFB172:
- 127:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
- 128:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**
- 129:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @brief Interrupt specific 16Bit ESC read access
- 130:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 131:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param pData Pointer to local destination buffer.
- 132:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Address EtherCAT Slave Controller address. Specifies the offset within the ESC memory are
- 133:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Len Access size in Bytes
- 134:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 135:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @return None
- 136:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * <BR>
- 137:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 138:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * \par<b>Description:</b><br>
- 139:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * Reads from the EtherCAT Slave Controller. This function is used to access ESC registers and the 
- 140:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 141:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  */
- 142:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** __STATIC_INLINE void HW_EscReadIsr(MEM_ADDR *pData, UINT16 Address, UINT16 Len)
- 143:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** {
+ 127:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+ 128:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**
+ 129:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @brief Interrupt specific 16Bit ESC read access
+ 130:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 131:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param pData Pointer to local destination buffer.
+ 132:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Address EtherCAT Slave Controller address. Specifies the offset within the ESC memory are
+ 133:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Len Access size in Bytes
+ 134:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 135:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @return None
+ 136:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * <BR>
+ 137:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 138:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * \par<b>Description:</b><br>
+ 139:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * Reads from the EtherCAT Slave Controller. This function is used to access ESC registers and the 
+ 140:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 141:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  */
+ 142:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** __STATIC_INLINE void HW_EscReadIsr(MEM_ADDR *pData, UINT16 Address, UINT16 Len)
+ 143:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** {
  116              	 .loc 2 143 0
  117              	 .cfi_startproc
  118              	 
@@ -686,7 +686,7 @@
  133 000a 7B80     	 strh r3,[r7,#2]
  134 000c 1346     	 mov r3,r2
  135 000e 3B80     	 strh r3,[r7]
- 144:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****   HW_EscRead(pData, Address, Len);
+ 144:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****   HW_EscRead(pData, Address, Len);
  136              	 .loc 2 144 0
  137 0010 7A88     	 ldrh r2,[r7,#2]
  138 0012 3B88     	 ldrh r3,[r7]
@@ -694,7 +694,7 @@
  140 0016 1146     	 mov r1,r2
  141 0018 1A46     	 mov r2,r3
  142 001a FFF7FEFF 	 bl HW_EscRead
- 145:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** }
+ 145:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** }
  143              	 .loc 2 145 0
  144 001e 0837     	 adds r7,r7,#8
  145              	.LCFI12:
@@ -712,43 +712,43 @@
  158              	 .thumb_func
  160              	HW_EscWrite:
  161              	.LFB174:
- 146:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
- 147:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**
- 148:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @brief Reads data from the ESC and copies to slave mailbox memory.
- 149:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 150:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param pData Pointer to local destination buffer.
- 151:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Address EtherCAT Slave Controller address. Specifies the offset within the ESC memory are
- 152:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Len Access size in Bytes
- 153:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 154:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @return None
- 155:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * <BR>
- 156:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 157:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * \par<b>Description:</b><br>
- 158:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * Reads data from the ESC and copies to slave mailbox memory. If the local mailbox memory is also 
- 159:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * application memory this function is equal to HW_EscRead.
- 160:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 161:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  */
- 162:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** __STATIC_INLINE void HW_EscReadMbxMem(MEM_ADDR *pData, UINT16 Address, UINT16 Len)
- 163:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** {
- 164:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****   HW_EscRead(pData, Address, Len);
- 165:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** }
- 166:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
- 167:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**
- 168:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @brief 16Bit ESC write access
- 169:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 170:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param pData Pointer to local source buffer.
- 171:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Address EtherCAT Slave Controller address. Specifies the offset within the ESC memory are
- 172:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Len Access size in Bytes
- 173:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 174:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @return None
- 175:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * <BR>
- 176:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 177:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * \par<b>Description:</b><br>
- 178:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * Writes from the EtherCAT Slave Controller. This function is used to access ESC registers and the
- 179:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 180:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  */
- 181:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** __STATIC_INLINE void HW_EscWrite(MEM_ADDR *pData, UINT16 Address, UINT16 Len)
- 182:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** {
+ 146:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+ 147:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**
+ 148:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @brief Reads data from the ESC and copies to slave mailbox memory.
+ 149:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 150:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param pData Pointer to local destination buffer.
+ 151:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Address EtherCAT Slave Controller address. Specifies the offset within the ESC memory are
+ 152:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Len Access size in Bytes
+ 153:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 154:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @return None
+ 155:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * <BR>
+ 156:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 157:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * \par<b>Description:</b><br>
+ 158:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * Reads data from the ESC and copies to slave mailbox memory. If the local mailbox memory is also 
+ 159:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * application memory this function is equal to HW_EscRead.
+ 160:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 161:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  */
+ 162:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** __STATIC_INLINE void HW_EscReadMbxMem(MEM_ADDR *pData, UINT16 Address, UINT16 Len)
+ 163:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** {
+ 164:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****   HW_EscRead(pData, Address, Len);
+ 165:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** }
+ 166:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+ 167:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**
+ 168:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @brief 16Bit ESC write access
+ 169:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 170:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param pData Pointer to local source buffer.
+ 171:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Address EtherCAT Slave Controller address. Specifies the offset within the ESC memory are
+ 172:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Len Access size in Bytes
+ 173:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 174:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @return None
+ 175:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * <BR>
+ 176:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 177:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * \par<b>Description:</b><br>
+ 178:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * Writes from the EtherCAT Slave Controller. This function is used to access ESC registers and the
+ 179:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 180:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  */
+ 181:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** __STATIC_INLINE void HW_EscWrite(MEM_ADDR *pData, UINT16 Address, UINT16 Len)
+ 182:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** {
  162              	 .loc 2 182 0
  163              	 .cfi_startproc
  164              	 
@@ -769,7 +769,7 @@
  179 000a 7B80     	 strh r3,[r7,#2]
  180 000c 1346     	 mov r3,r2
  181 000e 3B80     	 strh r3,[r7]
- 183:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****   memcpy(&pEsc[Address], pData, Len);
+ 183:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****   memcpy(&pEsc[Address], pData, Len);
  182              	 .loc 2 183 0
  183 0010 7B88     	 ldrh r3,[r7,#2]
  184 0012 03F1A843 	 add r3,r3,#1409286144
@@ -778,7 +778,7 @@
  187 001c 1846     	 mov r0,r3
  188 001e 7968     	 ldr r1,[r7,#4]
  189 0020 FFF7FEFF 	 bl memcpy
- 184:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** }
+ 184:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** }
  190              	 .loc 2 184 0
  191 0024 0837     	 adds r7,r7,#8
  192              	.LCFI17:
@@ -796,23 +796,23 @@
  205              	 .thumb_func
  207              	HW_EscWriteIsr:
  208              	.LFB175:
- 185:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
- 186:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**
- 187:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @brief Interrupt specific 16Bit ESC write access
- 188:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 189:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param pData Pointer to local source buffer.
- 190:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Address EtherCAT Slave Controller address. Specifies the offset within the ESC memory are
- 191:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Len Access size in Bytes
- 192:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 193:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @return None
- 194:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * <BR>
- 195:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 196:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * \par<b>Description:</b><br>
- 197:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * Writes from the EtherCAT Slave Controller. This function is used to access ESC registers and the
- 198:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 199:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  */
- 200:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** __STATIC_INLINE void HW_EscWriteIsr(MEM_ADDR *pData, UINT16 Address, UINT16 Len)
- 201:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** {
+ 185:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+ 186:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**
+ 187:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @brief Interrupt specific 16Bit ESC write access
+ 188:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 189:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param pData Pointer to local source buffer.
+ 190:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Address EtherCAT Slave Controller address. Specifies the offset within the ESC memory are
+ 191:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Len Access size in Bytes
+ 192:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 193:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @return None
+ 194:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * <BR>
+ 195:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 196:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * \par<b>Description:</b><br>
+ 197:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * Writes from the EtherCAT Slave Controller. This function is used to access ESC registers and the
+ 198:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 199:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  */
+ 200:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** __STATIC_INLINE void HW_EscWriteIsr(MEM_ADDR *pData, UINT16 Address, UINT16 Len)
+ 201:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** {
  209              	 .loc 2 201 0
  210              	 .cfi_startproc
  211              	 
@@ -833,7 +833,7 @@
  226 000a 7B80     	 strh r3,[r7,#2]
  227 000c 1346     	 mov r3,r2
  228 000e 3B80     	 strh r3,[r7]
- 202:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****   HW_EscWrite(pData, Address, Len);
+ 202:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****   HW_EscWrite(pData, Address, Len);
  229              	 .loc 2 202 0
  230 0010 7A88     	 ldrh r2,[r7,#2]
  231 0012 3B88     	 ldrh r3,[r7]
@@ -841,7 +841,7 @@
  233 0016 1146     	 mov r1,r2
  234 0018 1A46     	 mov r2,r3
  235 001a FFF7FEFF 	 bl HW_EscWrite
- 203:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** }
+ 203:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** }
  236              	 .loc 2 203 0
  237 001e 0837     	 adds r7,r7,#8
  238              	.LCFI22:
@@ -859,41 +859,41 @@
  251              	 .thumb_func
  253              	HW_GetALEventRegister:
  254              	.LFB177:
- 204:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
- 205:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**
- 206:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @brief Writes data from the slave mailbox memory to ESC memory.
- 207:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 208:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param pData Pointer to local source mailbox buffer.
- 209:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Address EtherCAT Slave Controller address. Specifies the offset within the ESC memory are
- 210:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Len Access size in Bytes
- 211:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 212:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @return None
- 213:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * <BR>
- 214:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 215:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * \par<b>Description:</b><br>
- 216:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * Writes data from the slave mailbox memory to ESC memory. If the local mailbox memory is also loc
- 217:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * application memory this function is equal to HW_EscWrite.
- 218:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 219:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  */
- 220:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** __STATIC_INLINE void HW_EscWriteMbxMem(MEM_ADDR *pData, UINT16 Address, UINT16 Len)
- 221:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** {
- 222:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****   HW_EscWrite(pData, Address, Len);
- 223:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** }
- 224:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
- 225:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**
- 226:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @brief Get the first two bytes of the AL Event register
- 227:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 228:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param None
- 229:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 230:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @return Content of register 0x220-0x221
- 231:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * <BR>
- 232:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 233:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * \par<b>Description:</b><br>
- 234:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 235:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 236:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  */
- 237:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** __STATIC_INLINE UINT16 HW_GetALEventRegister(void)
- 238:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** {
+ 204:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+ 205:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**
+ 206:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @brief Writes data from the slave mailbox memory to ESC memory.
+ 207:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 208:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param pData Pointer to local source mailbox buffer.
+ 209:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Address EtherCAT Slave Controller address. Specifies the offset within the ESC memory are
+ 210:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param Len Access size in Bytes
+ 211:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 212:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @return None
+ 213:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * <BR>
+ 214:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 215:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * \par<b>Description:</b><br>
+ 216:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * Writes data from the slave mailbox memory to ESC memory. If the local mailbox memory is also loc
+ 217:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * application memory this function is equal to HW_EscWrite.
+ 218:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 219:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  */
+ 220:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** __STATIC_INLINE void HW_EscWriteMbxMem(MEM_ADDR *pData, UINT16 Address, UINT16 Len)
+ 221:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** {
+ 222:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****   HW_EscWrite(pData, Address, Len);
+ 223:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** }
+ 224:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+ 225:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**
+ 226:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @brief Get the first two bytes of the AL Event register
+ 227:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 228:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param None
+ 229:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 230:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @return Content of register 0x220-0x221
+ 231:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * <BR>
+ 232:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 233:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * \par<b>Description:</b><br>
+ 234:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 235:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 236:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  */
+ 237:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** __STATIC_INLINE UINT16 HW_GetALEventRegister(void)
+ 238:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** {
  255              	 .loc 2 238 0
  256              	 .cfi_startproc
  257              	 
@@ -906,11 +906,11 @@
  264 0002 00AF     	 add r7,sp,#0
  265              	.LCFI25:
  266              	 .cfi_def_cfa_register 7
- 239:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****   return XMC_ECAT_GetALEventRegister();
+ 239:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****   return XMC_ECAT_GetALEventRegister();
  267              	 .loc 2 239 0
  268 0004 FFF7FEFF 	 bl XMC_ECAT_GetALEventRegister
  269 0008 0346     	 mov r3,r0
- 240:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** }
+ 240:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** }
  270              	 .loc 2 240 0
  271 000a 1846     	 mov r0,r3
  272 000c 80BD     	 pop {r7,pc}
@@ -922,22 +922,22 @@
  279              	 .thumb_func
  281              	HW_GetALEventRegister_Isr:
  282              	.LFB178:
- 241:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
- 242:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**
- 243:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @brief Get the first two bytes of the AL Event register from ISR.
- 244:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 245:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param None
- 246:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 247:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @return None
- 248:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * <BR>
- 249:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 250:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * \par<b>Description:</b><br>
- 251:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * Special function for ESC access from interrupt service routines if required, otherwise this func
- 252:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * HW_GetALEventRegister.
- 253:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
- 254:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  */
- 255:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** __STATIC_INLINE UINT16 HW_GetALEventRegister_Isr(void)
- 256:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** {
+ 241:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** 
+ 242:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** /**
+ 243:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @brief Get the first two bytes of the AL Event register from ISR.
+ 244:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 245:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @param None
+ 246:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 247:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * @return None
+ 248:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * <BR>
+ 249:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 250:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * \par<b>Description:</b><br>
+ 251:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * Special function for ESC access from interrupt service routines if required, otherwise this func
+ 252:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  * HW_GetALEventRegister.
+ 253:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  *
+ 254:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****  */
+ 255:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** __STATIC_INLINE UINT16 HW_GetALEventRegister_Isr(void)
+ 256:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** {
  283              	 .loc 2 256 0
  284              	 .cfi_startproc
  285              	 
@@ -950,11 +950,11 @@
  292 0002 00AF     	 add r7,sp,#0
  293              	.LCFI27:
  294              	 .cfi_def_cfa_register 7
- 257:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h ****   return HW_GetALEventRegister();
+ 257:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h ****   return HW_GetALEventRegister();
  295              	 .loc 2 257 0
  296 0004 FFF7FEFF 	 bl HW_GetALEventRegister
  297 0008 0346     	 mov r3,r0
- 258:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC\xmc_eschw.h **** }
+ 258:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/ECAT_SSC\xmc_eschw.h **** }
  298              	 .loc 2 258 0
  299 000a 1846     	 mov r0,r3
  300 000c 80BD     	 pop {r7,pc}
@@ -6124,10 +6124,10 @@
  4299              	.Letext0:
  4300              	 .file 4 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
  4301              	 .file 5 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
- 4302              	 .file 6 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Infineon/XMC4300_series/Include/XMC4300.h"
+ 4302              	 .file 6 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Infineon/XMC4300_series/Include/XMC4300.h"
  4303              	 .file 7 "../SSC/Src/objdef.h"
- 4304              	 .file 8 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/cmsis_gcc.h"
- 4305              	 .file 9 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/core_cm4.h"
+ 4304              	 .file 8 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 4305              	 .file 9 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Include/core_cm4.h"
  4306              	 .file 10 "../SSC/Src/eeprom.h"
  4307              	 .file 11 "../SSC/Src/ecatslv.h"
  4308              	 .file 12 "../SSC/Src/ecatappl.h"

@@ -98,8 +98,9 @@ int32_t Config;
 //Position Control
 	int32_t PosCtrl(int32_t targetpos, int32_t actualpos, int32_t targetvel, int32_t actualvel, int32_t acc, uint8_t Channel)
 	{
-		int32_t time = abs(actualvel) / acc;
-		int32_t accpos = ((time+ 20)* abs(actualvel) ) / 2000;
+		int32_t vel = actualvel;
+		int32_t time = abs(vel) / acc;
+		int32_t accpos = ((time+ 20)* abs(vel) ) / 2000;
 
 		if (targetpos > actualpos){//Position Movement
 			if (targetpos < (actualpos + accpos)){
@@ -122,14 +123,14 @@ int32_t Config;
 	void Tick()
 	{
 		//Motor Position Control
-		for (uint8_t i=0; i<4; i++){
+		for (uint8_t i=0; i<3; i++){
 			if (Mode[i] == 1){
 				CtrlVel[i] = PosCtrl(TarPos[i], ActPos[i], TarVel[i], ActVel[i], Acc[i], i);
 			}
 		}
 
 		//Run every millisecond;
-		for (uint8_t i=0; i<4; i++){
+		for (uint8_t i=0; i<3; i++){
 			if (Mode[i] == 1){
 				ActVel[i] = ramp(CtrlVel[i], ActVel[i], Acc[i]);//Profile Position
 			}else if (Mode[i] == 3){
@@ -236,7 +237,7 @@ void process_app(TOBJ7000 *OUT_GENERIC, TOBJ6000 *IN_GENERIC)
 		Config 		= OUT_GENERIC->Config;
 	}else{
 		Config 		= 0;
-		for (uint8_t i=0; i<4; i++){
+		for (uint8_t i=0; i<3; i++){
 			TarVel[i] = 0;
 			Acc[i] = 0;
 			Mode[i] = 0;

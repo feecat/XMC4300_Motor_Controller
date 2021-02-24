@@ -22,551 +22,551 @@
   22              	 .thumb_func
   24              	XMC_SCU_GetMirrorStatus:
   25              	.LFB176:
-  26              	 .file 1 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc/xmc_scu.h"
-   1:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**
-   2:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @file xmc_scu.h
-   3:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @date 2016-03-09
-   4:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
-   5:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @cond
-   6:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  **************************************************************************************************
-   7:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * XMClib v2.1.24 - XMC Peripheral Driver Library 
-   8:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
-   9:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Copyright (c) 2015-2019, Infineon Technologies AG
-  10:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * All rights reserved.                        
-  11:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *                                             
-  12:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
-  13:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * following conditions are met:   
-  14:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *                                                                              
-  15:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Redistributions of source code must retain the above copyright notice, this list of conditions a
-  16:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * disclaimer.                        
-  17:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * 
-  18:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Redistributions in binary form must reproduce the above copyright notice, this list of condition
-  19:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * disclaimer in the documentation and/or other materials provided with the distribution.          
-  20:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * 
-  21:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Neither the name of the copyright holders nor the names of its contributors may be used to endor
-  22:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * products derived from this software without specific prior written permission.                  
-  23:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *                                                                              
-  24:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
-  25:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
-  26:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
-  27:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
-  28:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
-  29:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
-  30:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                            
-  31:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *                                                                              
-  32:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
-  33:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Infineon Technologies AG dave@infineon.com).                                                    
-  34:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  **************************************************************************************************
-  35:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
-  36:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Change History
-  37:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * --------------
-  38:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
-  39:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * 2015-02-20:
-  40:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *     - Initial <br>
-  41:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
-  42:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * 2015-05-20:
-  43:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *     - Documentation improved <br>
-  44:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *     - XMC_ASSERT() hanging issues have fixed for XMC4 devices. <br>
-  45:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
-  46:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * 2015-06-20:
-  47:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *     - Removed version macros and declaration of GetDriverVersion API
-  48:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *     - Removed STATIC_INLINE property for the below APIs and declared as void
-  49:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *       XMC_SCU_INTERRUPT_EnableEvent, XMC_SCU_INTERRUPT_DisableEvent,
-  50:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *       XMC_SCU_INTERRUPT_TriggerEvent, XMC_SCU_INTERUPT_GetEventStatus,
-  51:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *       XMC_SCU_INTERUPT_ClearEventStatus
-  52:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
-  53:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * 2015-11-30:
-  54:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *     - Documentation improved <br>
-  55:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *      
-  56:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * 2016-03-09:
-  57:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *     - Optimization of write only registers
-  58:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *      
-  59:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @endcond 
-  60:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
-  61:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  */
-  62:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** #ifndef XMC_SCU_H
-  63:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** #define XMC_SCU_H
-  64:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  
-  65:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**************************************************************************************************
-  66:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * HEADER FILES
-  67:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  **************************************************************************************************
-  68:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** #include <xmc_common.h>
-  69:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
-  70:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**
-  71:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @addtogroup XMClib XMC Peripheral Library
-  72:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @{
-  73:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  */
-  74:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  
-  75:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**
-  76:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @addtogroup SCU
-  77:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @brief System Control Unit(SCU) driver for XMC microcontroller family.
-  78:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
-  79:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * System control unit is the SoC power, reset and a clock manager with additional responsibility o
-  80:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * providing system stability protection and other auxiliary functions.<br>
-  81:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * SCU provides the following features,
-  82:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Power control
-  83:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  \if XMC4 
-  84:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Hibernate control 
-  85:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  \endif
-  86:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Reset control
-  87:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Clock control
-  88:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Miscellaneous control(boot mode, system interrupts etc.)<br><br>
-  89:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
-  90:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The SCU driver is divided in to clock control logic, reset control logic, system interrupt contr
-  91:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  \if XMC4
-  92:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * , hibernate control logic, trap control logic, parity control logic 
-  93:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  \endif
-  94:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * and miscellaneous control logic.<br>
-  95:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
-  96:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Clock driver features:
-  97:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows clock configuration using the structure XMC_SCU_CLOCK_CONFIG_t and API XMC_SCU_CLOCK_I
-  98:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  \if XMC4
-  99:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Provides structure XMC_SCU_CLOCK_SYSPLL_CONFIG_t for configuring the system PLL
- 100:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows selection of clock source for system PLL, XMC_SCU_CLOCK_GetSystemPllClockSource()
- 101:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Provides APIs for configuring different module clock frequencies XMC_SCU_CLOCK_SetWdtClockDiv
- 102:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows selection of clock source for external output, XMC_SCU_CLOCK_SetExternalOutputClockSou
- 103:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Provides APIs for enabling external high power oscillator and ultra low power oscillator, XMC
- 104:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Provides APIs for getting various clock frequencies XMC_SCU_CLOCK_GetPeripheralClockFrequency
- 105:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  XMC_SCU_CLOCK_GetCpuClockFrequency(), XMC_SCU_CLOCK_GetSystemClockFrequency()<br>
- 106:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  \endif
- 107:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  \if XMC1
- 108:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows selection of peripheral clock frequency, XMC_SCU_CLOCK_SetFastPeripheralClockSource()
- 109:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Provides API to get the peripheral clock frequency, XMC_SCU_CLOCK_GetFastPeripheralClockFrequ
- 110:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  \endif
- 111:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 112:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Reset driver features:
- 113:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  \if XMC4
- 114:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows to handle peripheral reset XMC_SCU_RESET_AssertPeripheralReset(), XMC_SCU_RESET_Deasse
- 115:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows configuration of NMI generation for selected events, XMC_SCU_INTERRUPT_EnableNmiReques
- 116:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  \endif
- 117:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  \if XMC1
- 118:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows to trigger device reset XMC_SCU_RESET_AssertMasterReset()
- 119:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows to configure multiple sources for reset, XMC_SCU_RESET_EnableResetRequest()
- 120:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  \endif <br>
- 121:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 122:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Interrupt driver features:
- 123:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Provides APIs for enabling/ disabling interrupt event generation XMC_SCU_INTERRUPT_EnableEven
- 124:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  XMC_SCU_INTERRUPT_DisableEvent()
- 125:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Provides API for registering callback function for events XMC_SCU_INTERRUPT_SetEventHandler()
- 126:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 127:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  \if XMC4
- 128:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Hibernate driver features:
- 129:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows configuration of hibernate domain XMC_SCU_HIB_EnableHibernateDomain(), XMC_SCU_HIB_Dis
- 130:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows selection of standby clock source, XMC_SCU_HIB_SetStandbyClockSource()
- 131:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows selection of RTC clock source, XMC_SCU_HIB_SetRtcClockSource()
- 132:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Provides API for enabling slow internal clock used for backup clock, XMC_SCU_HIB_EnableIntern
- 133:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 134:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Trap driver features:
- 135:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows handling of trap XMC_SCU_TRAP_Enable(), XMC_SCU_TRAP_GetStatus(), XMC_SCU_TRAP_Trigger
- 136:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 137:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Parity driver features:
- 138:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Parity error generated by on-chip RAM can be monitored, XMC_SCU_PARITY_Enable(), XMC_SCU_PARI
- 139:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows configuration of trap generation on detection of parity error, XMC_SCU_PARITY_EnableTr
- 140:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 141:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Power driver features:
- 142:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows to power the USB module XMC_SCU_POWER_EnableUsb(), XMC_SCU_POWER_DisableUsb()
- 143:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  \endif
- 144:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 145:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Miscellaneous features:
- 146:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows to trigger multiple capture compare unit(CCU) channels to be started together XMC_SCU_
- 147:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  \if XMC4
- 148:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Enables configuration of out of range comparator (ORC) XMC_SCU_EnableOutOfRangeComparator()
- 149:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Enables configuration of die temperature sensor XMC_SCU_EnableTemperatureSensor(), XMC_SCU_Ca
- 150:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Enables configuration of device boot mode XMC_SCU_SetBootMode()<br>
- 151:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  \endif
- 152:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  \if XMC1
- 153:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Enables configuration of die temperature sensor XMC_SCU_StartTempMeasurement(), XMC_SCU_SetRa
- 154:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows configuring supply monitor unit using the structure XMC_SCU_SUPPLYMONITOR_t and API XM
- 155:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows handling of protected bits XMC_SCU_LockProtectedBits(), XMC_SCU_UnlockProtectedBits()<
- 156:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  \endif
- 157:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @{
- 158:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  */
- 159:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  
- 160:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**************************************************************************************************
- 161:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * MACROS
- 162:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  **************************************************************************************************
- 163:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 164:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**************************************************************************************************
- 165:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * ENUMS
- 166:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  **************************************************************************************************
- 167:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**
- 168:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *  Defines the status of SCU API execution, used to verify the SCU related API calls.
- 169:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  */
- 170:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** typedef enum XMC_SCU_STATUS 
- 171:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** {
- 172:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****   XMC_SCU_STATUS_OK   = 0UL, /**< SCU related operation successfully completed.*/
- 173:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****   XMC_SCU_STATUS_ERROR,      /**< SCU related operation failed. When API cannot fulfill request, th
- 174:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****   XMC_SCU_STATUS_BUSY,       /**< Cannot execute the SCU related operation request because
- 175:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****                                   another operation is in progress. \a XMC_SCU_STATUS_BUSY is retur
- 176:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****                                   processing another request. */
- 177:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** } XMC_SCU_STATUS_t;
- 178:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 179:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 180:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**************************************************************************************************
- 181:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * DATA TYPES
- 182:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  **************************************************************************************************
- 183:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 184:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**
- 185:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Function pointer type used for registering callback functions on SCU event occurrence.
- 186:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  */
- 187:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** typedef void (*XMC_SCU_INTERRUPT_EVENT_HANDLER_t)(void);
- 188:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 189:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**************************************************************************************************
- 190:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * DEVICE EXTENSIONS
- 191:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  **************************************************************************************************
- 192:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 193:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** #if (UC_FAMILY == XMC1)
- 194:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** #include <xmc1_scu.h>
- 195:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** #elif (UC_FAMILY == XMC4)
- 196:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** #include <xmc4_scu.h>
- 197:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** #else
- 198:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** #error "Unspecified chipset"
- 199:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** #endif
- 200:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 201:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**************************************************************************************************
- 202:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * API Prototypes
- 203:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  **************************************************************************************************
- 204:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 205:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** #ifdef __cplusplus
- 206:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** extern "C" {
- 207:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** #endif
- 208:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 209:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 210:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**
- 211:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 212:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @param trigger    CCU slices to be triggered synchronously via software. The value is a bitmask 
- 213:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *                    in the register CCUCON. <br>
- 214:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *                    \b Range: Use type @ref XMC_SCU_CCU_TRIGGER_t for bitmask of individual CCU s
- 215:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *                    combined using \a OR operation.
- 216:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 217:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @return None
- 218:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 219:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
- 220:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Generates active edge(low to high) trigger for multiple CCU units at the same time.\n\n
- 221:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Before executing this API, all the required CCU timers should configure external start.
- 222:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The edge of the start signal should be selected as active edge.
- 223:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The input signal for the CCU slice should be selected as SCU input.
- 224:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The above mentioned configurations can be made using the CCU LLD API XMC_CCU4_SLICE_StartConfig(
- 225:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * CCU timer slice should be started using XMC_CCU4_SLICE_StartTimer() before triggering 
- 226:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * the timer using this API.<BR>
- 227:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
- 228:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_CCU4_SLICE_StartConfig(), XMC_CCU4_SLICE_SetInput(), XMC_SCU_SetCcuTriggerLow()\n\n\n
- 229:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  */
- 230:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** __STATIC_INLINE void XMC_SCU_SetCcuTriggerHigh(const uint32_t trigger)
- 231:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** {
- 232:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****   SCU_GENERAL->CCUCON |= (uint32_t)trigger;
- 233:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** }
- 234:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 235:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**
- 236:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 237:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @param trigger  CCU slices to be triggered synchronously via software. The value is a bitmask of
- 238:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *                    in the register CCUCON. <br>
- 239:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *                    \b Range: Use type @ref XMC_SCU_CCU_TRIGGER_t for bitmask of individual CCU s
- 240:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *                    combined using \a OR operation.
- 241:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 242:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @return None
- 243:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 244:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
- 245:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Generates passive edge(high to low) trigger for multiple CCU units at the same time.\n\n
- 246:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Before executing this API, all the required CCU timers should configure external start.
- 247:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The edge of the start signal should be selected as passive edge.
- 248:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The input signal for the CCU slice should be selected as SCU input.
- 249:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The above mentioned configurations can be made using the CCU LLD API XMC_CCU4_SLICE_StartConfig(
- 250:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * CCU timer slice should be started using XMC_CCU4_SLICE_StartTimer() before triggering 
- 251:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * the timer using this API.<BR>
- 252:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
- 253:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_CCU4_SLICE_StartConfig(), XMC_CCU4_SLICE_SetInput(), XMC_SCU_SetCcuTriggerHigh()\n\n\n
- 254:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  */
- 255:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** __STATIC_INLINE void XMC_SCU_SetCcuTriggerLow(const uint32_t trigger)
- 256:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** {
- 257:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****   SCU_GENERAL->CCUCON &= (uint32_t)~trigger;
- 258:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** }
- 259:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 260:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**
- 261:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 262:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @param config Pointer to structure holding the clock prescaler values and divider values for 
- 263:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *                configuring clock generators and clock tree.\n
- 264:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *                \b Range: Configure the members of structure @ref XMC_SCU_CLOCK_CONFIG_t for vari
- 265:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *                parameters of clock setup.
- 266:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 267:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @return None
- 268:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 269:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
- 270:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Initializes clock generators and clock tree.\n\n
- 271:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \if XMC1
- 272:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Peripheral clock and system clock are configured based on the input configuration \a config.
- 273:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The system clock frequency is tuned by configuring the FDIV and IDIV values of CLKCR register.
- 274:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The values of FDIV and IDIV can be provided as part of input configuration.
- 275:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The PCLK divider determines the ratio of peripheral clock to the system clock. 
- 276:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The source of RTC clock is set based on the input configuration. 
- 277:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \a SystemCoreClock variable will be updated with the value of
- 278:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * system clock frequency. Access to protected bit fields are handled internally.
- 279:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \endif
- 280:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \if XMC4
- 281:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Enables the high precision oscillator(fOHP) input and configures the system and peripheral clock
- 282:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Based on the system clock source selected in \a config, either fPLL or fOFI will be chosen as sy
- 283:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Based on PLL mode(normal or prescaler mode) used, PLL ramps up in steps to achieve target freque
- 284:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The clock dividers for CPU, CCU and peripheral clocks will be set based on the input configurati
- 285:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The \a SystemCoreClock variable is set with the value of system clock frequency.
- 286:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \endif
- 287:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
- 288:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_SCU_CLOCK_GetPeripheralClockFrequency(), XMC_SCU_CLOCK_GetCpuClockFrequency() \n\n\n
- 289:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  */
- 290:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** void XMC_SCU_CLOCK_Init(const XMC_SCU_CLOCK_CONFIG_t *const config);
- 291:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 292:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**
- 293:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 294:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @param event  Bit mask of the event to enable. \b Range: Use type @ref XMC_SCU_INTERRUPT_EVENT_t
- 295:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *                for providing the input value. Multiple events can be combined using the \a OR op
- 296:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 297:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @return None
- 298:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 299:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
- 300:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Enables the generation of interrupt for the input events.\n\n
- 301:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The events are enabled by setting the respective bit fields in the SRMSK register. \n
- 302:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Note: User should separately enable the NVIC node responsible for handling the SCU interrupt.
- 303:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The interrupt will be generated when the respective event occurs.
- 304:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
- 305:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * NVIC_EnableIRQ(), XMC_SCU_INTERRUPT_DisableEvent()\n\n\n
- 306:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  */
- 307:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** void XMC_SCU_INTERRUPT_EnableEvent(const XMC_SCU_INTERRUPT_EVENT_t event);
- 308:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 309:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 310:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**
- 311:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 312:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @param event  Bit mask of the event to disable. \b Range: Use type @ref XMC_SCU_INTERRUPT_EVENT_
- 313:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *                for providing the input value. Multiple events can be combined using the \a OR op
- 314:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 315:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @return None
- 316:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 317:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
- 318:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Disables generation of interrupt on occurrence of the input event.\n\n
- 319:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The events are disabled by resetting the respective bit fields in the SRMSK register. \n
- 320:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
- 321:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * NVIC_DisableIRQ(), XMC_SCU_INTERRUPT_EnableEvent()\n\n\n
- 322:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  */
- 323:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** void XMC_SCU_INTERRUPT_DisableEvent(const XMC_SCU_INTERRUPT_EVENT_t event);
- 324:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 325:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**
- 326:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 327:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @param event Bit mask of the event to be triggered. \b Range: Use type @ref XMC_SCU_INTERRUPT_EV
- 328:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *                for providing the input value. Multiple events can be combined using the \a OR op
- 329:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 330:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @return None
- 331:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 332:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
- 333:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Triggers the event as if the hardware raised it.\n\n
- 334:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Event will be triggered by setting the respective bitfield in the SRSET register.\n
- 335:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Note: User should enable the NVIC node that handles the respective event for interrupt generatio
- 336:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
- 337:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * NVIC_EnableIRQ(), XMC_SCU_INTERUPT_GetEventStatus(), XMC_SCU_INTERRUPT_ClearEventStatus() \n\n\n
- 338:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  */
- 339:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** void XMC_SCU_INTERRUPT_TriggerEvent(const XMC_SCU_INTERRUPT_EVENT_t  event);
- 340:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 341:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**
- 342:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @return uint32_t  Status of the SCU events.
- 343:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 344:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
- 345:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Provides the status of all SCU events.\n\n
- 346:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The status is read from the SRRAW register. To check the status of a particular 
- 347:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * event, the returned value should be masked with the bit mask of the event. The bitmask
- 348:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * of events can be obtained using the type @ref XMC_SCU_INTERRUPT_EVENT_t. Multiple events'
- 349:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * status can be checked by combining the bit masks using \a OR operation. 
- 350:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * After detecting the event, the event status should be cleared using software to detect the event
- 351:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
- 352:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_SCU_INTERRUPT_ClearEventStatus(), XMC_SCU_INTERRUPT_TriggerEvent(), XMC_SCU_INTERRUPT_SetEve
- 353:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  */
- 354:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** XMC_SCU_INTERRUPT_EVENT_t XMC_SCU_INTERUPT_GetEventStatus(void);
- 355:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 356:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**
- 357:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 358:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @param event  Bit mask of the events to clear. \b Range: Use type @ref XMC_SCU_INTERRUPT_EVENT_t
- 359:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *                for providing the input value. Multiple events can be combined using the \a OR op
- 360:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 361:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @return None
- 362:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 363:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
- 364:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Clears the event status bit in SRRAW register.\n\n
- 365:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The events are cleared by writing value 1 to their bit positions in the SRCLR register.
- 366:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The API can be used when polling method is used. After detecting the event, the event status
- 367:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * should be cleared using software to detect the event again.
- 368:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 369:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
- 370:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_SCU_INTERUPT_GetEventStatus(), XMC_SCU_INTERRUPT_TriggerEvent() \n\n\n
- 371:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  */
- 372:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** void XMC_SCU_INTERRUPT_ClearEventStatus(const XMC_SCU_INTERRUPT_EVENT_t event);
- 373:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 374:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**
- 375:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 376:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @return uint32_t  Status representing the reason for device reset.
- 377:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 378:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
- 379:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Provides the value representing the reason for device reset.\n\n
- 380:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The return value is an encoded word, which can indicate multiple reasons for the last reset. Eac
- 381:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * returned word is representative of a last reset cause. The returned value should be appropriatel
- 382:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * the cause of reset. 
- 383:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The cause of the last reset gets automatically stored in 
- 384:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * the \a SCU_RSTSTAT register. The reset status shall be reset after each
- 385:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * startup in order to ensure consistent source indication after the next reset.
- 386:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \b Range: The type @ref XMC_SCU_RESET_REASON_t can be used to get the bit masks of the reset cau
- 387:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 388:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
- 389:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_SCU_RESET_ClearDeviceResetReason() \n\n\n
- 390:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  */
- 391:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** __STATIC_INLINE uint32_t XMC_SCU_RESET_GetDeviceResetReason(void)
- 392:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** {
- 393:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****   return ((SCU_RESET->RSTSTAT) & SCU_RESET_RSTSTAT_RSTSTAT_Msk);
- 394:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** }
- 395:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**
- 396:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @return None 
- 397:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 398:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
- 399:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Clears the reset reason bits in the reset status register. \n\n
- 400:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Clearing of the reset status information in the \a SCU_RSTSTAT register via register bit \a RSTC
- 401:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * recommended to ensure a clear indication of the cause of next reset.
- 402:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 403:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
- 404:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_SCU_RESET_GetDeviceResetReason() \n\n\n
- 405:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  */
- 406:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** __STATIC_INLINE void XMC_SCU_RESET_ClearDeviceResetReason(void)
- 407:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** {
- 408:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****   /* Clear RSTSTAT.RSTSTAT bitfield */
- 409:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****   SCU_RESET->RSTCLR = (uint32_t)SCU_RESET_RSTCLR_RSCLR_Msk;
- 410:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** }
- 411:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  
- 412:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**
- 413:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @return uint32_t  Value of CPU clock frequency.
- 414:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 415:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
- 416:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Provides the vlaue of CPU clock frequency.\n\n
- 417:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The value is stored in a global variable \a \b SystemCoreClock.
- 418:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * It is updated when the clock configuration is done using the SCU LLD APIs.
- 419:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The value represents the frequency of clock used for CPU operation.
- 420:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \b Range: Value is of type uint32_t, and gives the value of frequency in Hertz.
- 421:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 422:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
- 423:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_SCU_CLOCK_GetPeripheralClockFrequency(), XMC_SCU_CLOCK_GatePeripheralClock() \n\n\n
- 424:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  */
- 425:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** __STATIC_INLINE uint32_t XMC_SCU_CLOCK_GetCpuClockFrequency(void)
- 426:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** {
- 427:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****   return SystemCoreClock;
- 428:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** }
- 429:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 430:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**
- 431:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @return uint32_t  Value of peripheral clock frequency in Hertz.
- 432:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 433:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
- 434:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Provides the vlaue of clock frequency at which the peripherals are working.\n\n
- 435:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The value is derived from the CPU frequency. \b Range: Value is of type uint32_t. It is represen
- 436:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
- 437:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_SCU_CLOCK_GetCpuClockFrequency(),XMC_SCU_CLOCK_GatePeripheralClock() \n\n\n
- 438:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  */
- 439:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** uint32_t XMC_SCU_CLOCK_GetPeripheralClockFrequency(void); 
- 440:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 441:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** #if(UC_SERIES != XMC45)
- 442:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  
- 443:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**
- 444:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 445:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @param  peripheral The peripheral for which the clock has to be gated. \b Range: Use type @ref X
- 446:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *                    to identify the peripheral clock to be gated.
- 447:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 448:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @return None
- 449:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 450:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
- 451:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Blocks the supply of clock to the selected peripheral.\n\n
- 452:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Clock gating helps in reducing the power consumption. User can selectively gate the clocks of un
- 453:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \if XMC1
- 454:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * fPCLK is the source of clock to various peripherals. Some peripherals support clock gate. Such a
- 455:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * the clock supply for the selected peripheral.
- 456:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Software can request for individual gating of such peripheral clocks by enabling the \a SCU_CGAT
- 457:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * register bit field. Every bit in \a SCU_CGATSET0 register is protected by the bit protection sch
- 458:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * bit fields are handled internally.
- 459:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \endif
- 460:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \if XMC4
- 461:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * fPERI is the source of clock to various peripherals. Some peripherals support clock gate. Such a
- 462:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * the clock supply for the selected peripheral.
- 463:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Software can request for individual gating of such peripheral clocks by enabling one of the \a
- 464:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * SCU_CGATSET0, \a SCU_CGATSET1 or \a SCU_CGATSET2 register bitfields.
- 465:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * 
- 466:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \endif
- 467:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Note: Clock gating shall not be activated unless the module is in reset state. So use \a
- 468:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_SCU_CLOCK_IsPeripheralClockGated() API before enabling the gating of any peripheral.
- 469:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
- 470:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_SCU_CLOCK_IsPeripheralClockGated(), XMC_SCU_CLOCK_UngatePeripheralClock() \n\n\n
- 471:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  */
- 472:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** void XMC_SCU_CLOCK_GatePeripheralClock(const XMC_SCU_PERIPHERAL_CLOCK_t peripheral);
- 473:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  
- 474:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**
- 475:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 476:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @param  peripheral  The peripheral for which the clock has to be ungated. \b Range: Use type @re
- 477:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *                    to identify the peripheral.
- 478:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 479:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @return None
- 480:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 481:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
- 482:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Enables the supply of clock to the selected peripheral.\n\n
- 483:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * By default when the device powers on, the peripheral clock will be gated for the 
- 484:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * peripherals that support clock gating.
- 485:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The peripheral clock should be enabled before using it for any functionality.
- 486:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \if XMC1
- 487:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * fPCLK is the source of clock to various peripherals. Some peripherals support clock gate.
- 488:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Software can request for individual ungating of such peripheral clocks by setting respective bit
- 489:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * in the \a SCU_CGATCLR0 register.
- 490:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \endif
- 491:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \if XMC4
- 492:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * fPERI is the source of clock to various peripherals. Some peripherals support clock gate.
- 493:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Software can request for individual ungating of such peripheral clocks by setting the respective
- 494:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * SCU_CGATCLR0, \a SCU_CGATCLR1 or \a SCU_CGATCLR2 registers.
- 495:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \endif
- 496:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 497:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
- 498:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_SCU_CLOCK_IsPeripheralClockGated(), XMC_SCU_CLOCK_GatePeripheralClock() \n\n\n
- 499:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  */
- 500:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** void XMC_SCU_CLOCK_UngatePeripheralClock(const XMC_SCU_PERIPHERAL_CLOCK_t peripheral);
- 501:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 502:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**
- 503:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 504:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @param  peripheral  The peripheral for which the check for clock gating has to be done. 
- 505:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *                    \b Range: Use type @ref XMC_SCU_PERIPHERAL_CLOCK_t to identify the peripheral
- 506:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 507:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @return bool Status of the peripheral clock gating. \b Range: true if the peripheral clock is ga
- 508:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *              false if the peripheral clock ungated(gate de-asserted).
- 509:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 510:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
- 511:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Gives the status of peripheral clock gating.\n\n
- 512:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \if XMC1
- 513:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Checks the status of peripheral clock gating using the register CGATSTAT0.
- 514:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \endif
- 515:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \if XMC4
- 516:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Checks the status of peripheral clock gating using one of CGATSTAT0, CGATSTAT1 or CGATSTAT2 regi
- 517:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \endif
- 518:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * It is recommended to use this API before
- 519:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * enabling the gating of any peripherals through \a XMC_SCU_CLOCK_GatePeripheralClock() API.
- 520:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 521:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
- 522:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_SCU_CLOCK_UngatePeripheralClock(), XMC_SCU_CLOCK_GatePeripheralClock() \n\n\n
- 523:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  */
- 524:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** bool XMC_SCU_CLOCK_IsPeripheralClockGated(const XMC_SCU_PERIPHERAL_CLOCK_t peripheral);
- 525:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** #endif
- 526:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 527:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** 
- 528:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** /**
- 529:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * @return  uint32_t  Status of the register mirror update.\n
- 530:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *                    \b Range: Use the bit mask of the SCU_GENERAL_MIRRSTS register for the mirror
- 531:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *                    interest. e.g.: SCU_GENERAL_MIRRSTS_RTC_CTR_Msk. Multiple update events can b
- 532:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *                    using \a OR operation.
- 533:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  *
- 534:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
- 535:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Provides the status of hibernate domain register update, when the respective mirror registers ar
- 536:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * The hibernate domain is connected to the core domain via SPI serial communication. MIRRSTS is a 
- 537:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * representing the communication of changed value of a mirror register to its corresponding regist
- 538:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * hibernate domain. The bit fields of the register indicate
- 539:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * that a corresponding register of the hibernate domain is ready to accept a write or that the com
- 540:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * is busy with executing the previous operation.\n
- 541:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  * Note: There is no hibernate domain in XMC1x devices. This register is retained for legacy purpos
- 542:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****  */
- 543:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** __STATIC_INLINE uint32_t XMC_SCU_GetMirrorStatus(void)
- 544:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** {
+  26              	 .file 1 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc/xmc_scu.h"
+   1:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**
+   2:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @file xmc_scu.h
+   3:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @date 2016-03-09
+   4:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+   5:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @cond
+   6:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  **************************************************************************************************
+   7:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * XMClib v2.1.24 - XMC Peripheral Driver Library 
+   8:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+   9:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Copyright (c) 2015-2019, Infineon Technologies AG
+  10:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * All rights reserved.                        
+  11:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *                                             
+  12:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
+  13:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * following conditions are met:   
+  14:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *                                                                              
+  15:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Redistributions of source code must retain the above copyright notice, this list of conditions a
+  16:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * disclaimer.                        
+  17:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * 
+  18:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Redistributions in binary form must reproduce the above copyright notice, this list of condition
+  19:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * disclaimer in the documentation and/or other materials provided with the distribution.          
+  20:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * 
+  21:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Neither the name of the copyright holders nor the names of its contributors may be used to endor
+  22:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * products derived from this software without specific prior written permission.                  
+  23:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *                                                                              
+  24:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
+  25:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
+  26:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
+  27:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
+  28:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
+  29:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+  30:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                            
+  31:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *                                                                              
+  32:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
+  33:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Infineon Technologies AG dave@infineon.com).                                                    
+  34:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  **************************************************************************************************
+  35:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+  36:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Change History
+  37:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * --------------
+  38:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+  39:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * 2015-02-20:
+  40:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *     - Initial <br>
+  41:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+  42:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * 2015-05-20:
+  43:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *     - Documentation improved <br>
+  44:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *     - XMC_ASSERT() hanging issues have fixed for XMC4 devices. <br>
+  45:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+  46:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * 2015-06-20:
+  47:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *     - Removed version macros and declaration of GetDriverVersion API
+  48:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *     - Removed STATIC_INLINE property for the below APIs and declared as void
+  49:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *       XMC_SCU_INTERRUPT_EnableEvent, XMC_SCU_INTERRUPT_DisableEvent,
+  50:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *       XMC_SCU_INTERRUPT_TriggerEvent, XMC_SCU_INTERUPT_GetEventStatus,
+  51:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *       XMC_SCU_INTERUPT_ClearEventStatus
+  52:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+  53:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * 2015-11-30:
+  54:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *     - Documentation improved <br>
+  55:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *      
+  56:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * 2016-03-09:
+  57:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *     - Optimization of write only registers
+  58:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *      
+  59:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @endcond 
+  60:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+  61:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  */
+  62:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** #ifndef XMC_SCU_H
+  63:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** #define XMC_SCU_H
+  64:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  
+  65:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**************************************************************************************************
+  66:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * HEADER FILES
+  67:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  **************************************************************************************************
+  68:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** #include <xmc_common.h>
+  69:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+  70:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**
+  71:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @addtogroup XMClib XMC Peripheral Library
+  72:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @{
+  73:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  */
+  74:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  
+  75:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**
+  76:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @addtogroup SCU
+  77:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @brief System Control Unit(SCU) driver for XMC microcontroller family.
+  78:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+  79:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * System control unit is the SoC power, reset and a clock manager with additional responsibility o
+  80:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * providing system stability protection and other auxiliary functions.<br>
+  81:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * SCU provides the following features,
+  82:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Power control
+  83:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  \if XMC4 
+  84:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Hibernate control 
+  85:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  \endif
+  86:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Reset control
+  87:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Clock control
+  88:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Miscellaneous control(boot mode, system interrupts etc.)<br><br>
+  89:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+  90:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The SCU driver is divided in to clock control logic, reset control logic, system interrupt contr
+  91:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  \if XMC4
+  92:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * , hibernate control logic, trap control logic, parity control logic 
+  93:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  \endif
+  94:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * and miscellaneous control logic.<br>
+  95:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+  96:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Clock driver features:
+  97:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows clock configuration using the structure XMC_SCU_CLOCK_CONFIG_t and API XMC_SCU_CLOCK_I
+  98:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  \if XMC4
+  99:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Provides structure XMC_SCU_CLOCK_SYSPLL_CONFIG_t for configuring the system PLL
+ 100:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows selection of clock source for system PLL, XMC_SCU_CLOCK_GetSystemPllClockSource()
+ 101:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Provides APIs for configuring different module clock frequencies XMC_SCU_CLOCK_SetWdtClockDiv
+ 102:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows selection of clock source for external output, XMC_SCU_CLOCK_SetExternalOutputClockSou
+ 103:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Provides APIs for enabling external high power oscillator and ultra low power oscillator, XMC
+ 104:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Provides APIs for getting various clock frequencies XMC_SCU_CLOCK_GetPeripheralClockFrequency
+ 105:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  XMC_SCU_CLOCK_GetCpuClockFrequency(), XMC_SCU_CLOCK_GetSystemClockFrequency()<br>
+ 106:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  \endif
+ 107:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  \if XMC1
+ 108:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows selection of peripheral clock frequency, XMC_SCU_CLOCK_SetFastPeripheralClockSource()
+ 109:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Provides API to get the peripheral clock frequency, XMC_SCU_CLOCK_GetFastPeripheralClockFrequ
+ 110:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  \endif
+ 111:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 112:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Reset driver features:
+ 113:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  \if XMC4
+ 114:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows to handle peripheral reset XMC_SCU_RESET_AssertPeripheralReset(), XMC_SCU_RESET_Deasse
+ 115:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows configuration of NMI generation for selected events, XMC_SCU_INTERRUPT_EnableNmiReques
+ 116:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  \endif
+ 117:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  \if XMC1
+ 118:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows to trigger device reset XMC_SCU_RESET_AssertMasterReset()
+ 119:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows to configure multiple sources for reset, XMC_SCU_RESET_EnableResetRequest()
+ 120:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  \endif <br>
+ 121:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 122:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Interrupt driver features:
+ 123:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Provides APIs for enabling/ disabling interrupt event generation XMC_SCU_INTERRUPT_EnableEven
+ 124:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  XMC_SCU_INTERRUPT_DisableEvent()
+ 125:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Provides API for registering callback function for events XMC_SCU_INTERRUPT_SetEventHandler()
+ 126:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 127:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  \if XMC4
+ 128:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Hibernate driver features:
+ 129:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows configuration of hibernate domain XMC_SCU_HIB_EnableHibernateDomain(), XMC_SCU_HIB_Dis
+ 130:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows selection of standby clock source, XMC_SCU_HIB_SetStandbyClockSource()
+ 131:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows selection of RTC clock source, XMC_SCU_HIB_SetRtcClockSource()
+ 132:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Provides API for enabling slow internal clock used for backup clock, XMC_SCU_HIB_EnableIntern
+ 133:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 134:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Trap driver features:
+ 135:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows handling of trap XMC_SCU_TRAP_Enable(), XMC_SCU_TRAP_GetStatus(), XMC_SCU_TRAP_Trigger
+ 136:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 137:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Parity driver features:
+ 138:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Parity error generated by on-chip RAM can be monitored, XMC_SCU_PARITY_Enable(), XMC_SCU_PARI
+ 139:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows configuration of trap generation on detection of parity error, XMC_SCU_PARITY_EnableTr
+ 140:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 141:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Power driver features:
+ 142:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows to power the USB module XMC_SCU_POWER_EnableUsb(), XMC_SCU_POWER_DisableUsb()
+ 143:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  \endif
+ 144:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 145:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Miscellaneous features:
+ 146:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows to trigger multiple capture compare unit(CCU) channels to be started together XMC_SCU_
+ 147:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  \if XMC4
+ 148:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Enables configuration of out of range comparator (ORC) XMC_SCU_EnableOutOfRangeComparator()
+ 149:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Enables configuration of die temperature sensor XMC_SCU_EnableTemperatureSensor(), XMC_SCU_Ca
+ 150:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Enables configuration of device boot mode XMC_SCU_SetBootMode()<br>
+ 151:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  \endif
+ 152:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  \if XMC1
+ 153:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Enables configuration of die temperature sensor XMC_SCU_StartTempMeasurement(), XMC_SCU_SetRa
+ 154:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows configuring supply monitor unit using the structure XMC_SCU_SUPPLYMONITOR_t and API XM
+ 155:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * -# Allows handling of protected bits XMC_SCU_LockProtectedBits(), XMC_SCU_UnlockProtectedBits()<
+ 156:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  \endif
+ 157:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @{
+ 158:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  */
+ 159:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  
+ 160:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**************************************************************************************************
+ 161:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * MACROS
+ 162:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  **************************************************************************************************
+ 163:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 164:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**************************************************************************************************
+ 165:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * ENUMS
+ 166:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  **************************************************************************************************
+ 167:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**
+ 168:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *  Defines the status of SCU API execution, used to verify the SCU related API calls.
+ 169:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  */
+ 170:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** typedef enum XMC_SCU_STATUS 
+ 171:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** {
+ 172:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****   XMC_SCU_STATUS_OK   = 0UL, /**< SCU related operation successfully completed.*/
+ 173:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****   XMC_SCU_STATUS_ERROR,      /**< SCU related operation failed. When API cannot fulfill request, th
+ 174:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****   XMC_SCU_STATUS_BUSY,       /**< Cannot execute the SCU related operation request because
+ 175:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****                                   another operation is in progress. \a XMC_SCU_STATUS_BUSY is retur
+ 176:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****                                   processing another request. */
+ 177:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** } XMC_SCU_STATUS_t;
+ 178:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 179:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 180:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**************************************************************************************************
+ 181:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * DATA TYPES
+ 182:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  **************************************************************************************************
+ 183:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 184:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**
+ 185:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Function pointer type used for registering callback functions on SCU event occurrence.
+ 186:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  */
+ 187:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** typedef void (*XMC_SCU_INTERRUPT_EVENT_HANDLER_t)(void);
+ 188:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 189:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**************************************************************************************************
+ 190:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * DEVICE EXTENSIONS
+ 191:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  **************************************************************************************************
+ 192:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 193:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** #if (UC_FAMILY == XMC1)
+ 194:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** #include <xmc1_scu.h>
+ 195:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** #elif (UC_FAMILY == XMC4)
+ 196:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** #include <xmc4_scu.h>
+ 197:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** #else
+ 198:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** #error "Unspecified chipset"
+ 199:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** #endif
+ 200:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 201:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**************************************************************************************************
+ 202:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * API Prototypes
+ 203:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  **************************************************************************************************
+ 204:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 205:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** #ifdef __cplusplus
+ 206:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** extern "C" {
+ 207:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** #endif
+ 208:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 209:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 210:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**
+ 211:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 212:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @param trigger    CCU slices to be triggered synchronously via software. The value is a bitmask 
+ 213:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *                    in the register CCUCON. <br>
+ 214:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *                    \b Range: Use type @ref XMC_SCU_CCU_TRIGGER_t for bitmask of individual CCU s
+ 215:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *                    combined using \a OR operation.
+ 216:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 217:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @return None
+ 218:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 219:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
+ 220:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Generates active edge(low to high) trigger for multiple CCU units at the same time.\n\n
+ 221:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Before executing this API, all the required CCU timers should configure external start.
+ 222:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The edge of the start signal should be selected as active edge.
+ 223:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The input signal for the CCU slice should be selected as SCU input.
+ 224:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The above mentioned configurations can be made using the CCU LLD API XMC_CCU4_SLICE_StartConfig(
+ 225:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * CCU timer slice should be started using XMC_CCU4_SLICE_StartTimer() before triggering 
+ 226:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * the timer using this API.<BR>
+ 227:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
+ 228:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_CCU4_SLICE_StartConfig(), XMC_CCU4_SLICE_SetInput(), XMC_SCU_SetCcuTriggerLow()\n\n\n
+ 229:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  */
+ 230:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** __STATIC_INLINE void XMC_SCU_SetCcuTriggerHigh(const uint32_t trigger)
+ 231:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** {
+ 232:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****   SCU_GENERAL->CCUCON |= (uint32_t)trigger;
+ 233:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** }
+ 234:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 235:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**
+ 236:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 237:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @param trigger  CCU slices to be triggered synchronously via software. The value is a bitmask of
+ 238:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *                    in the register CCUCON. <br>
+ 239:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *                    \b Range: Use type @ref XMC_SCU_CCU_TRIGGER_t for bitmask of individual CCU s
+ 240:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *                    combined using \a OR operation.
+ 241:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 242:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @return None
+ 243:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 244:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
+ 245:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Generates passive edge(high to low) trigger for multiple CCU units at the same time.\n\n
+ 246:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Before executing this API, all the required CCU timers should configure external start.
+ 247:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The edge of the start signal should be selected as passive edge.
+ 248:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The input signal for the CCU slice should be selected as SCU input.
+ 249:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The above mentioned configurations can be made using the CCU LLD API XMC_CCU4_SLICE_StartConfig(
+ 250:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * CCU timer slice should be started using XMC_CCU4_SLICE_StartTimer() before triggering 
+ 251:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * the timer using this API.<BR>
+ 252:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
+ 253:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_CCU4_SLICE_StartConfig(), XMC_CCU4_SLICE_SetInput(), XMC_SCU_SetCcuTriggerHigh()\n\n\n
+ 254:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  */
+ 255:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** __STATIC_INLINE void XMC_SCU_SetCcuTriggerLow(const uint32_t trigger)
+ 256:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** {
+ 257:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****   SCU_GENERAL->CCUCON &= (uint32_t)~trigger;
+ 258:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** }
+ 259:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 260:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**
+ 261:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 262:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @param config Pointer to structure holding the clock prescaler values and divider values for 
+ 263:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *                configuring clock generators and clock tree.\n
+ 264:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *                \b Range: Configure the members of structure @ref XMC_SCU_CLOCK_CONFIG_t for vari
+ 265:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *                parameters of clock setup.
+ 266:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 267:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @return None
+ 268:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 269:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
+ 270:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Initializes clock generators and clock tree.\n\n
+ 271:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \if XMC1
+ 272:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Peripheral clock and system clock are configured based on the input configuration \a config.
+ 273:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The system clock frequency is tuned by configuring the FDIV and IDIV values of CLKCR register.
+ 274:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The values of FDIV and IDIV can be provided as part of input configuration.
+ 275:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The PCLK divider determines the ratio of peripheral clock to the system clock. 
+ 276:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The source of RTC clock is set based on the input configuration. 
+ 277:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \a SystemCoreClock variable will be updated with the value of
+ 278:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * system clock frequency. Access to protected bit fields are handled internally.
+ 279:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \endif
+ 280:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \if XMC4
+ 281:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Enables the high precision oscillator(fOHP) input and configures the system and peripheral clock
+ 282:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Based on the system clock source selected in \a config, either fPLL or fOFI will be chosen as sy
+ 283:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Based on PLL mode(normal or prescaler mode) used, PLL ramps up in steps to achieve target freque
+ 284:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The clock dividers for CPU, CCU and peripheral clocks will be set based on the input configurati
+ 285:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The \a SystemCoreClock variable is set with the value of system clock frequency.
+ 286:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \endif
+ 287:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
+ 288:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_SCU_CLOCK_GetPeripheralClockFrequency(), XMC_SCU_CLOCK_GetCpuClockFrequency() \n\n\n
+ 289:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  */
+ 290:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** void XMC_SCU_CLOCK_Init(const XMC_SCU_CLOCK_CONFIG_t *const config);
+ 291:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 292:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**
+ 293:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 294:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @param event  Bit mask of the event to enable. \b Range: Use type @ref XMC_SCU_INTERRUPT_EVENT_t
+ 295:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *                for providing the input value. Multiple events can be combined using the \a OR op
+ 296:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 297:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @return None
+ 298:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 299:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
+ 300:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Enables the generation of interrupt for the input events.\n\n
+ 301:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The events are enabled by setting the respective bit fields in the SRMSK register. \n
+ 302:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Note: User should separately enable the NVIC node responsible for handling the SCU interrupt.
+ 303:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The interrupt will be generated when the respective event occurs.
+ 304:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
+ 305:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * NVIC_EnableIRQ(), XMC_SCU_INTERRUPT_DisableEvent()\n\n\n
+ 306:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  */
+ 307:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** void XMC_SCU_INTERRUPT_EnableEvent(const XMC_SCU_INTERRUPT_EVENT_t event);
+ 308:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 309:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 310:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**
+ 311:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 312:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @param event  Bit mask of the event to disable. \b Range: Use type @ref XMC_SCU_INTERRUPT_EVENT_
+ 313:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *                for providing the input value. Multiple events can be combined using the \a OR op
+ 314:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 315:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @return None
+ 316:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 317:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
+ 318:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Disables generation of interrupt on occurrence of the input event.\n\n
+ 319:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The events are disabled by resetting the respective bit fields in the SRMSK register. \n
+ 320:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
+ 321:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * NVIC_DisableIRQ(), XMC_SCU_INTERRUPT_EnableEvent()\n\n\n
+ 322:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  */
+ 323:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** void XMC_SCU_INTERRUPT_DisableEvent(const XMC_SCU_INTERRUPT_EVENT_t event);
+ 324:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 325:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**
+ 326:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 327:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @param event Bit mask of the event to be triggered. \b Range: Use type @ref XMC_SCU_INTERRUPT_EV
+ 328:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *                for providing the input value. Multiple events can be combined using the \a OR op
+ 329:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 330:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @return None
+ 331:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 332:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
+ 333:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Triggers the event as if the hardware raised it.\n\n
+ 334:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Event will be triggered by setting the respective bitfield in the SRSET register.\n
+ 335:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Note: User should enable the NVIC node that handles the respective event for interrupt generatio
+ 336:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
+ 337:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * NVIC_EnableIRQ(), XMC_SCU_INTERUPT_GetEventStatus(), XMC_SCU_INTERRUPT_ClearEventStatus() \n\n\n
+ 338:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  */
+ 339:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** void XMC_SCU_INTERRUPT_TriggerEvent(const XMC_SCU_INTERRUPT_EVENT_t  event);
+ 340:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 341:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**
+ 342:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @return uint32_t  Status of the SCU events.
+ 343:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 344:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
+ 345:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Provides the status of all SCU events.\n\n
+ 346:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The status is read from the SRRAW register. To check the status of a particular 
+ 347:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * event, the returned value should be masked with the bit mask of the event. The bitmask
+ 348:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * of events can be obtained using the type @ref XMC_SCU_INTERRUPT_EVENT_t. Multiple events'
+ 349:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * status can be checked by combining the bit masks using \a OR operation. 
+ 350:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * After detecting the event, the event status should be cleared using software to detect the event
+ 351:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
+ 352:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_SCU_INTERRUPT_ClearEventStatus(), XMC_SCU_INTERRUPT_TriggerEvent(), XMC_SCU_INTERRUPT_SetEve
+ 353:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  */
+ 354:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** XMC_SCU_INTERRUPT_EVENT_t XMC_SCU_INTERUPT_GetEventStatus(void);
+ 355:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 356:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**
+ 357:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 358:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @param event  Bit mask of the events to clear. \b Range: Use type @ref XMC_SCU_INTERRUPT_EVENT_t
+ 359:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *                for providing the input value. Multiple events can be combined using the \a OR op
+ 360:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 361:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @return None
+ 362:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 363:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
+ 364:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Clears the event status bit in SRRAW register.\n\n
+ 365:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The events are cleared by writing value 1 to their bit positions in the SRCLR register.
+ 366:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The API can be used when polling method is used. After detecting the event, the event status
+ 367:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * should be cleared using software to detect the event again.
+ 368:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 369:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
+ 370:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_SCU_INTERUPT_GetEventStatus(), XMC_SCU_INTERRUPT_TriggerEvent() \n\n\n
+ 371:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  */
+ 372:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** void XMC_SCU_INTERRUPT_ClearEventStatus(const XMC_SCU_INTERRUPT_EVENT_t event);
+ 373:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 374:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**
+ 375:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 376:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @return uint32_t  Status representing the reason for device reset.
+ 377:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 378:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
+ 379:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Provides the value representing the reason for device reset.\n\n
+ 380:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The return value is an encoded word, which can indicate multiple reasons for the last reset. Eac
+ 381:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * returned word is representative of a last reset cause. The returned value should be appropriatel
+ 382:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * the cause of reset. 
+ 383:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The cause of the last reset gets automatically stored in 
+ 384:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * the \a SCU_RSTSTAT register. The reset status shall be reset after each
+ 385:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * startup in order to ensure consistent source indication after the next reset.
+ 386:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \b Range: The type @ref XMC_SCU_RESET_REASON_t can be used to get the bit masks of the reset cau
+ 387:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 388:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
+ 389:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_SCU_RESET_ClearDeviceResetReason() \n\n\n
+ 390:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  */
+ 391:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** __STATIC_INLINE uint32_t XMC_SCU_RESET_GetDeviceResetReason(void)
+ 392:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** {
+ 393:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****   return ((SCU_RESET->RSTSTAT) & SCU_RESET_RSTSTAT_RSTSTAT_Msk);
+ 394:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** }
+ 395:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**
+ 396:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @return None 
+ 397:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 398:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
+ 399:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Clears the reset reason bits in the reset status register. \n\n
+ 400:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Clearing of the reset status information in the \a SCU_RSTSTAT register via register bit \a RSTC
+ 401:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * recommended to ensure a clear indication of the cause of next reset.
+ 402:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 403:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
+ 404:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_SCU_RESET_GetDeviceResetReason() \n\n\n
+ 405:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  */
+ 406:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** __STATIC_INLINE void XMC_SCU_RESET_ClearDeviceResetReason(void)
+ 407:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** {
+ 408:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****   /* Clear RSTSTAT.RSTSTAT bitfield */
+ 409:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****   SCU_RESET->RSTCLR = (uint32_t)SCU_RESET_RSTCLR_RSCLR_Msk;
+ 410:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** }
+ 411:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  
+ 412:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**
+ 413:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @return uint32_t  Value of CPU clock frequency.
+ 414:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 415:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
+ 416:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Provides the vlaue of CPU clock frequency.\n\n
+ 417:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The value is stored in a global variable \a \b SystemCoreClock.
+ 418:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * It is updated when the clock configuration is done using the SCU LLD APIs.
+ 419:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The value represents the frequency of clock used for CPU operation.
+ 420:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \b Range: Value is of type uint32_t, and gives the value of frequency in Hertz.
+ 421:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 422:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
+ 423:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_SCU_CLOCK_GetPeripheralClockFrequency(), XMC_SCU_CLOCK_GatePeripheralClock() \n\n\n
+ 424:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  */
+ 425:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** __STATIC_INLINE uint32_t XMC_SCU_CLOCK_GetCpuClockFrequency(void)
+ 426:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** {
+ 427:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****   return SystemCoreClock;
+ 428:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** }
+ 429:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 430:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**
+ 431:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @return uint32_t  Value of peripheral clock frequency in Hertz.
+ 432:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 433:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
+ 434:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Provides the vlaue of clock frequency at which the peripherals are working.\n\n
+ 435:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The value is derived from the CPU frequency. \b Range: Value is of type uint32_t. It is represen
+ 436:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
+ 437:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_SCU_CLOCK_GetCpuClockFrequency(),XMC_SCU_CLOCK_GatePeripheralClock() \n\n\n
+ 438:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  */
+ 439:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** uint32_t XMC_SCU_CLOCK_GetPeripheralClockFrequency(void); 
+ 440:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 441:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** #if(UC_SERIES != XMC45)
+ 442:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  
+ 443:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**
+ 444:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 445:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @param  peripheral The peripheral for which the clock has to be gated. \b Range: Use type @ref X
+ 446:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *                    to identify the peripheral clock to be gated.
+ 447:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 448:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @return None
+ 449:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 450:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
+ 451:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Blocks the supply of clock to the selected peripheral.\n\n
+ 452:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Clock gating helps in reducing the power consumption. User can selectively gate the clocks of un
+ 453:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \if XMC1
+ 454:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * fPCLK is the source of clock to various peripherals. Some peripherals support clock gate. Such a
+ 455:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * the clock supply for the selected peripheral.
+ 456:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Software can request for individual gating of such peripheral clocks by enabling the \a SCU_CGAT
+ 457:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * register bit field. Every bit in \a SCU_CGATSET0 register is protected by the bit protection sch
+ 458:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * bit fields are handled internally.
+ 459:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \endif
+ 460:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \if XMC4
+ 461:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * fPERI is the source of clock to various peripherals. Some peripherals support clock gate. Such a
+ 462:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * the clock supply for the selected peripheral.
+ 463:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Software can request for individual gating of such peripheral clocks by enabling one of the \a
+ 464:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * SCU_CGATSET0, \a SCU_CGATSET1 or \a SCU_CGATSET2 register bitfields.
+ 465:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * 
+ 466:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \endif
+ 467:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Note: Clock gating shall not be activated unless the module is in reset state. So use \a
+ 468:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_SCU_CLOCK_IsPeripheralClockGated() API before enabling the gating of any peripheral.
+ 469:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
+ 470:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_SCU_CLOCK_IsPeripheralClockGated(), XMC_SCU_CLOCK_UngatePeripheralClock() \n\n\n
+ 471:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  */
+ 472:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** void XMC_SCU_CLOCK_GatePeripheralClock(const XMC_SCU_PERIPHERAL_CLOCK_t peripheral);
+ 473:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  
+ 474:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**
+ 475:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 476:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @param  peripheral  The peripheral for which the clock has to be ungated. \b Range: Use type @re
+ 477:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *                    to identify the peripheral.
+ 478:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 479:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @return None
+ 480:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 481:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
+ 482:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Enables the supply of clock to the selected peripheral.\n\n
+ 483:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * By default when the device powers on, the peripheral clock will be gated for the 
+ 484:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * peripherals that support clock gating.
+ 485:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The peripheral clock should be enabled before using it for any functionality.
+ 486:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \if XMC1
+ 487:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * fPCLK is the source of clock to various peripherals. Some peripherals support clock gate.
+ 488:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Software can request for individual ungating of such peripheral clocks by setting respective bit
+ 489:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * in the \a SCU_CGATCLR0 register.
+ 490:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \endif
+ 491:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \if XMC4
+ 492:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * fPERI is the source of clock to various peripherals. Some peripherals support clock gate.
+ 493:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Software can request for individual ungating of such peripheral clocks by setting the respective
+ 494:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * SCU_CGATCLR0, \a SCU_CGATCLR1 or \a SCU_CGATCLR2 registers.
+ 495:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \endif
+ 496:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 497:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
+ 498:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_SCU_CLOCK_IsPeripheralClockGated(), XMC_SCU_CLOCK_GatePeripheralClock() \n\n\n
+ 499:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  */
+ 500:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** void XMC_SCU_CLOCK_UngatePeripheralClock(const XMC_SCU_PERIPHERAL_CLOCK_t peripheral);
+ 501:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 502:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**
+ 503:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 504:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @param  peripheral  The peripheral for which the check for clock gating has to be done. 
+ 505:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *                    \b Range: Use type @ref XMC_SCU_PERIPHERAL_CLOCK_t to identify the peripheral
+ 506:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 507:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @return bool Status of the peripheral clock gating. \b Range: true if the peripheral clock is ga
+ 508:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *              false if the peripheral clock ungated(gate de-asserted).
+ 509:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 510:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
+ 511:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Gives the status of peripheral clock gating.\n\n
+ 512:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \if XMC1
+ 513:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Checks the status of peripheral clock gating using the register CGATSTAT0.
+ 514:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \endif
+ 515:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \if XMC4
+ 516:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Checks the status of peripheral clock gating using one of CGATSTAT0, CGATSTAT1 or CGATSTAT2 regi
+ 517:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \endif
+ 518:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * It is recommended to use this API before
+ 519:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * enabling the gating of any peripherals through \a XMC_SCU_CLOCK_GatePeripheralClock() API.
+ 520:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 521:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Related APIs:</b><BR>
+ 522:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * XMC_SCU_CLOCK_UngatePeripheralClock(), XMC_SCU_CLOCK_GatePeripheralClock() \n\n\n
+ 523:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  */
+ 524:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** bool XMC_SCU_CLOCK_IsPeripheralClockGated(const XMC_SCU_PERIPHERAL_CLOCK_t peripheral);
+ 525:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** #endif
+ 526:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 527:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** 
+ 528:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** /**
+ 529:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * @return  uint32_t  Status of the register mirror update.\n
+ 530:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *                    \b Range: Use the bit mask of the SCU_GENERAL_MIRRSTS register for the mirror
+ 531:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *                    interest. e.g.: SCU_GENERAL_MIRRSTS_RTC_CTR_Msk. Multiple update events can b
+ 532:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *                    using \a OR operation.
+ 533:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  *
+ 534:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * \par<b>Description</b><br>
+ 535:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Provides the status of hibernate domain register update, when the respective mirror registers ar
+ 536:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * The hibernate domain is connected to the core domain via SPI serial communication. MIRRSTS is a 
+ 537:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * representing the communication of changed value of a mirror register to its corresponding regist
+ 538:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * hibernate domain. The bit fields of the register indicate
+ 539:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * that a corresponding register of the hibernate domain is ready to accept a write or that the com
+ 540:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * is busy with executing the previous operation.\n
+ 541:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  * Note: There is no hibernate domain in XMC1x devices. This register is retained for legacy purpos
+ 542:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****  */
+ 543:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** __STATIC_INLINE uint32_t XMC_SCU_GetMirrorStatus(void)
+ 544:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** {
   27              	 .loc 1 544 0
   28              	 .cfi_startproc
   29              	 
@@ -579,11 +579,11 @@
   36 0002 00AF     	 add r7,sp,#0
   37              	.LCFI1:
   38              	 .cfi_def_cfa_register 7
- 545:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h ****   return(SCU_GENERAL->MIRRSTS);
+ 545:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h ****   return(SCU_GENERAL->MIRRSTS);
   39              	 .loc 1 545 0
   40 0004 034B     	 ldr r3,.L3
   41 0006 D3F8C430 	 ldr r3,[r3,#196]
- 546:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_scu.h **** }
+ 546:C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc\xmc_scu.h **** }
   42              	 .loc 1 546 0
   43 000a 1846     	 mov r0,r3
   44 000c BD46     	 mov sp,r7
@@ -1708,12 +1708,12 @@
  884              	.Letext0:
  885              	 .file 3 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
  886              	 .file 4 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
- 887              	 .file 5 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Infineon/XMC4300_series/Include/XMC4300.h"
+ 887              	 .file 5 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Infineon/XMC4300_series/Include/XMC4300.h"
  888              	 .file 6 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\time.h"
- 889              	 .file 7 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc/xmc_rtc.h"
- 890              	 .file 8 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/cmsis_gcc.h"
- 891              	 .file 9 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/core_cm4.h"
- 892              	 .file 10 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Infineon/XMC4300_series/Include/system_XMC4300.h"
+ 889              	 .file 7 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc/xmc_rtc.h"
+ 890              	 .file 8 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 891              	 .file 9 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Include/core_cm4.h"
+ 892              	 .file 10 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Infineon/XMC4300_series/Include/system_XMC4300.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 xmc_rtc.c
     {standard input}:20     .text.XMC_SCU_GetMirrorStatus:00000000 $t

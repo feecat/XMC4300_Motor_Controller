@@ -1037,8 +1037,8 @@
  771              	 .file 4 "../SSC/Src/sdoserv.h"
  772              	 .file 5 "../SSC/Src/objdef.h"
  773              	 .file 6 "../SSC/Src/XMC_ESCObjects.h"
- 774              	 .file 7 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/cmsis_gcc.h"
- 775              	 .file 8 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/core_cm4.h"
+ 774              	 .file 7 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 775              	 .file 8 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Include/core_cm4.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 XMC_ESC.c
     {standard input}:24     .data.OUT_GENERICProcessDataMapping0x1600:00000000 OUT_GENERICProcessDataMapping0x1600

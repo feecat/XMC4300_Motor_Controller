@@ -4129,8 +4129,8 @@
  2770              	 .file 5 "../SSC/Src/ecatcoe.h"
  2771              	 .file 6 "../SSC/Src/sdoserv.h"
  2772              	 .file 7 "../SSC/Src/objdef.h"
- 2773              	 .file 8 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/cmsis_gcc.h"
- 2774              	 .file 9 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/core_cm4.h"
+ 2773              	 .file 8 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 2774              	 .file 9 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Include/core_cm4.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 sdoserv.c
                             *COM*:00000001 u8PendingSdo

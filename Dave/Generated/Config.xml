@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Project MotherSystem_Version="" Name="XMC4300_PWMTest" Path="C:\Users\Admin\DaveWorkspaces\XMC4300_PWMTest">
+<Project MotherSystem_Version="" Name="XMC4300_Motor_Controller" Path="C:\Users\Admin\DaveWorkspaces\XMC4300_Motor_Controller">
     <COMPILER>
         <Name>ARM_GCC_HOME</Name>
         <Version/>

@@ -137,7 +137,7 @@
  152 0001 00       	 .byte 0
  153 0002 00       	 .byte 0
  154 0003 00       	 .byte 0
- 155 0004 07       	 .byte 7
+ 155 0004 01       	 .byte 1
  156 0005 00       	 .byte 0
  157 0006 0000     	 .space 2
  158              	 .global PWM_1_event0_config
@@ -179,8 +179,8 @@
  204              	PWM_1_config_handle:
  205 0000 00       	 .byte 0
  206 0001 00       	 .space 1
- 207 0002 23F4     	 .short -3037
- 208 0004 127A     	 .short 31250
+ 207 0002 CF02     	 .short 719
+ 208 0004 6801     	 .short 360
  209 0006 00       	 .byte 0
  210 0007 01       	 .byte 1
  211 0008 00       	 .byte 0
@@ -250,7 +250,7 @@
  278 0001 00       	 .byte 0
  279 0002 00       	 .byte 0
  280 0003 00       	 .byte 0
- 281 0004 07       	 .byte 7
+ 281 0004 01       	 .byte 1
  282 0005 00       	 .byte 0
  283 0006 0000     	 .space 2
  284              	 .global PWM_2_event0_config
@@ -292,8 +292,8 @@
  330              	PWM_2_config_handle:
  331 0000 00       	 .byte 0
  332 0001 00       	 .space 1
- 333 0002 23F4     	 .short -3037
- 334 0004 127A     	 .short 31250
+ 333 0002 CF02     	 .short 719
+ 334 0004 6801     	 .short 360
  335 0006 00       	 .byte 0
  336 0007 01       	 .byte 1
  337 0008 00       	 .byte 0

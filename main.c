@@ -34,6 +34,7 @@ uint8_t Dir[3];
 int32_t StartPos[3];
 int32_t ProcessPos[3];
 int32_t Config;
+uint16_t SmoothTime;
 
 //Output Enable
 	uint8_t outenable;
@@ -98,8 +99,14 @@ int32_t Config;
 	int32_t PosCtrl(uint8_t Channel)
 	{
 		int32_t time = abs(ActVel[Channel]) / Acc[Channel];
+		int32_t accpos;
 		// #FIXME IDK why but it works fine for me, The pulse in down range is not ideal. add some time will fix it.
-		int32_t accpos = ((time + 20)* abs(ActVel[Channel]) ) / 2000;
+		if (Config >> 1 & 0x1){
+			SmoothTime = Config >> 16;
+			accpos = ((time + SmoothTime)* abs(ActVel[Channel]) ) / 2000;
+		}else{
+			accpos = ((time + 20)* abs(ActVel[Channel]) ) / 2000;
+		}
 
 		if (TarPos[Channel] > ActPos[Channel]){//Position Movement
 			if (TarPos[Channel] < (ActPos[Channel] + accpos)){

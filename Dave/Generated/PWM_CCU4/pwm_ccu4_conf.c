@@ -233,7 +233,7 @@
       .prescaler_mode        = (uint32_t)XMC_CCU4_SLICE_PRESCALER_MODE_NORMAL,
 
       .mcm_enable            = 0U,
-      .prescaler_initval     = 7U,
+      .prescaler_initval     = 1U,
       .dither_limit          = 0U,
       .timer_concatenation   = 0U,
       .passive_level         = (uint32_t)XMC_CCU4_SLICE_OUTPUT_PASSIVE_LEVEL_LOW, 
@@ -288,8 +288,8 @@
     const PWM_CCU4_CONFIG_t  PWM_1_config_handle =
     {
       .start_control                       = false,      
-      .period_value                        = 62499U,
-      .compare_value                       = 31250U,
+      .period_value                        = 719U,
+      .compare_value                       = 360U,
 
       .int_per_match                       = false,
       .int_cmp_match_up                    = true,
@@ -394,7 +394,7 @@
       .prescaler_mode        = (uint32_t)XMC_CCU4_SLICE_PRESCALER_MODE_NORMAL,
 
       .mcm_enable            = 0U,
-      .prescaler_initval     = 7U,
+      .prescaler_initval     = 1U,
       .dither_limit          = 0U,
       .timer_concatenation   = 0U,
       .passive_level         = (uint32_t)XMC_CCU4_SLICE_OUTPUT_PASSIVE_LEVEL_LOW, 
@@ -449,8 +449,8 @@
     const PWM_CCU4_CONFIG_t  PWM_2_config_handle =
     {
       .start_control                       = false,      
-      .period_value                        = 62499U,
-      .compare_value                       = 31250U,
+      .period_value                        = 719U,
+      .compare_value                       = 360U,
 
       .int_per_match                       = false,
       .int_cmp_match_up                    = true,

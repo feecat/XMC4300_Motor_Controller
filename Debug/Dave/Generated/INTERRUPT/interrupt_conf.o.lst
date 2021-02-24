@@ -29,7 +29,7 @@
   31              	 .align 2
   34              	INT_SYNC1:
   35 0000 05       	 .byte 5
-  36 0001 3F       	 .byte 63
+  36 0001 00       	 .byte 0
   37 0002 00       	 .byte 0
   38 0003 01       	 .byte 1
   39              	 .global INT_SYNC0
@@ -37,7 +37,7 @@
   41              	 .align 2
   44              	INT_SYNC0:
   45 0000 08       	 .byte 8
-  46 0001 3F       	 .byte 63
+  46 0001 00       	 .byte 0
   47 0002 00       	 .byte 0
   48 0003 01       	 .byte 1
   49              	 .global INT_PWM_0

@@ -84,7 +84,7 @@ const INTERRUPT_t INT_SYNC1 =
  .irqctrl = (XMC_SCU_IRQCTRL_t)0U,
 #endif
   .node = (IRQn_Type)5,
-  .priority = 63,  
+  .priority = 0,  
 #if(UC_FAMILY == XMC4)  
   .subpriority = 0,
 #endif  
@@ -98,7 +98,7 @@ const INTERRUPT_t INT_SYNC0 =
  .irqctrl = (XMC_SCU_IRQCTRL_t)0U,
 #endif
   .node = (IRQn_Type)8,
-  .priority = 63,  
+  .priority = 0,  
 #if(UC_FAMILY == XMC4)  
   .subpriority = 0,
 #endif  

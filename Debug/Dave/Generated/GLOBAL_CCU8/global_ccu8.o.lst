@@ -1,0 +1,1494 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "global_ccu8.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .section .text.XMC_CCU8_StartPrescaler,"ax",%progbits
+  20              	 .align 2
+  21              	 .thumb
+  22              	 .thumb_func
+  24              	XMC_CCU8_StartPrescaler:
+  25              	.LFB139:
+  26              	 .file 1 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc/xmc_ccu8.h"
+   1:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+   2:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @file xmc_ccu8.h
+   3:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @date 2019-07-29
+   4:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+   5:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @cond
+   6:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  **************************************************************************************************
+   7:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * XMClib v2.1.24 - XMC Peripheral Driver Library 
+   8:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+   9:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Copyright (c) 2015-2019, Infineon Technologies AG
+  10:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * All rights reserved.                        
+  11:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *                                             
+  12:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
+  13:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * following conditions are met:   
+  14:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *                                                                              
+  15:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Redistributions of source code must retain the above copyright notice, this list of conditions a
+  16:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * disclaimer.                        
+  17:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * 
+  18:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Redistributions in binary form must reproduce the above copyright notice, this list of condition
+  19:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * disclaimer in the documentation and/or other materials provided with the distribution.          
+  20:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * 
+  21:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Neither the name of the copyright holders nor the names of its contributors may be used to endor
+  22:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * products derived from this software without specific prior written permission.                  
+  23:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *                                                                              
+  24:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
+  25:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
+  26:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
+  27:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
+  28:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
+  29:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+  30:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                            
+  31:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *                                                                              
+  32:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
+  33:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Infineon Technologies AG dave@infineon.com).                                                    
+  34:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  **************************************************************************************************
+  35:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+  36:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Change History
+  37:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * --------------
+  38:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+  39:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * 2015-02-20:
+  40:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - Initial <br>
+  41:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - Documentation updates <br>
+  42:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+  43:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * 2015-06-20:
+  44:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - Removed version macros and declaration of GetDriverVersion API <br>
+  45:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - Added XMC_CCU8_SLICE_LoadSelector() API, to select which compare register value has to be 
+  46:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *       during external load event.
+  47:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+  48:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * 2015-07-01:
+  49:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - In XMC_CCU8_SLICE_CHECK_INTERRUPT macro, fixed the missing item for compare match down for
+  50:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+  51:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * 2015-07-24:
+  52:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - XMC_CCU8_SLICE_ConfigureStatusBitOverrideEvent() is updated to support XMC14 device. <br>
+  53:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+  54:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * 2015-08-17:
+  55:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - XMC_CCU8_SLICE_PRESCALER_t enum is added to set the prescaler divider. <br>
+  56:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - XMC_CCU8_SLICE_SHADOW_TRANSFER_MODE_t is added for all the devices except XMC45 devices, t
+  57:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *       shadow transfer has to happen. <br>
+  58:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - XMC_CCU8_SOURCE_OUT0_t, XMC_CCU8_SOURCE_OUT1_t, XMC_CCU8_SOURCE_OUT2_t, XMC_CCU8_SOURCE_OU
+  59:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *       to maps one of the ST to OUT0, OUT1, OUT3, OUT4 signals.
+  60:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - In XMC_CCU8_SLICE_COMPARE_CONFIG_t structure, selector_out0, selector_out1, selector_out2,
+  61:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *       added to support XMC14 devices.
+  62:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - XMC_CCU8_EnableShadowTransfer() API is made as inline, to improve the speed. <br>
+  63:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - XMC_CCU8_SLICE_EnableCascadedShadowTransfer(), XMC_CCU8_SLICE_DisableCascadedShadowTransfe
+  64:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *       XMC_CCU8_SLICE_SetShadowTransferMode() API are supported for all the devices except XMC45.
+  65:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+  66:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * 2015-09-29:
+  67:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - In XMC_CCU8_SLICE_EVENT_LEVEL_SENSITIVITY_t, two more enum items are added to support exte
+  68:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *       settings.
+  69:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+  70:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * 2015-10-07:
+  71:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - XMC_CCU8_SLICE_SetTimerCompareMatchChannel1(), XMC_CCU8_SLICE_SetTimerCompareMatchChannel2
+  72:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *       added to update the respective compare registers directly.
+  73:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - XMC_CCU8_SLICE_GetEvent() is made as inline.
+  74:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - XMC_CCU8_SLICE_MULTI_IRQ_ID_t is added to support the XMC_CCU8_SLICE_EnableMultipleEvents(
+  75:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *       XMC_CCU8_SLICE_DisableMultipleEvents() APIs.
+  76:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - DOC updates for the newly added APIs.
+  77:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+  78:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * 2016-03-09:
+  79:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - Optimization of write only registers
+  80:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+  81:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * 2016-05-20:
+  82:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - Added XMC_CCU8_SLICE_StopClearTimer()
+  83:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - Changed XMC_CCU8_SLICE_StopTimer() and XMC_CCU8_SLICE_ClearTimer() 
+  84:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+  85:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * 2017-04-27:
+  86:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - XMC_CCU8_SLICE_SetPrescaler() changed div_val parameter to type XMC_CCU8_SLICE_PRESCALER_t
+  87:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+  88:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * 2017-09-15:
+  89:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - Fix XMC_CCU8_SLICE_SetShadowTransferMode()
+  90:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - Added parity checking functionality
+  91:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+  92:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * 2019-03-30:
+  93:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - Changed XMC_CCU8_StartPrescaler(), XMC_CCU8_StartParityChecker(), XMC_CCU8_StopPrescaler()
+  94:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *       XMC_CCU8_EnableMultipleClocks(), XMC_CCU8_EnableClock(), XMC_CCU8_DisableClock() to avoid 
+  95:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - Changed XMC_CCU8_SLICE_SetEvent(), XMC_CCU8_SLICE_ClearEvent() to avoid RMW access
+  96:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - Added XMC_CCU8_SetSuspendMode(), XMC_CCU8_SLICE_GetPrescaler()
+  97:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - Added XMC_CCU8_SLICE_GetTimerCompareMatchChannel1() and XMC_CCU8_SLICE_GetTimerCompareMatc
+  98:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * 
+  99:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * 2019-07-29:
+ 100:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *     - Added XMC_CCU4_SLICE_GetStatus()
+ 101:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * 
+ 102:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @endcond
+ 103:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 104:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 105:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #ifndef XMC_CCU8_H
+ 106:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #define XMC_CCU8_H
+ 107:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 108:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**************************************************************************************************
+ 109:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * HEADER FILES
+ 110:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  **************************************************************************************************
+ 111:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #include "xmc_common.h"
+ 112:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 113:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #if defined(CCU80)
+ 114:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 115:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #if UC_FAMILY == XMC1
+ 116:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  #include "xmc1_ccu8_map.h"
+ 117:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #endif
+ 118:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 119:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #if UC_FAMILY == XMC4
+ 120:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  #include "xmc4_ccu8_map.h"
+ 121:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #endif
+ 122:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 123:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 124:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @addtogroup XMClib XMC Peripheral Library
+ 125:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @{
+ 126:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 127:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 128:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 129:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @addtogroup CCU8
+ 130:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+ 131:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @brief Capture Compare Unit 8 (CCU8) low level driver for XMC family of microcontrollers<br>
+ 132:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+ 133:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * The CCU8 peripheral functions play a major role in applications that need complex Pulse Width Mo
+ 134:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * generation, with complementary high side and low side switches, multi phase control. These funct
+ 135:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * with a very flexible and programmable signal conditioning scheme, make the CCU8 the must have pe
+ 136:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * of the art motor control, multi phase and multi level power electronics systems.\n
+ 137:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Each CCU8 module is comprised of four identical 16 bit Capture/Compare Timer slices, CC8y (where
+ 138:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * timer slice can work in compare mode or in capture mode.
+ 139:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+ 140:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * APIs provided in this file cover the following functional blocks of CCU8:
+ 141:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * -- Timer configuration, Capture configuration, Function/Event configuration, Interrupt configura
+ 142:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * \par Note:
+ 143:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * 1. SLICE (APIs prefixed with e.g. XMC_CCU8_SLICE_)
+ 144:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * 2. Module (APIs are not having any prefix e.g. XMC_CCU8_)
+ 145:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+ 146:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * \par Timer(Compare mode) configuration:
+ 147:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * This section of the LLD provides the configuration structure XMC_CCU8_SLICE_COMPARE_CONFIG_t, 
+ 148:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * XMC_CCU8_SLICE_DEAD_TIME_CONFIG_t and the initialization functions XMC_CCU8_SLICE_CompareInit(),
+ 149:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+ 150:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * It can be used to:
+ 151:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * -# Start and Stop the timer. (XMC_CCU8_SLICE_StartTimer(), XMC_CCU8_SLICE_StopTimer())
+ 152:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * -# Update the period, compare, Dither, Prescaler  and Passive values. (XMC_CCU8_SLICE_SetTimerPe
+ 153:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *    XMC_CCU8_SLICE_SetTimerCompareMatch(), XMC_CCU8_SLICE_SetPrescaler(), XMC_CCU8_SLICE_SetDithe
+ 154:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *    XMC_CCU8_SLICE_SetPassiveLevel())
+ 155:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * -# Configure the dead time.(XMC_CCU8_SLICE_SetDeadTimeValue(), XMC_CCU8_SLICE_SetDeadTimePrescal
+ 156:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * -# Enable the slices to support multichannel mode. (XMC_CCU8_SLICE_EnableMultiChannelMode())
+ 157:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * 
+ 158:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * \par Capture configuration:
+ 159:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * This section of the LLD provides the configuration structure XMC_CCU8_SLICE_CAPTURE_CONFIG_t and
+ 160:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * function XMC_CCU8_SLICE_CaptureInit().
+ 161:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+ 162:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * It can be used to:
+ 163:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * -# Configure the capture functionality. (XMC_CCU8_SLICE_Capture0Config(), XMC_CCU8_SLICE_Capture
+ 164:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * -# Read the captured values along with the status, which indicate the value is latest or not.
+ 165:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *    (XMC_CCU8_SLICE_GetCaptureRegisterValue())
+ 166:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * 
+ 167:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * \par Function/Event configuration:
+ 168:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * This section of the LLD provides the configuration structure XMC_CCU8_SLICE_EVENT_CONFIG_t.
+ 169:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * 
+ 170:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * It can be used to:
+ 171:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * -# Enable and Disable the events. (XMC_CCU8_SLICE_EnableEvent(), XMC_CCU8_SLICE_DisableEvent())
+ 172:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * -# Configure to start and stop the timer on external events.(XMC_CCU8_SLICE_StartConfig(), XMC_C
+ 173:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * -# Modulation, external load and Gating of the timer output.(XMC_CCU8_SLICE_ModulationConfig(), 
+ 174:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *    XMC_CCU8_SLICE_LoadConfig(), XMC_CCU8_SLICE_GateConfig())
+ 175:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * -# Control the count direction of the timer based on the external event. (XMC_CCU8_SLICE_Directi
+ 176:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * -# Count the external events.(XMC_CCU8_SLICE_CountConfig())
+ 177:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * -# External Trap. Which can be used as protective feature.(XMC_CCU8_SLICE_EnableTrap(), XMC_CCU8
+ 178:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *    XMC_CCU8_SLICE_TrapConfig())
+ 179:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+ 180:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * \par Interrupt configuration:
+ 181:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * This section of the LLD provides the function to configure the interrupt node to each event (XMC
+ 182:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+ 183:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @{
+ 184:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 185:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 186:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**************************************************************************************************
+ 187:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * MACROS
+ 188:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  **************************************************************************************************
+ 189:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #define XMC_CCU8_SLICE_CHECK_INTERRUPT(interrupt) \
+ 190:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     ((interrupt == XMC_CCU8_SLICE_IRQ_ID_PERIOD_MATCH)           || \
+ 191:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****      (interrupt == XMC_CCU8_SLICE_IRQ_ID_ONE_MATCH)              || \
+ 192:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****      (interrupt == XMC_CCU8_SLICE_IRQ_ID_COMPARE_MATCH_UP_CH_1)  || \
+ 193:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****      (interrupt == XMC_CCU8_SLICE_IRQ_ID_COMPARE_MATCH_DOWN_CH_1)|| \
+ 194:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****      (interrupt == XMC_CCU8_SLICE_IRQ_ID_COMPARE_MATCH_UP_CH_2)  || \
+ 195:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****      (interrupt == XMC_CCU8_SLICE_IRQ_ID_COMPARE_MATCH_DOWN_CH_2)|| \
+ 196:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****      (interrupt == XMC_CCU8_SLICE_IRQ_ID_EVENT0)                 || \
+ 197:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****      (interrupt == XMC_CCU8_SLICE_IRQ_ID_EVENT1)                 || \
+ 198:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****      (interrupt == XMC_CCU8_SLICE_IRQ_ID_EVENT2)                 || \
+ 199:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****      (interrupt == XMC_CCU8_SLICE_IRQ_ID_TRAP))
+ 200:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****      
+ 201:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /* Macro to check if the slice ptr passed is valid */
+ 202:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #define XMC_CCU8_SLICE_CHECK_COMP_CHANNEL(cmp_channel) \
+ 203:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     ((cmp_channel == XMC_CCU8_SLICE_COMPARE_CHANNEL_1) || \
+ 204:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****      (cmp_channel == XMC_CCU8_SLICE_COMPARE_CHANNEL_2))
+ 205:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 206:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**************************************************************************************************
+ 207:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * ENUMS
+ 208:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  **************************************************************************************************
+ 209:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 210:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 211:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Typedef for CCU8 Global data structure
+ 212:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 213:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef CCU8_GLOBAL_TypeDef XMC_CCU8_MODULE_t;
+ 214:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 215:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 216:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Typedef for CCU8 Slice data structure
+ 217:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 218:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef CCU8_CC8_TypeDef XMC_CCU8_SLICE_t;
+ 219:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 220:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 221:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Return Value of an API
+ 222:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 223:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_STATUS
+ 224:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 225:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_STATUS_OK      = 0U, /**< API fulfils request */
+ 226:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_STATUS_ERROR       , /**< API cannot fulfil request */
+ 227:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_STATUS_RUNNING     , /**< The timer slice is currently running */
+ 228:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_STATUS_IDLE          /**< The timer slice is currently idle */
+ 229:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_STATUS_t;
+ 230:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 231:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 232:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * CCU8 module clock
+ 233:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 234:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_CLOCK
+ 235:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 236:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_CLOCK_SCU        = 0U, /**< Select the fCCU as the clock */
+ 237:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_CLOCK_EXTERNAL_A     , /**< External clock-A */
+ 238:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_CLOCK_EXTERNAL_B     , /**< External clock-B */
+ 239:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_CLOCK_EXTERNAL_C       /**< External clock-C */
+ 240:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_CLOCK_t;
+ 241:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 242:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 243:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * CCU8 set the shadow transfer type for multichannel mode
+ 244:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 245:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_MULTI_CHANNEL_SHADOW_TRANSFER
+ 246:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 247:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_MULTI_CHANNEL_SHADOW_TRANSFER_SW_SLICE0       = (uint32_t)0x4000000, /**< Shadow transfe
+ 248:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                      only for slice
+ 249:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_MULTI_CHANNEL_SHADOW_TRANSFER_SW_MCSS_SLICE0  = (uint32_t)0x4000400, /**< Shadow transfe
+ 250:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                      and hardware f
+ 251:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_MULTI_CHANNEL_SHADOW_TRANSFER_SW_SLICE1       = (uint32_t)0x8000000, /**< Shadow transfe
+ 252:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                      only for slice
+ 253:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_MULTI_CHANNEL_SHADOW_TRANSFER_SW_MCSS_SLICE1  = (uint32_t)0x8000800, /**< Shadow transfe
+ 254:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                      and hardware f
+ 255:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_MULTI_CHANNEL_SHADOW_TRANSFER_SW_SLICE2       = (uint32_t)0x10000000, /**< Shadow transf
+ 256:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                       only for slic
+ 257:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_MULTI_CHANNEL_SHADOW_TRANSFER_SW_MCSS_SLICE2  = (uint32_t)0x10001000, /**< Shadow transf
+ 258:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                       and hardware 
+ 259:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_MULTI_CHANNEL_SHADOW_TRANSFER_SW_SLICE3       = (uint32_t)0x20000000, /**< Shadow transf
+ 260:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                       only for slic
+ 261:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_MULTI_CHANNEL_SHADOW_TRANSFER_SW_MCSS_SLICE3  = (uint32_t)0x20002000  /**< Shadow transf
+ 262:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                       and hardware 
+ 263:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_MULTI_CHANNEL_SHADOW_TRANSFER_t;
+ 264:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 265:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 266:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Operational modes of CCU8 slice
+ 267:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 268:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_MODE
+ 269:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 270:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MODE_COMPARE  = 0U, /**< slice(CC8y) operates in Compare Mode */
+ 271:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MODE_CAPTURE        /**< slice(CC8y) operates in Capture Mode */
+ 272:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_MODE_t;
+ 273:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 274:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 275:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Slice Output selection
+ 276:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 277:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_OUTPUT
+ 278:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 279:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_OUTPUT_0  = 1U, /**< Slice Output-0 */
+ 280:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_OUTPUT_1  = 2U, /**< Slice Output-1 */
+ 281:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_OUTPUT_2  = 4U, /**< Slice Output-2 */
+ 282:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_OUTPUT_3  = 8U  /**< Slice Output-3 */
+ 283:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_OUTPUT_t;
+ 284:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 285:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 286:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Timer counting modes for the slice
+ 287:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 288:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_TIMER_COUNT_MODE
+ 289:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 290:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_TIMER_COUNT_MODE_EA  = 0U, /**< Edge Aligned Mode */
+ 291:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_TIMER_COUNT_MODE_CA        /**< Centre Aligned Mode */
+ 292:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_TIMER_COUNT_MODE_t;
+ 293:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 294:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 295:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Timer repetition mode for the slice
+ 296:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 297:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_TIMER_REPEAT_MODE
+ 298:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 299:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_TIMER_REPEAT_MODE_REPEAT = 0U, /**< Repetitive mode: continuous mode of operation 
+ 300:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_TIMER_REPEAT_MODE_SINGLE       /**< Single shot mode: Once a Period match/One matc
+ 301:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                      occurs timer goes to idle state */
+ 302:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_TIMER_REPEAT_MODE_t;
+ 303:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 304:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 305:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Timer counting direction for the CCU8 slice
+ 306:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 307:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_TIMER_COUNT_DIR
+ 308:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 309:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_TIMER_COUNT_DIR_UP   = 0U, /**< Counting up */
+ 310:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_TIMER_COUNT_DIR_DOWN       /**< Counting down */
+ 311:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_TIMER_COUNT_DIR_t;
+ 312:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 313:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 314:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Capture mode register sets
+ 315:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 316:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_CAP_REG_SET
+ 317:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 318:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_CAP_REG_SET_LOW  = 0U, /**< Capture register-0, Capture register-1 used */
+ 319:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_CAP_REG_SET_HIGH       /**< Capture register-0, Capture register-1 used */
+ 320:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_CAP_REG_SET_t;
+ 321:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 322:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 323:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Prescaler mode
+ 324:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 325:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_PRESCALER_MODE
+ 326:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 327:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_PRESCALER_MODE_NORMAL = 0U, /**< Fixed division of module clock */
+ 328:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_PRESCALER_MODE_FLOAT        /**< Floating divider */
+ 329:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_PRESCALER_MODE_t;
+ 330:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 331:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 332:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Timer output passive level
+ 333:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 334:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_OUTPUT_PASSIVE_LEVEL
+ 335:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 336:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_OUTPUT_PASSIVE_LEVEL_LOW  = 0U, /**< Passive level = Low */
+ 337:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_OUTPUT_PASSIVE_LEVEL_HIGH       /**< Passive level = High */
+ 338:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_OUTPUT_PASSIVE_LEVEL_t;
+ 339:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 340:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 341:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Compare Channel selection
+ 342:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 343:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_COMPARE_CHANNEL
+ 344:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 345:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_COMPARE_CHANNEL_1  = 0U, /**< Compare Channel-1 */
+ 346:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_COMPARE_CHANNEL_2        /**< Compare Channel-2 */
+ 347:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_COMPARE_CHANNEL_t;
+ 348:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 349:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 350:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Timer clock Divider
+ 351:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 352:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_PRESCALER
+ 353:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 354:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_PRESCALER_1  = 0U, /**< Slice Clock = fccu8 */
+ 355:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_PRESCALER_2      , /**< Slice Clock = fccu8/2 */
+ 356:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_PRESCALER_4      , /**< Slice Clock = fccu8/4 */
+ 357:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_PRESCALER_8      , /**< Slice Clock = fccu8/8 */
+ 358:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_PRESCALER_16     , /**< Slice Clock = fccu8/16 */
+ 359:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_PRESCALER_32     , /**< Slice Clock = fccu8/32 */
+ 360:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_PRESCALER_64     , /**< Slice Clock = fccu8/64 */
+ 361:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_PRESCALER_128    , /**< Slice Clock = fccu8/128 */
+ 362:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_PRESCALER_256    , /**< Slice Clock = fccu8/256 */
+ 363:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_PRESCALER_512    , /**< Slice Clock = fccu8/512 */
+ 364:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_PRESCALER_1024   , /**< Slice Clock = fccu8/1024 */
+ 365:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_PRESCALER_2048   , /**< Slice Clock = fccu8/2048 */
+ 366:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_PRESCALER_4096   , /**< Slice Clock = fccu8/4096 */
+ 367:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_PRESCALER_8192   , /**< Slice Clock = fccu8/8192 */
+ 368:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_PRESCALER_16384  , /**< Slice Clock = fccu8/16384 */
+ 369:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_PRESCALER_32768    /**< Slice Clock = fccu8/32768 */
+ 370:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_PRESCALER_t;
+ 371:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 372:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 373:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Dead Time Generator Clock Divider
+ 374:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 375:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_DTC_DIV
+ 376:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 377:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_DTC_DIV_1  = 0U, /**< DTC clock = Slice Clock */
+ 378:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_DTC_DIV_2      , /**< DTC clock = Slice Clock/2 */
+ 379:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_DTC_DIV_4      , /**< DTC clock = Slice Clock/4 */
+ 380:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_DTC_DIV_8        /**< DTC clock = Slice Clock/8 */
+ 381:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_DTC_DIV_t;
+ 382:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 383:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 384:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 385:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  The compare channel output which is routed to the slice output signal(STy).
+ 386:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 387:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_STATUS
+ 388:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 389:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_STATUS_CHANNEL_1        = 0U, /**< Channel-1 status connected to Slice Status */
+ 390:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_STATUS_CHANNEL_2            , /**< Channel-2 status connected to Slice Status */
+ 391:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_STATUS_CHANNEL_1_AND_2      , /**< \b Wired \b AND of Channel-1 and Channel-2 stat
+ 392:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                     Slice status */
+ 393:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #if ((UC_SERIES == XMC13) || (UC_SERIES == XMC14)) || defined(DOXYGEN)
+ 394:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_STATUS_CHANNEL_1_OR_2         /**< \b Wired \b OR of Channel-1 and Channel-2 statu
+ 395:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                     status. @note Only available for XMC1300 and XM
+ 396:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #endif
+ 397:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_STATUS_t;
+ 398:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 399:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 400:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Compare channel for which modulation has to be applied
+ 401:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 402:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_MODULATION_CHANNEL
+ 403:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 404:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MODULATION_CHANNEL_NONE  = 0U, /**< No modulation */
+ 405:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MODULATION_CHANNEL_1         , /**< Modulation for Compare Channel-1 */
+ 406:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MODULATION_CHANNEL_2         , /**< Modulation for Compare Channel-2 */
+ 407:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MODULATION_CHANNEL_1_AND_2     /**< Modulation for Compare Channel-1 and Compare C
+ 408:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_MODULATION_CHANNEL_t;
+ 409:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 410:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 411:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  External Function list
+ 412:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 413:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_FUNCTION
+ 414:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 415:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_FUNCTION_START           = 0U, /**< Start function */
+ 416:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_FUNCTION_STOP                , /**< Stop function */
+ 417:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_FUNCTION_CAPTURE_EVENT0      , /**< Capture Event-0 function, CCycapt0 signal is u
+ 418:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                      generation */
+ 419:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_FUNCTION_CAPTURE_EVENT1      , /**< Capture Event-1 function, CCycapt1 signal is u
+ 420:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                      generation */
+ 421:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_FUNCTION_GATING              , /**< Gating function */
+ 422:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_FUNCTION_DIRECTION           , /**< Direction function */
+ 423:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_FUNCTION_LOAD                , /**< Load function */
+ 424:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_FUNCTION_COUNT               , /**< Counting function */
+ 425:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_FUNCTION_OVERRIDE            , /**< Override function */
+ 426:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_FUNCTION_MODULATION          , /**< Modulation function */
+ 427:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_FUNCTION_TRAP                  /**< Trap function */
+ 428:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_FUNCTION_t;
+ 429:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 430:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 431:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  External Event list
+ 432:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 433:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_EVENT
+ 434:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 435:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_EVENT_NONE  = 0U, /**< None */
+ 436:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_EVENT_0         , /**< Event-0 */
+ 437:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_EVENT_1         , /**< Event-1 */
+ 438:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_EVENT_2           /**< Event-2 */
+ 439:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_EVENT_t;
+ 440:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 441:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 442:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  External Event trigger criteria  - Edge sensitivity
+ 443:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 444:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_EVENT_EDGE_SENSITIVITY
+ 445:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 446:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_EVENT_EDGE_SENSITIVITY_NONE          = 0U, /**< None */
+ 447:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_EVENT_EDGE_SENSITIVITY_RISING_EDGE       , /**< Rising Edge of the input signal ge
+ 448:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                  event trigger */
+ 449:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_EVENT_EDGE_SENSITIVITY_FALLING_EDGE      , /**< Falling Edge of the input signal g
+ 450:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                  trigger */
+ 451:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_EVENT_EDGE_SENSITIVITY_DUAL_EDGE           /**< Both Rising and Falling edges caus
+ 452:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_EVENT_EDGE_SENSITIVITY_t;
+ 453:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 454:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 455:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  External Event trigger criteria  - Level sensitivity
+ 456:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 457:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_EVENT_LEVEL_SENSITIVITY
+ 458:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 459:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_EVENT_LEVEL_SENSITIVITY_ACTIVE_HIGH = 0U, /**< Level sensitive functions react to 
+ 460:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_EVENT_LEVEL_SENSITIVITY_ACTIVE_LOW  = 1U, /**< Level sensitive functions react to 
+ 461:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     /* Below enum items can be utilised specific to the functionality */
+ 462:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_EVENT_LEVEL_SENSITIVITY_COUNT_UP_ON_LOW = 0U, /**< Timer counts up, during Low sta
+ 463:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_EVENT_LEVEL_SENSITIVITY_COUNT_UP_ON_HIGH = 1U /**< Timer counts up, during High st
+ 464:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_EVENT_LEVEL_SENSITIVITY_t;
+ 465:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 466:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 467:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Low pass filter Configuration. The External Event input should be stable for a selected number 
+ 468:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 469:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_EVENT_FILTER
+ 470:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 471:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_EVENT_FILTER_DISABLED  = 0U, /**< No Low Pass Filtering is applied */
+ 472:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_EVENT_FILTER_3_CYCLES      , /**< Input should be stable for 3 clock cycles */
+ 473:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_EVENT_FILTER_5_CYCLES      , /**< Input should be stable for 5 clock cycles */
+ 474:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_EVENT_FILTER_7_CYCLES        /**< Input should be stable for 7 clock cycles */
+ 475:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_EVENT_FILTER_t;
+ 476:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 477:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 478:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  External Event Input list. This list depicts the possible input connections to the CCU8 slice.
+ 479:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Interconnects are specific to each device.
+ 480:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 481:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef uint8_t XMC_CCU8_SLICE_INPUT_t;
+ 482:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 483:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 484:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 485:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Actions that can be performed upon detection of an external Timer STOP event
+ 486:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 487:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_END_MODE
+ 488:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 489:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_END_MODE_TIMER_STOP       = 0U, /**< Stops the timer, without clearing TIMER regis
+ 490:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_END_MODE_TIMER_CLEAR          , /**< Without stopping timer, clears the TIMER regi
+ 491:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_END_MODE_TIMER_STOP_CLEAR       /**< Stops the timer and clears the TIMER register
+ 492:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_END_MODE_t;
+ 493:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 494:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 495:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Actions that can be performed upon detection of an external Timer START event
+ 496:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 497:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_START_MODE
+ 498:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 499:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_START_MODE_TIMER_START       = 0U, /**< Start the timer from the current count of 
+ 500:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_START_MODE_TIMER_START_CLEAR       /**< Clears the TIMER register and start the ti
+ 501:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_START_MODE_t;
+ 502:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 503:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 504:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Modulation of timer output signals
+ 505:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 506:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_MODULATION_MODE
+ 507:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 508:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MODULATION_MODE_CLEAR_ST_OUT  = 0U, /**< Clear ST and OUT signals */
+ 509:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MODULATION_MODE_CLEAR_OUT           /**< Clear only the OUT signal */
+ 510:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_MODULATION_MODE_t;
+ 511:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 512:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 513:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Trap exit mode
+ 514:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 515:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_TRAP_EXIT_MODE
+ 516:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 517:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_TRAP_EXIT_MODE_AUTOMATIC = 0U, /**< Clear trap state as soon as the trap signal is
+ 518:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_TRAP_EXIT_MODE_SW              /**< Clear only when acknowledged by software */
+ 519:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_TRAP_EXIT_MODE_t;
+ 520:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 521:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 522:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Timer clear on capture
+ 523:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 524:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_TIMER_CLEAR_MODE
+ 525:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 526:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_TIMER_CLEAR_MODE_NEVER    = 0U, /**< Never clear the timer on any capture event */
+ 527:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_TIMER_CLEAR_MODE_CAP_HIGH     , /**< Clear only when timer value has been captured
+ 528:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_TIMER_CLEAR_MODE_CAP_LOW      , /**< Clear only when timer value has been captured
+ 529:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_TIMER_CLEAR_MODE_ALWAYS         /**< Always clear the timer upon detection of any 
+ 530:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_TIMER_CLEAR_MODE_t;
+ 531:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 532:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 533:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Multi Channel Shadow transfer request configuration options
+ 534:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 535:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_MCMS_ACTION
+ 536:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 537:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MCMS_ACTION_TRANSFER_PR_CR          = 0U, /**< Transfer Compare and Period Shadow 
+ 538:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                 the actual registers upon MCS xfer 
+ 539:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MCMS_ACTION_TRANSFER_PR_CR_PCMP     = 1U, /**< Transfer Compare, Period and Presca
+ 540:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                 register values to the actual regis
+ 541:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                 request */
+ 542:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MCMS_ACTION_TRANSFER_PR_CR_PCMP_DIT = 3U  /**< Transfer Compare, Period ,Prescaler
+ 543:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                 Compare register values to the actu
+ 544:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                 MCS xfer request */
+ 545:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_MCMS_ACTION_t;
+ 546:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 547:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 548:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Available Interrupt Event Ids
+ 549:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 550:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_IRQ_ID
+ 551:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 552:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_IRQ_ID_PERIOD_MATCH            = 0U , /**< Period match counting up */
+ 553:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_IRQ_ID_ONE_MATCH               = 1U , /**< One match counting down */
+ 554:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_IRQ_ID_COMPARE_MATCH_UP_CH_1   = 2U , /**< Compare match counting up for channel 1
+ 555:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_IRQ_ID_COMPARE_MATCH_DOWN_CH_1 = 3U , /**< Compare match counting down for channel
+ 556:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_IRQ_ID_COMPARE_MATCH_UP_CH_2   = 4U , /**< Compare match counting up for channel 2
+ 557:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_IRQ_ID_COMPARE_MATCH_DOWN_CH_2 = 5U , /**< Compare match counting down for channel
+ 558:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_IRQ_ID_EVENT0                  = 8U , /**< Event-0 occurrence */
+ 559:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_IRQ_ID_EVENT1                  = 9U , /**< Event-1 occurrence */
+ 560:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_IRQ_ID_EVENT2                  = 10U, /**< Event-2 occurrence */
+ 561:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_IRQ_ID_TRAP                    = 11U  /**< Trap occurrence */
+ 562:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_IRQ_ID_t;
+ 563:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 564:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 565:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Available Interrupt Event Ids, which is added to support multi event APIs
+ 566:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 567:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_MULTI_IRQ_ID
+ 568:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 569:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MULTI_IRQ_ID_PERIOD_MATCH            = 0x1U,   /**< Period match counting up */
+ 570:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MULTI_IRQ_ID_ONE_MATCH               = 0x2U,   /**< One match counting down */
+ 571:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MULTI_IRQ_ID_COMPARE_MATCH_UP_CH_1   = 0x4U,   /**< Compare match counting up for 
+ 572:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MULTI_IRQ_ID_COMPARE_MATCH_DOWN_CH_1 = 0x8U,   /**< Compare match counting down fo
+ 573:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MULTI_IRQ_ID_COMPARE_MATCH_UP_CH_2   = 0x10U,  /**< Compare match counting up for 
+ 574:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MULTI_IRQ_ID_COMPARE_MATCH_DOWN_CH_2 = 0x20U,  /**< Compare match counting down fo
+ 575:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MULTI_IRQ_ID_EVENT0                  = 0x100U, /**< Event-0 occurrence */
+ 576:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MULTI_IRQ_ID_EVENT1                  = 0x200U, /**< Event-1 occurrence */
+ 577:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MULTI_IRQ_ID_EVENT2                  = 0x400U, /**< Event-2 occurrence */
+ 578:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_MULTI_IRQ_ID_t;
+ 579:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 580:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 581:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Service Request Lines for CCU8. Event are mapped to these SR lines and these are used to generat
+ 582:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 583:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_SR_ID
+ 584:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 585:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_SR_ID_0    = 0U, /**< Service Request Line-0 selected  */
+ 586:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_SR_ID_1        , /**< Service Request Line-1 selected  */
+ 587:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_SR_ID_2        , /**< Service Request Line-2 selected  */
+ 588:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_SR_ID_3          /**< Service Request Line-3 selected  */
+ 589:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_SR_ID_t;
+ 590:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 591:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 592:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 593:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Slice shadow transfer options.
+ 594:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 595:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SHADOW_TRANSFER
+ 596:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 597:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SHADOW_TRANSFER_SLICE_0            = CCU8_GCSS_S0SE_Msk,  /**< Transfer Period, Compare 
+ 598:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                           shadow register values to
+ 599:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                           SLICE-0 */
+ 600:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SHADOW_TRANSFER_DITHER_SLICE_0     = CCU8_GCSS_S0DSE_Msk, /**< Transfer Dither compare s
+ 601:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                           to actual register for SL
+ 602:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SHADOW_TRANSFER_PRESCALER_SLICE_0  = CCU8_GCSS_S0PSE_Msk, /**< Transfer Prescaler shadow
+ 603:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                           actual register for SLICE
+ 604:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SHADOW_TRANSFER_SLICE_1            = CCU8_GCSS_S1SE_Msk,  /**< Transfer Period, Compare 
+ 605:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                           shadow register values to
+ 606:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                           SLICE-1 */
+ 607:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SHADOW_TRANSFER_DITHER_SLICE_1     = CCU8_GCSS_S1DSE_Msk, /**< Transfer Dither compare s
+ 608:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                           to actual registers for S
+ 609:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SHADOW_TRANSFER_PRESCALER_SLICE_1  = CCU8_GCSS_S1PSE_Msk, /**< Transfer Prescaler shadow
+ 610:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                           actual register for SLICE
+ 611:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SHADOW_TRANSFER_SLICE_2            = CCU8_GCSS_S2SE_Msk,  /**< Transfer Period, Compare 
+ 612:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                           shadow register values to
+ 613:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                           SLICE-2 */
+ 614:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SHADOW_TRANSFER_DITHER_SLICE_2     = CCU8_GCSS_S2DSE_Msk, /**< Transfer Dither compare s
+ 615:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                           to actual register for SL
+ 616:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SHADOW_TRANSFER_PRESCALER_SLICE_2  = CCU8_GCSS_S2PSE_Msk, /**< Transfer Prescaler shadow
+ 617:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                           actual register for SLICE
+ 618:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SHADOW_TRANSFER_SLICE_3            = CCU8_GCSS_S3SE_Msk,  /**< Transfer Period, Compare 
+ 619:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                           shadow register values to
+ 620:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                           SLICE-3 */
+ 621:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SHADOW_TRANSFER_DITHER_SLICE_3     = CCU8_GCSS_S3DSE_Msk, /**< Transfer Dither compare s
+ 622:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                           to actual register for SL
+ 623:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SHADOW_TRANSFER_PRESCALER_SLICE_3  = CCU8_GCSS_S3PSE_Msk  /**< Transfer Prescaler shadow
+ 624:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                           actual register for SLICE
+ 625:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SHADOW_TRANSFER_t;
+ 626:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 627:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #if (UC_SERIES != XMC45) || defined(DOXYGEN)
+ 628:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 629:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Slice shadow transfer mode options.
+ 630:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @note Not available for XMC4500 series
+ 631:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 632:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_SHADOW_TRANSFER_MODE
+ 633:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 634:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_SHADOW_TRANSFER_MODE_IN_PERIOD_MATCH_AND_ONE_MATCH = 0U, /**< Shadow transfer is d
+ 635:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                One match. */
+ 636:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_SHADOW_TRANSFER_MODE_ONLY_IN_PERIOD_MATCH = 1U,  /**< Shadow transfer is done only
+ 637:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_SHADOW_TRANSFER_MODE_ONLY_IN_ONE_MATCH = 2U  /**< Shadow transfer is done only in 
+ 638:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_SHADOW_TRANSFER_MODE_t;
+ 639:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #endif
+ 640:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 641:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #if defined(CCU8V3) || defined(DOXYGEN) /* Defined for XMC1400 devices only */
+ 642:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 643:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Output sources for OUTy0 signal
+ 644:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @note Only available for XMC1400 series
+ 645:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 646:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  typedef enum XMC_CCU8_SOURCE_OUT0
+ 647:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 648:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SOURCE_OUT0_ST1      = (uint32_t)0x0, /**< CCU8yST1 signal path is connected the CCU8x.O
+ 649:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SOURCE_OUT0_INV_ST1  = (uint32_t)0x1, /**< Inverted CCU8yST1 signal path is connected th
+ 650:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SOURCE_OUT0_ST2      = (uint32_t)0x2, /**< CCU8yST2 signal path is connected the CCU8x.O
+ 651:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SOURCE_OUT0_INV_ST2  = (uint32_t)0x3  /**< Inverted CCU8yST2 signal path is connected th
+ 652:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SOURCE_OUT0_t;
+ 653:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 654:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 655:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Output sources for OUTy1 signal
+ 656:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  @note Only available for XMC1400 series
+ 657:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 658:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  typedef enum XMC_CCU8_SOURCE_OUT1
+ 659:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 660:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SOURCE_OUT1_ST1      = (uint32_t)0x1, /**< CCU8yST1 signal path is connected the CCU8x.O
+ 661:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SOURCE_OUT1_INV_ST1  = (uint32_t)0x0, /**< Inverted CCU8yST1 signal path is connected th
+ 662:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SOURCE_OUT1_ST2      = (uint32_t)0x3, /**< CCU8yST2 signal path is connected the CCU8x.O
+ 663:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SOURCE_OUT1_INV_ST2  = (uint32_t)0x2  /**< Inverted CCU8yST2 signal path is connected th
+ 664:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SOURCE_OUT1_t;
+ 665:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 666:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 667:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Output sources for OUTy2 signal
+ 668:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @note Only available for XMC1400 series
+ 669:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 670:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  typedef enum XMC_CCU8_SOURCE_OUT2
+ 671:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 672:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SOURCE_OUT2_ST2      = (uint32_t)0x0, /**< CCU8yST2 signal path is connected the CCU8x.O
+ 673:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SOURCE_OUT2_INV_ST2  = (uint32_t)0x1, /**< Inverted CCU8yST2 signal path is connected th
+ 674:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SOURCE_OUT2_ST1      = (uint32_t)0x2, /**< CCU8yST1 signal path is connected the CCU8x.O
+ 675:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SOURCE_OUT2_INV_ST1  = (uint32_t)0x3  /**< Inverted CCU8yST1 signal path is connected th
+ 676:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SOURCE_OUT2_t;
+ 677:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 678:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 679:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Output sources for OUTy3 signal
+ 680:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  @note Only available for XMC1400 series
+ 681:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 682:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  typedef enum XMC_CCU8_SOURCE_OUT3
+ 683:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 684:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SOURCE_OUT3_ST2      = (uint32_t)0x1, /**< CCU8yST2 signal path is connected the CCU8x.O
+ 685:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SOURCE_OUT3_INV_ST2  = (uint32_t)0x0, /**< Inverted CCU8yST2 signal path is connected th
+ 686:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SOURCE_OUT3_ST1      = (uint32_t)0x3, /**< CCU8yST1 signal path is connected the CCU8x.O
+ 687:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SOURCE_OUT3_INV_ST1  = (uint32_t)0x2  /**< Inverted CCU8yST1 signal path is connected th
+ 688:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SOURCE_OUT3_t;
+ 689:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #endif
+ 690:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 691:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 692:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 693:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Output selector for CCU8x.OUT0-3
+ 694:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 695:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #if !defined(CCU8V3) /* Defined for all devices except XMC1400 */
+ 696:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_OUT_PATH
+ 697:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 698:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT0_ST1      = (uint32_t)0x20000, /**< CCU8yST1 signal path is connected the C
+ 699:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT0_INV_ST1  = (uint32_t)0x20002, /**< Inverted CCU8yST1 signal path is connec
+ 700:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT1_ST1      = (uint32_t)0x40000, /**< CCU8yST1 signal path is connected the C
+ 701:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT1_INV_ST1  = (uint32_t)0x40004, /**< Inverted CCU8yST1 signal path is connec
+ 702:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT2_ST2      = (uint32_t)0x80000, /**< CCU8yST2 signal path is connected the C
+ 703:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT2_INV_ST2  = (uint32_t)0x80008, /**< Inverted CCU8yST2 signal path is connec
+ 704:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT3_ST2      = (uint32_t)0x100000,/**< CCU8yST2 signal path is connected the C
+ 705:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT3_INV_ST1  = (uint32_t)0x100010 /**< Inverted CCU8yST2 signal path is connec
+ 706:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_OUT_PATH_t;
+ 707:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #else
+ 708:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_OUT_PATH
+ 709:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 710:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT0_ST1      = (uint32_t)0x000C0, /**< CCU8yST1 signal path is connected the C
+ 711:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT0_INV_ST1  = (uint32_t)0x000D0, /**< Inverted CCU8yST1 signal path is connec
+ 712:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT0_ST2      = (uint32_t)0x000E0, /**< CCU8yST2 signal path is connected the C
+ 713:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT0_INV_ST2  = (uint32_t)0x000F0, /**< Inverted CCU8yST2 signal path is connec
+ 714:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT1_ST1      = (uint32_t)0x00D00, /**< CCU8yST1 signal path is connected the C
+ 715:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT1_INV_ST1  = (uint32_t)0x00C00, /**< Inverted CCU8yST1 signal path is connec
+ 716:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT1_ST2      = (uint32_t)0x00F00, /**< CCU8yST2 signal path is connected the C
+ 717:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT1_INV_ST2  = (uint32_t)0x00E00, /**< Inverted CCU8yST2 signal path is connec
+ 718:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT2_ST2      = (uint32_t)0x0C000, /**< CCU8yST2 signal path is connected the C
+ 719:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT2_INV_ST2  = (uint32_t)0x0D000, /**< Inverted CCU8yST2 signal path is connec
+ 720:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT2_ST1      = (uint32_t)0x0E000, /**< CCU8yST1 signal path is connected the C
+ 721:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT2_INV_ST1  = (uint32_t)0x0F000, /**< Inverted CCU8yST1 signal path is connec
+ 722:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT3_ST2      = (uint32_t)0xD0000, /**< CCU8yST2 signal path is connected the C
+ 723:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT3_INV_ST2  = (uint32_t)0xC0000, /**< Inverted CCU8yST2 signal path is connec
+ 724:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT3_ST1      = (uint32_t)0xF0000, /**< CCU8yST1 signal path is connected the C
+ 725:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_OUT_PATH_OUT3_INV_ST1  = (uint32_t)0xE0000  /**< Inverted CCU8yST1 signal path is connec
+ 726:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_OUT_PATH_t;
+ 727:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 728:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 729:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Immediate write into configuration register
+ 730:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  @note Only available for XMC1400 series
+ 731:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 732:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_WRITE_INTO
+ 733:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 734:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_WRITE_INTO_PERIOD_CONFIGURATION = CCU8_CC8_STC_IRPC_Msk,                  /**< Imm
+ 735:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                                 Wri
+ 736:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                                 Con
+ 737:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_WRITE_INTO_COMPARE1_CONFIGURATION = CCU8_CC8_STC_IRCC1_Msk,               /**< Imm
+ 738:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                                 Wri
+ 739:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                                 Con
+ 740:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_WRITE_INTO_COMPARE2_CONFIGURATION = CCU8_CC8_STC_IRCC2_Msk,               /**< Imm
+ 741:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                                 Wri
+ 742:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                                 Con
+ 743:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_WRITE_INTO_PASSIVE_LEVEL_CONFIGURATION = CCU8_CC8_STC_IRLC_Msk,           /**< Imm
+ 744:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                                 Wri
+ 745:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 	                                                                                            Config
+ 746:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_WRITE_INTO_DITHER_VALUE_CONFIGURATION = CCU8_CC8_STC_IRDC_Msk,            /**< Imm
+ 747:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                                 Wri
+ 748:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 	                                                                                            Config
+ 749:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_WRITE_INTO_FLOATING_PRESCALER_VALUE_CONFIGURATION = CCU8_CC8_STC_IRFC_Msk /**< Imm
+ 750:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                                 Wri
+ 751:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                                 Val
+ 752:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_WRITE_INTO_t;
+ 753:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 754:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 755:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 756:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Automatic Shadow Transfer request when writing into shadow register
+ 757:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  @note Only available for XMC1400 series
+ 758:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 759:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_AUTOMAIC_SHADOW_TRANSFER_WRITE_INTO
+ 760:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 761:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_AUTOMAIC_SHADOW_TRANSFER_WRITE_INTO_PERIOD_SHADOW = CCU8_CC8_STC_ASPC_Msk,        
+ 762:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 	                                                                                                  
+ 763:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                                    
+ 764:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                                    
+ 765:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_AUTOMAIC_SHADOW_TRANSFER_WRITE_INTO_COMPARE1_SHADOW = CCU8_CC8_STC_ASCC1_Msk,     
+ 766:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 	                                                                                                  
+ 767:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 	                                                                                                  
+ 768:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 	                                                                                                  
+ 769:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_AUTOMAIC_SHADOW_TRANSFER_WRITE_INTO_COMPARE2_SHADOW = CCU8_CC8_STC_ASCC2_Msk,     
+ 770:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 	                                                                                                  
+ 771:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 	                                                                                                  
+ 772:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 	                                                                                                  
+ 773:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_AUTOMAIC_SHADOW_TRANSFER_WRITE_INTO_PASSIVE_LEVEL = CCU8_CC8_STC_ASLC_Msk,        
+ 774:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 	                                                                                                  
+ 775:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                                    
+ 776:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_AUTOMAIC_SHADOW_TRANSFER_WRITE_INTO_DITHER_SHADOW = CCU8_CC8_STC_ASDC_Msk,        
+ 777:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                                    
+ 778:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                                    
+ 779:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_AUTOMAIC_SHADOW_TRANSFER_WRITE_INTO_FLOATING_PRESCALER_SHADOW = CCU8_CC8_STC_ASFC_
+ 780:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 	                                                                                                  
+ 781:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                                    
+ 782:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                                                                    
+ 783:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 784:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_AUTOMAIC_SHADOW_TRANSFER_WRITE_INTO_t;
+ 785:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #endif
+ 786:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 787:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 788:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  CCU8 slice mask which can be used for the APIs as input where multi slice support is available
+ 789:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 790:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_MASK
+ 791:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 792:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MASK_SLICE_0  = 1U , /**< SLICE-0 */
+ 793:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MASK_SLICE_1  = 2U , /**< SLICE-1 */
+ 794:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MASK_SLICE_2  = 4U , /**< SLICE-2 */
+ 795:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_MASK_SLICE_3  = 8U   /**< SLICE-3 */
+ 796:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_MASK_t;
+ 797:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 798:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 799:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Selects which signal is controlling the delay between the change at the CCU8 outputs and effect
+ 800:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 801:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_PARITY_CHECKER_DELAY_INPUT
+ 802:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 803:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_PARITY_CHECKER_DELAY_INPUT_IGBTA = 0 << CCU8_GPCHK_PCDS_Pos,
+ 804:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_PARITY_CHECKER_DELAY_INPUT_IGBTB = 1 << CCU8_GPCHK_PCDS_Pos,
+ 805:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_PARITY_CHECKER_DELAY_INPUT_IGBTC = 2 << CCU8_GPCHK_PCDS_Pos,
+ 806:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_PARITY_CHECKER_DELAY_INPUT_IGBTD = 3 << CCU8_GPCHK_PCDS_Pos
+ 807:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_PARITY_CHECKER_DELAY_INPUT_t;
+ 808:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 809:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 810:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 811:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Selects which signal contains the driver parity information
+ 812:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 813:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_PARITY_CHECKER_DRIVER_INPUT
+ 814:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 815:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_PARITY_CHECKER_DRIVER_INPUT_SLICE_0 = 0 << CCU8_GPCHK_PISEL_Pos,
+ 816:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_PARITY_CHECKER_DRIVER_INPUT_SLICE_1 = 1 << CCU8_GPCHK_PISEL_Pos,
+ 817:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_PARITY_CHECKER_DRIVER_INPUT_SLICE_2 = 2 << CCU8_GPCHK_PISEL_Pos,
+ 818:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_PARITY_CHECKER_DRIVER_INPUT_SLICE_3 = 3 << CCU8_GPCHK_PISEL_Pos,
+ 819:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_PARITY_CHECKER_DRIVER_INPUT_t;
+ 820:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 821:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 822:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Selects if we have an odd or even parity
+ 823:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 824:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_PARITY_CHECKER_TYPE
+ 825:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 826:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_PARITY_CHECKER_TYPE_EVEN = 0 << CCU8_GPCHK_PCTS_Pos,
+ 827:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_PARITY_CHECKER_TYPE_ODD = 1 << CCU8_GPCHK_PCTS_Pos,
+ 828:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_PARITY_CHECKER_TYPE_t;
+ 829:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 830:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 831:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Selects suspend mode
+ 832:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 833:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SUSPEND_MODE
+ 834:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 835:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SUSPEND_MODE_IGNORE = 0 << CCU8_GCTRL_SUSCFG_Pos, /**< Suspend request ignored. The modu
+ 836:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SUSPEND_MODE_STOPS_INMEDIATELLY = 1 << CCU8_GCTRL_SUSCFG_Pos, /**< Stops all the running
+ 837:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SUSPEND_MODE_SAFE_STOP = 2 << CCU8_GCTRL_SUSCFG_Pos, /**< Stops the block immediately an
+ 838:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SUSPEND_MODE_WAIT_ROLL_OVER = 3 << CCU8_GCTRL_SUSCFG_Pos /**< Waits for the roll over of
+ 839:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SUSPEND_MODE_t;
+ 840:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 841:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 842:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  CCU8 slice status bit
+ 843:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */ 
+ 844:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef enum XMC_CCU8_SLICE_STATUS_BIT
+ 845:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 846:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_STATUS_BIT_PASSIVE = false, /**< Passive */
+ 847:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_STATUS_BIT_ACTIVE  = true   /**< Active  */
+ 848:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_STATUS_BIT_t;
+ 849:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 850:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 851:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**************************************************************************************************
+ 852:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * DATA STRUCTURES
+ 853:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  **************************************************************************************************
+ 854:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 855:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 856:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Configuration data structure of an External Event(Event-0/1/2).
+ 857:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Needed to configure the various aspects of an External Event.
+ 858:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  This structure will not connect the external event with an external function.
+ 859:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 860:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef struct XMC_CCU8_SLICE_EVENT_CONFIG
+ 861:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 862:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_INPUT_t                   mapped_input; /**< Required input signal for the Event. 
+ 863:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_EVENT_EDGE_SENSITIVITY_t  edge;         /**< Select the event edge of the input si
+ 864:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                               This is needed for an edge sensitive 
+ 865:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_EVENT_LEVEL_SENSITIVITY_t level;        /**< Select the event level of the input s
+ 866:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                               This is needed for an level sensitive
+ 867:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_CCU8_SLICE_EVENT_FILTER_t            duration;     /**< Low Pass filter duration in terms of 
+ 868:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_EVENT_CONFIG_t;
+ 869:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 870:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /*Anonymous structure/union guard start*/
+ 871:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #if defined(__CC_ARM)
+ 872:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   #pragma push
+ 873:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   #pragma anon_unions
+ 874:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #elif defined(__TASKING__)
+ 875:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   #pragma warning 586
+ 876:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #endif
+ 877:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 878:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 879:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Dead Time configuration
+ 880:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 881:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef struct XMC_CCU8_SLICE_DEAD_TIME_CONFIG
+ 882:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 883:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   union
+ 884:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   {
+ 885:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     struct
+ 886:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     {
+ 887:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t enable_dead_time_channel1 : 1; /**< Enable dead time for Compare Channel-1 */
+ 888:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t enable_dead_time_channel2 : 1; /**< Enable dead time for Compare Channel-2 */
+ 889:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t channel1_st_path : 1;          /**< Should dead time be applied to ST output of Comp
+ 890:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t channel1_inv_st_path : 1;      /**< Should dead time be applied to inverse ST output
+ 891:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                    Compare Channel-1? */
+ 892:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t channel2_st_path : 1;          /**< Should dead time be applied to ST output of Comp
+ 893:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t channel2_inv_st_path : 1;      /**< Should dead time be applied to inverse ST output
+ 894:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                    Compare Channel-2? */
+ 895:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t div : 2;                       /**< Dead time prescaler divider value.
+ 896:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                                    Accepts enum ::XMC_CCU8_SLICE_DTC_DIV_t*/
+ 897:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t : 24;
+ 898:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     };
+ 899:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     uint32_t dtc;
+ 900:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   };
+ 901:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   union
+ 902:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   {
+ 903:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     struct
+ 904:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     {
+ 905:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t channel1_st_rising_edge_counter : 8; /**< Contains the delay value that is applied t
+ 906:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 	                                                       for compare channel-1. Range: [0x0 to 0xFF]
+ 907:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t channel1_st_falling_edge_counter : 8; /**< Contains the delay value that is applied 
+ 908:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 	                                                        for compare channel-1. Range: [0x0 to 0xFF
+ 909:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t : 16;
+ 910:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     };
+ 911:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     uint32_t dc1r;
+ 912:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   };
+ 913:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   union
+ 914:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   {
+ 915:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     struct
+ 916:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     {
+ 917:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t channel2_st_rising_edge_counter : 8; /**< Contains the delay value that is applied t
+ 918:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 	                                                     for compare channel-2. Range: [0x0 to 0xFF]*/
+ 919:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t channel2_st_falling_edge_counter : 8; /**< Contains the delay value that is applied 
+ 920:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 	                                                     for compare channel-2. Range: [0x0 to 0xFF]*/
+ 921:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t : 16;
+ 922:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     };
+ 923:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     uint32_t dc2r;
+ 924:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   };
+ 925:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_DEAD_TIME_CONFIG_t;
+ 926:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+ 927:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+ 928:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Configuration data structure for CCU8 slice. Specifically configures the CCU8 slice to compare 
+ 929:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  This excludes event and function configuration.
+ 930:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+ 931:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef struct XMC_CCU8_SLICE_COMPARE_CONFIG
+ 932:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+ 933:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   union
+ 934:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   {
+ 935:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     struct
+ 936:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     {
+ 937:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t timer_mode : 1;         /**< Edge aligned or Centre Aligned.
+ 938:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                             Accepts enum :: XMC_CCU8_SLICE_TIMER_COUNT_MODE_t */
+ 939:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t monoshot : 1;           /**< Single shot or Continuous mode .
+ 940:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                             Accepts enum :: XMC_CCU8_SLICE_TIMER_REPEAT_MODE_t */
+ 941:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t shadow_xfer_clear : 1; /**< Should PR and CR shadow xfer happen when timer is cleare
+ 942:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t : 10;
+ 943:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t dither_timer_period: 1; /**< Can the period of the timer dither? */
+ 944:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t dither_duty_cycle : 1;  /**< Can the compare match of the timer dither? */
+ 945:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t : 1;
+ 946:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t prescaler_mode: 1;      /**< Normal or floating prescaler mode.
+ 947:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                             Accepts enum :: XMC_CCU8_SLICE_PRESCALER_MODE_t */
+ 948:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t : 8;
+ 949:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t mcm_ch1_enable : 1;     /**< Multi-Channel mode for compare channel 1 enable? */
+ 950:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t mcm_ch2_enable : 1;     /**< Multi-Channel mode for compare channel 2 enable? */
+ 951:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t : 2;
+ 952:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t slice_status : 2;       /**< Which of the two channels drives the slice status outpu
+ 953:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 	                                          Accepts enum :: XMC_CCU8_SLICE_STATUS_t*/
+ 954:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t : 1;
+ 955:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     };
+ 956:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     uint32_t tc;
+ 957:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   };
+ 958:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   union
+ 959:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   {
+ 960:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     struct
+ 961:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     {
+ 962:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t passive_level_out0 : 1; /**< ST and OUT passive levels Configuration for OUT0. 
+ 963:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 	                                          Accepts enum :: XMC_CCU8_SLICE_OUTPUT_PASSIVE_LEVEL_t */
+ 964:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t passive_level_out1 : 1; /**< ST and OUT passive levels Configuration for OUT1. 
+ 965:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 	                                          Accepts enum :: XMC_CCU8_SLICE_OUTPUT_PASSIVE_LEVEL_t */
+ 966:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t passive_level_out2 : 1; /**< ST and OUT passive levels Configuration for OUT2. 
+ 967:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 	                                          Accepts enum :: XMC_CCU8_SLICE_OUTPUT_PASSIVE_LEVEL_t */
+ 968:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t passive_level_out3 : 1; /**< ST and OUT passive levels Configuration for OUT3. 
+ 969:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 	                                          Accepts enum :: XMC_CCU8_SLICE_OUTPUT_PASSIVE_LEVEL_t */
+ 970:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t : 28;
+ 971:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     };
+ 972:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     uint32_t psl;
+ 973:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   };
+ 974:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   union
+ 975:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   {
+ 976:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     struct
+ 977:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     {
+ 978:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t asymmetric_pwm : 1;     /**< Should the PWM be a function of the 2 compare channels
+ 979:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                             rather than period value? */
+ 980:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   #if !defined(CCU8V3)    /* Defined for all devices except XMC1400 */                             
+ 981:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t invert_out0 : 1;        /**< Should inverted ST of Channel-1 be connected to OUT0? *
+ 982:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t invert_out1 : 1;        /**< Should inverted ST of Channel-1 be connected to OUT1? *
+ 983:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t invert_out2 : 1;        /**< Should inverted ST of Channel-2 be connected to OUT2? *
+ 984:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t invert_out3 : 1;        /**< Should inverted ST of Channel-2 be connected to OUT3? *
+ 985:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t : 27;
+ 986:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   #else
+ 987:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t : 3;
+ 988:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t selector_out0 : 2;      /**< Connect ST or inverted ST of Channel-1 or Channel-2 be 
+ 989:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                             Accepts enum :: XMC_CCU8_SOURCE_OUT0_t 
+ 990:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                             refer OCS1 bit-field of CHC register. 
+ 991:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 											@note Only available for XMC1400 series */
+ 992:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t : 2;
+ 993:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t selector_out1 : 2;      /**< Connect ST or inverted ST of Channel-1 or Channel-2 be 
+ 994:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                             Accepts enum :: XMC_CCU8_SOURCE_OUT1_t 
+ 995:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                             refer OCS2 bit-field of CHC register. 
+ 996:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 											@note Only available for XMC1400 series */
+ 997:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t : 2;
+ 998:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t selector_out2 : 2;      /**< Connect ST or inverted ST of Channel-1 or Channel-2 be 
+ 999:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                             Accepts enum :: XMC_CCU8_SOURCE_OUT2_t 
+1000:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                             refer OCS3 bit-field of CHC register.
+1001:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 											@note Only available for XMC1400 series */
+1002:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t : 2;
+1003:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t selector_out3 : 2;      /**< Connect ST or inverted ST of Channel-1 or Channel-2 be 
+1004:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                             Accepts enum :: XMC_CCU8_SOURCE_OUT3_t 
+1005:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                             refer OCS4 bit-field of CHC register.
+1006:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 											@note Only available for XMC1400 series */
+1007:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t : 14;
+1008:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   #endif
+1009:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     };
+1010:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     uint32_t chc;
+1011:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   };
+1012:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   uint32_t prescaler_initval : 4;      /**< Initial prescaler divider value 
+1013:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                             Accepts enum :: XMC_CCU8_SLICE_PRESCALER_t */
+1014:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   uint32_t float_limit : 4;            /**< The max value which the prescaler divider can increment
+1015:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                             Range : [0 to 15] */
+1016:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   uint32_t dither_limit : 4;           /**< The value that determines the spreading of dithering 
+1017:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                             Range : [0 to 15] */
+1018:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   uint32_t timer_concatenation : 1;    /**< Enables the concatenation of the timer if true*/
+1019:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_COMPARE_CONFIG_t;
+1020:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+1021:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+1022:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Configuration data structure for CCU8 slice. Specifically configures the CCU8 slice to capture 
+1023:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  This excludes event and function configuration.
+1024:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+1025:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** typedef struct XMC_CCU8_SLICE_CAPTURE_CONFIG
+1026:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+1027:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   union
+1028:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   {
+1029:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     struct
+1030:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     {
+1031:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t : 4;
+1032:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t fifo_enable : 1;      /**< Should the capture registers be setup as a FIFO?(Extended
+1033:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t timer_clear_mode : 2; /**< How should the timer register be cleared upon detection o
+1034:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****                                           Accepts enum ::XMC_CCU8_SLICE_TIMER_CLEAR_MODE_t */
+1035:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t : 4;
+1036:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t same_event : 1;       /**< Should the capture event for C1V/C0V and C3V/C2V be same 
+1037:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t ignore_full_flag : 1; /**< Should updates to capture registers follow full flag rule
+1038:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t : 3;
+1039:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t prescaler_mode: 1;    /**< Normal or floating prescaler Accepts enum :: XMC_CCU8_SLI
+1040:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****       uint32_t : 15;
+1041:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     };
+1042:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****     uint32_t tc;
+1043:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   };
+1044:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   uint32_t prescaler_initval : 4;    /**< Prescaler divider value */
+1045:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   uint32_t float_limit : 4;          /**< The max value which the prescaler divider can increment t
+1046:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   uint32_t timer_concatenation : 1;    /**< Enables the concatenation of the timer */
+1047:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } XMC_CCU8_SLICE_CAPTURE_CONFIG_t;
+1048:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /*Anonymous structure/union guard end*/
+1049:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #if defined(__CC_ARM)
+1050:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   #pragma pop
+1051:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #elif defined(__TASKING__)
+1052:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   #pragma warning restore
+1053:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #endif
+1054:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**************************************************************************************************
+1055:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * API Prototypes
+1056:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  **************************************************************************************************
+1057:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #ifdef __cplusplus
+1058:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** extern "C" {
+1059:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #endif
+1060:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+1061:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** __STATIC_INLINE bool XMC_CCU8_IsValidModule(const XMC_CCU8_MODULE_t *const module)
+1062:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+1063:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   bool tmp = false;
+1064:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   
+1065:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   tmp = (module == CCU80);
+1066:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   
+1067:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #if defined(CCU81)
+1068:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   tmp = tmp || (module == CCU81);
+1069:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #endif
+1070:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   
+1071:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   return tmp;  
+1072:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } 
+1073:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+1074:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** __STATIC_INLINE bool XMC_CCU8_IsValidSlice(const XMC_CCU8_SLICE_t *const slice)
+1075:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+1076:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   bool tmp = false;
+1077:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   
+1078:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   tmp = (slice == CCU80_CC80);
+1079:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #if defined(CCU80_CC81)  
+1080:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   tmp = tmp || (slice == CCU80_CC81);
+1081:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #endif
+1082:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #if defined(CCU80_CC82)  
+1083:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   tmp = tmp || (slice == CCU80_CC82);
+1084:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #endif
+1085:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #if defined(CCU80_CC83)  
+1086:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   tmp = tmp || (slice == CCU80_CC83);
+1087:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #endif
+1088:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #if defined(CCU81)  
+1089:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   tmp = tmp || (slice == CCU81_CC80);
+1090:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #if defined(CCU81_CC81)  
+1091:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   tmp = tmp || (slice == CCU81_CC81);
+1092:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #endif
+1093:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #if defined(CCU81_CC82)  
+1094:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   tmp = tmp || (slice == CCU81_CC82);
+1095:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #endif
+1096:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #if defined(CCU81_CC83)  
+1097:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   tmp = tmp || (slice == CCU81_CC83);
+1098:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #endif
+1099:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** #endif 
+1100:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  
+1101:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   return tmp;  
+1102:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** } 
+1103:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+1104:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+1105:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @param module Constant pointer to CCU8 module
+1106:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @param mcs_action multi-channel shadow transfer request configuration
+1107:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @return <BR>
+1108:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *    None<BR>
+1109:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+1110:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * \par<b>Description:</b><br>
+1111:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Initialization of global register GCTRL.\n\n
+1112:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  As part of module initialization, behaviour of the module upon detection
+1113:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Multi-Channel Mode trigger is configured. Will also invoke the XMC_CCU8_EnableModule().
+1114:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  The API call would bring up the required CCU8 module and also initialize the module for
+1115:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  the required multi-channel shadow transfer.
+1116:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+1117:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * \par<b>Related APIs:</b><br>
+1118:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * XMC_CCU8_SLICE_CompareInit()<BR> XMC_CCU8_SLICE_CaptureInit().
+1119:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+1120:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** void XMC_CCU8_Init(XMC_CCU8_MODULE_t *const module, const XMC_CCU8_SLICE_MCMS_ACTION_t mcs_action);
+1121:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+1122:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+1123:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @param module Constant pointer to CCU8 module
+1124:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @return <BR>
+1125:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *    None<BR>
+1126:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+1127:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * \par<b>Description:</b><br>
+1128:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Enables the CCU8 module and brings it to active state.\n\n
+1129:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Also disables the gating of the clock signal (if applicable depending on the device being select
+1130:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Invoke this API before any operations are done on the CCU8 module. Invoked from  XMC_CCU8_Init()
+1131:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+1132:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * \par<b>Related APIs:</b><br>
+1133:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * XMC_CCU8_SetModuleClock()<BR>  XMC_CCU8_DisableModule()<BR>  XMC_CCU8_StartPrescaler().
+1134:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+1135:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** void XMC_CCU8_EnableModule(XMC_CCU8_MODULE_t *const module);
+1136:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+1137:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+1138:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @param module Constant pointer to CCU8 module
+1139:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @return <BR>
+1140:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *    None<BR>
+1141:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+1142:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * \par<b>Description:</b><br>
+1143:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Brings the CCU8 module to reset state and enables gating of the clock signal(if applicable depen
+1144:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * on the device being selected).\n\n
+1145:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Invoke this API when a CCU8 module needs to be disabled completely.
+1146:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * Any operation on the CCU8 module will have no effect after this API is called.
+1147:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+1148:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * \par<b>Related APIs:</b><br>
+1149:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * XMC_CCU8_EnableModule()<BR> XMC_CCU8_DisableModule().
+1150:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+1151:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** void XMC_CCU8_DisableModule(XMC_CCU8_MODULE_t *const module);
+1152:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+1153:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+1154:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @param module Constant pointer to CCU8 module
+1155:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @param clock Choice of input clock to the module
+1156:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @return <BR>
+1157:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *    None<BR>
+1158:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+1159:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * \par<b>Description:</b><br>
+1160:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Selects the Module Clock by configuring GCTRL.PCIS bits.\n\n
+1161:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  There are 3 potential clock sources. This API helps to select the required clock source.
+1162:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Call to this API is valid after the XMC_CCU8_Init().
+1163:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+1164:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * \par<b>Related APIs:</b><br>
+1165:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * None.<BR>
+1166:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+1167:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** void XMC_CCU8_SetModuleClock(XMC_CCU8_MODULE_t *const module, const XMC_CCU8_CLOCK_t clock);
+1168:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** 
+1169:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** /**
+1170:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @param module Constant pointer to CCU8 module
+1171:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * @return <BR>
+1172:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *    None<BR>
+1173:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+1174:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * \par<b>Description:</b><br>
+1175:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Starts the prescaler and restores clocks to the timer slices, by setting GIDLC.SPRB bit.<br>\n
+1176:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  Once the input to the prescaler has been chosen and the prescaler divider of all slices program
+1177:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  the prescaler itself may be started. Invoke this  API after XMC_CCU8_Init()
+1178:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  (Mandatory to fully initialize the module).
+1179:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *
+1180:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * \par<b>Related APIs:</b><br>
+1181:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  * XMC_CCU8_Init()<BR>  XMC_CCU8_EnableClock()<BR>  XMC_CCU8_DisableClock()<BR>  XMC_CCU8_StartPres
+1182:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  *  XMC_CCU8_StopPrescaler().
+1183:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****  */
+1184:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** __STATIC_INLINE void XMC_CCU8_StartPrescaler(XMC_CCU8_MODULE_t *const module)
+1185:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** {
+  27              	 .loc 1 1185 0
+  28              	 .cfi_startproc
+  29              	 
+  30              	 
+  31              	 
+  32 0000 80B4     	 push {r7}
+  33              	.LCFI0:
+  34              	 .cfi_def_cfa_offset 4
+  35              	 .cfi_offset 7,-4
+  36 0002 83B0     	 sub sp,sp,#12
+  37              	.LCFI1:
+  38              	 .cfi_def_cfa_offset 16
+  39 0004 00AF     	 add r7,sp,#0
+  40              	.LCFI2:
+  41              	 .cfi_def_cfa_register 7
+  42 0006 7860     	 str r0,[r7,#4]
+1186:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   XMC_ASSERT("XMC_CCU8_StartPrescaler:Invalid Module Pointer", XMC_CCU8_IsValidModule(module));
+1187:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h ****   module->GIDLC = (uint32_t) CCU8_GIDLC_SPRB_Msk;
+  43              	 .loc 1 1187 0
+  44 0008 7B68     	 ldr r3,[r7,#4]
+  45 000a 4FF48072 	 mov r2,#256
+  46 000e DA60     	 str r2,[r3,#12]
+1188:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc\xmc_ccu8.h **** }
+  47              	 .loc 1 1188 0
+  48 0010 0C37     	 adds r7,r7,#12
+  49              	.LCFI3:
+  50              	 .cfi_def_cfa_offset 4
+  51 0012 BD46     	 mov sp,r7
+  52              	.LCFI4:
+  53              	 .cfi_def_cfa_register 13
+  54              	 
+  55 0014 5DF8047B 	 ldr r7,[sp],#4
+  56              	.LCFI5:
+  57              	 .cfi_restore 7
+  58              	 .cfi_def_cfa_offset 0
+  59 0018 7047     	 bx lr
+  60              	 .cfi_endproc
+  61              	.LFE139:
+  63 001a 00BF     	 .section .text.GLOBAL_CCU8_GetAppVersion,"ax",%progbits
+  64              	 .align 2
+  65              	 .global GLOBAL_CCU8_GetAppVersion
+  66              	 .thumb
+  67              	 .thumb_func
+  69              	GLOBAL_CCU8_GetAppVersion:
+  70              	.LFB240:
+  71              	 .file 2 "../Dave/Generated/GLOBAL_CCU8/global_ccu8.c"
+   1:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c **** /**
+   2:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * @file global_ccu8.c
+   3:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * @date 2016-02-10
+   4:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  *
+   5:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * NOTE:
+   6:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * This file is generated by DAVE. Any manual modification done to this file will be lost when the 
+   7:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  *
+   8:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * @cond
+   9:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  **************************************************************************************************
+  10:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * GLOBAL_CCU8 v4.1.12 - Configures the global properties of CCU8x peripheral instance.
+  11:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  *
+  12:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * Copyright (c) 2016, Infineon Technologies AG
+  13:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * All rights reserved.
+  14:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  *
+  15:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
+  16:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * following conditions are met:
+  17:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  *
+  18:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  *   Redistributions of source code must retain the above copyright notice, this list of conditions
+  19:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  *   disclaimer.
+  20:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  *
+  21:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  *   Redistributions in binary form must reproduce the above copyright notice, this list of conditi
+  22:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  *   following disclaimer in the documentation and/or other materials provided with the distributio
+  23:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  *
+  24:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  *   Neither the name of the copyright holders nor the names of its contributors may be used to end
+  25:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  *   products derived from this software without specific prior written permission.
+  26:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  *
+  27:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
+  28:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
+  29:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
+  30:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
+  31:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
+  32:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+  33:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  34:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  *
+  35:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
+  36:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * with Infineon Technologies AG (dave@infineon.com).
+  37:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  **************************************************************************************************
+  38:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  *
+  39:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * Change History
+  40:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * --------------
+  41:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  *
+  42:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * 2015-02-16:
+  43:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  *     - Initial version<br>
+  44:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  *
+  45:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * @endcond
+  46:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  *
+  47:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  */
+  48:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c **** /**************************************************************************************************
+  49:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * HEADER FILES
+  50:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  **************************************************************************************************
+  51:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c **** 
+  52:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c **** #include "global_ccu8.h"
+  53:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c **** 
+  54:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c **** /**************************************************************************************************
+  55:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * MACROS
+  56:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  **************************************************************************************************
+  57:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c **** 
+  58:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c **** /**************************************************************************************************
+  59:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * LOCAL DATA
+  60:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  **************************************************************************************************
+  61:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  
+  62:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c **** /**************************************************************************************************
+  63:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * LOCAL ROUTINES
+  64:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  **************************************************************************************************
+  65:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c **** 
+  66:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  /*************************************************************************************************
+  67:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  * API IMPLEMENTATION
+  68:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****  **************************************************************************************************
+  69:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c **** /* Returns the version of the GLOBAL_CCU8 APP. */
+  70:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c **** DAVE_APP_VERSION_t GLOBAL_CCU8_GetAppVersion(void)
+  71:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c **** {
+  72              	 .loc 2 71 0
+  73              	 .cfi_startproc
+  74              	 
+  75              	 
+  76              	 
+  77 0000 80B4     	 push {r7}
+  78              	.LCFI6:
+  79              	 .cfi_def_cfa_offset 4
+  80              	 .cfi_offset 7,-4
+  81 0002 83B0     	 sub sp,sp,#12
+  82              	.LCFI7:
+  83              	 .cfi_def_cfa_offset 16
+  84 0004 00AF     	 add r7,sp,#0
+  85              	.LCFI8:
+  86              	 .cfi_def_cfa_register 7
+  72:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****   DAVE_APP_VERSION_t version;
+  73:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c **** 
+  74:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****   version.major = GLOBAL_CCU8_MAJOR_VERSION;
+  87              	 .loc 2 74 0
+  88 0006 0423     	 movs r3,#4
+  89 0008 3B70     	 strb r3,[r7]
+  75:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****   version.minor = GLOBAL_CCU8_MINOR_VERSION;
+  90              	 .loc 2 75 0
+  91 000a 0123     	 movs r3,#1
+  92 000c 7B70     	 strb r3,[r7,#1]
+  76:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****   version.patch = GLOBAL_CCU8_PATCH_VERSION;
+  93              	 .loc 2 76 0
+  94 000e 0C23     	 movs r3,#12
+  95 0010 BB70     	 strb r3,[r7,#2]
+  77:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c **** 
+  78:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****   return version;
+  96              	 .loc 2 78 0
+  97 0012 3B1D     	 adds r3,r7,#4
+  98 0014 3A46     	 mov r2,r7
+  99 0016 1268     	 ldr r2,[r2]
+ 100 0018 1146     	 mov r1,r2
+ 101 001a 1980     	 strh r1,[r3]
+ 102 001c 0233     	 adds r3,r3,#2
+ 103 001e 120C     	 lsrs r2,r2,#16
+ 104 0020 1A70     	 strb r2,[r3]
+ 105 0022 0023     	 movs r3,#0
+ 106 0024 3A79     	 ldrb r2,[r7,#4]
+ 107 0026 62F30703 	 bfi r3,r2,#0,#8
+ 108 002a 7A79     	 ldrb r2,[r7,#5]
+ 109 002c 62F30F23 	 bfi r3,r2,#8,#8
+ 110 0030 BA79     	 ldrb r2,[r7,#6]
+ 111 0032 62F31743 	 bfi r3,r2,#16,#8
+  79:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c **** }
+ 112              	 .loc 2 79 0
+ 113 0036 1846     	 mov r0,r3
+ 114 0038 0C37     	 adds r7,r7,#12
+ 115              	.LCFI9:
+ 116              	 .cfi_def_cfa_offset 4
+ 117 003a BD46     	 mov sp,r7
+ 118              	.LCFI10:
+ 119              	 .cfi_def_cfa_register 13
+ 120              	 
+ 121 003c 5DF8047B 	 ldr r7,[sp],#4
+ 122              	.LCFI11:
+ 123              	 .cfi_restore 7
+ 124              	 .cfi_def_cfa_offset 0
+ 125 0040 7047     	 bx lr
+ 126              	 .cfi_endproc
+ 127              	.LFE240:
+ 129 0042 00BF     	 .section .text.GLOBAL_CCU8_Init,"ax",%progbits
+ 130              	 .align 2
+ 131              	 .global GLOBAL_CCU8_Init
+ 132              	 .thumb
+ 133              	 .thumb_func
+ 135              	GLOBAL_CCU8_Init:
+ 136              	.LFB241:
+  80:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c **** 
+  81:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c **** /* Initializes the slice with the generated configuration */
+  82:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c **** GLOBAL_CCU8_STATUS_t GLOBAL_CCU8_Init(GLOBAL_CCU8_t* handle)
+  83:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c **** {
+ 137              	 .loc 2 83 0
+ 138              	 .cfi_startproc
+ 139              	 
+ 140              	 
+ 141 0000 80B5     	 push {r7,lr}
+ 142              	.LCFI12:
+ 143              	 .cfi_def_cfa_offset 8
+ 144              	 .cfi_offset 7,-8
+ 145              	 .cfi_offset 14,-4
+ 146 0002 82B0     	 sub sp,sp,#8
+ 147              	.LCFI13:
+ 148              	 .cfi_def_cfa_offset 16
+ 149 0004 00AF     	 add r7,sp,#0
+ 150              	.LCFI14:
+ 151              	 .cfi_def_cfa_register 7
+ 152 0006 7860     	 str r0,[r7,#4]
+  84:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****   XMC_ASSERT("GLOBAL_CCU8_Init:NULL handler", (NULL != handle));
+  85:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c **** 
+  86:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****   if (false == handle->is_initialized)
+ 153              	 .loc 2 86 0
+ 154 0008 7B68     	 ldr r3,[r7,#4]
+ 155 000a 5B7B     	 ldrb r3,[r3,#13]
+ 156 000c 83F00103 	 eor r3,r3,#1
+ 157 0010 DBB2     	 uxtb r3,r3
+ 158 0012 002B     	 cmp r3,#0
+ 159 0014 0FD0     	 beq .L5
+  87:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****   {
+  88:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****     /* Enable CCU8 module */
+  89:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****     XMC_CCU8_Init(handle->module_ptr,handle->mcs_action);
+ 160              	 .loc 2 89 0
+ 161 0016 7B68     	 ldr r3,[r7,#4]
+ 162 0018 9A68     	 ldr r2,[r3,#8]
+ 163 001a 7B68     	 ldr r3,[r7,#4]
+ 164 001c 1B7B     	 ldrb r3,[r3,#12]
+ 165 001e 1046     	 mov r0,r2
+ 166 0020 1946     	 mov r1,r3
+ 167 0022 FFF7FEFF 	 bl XMC_CCU8_Init
+  90:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****     /* Start the prescaler */
+  91:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****     XMC_CCU8_StartPrescaler(handle->module_ptr);
+ 168              	 .loc 2 91 0
+ 169 0026 7B68     	 ldr r3,[r7,#4]
+ 170 0028 9B68     	 ldr r3,[r3,#8]
+ 171 002a 1846     	 mov r0,r3
+ 172 002c FFF7FEFF 	 bl XMC_CCU8_StartPrescaler
+  92:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****     /* Restricts multiple initializations */
+  93:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****     handle->is_initialized = true;
+ 173              	 .loc 2 93 0
+ 174 0030 7B68     	 ldr r3,[r7,#4]
+ 175 0032 0122     	 movs r2,#1
+ 176 0034 5A73     	 strb r2,[r3,#13]
+ 177              	.L5:
+  94:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****   }
+  95:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c **** 
+  96:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c ****   return (GLOBAL_CCU8_STATUS_SUCCESS);
+ 178              	 .loc 2 96 0
+ 179 0036 0023     	 movs r3,#0
+  97:../Dave/Generated/GLOBAL_CCU8/global_ccu8.c **** }
+ 180              	 .loc 2 97 0
+ 181 0038 1846     	 mov r0,r3
+ 182 003a 0837     	 adds r7,r7,#8
+ 183              	.LCFI15:
+ 184              	 .cfi_def_cfa_offset 8
+ 185 003c BD46     	 mov sp,r7
+ 186              	.LCFI16:
+ 187              	 .cfi_def_cfa_register 13
+ 188              	 
+ 189 003e 80BD     	 pop {r7,pc}
+ 190              	 .cfi_endproc
+ 191              	.LFE241:
+ 193              	 .text
+ 194              	.Letext0:
+ 195              	 .file 3 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 196              	 .file 4 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 197              	 .file 5 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Infineon/XMC4300_series/Include/XMC4300.h"
+ 198              	 .file 6 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc/xmc4_scu.h"
+ 199              	 .file 7 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/DAVE_Common.h"
+ 200              	 .file 8 "../Dave/Generated/GLOBAL_CCU8/global_ccu8.h"
+ 201              	 .file 9 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 202              	 .file 10 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/core_cm4.h"
+ 203              	 .file 11 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Infineon/XMC4300_series/Include/system_XMC4300.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 global_ccu8.c
+    {standard input}:20     .text.XMC_CCU8_StartPrescaler:00000000 $t
+    {standard input}:24     .text.XMC_CCU8_StartPrescaler:00000000 XMC_CCU8_StartPrescaler
+    {standard input}:64     .text.GLOBAL_CCU8_GetAppVersion:00000000 $t
+    {standard input}:69     .text.GLOBAL_CCU8_GetAppVersion:00000000 GLOBAL_CCU8_GetAppVersion
+    {standard input}:130    .text.GLOBAL_CCU8_Init:00000000 $t
+    {standard input}:135    .text.GLOBAL_CCU8_Init:00000000 GLOBAL_CCU8_Init
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+XMC_CCU8_Init

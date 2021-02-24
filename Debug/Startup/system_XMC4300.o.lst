@@ -1,0 +1,2485 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "system_XMC4300.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .global SystemCoreClock
+  20              	 .section .no_init,"aw",%progbits
+  21              	 .align 2
+  24              	SystemCoreClock:
+  25 0000 00000000 	 .space 4
+  26              	 .global g_chipid
+  27              	 .align 2
+  30              	g_chipid:
+  31 0004 00000000 	 .space 16
+  31      00000000 
+  31      00000000 
+  31      00000000 
+  32              	 .section .text.delay,"ax",%progbits
+  33              	 .align 2
+  34              	 .thumb
+  35              	 .thumb_func
+  37              	delay:
+  38              	.LFB132:
+  39              	 .file 1 "../Startup/system_XMC4300.c"
+   1:../Startup/system_XMC4300.c **** /**************************************************************************************************
+   2:../Startup/system_XMC4300.c ****  * @file     system_XMC4300.c
+   3:../Startup/system_XMC4300.c ****  * @brief    CMSIS Cortex-M4 Device Peripheral Access Layer Header File for the Infineon XMC4300 De
+   4:../Startup/system_XMC4300.c ****  * @version  V1.0.6
+   5:../Startup/system_XMC4300.c ****  * @date     29. Oct 2018
+   6:../Startup/system_XMC4300.c ****  *
+   7:../Startup/system_XMC4300.c ****  * @cond
+   8:../Startup/system_XMC4300.c ****  **************************************************************************************************
+   9:../Startup/system_XMC4300.c ****  * Copyright (c) 2015-2018, Infineon Technologies AG
+  10:../Startup/system_XMC4300.c ****  * All rights reserved.
+  11:../Startup/system_XMC4300.c ****  *
+  12:../Startup/system_XMC4300.c ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
+  13:../Startup/system_XMC4300.c ****  * following conditions are met:
+  14:../Startup/system_XMC4300.c ****  *
+  15:../Startup/system_XMC4300.c ****  * Redistributions of source code must retain the above copyright notice, this list of conditions a
+  16:../Startup/system_XMC4300.c ****  * disclaimer.
+  17:../Startup/system_XMC4300.c ****  *
+  18:../Startup/system_XMC4300.c ****  * Redistributions in binary form must reproduce the above copyright notice, this list of condition
+  19:../Startup/system_XMC4300.c ****  * disclaimer in the documentation and/or other materials provided with the distribution.
+  20:../Startup/system_XMC4300.c ****  *
+  21:../Startup/system_XMC4300.c ****  * Neither the name of the copyright holders nor the names of its contributors may be used to endor
+  22:../Startup/system_XMC4300.c ****  * products derived from this software without specific prior written permission.
+  23:../Startup/system_XMC4300.c ****  *
+  24:../Startup/system_XMC4300.c ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
+  25:../Startup/system_XMC4300.c ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
+  26:../Startup/system_XMC4300.c ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
+  27:../Startup/system_XMC4300.c ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
+  28:../Startup/system_XMC4300.c ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
+  29:../Startup/system_XMC4300.c ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+  30:../Startup/system_XMC4300.c ****  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  31:../Startup/system_XMC4300.c ****  *
+  32:../Startup/system_XMC4300.c ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
+  33:../Startup/system_XMC4300.c ****  * Infineon Technologies AG dave@infineon.com).
+  34:../Startup/system_XMC4300.c ****  **************************************************************************************************
+  35:../Startup/system_XMC4300.c ****  *
+  36:../Startup/system_XMC4300.c ****  ********************** Version History ***************************************
+  37:../Startup/system_XMC4300.c ****  * V1.0.0, 19. November 2015, Initial version
+  38:../Startup/system_XMC4300.c ****  * V1.0.1, 26. February 2016, EBU clock removed
+  39:../Startup/system_XMC4300.c ****  * V1.0.2, 01. Jun 2016, Fix masking of OSCHPCTRL value 
+  40:../Startup/system_XMC4300.c ****  * V1.0.3, 09. Feb 2017, Fix activation of USBPLL when SDMMC clock is enabled 
+  41:../Startup/system_XMC4300.c ****  * V1.0.4, 19. Jun 2017, Rely on cmsis_compiler.h instead of defining __WEAK 
+  42:../Startup/system_XMC4300.c ****  *                       Added support for ARM Compiler 6 (armclang) 
+  43:../Startup/system_XMC4300.c ****  * V1.0.5, 26. Sep 2017, Disable FPU if FPU_USED is zero  
+  44:../Startup/system_XMC4300.c ****  * V1.0.6, 29. Oct 2018, Fix variable location of SystemCoreClock and g_chipid for ARMCC compiler
+  45:../Startup/system_XMC4300.c ****  ******************************************************************************
+  46:../Startup/system_XMC4300.c ****  * @endcond
+  47:../Startup/system_XMC4300.c ****  */
+  48:../Startup/system_XMC4300.c **** 
+  49:../Startup/system_XMC4300.c **** /*******************************************************************************
+  50:../Startup/system_XMC4300.c ****  * Default clock initialization
+  51:../Startup/system_XMC4300.c ****  * fPLL = 288MHz => fSYS = 144MHz => fCPU = 144MHz
+  52:../Startup/system_XMC4300.c ****  *                                => fPB  = 144MHz
+  53:../Startup/system_XMC4300.c ****  *                                => fCCU = 144MHz
+  54:../Startup/system_XMC4300.c ****  *                                => fETH = 72MHz
+  55:../Startup/system_XMC4300.c ****  *               => fUSB = 48MHz
+  56:../Startup/system_XMC4300.c ****  *               => fEBU = 72MHz
+  57:../Startup/system_XMC4300.c ****  *
+  58:../Startup/system_XMC4300.c ****  * fUSBPLL = 200MHz => fECAT = 100MHz
+  59:../Startup/system_XMC4300.c ****  *
+  60:../Startup/system_XMC4300.c ****  * fOFI = 24MHz => fWDT = 24MHz
+  61:../Startup/system_XMC4300.c ****  *******************************************************************************/
+  62:../Startup/system_XMC4300.c **** 
+  63:../Startup/system_XMC4300.c **** /*******************************************************************************
+  64:../Startup/system_XMC4300.c ****  * HEADER FILES
+  65:../Startup/system_XMC4300.c ****  *******************************************************************************/
+  66:../Startup/system_XMC4300.c **** #include <string.h>
+  67:../Startup/system_XMC4300.c **** 
+  68:../Startup/system_XMC4300.c **** #include <XMC4300.h>
+  69:../Startup/system_XMC4300.c **** #include "system_XMC4300.h"
+  70:../Startup/system_XMC4300.c **** 
+  71:../Startup/system_XMC4300.c **** /*******************************************************************************
+  72:../Startup/system_XMC4300.c ****  * MACROS
+  73:../Startup/system_XMC4300.c ****  *******************************************************************************/
+  74:../Startup/system_XMC4300.c **** #define CHIPID_LOC ((uint8_t *)0x20000000UL)
+  75:../Startup/system_XMC4300.c **** 
+  76:../Startup/system_XMC4300.c **** #define PMU_FLASH_WS          (0x4U)
+  77:../Startup/system_XMC4300.c **** 
+  78:../Startup/system_XMC4300.c **** #define FOSCREF               (2500000U)
+  79:../Startup/system_XMC4300.c **** 
+  80:../Startup/system_XMC4300.c **** #define DELAY_CNT_50US_50MHZ  (2500UL)
+  81:../Startup/system_XMC4300.c **** #define DELAY_CNT_150US_50MHZ (7500UL)
+  82:../Startup/system_XMC4300.c **** #define DELAY_CNT_50US_48MHZ  (2400UL)
+  83:../Startup/system_XMC4300.c **** #define DELAY_CNT_50US_72MHZ  (3600UL)
+  84:../Startup/system_XMC4300.c **** #define DELAY_CNT_50US_96MHZ  (4800UL)
+  85:../Startup/system_XMC4300.c **** #define DELAY_CNT_50US_120MHZ (6000UL)
+  86:../Startup/system_XMC4300.c **** #define DELAY_CNT_50US_144MHZ (7200UL)
+  87:../Startup/system_XMC4300.c **** 
+  88:../Startup/system_XMC4300.c **** #define SCU_PLL_PLLSTAT_OSC_USABLE  (SCU_PLL_PLLSTAT_PLLHV_Msk | \
+  89:../Startup/system_XMC4300.c ****                                      SCU_PLL_PLLSTAT_PLLLV_Msk | \
+  90:../Startup/system_XMC4300.c ****                                      SCU_PLL_PLLSTAT_PLLSP_Msk)
+  91:../Startup/system_XMC4300.c **** 
+  92:../Startup/system_XMC4300.c **** /*
+  93:../Startup/system_XMC4300.c **** //-------- <<< Use Configuration Wizard in Context Menu >>> ------------------
+  94:../Startup/system_XMC4300.c **** */
+  95:../Startup/system_XMC4300.c **** 
+  96:../Startup/system_XMC4300.c **** /*
+  97:../Startup/system_XMC4300.c **** // <h> Clock configuration
+  98:../Startup/system_XMC4300.c **** */
+  99:../Startup/system_XMC4300.c **** 
+ 100:../Startup/system_XMC4300.c **** /*
+ 101:../Startup/system_XMC4300.c **** //    <o> External crystal frequency [Hz]
+ 102:../Startup/system_XMC4300.c **** //       <8000000=> 8MHz
+ 103:../Startup/system_XMC4300.c **** //       <12000000=> 12MHz
+ 104:../Startup/system_XMC4300.c **** //       <16000000=> 16MHz
+ 105:../Startup/system_XMC4300.c **** //    <i> Defines external crystal frequency
+ 106:../Startup/system_XMC4300.c **** //    <i> Default: 8MHz
+ 107:../Startup/system_XMC4300.c **** */
+ 108:../Startup/system_XMC4300.c **** #define OSCHP_FREQUENCY (12000000U)
+ 109:../Startup/system_XMC4300.c **** 
+ 110:../Startup/system_XMC4300.c **** /* USB PLL settings, fUSBPLL = 200MHz */
+ 111:../Startup/system_XMC4300.c **** /* Note: Implicit divider of 2, fUSBPLLVCO = 400MHz */
+ 112:../Startup/system_XMC4300.c **** #if OSCHP_FREQUENCY == 8000000U
+ 113:../Startup/system_XMC4300.c **** #define USB_PDIV (1U)
+ 114:../Startup/system_XMC4300.c **** #define USB_NDIV (99U)
+ 115:../Startup/system_XMC4300.c **** 
+ 116:../Startup/system_XMC4300.c **** #elif OSCHP_FREQUENCY == 12000000U
+ 117:../Startup/system_XMC4300.c **** #define USB_PDIV (2U)
+ 118:../Startup/system_XMC4300.c **** #define USB_NDIV (99U)
+ 119:../Startup/system_XMC4300.c **** 
+ 120:../Startup/system_XMC4300.c **** #elif OSCHP_FREQUENCY == 16000000U
+ 121:../Startup/system_XMC4300.c **** #define USB_PDIV (3U)
+ 122:../Startup/system_XMC4300.c **** #define USB_NDIV (99U)
+ 123:../Startup/system_XMC4300.c **** 
+ 124:../Startup/system_XMC4300.c **** #else
+ 125:../Startup/system_XMC4300.c **** #error "External crystal frequency not supported"
+ 126:../Startup/system_XMC4300.c **** 
+ 127:../Startup/system_XMC4300.c **** #endif
+ 128:../Startup/system_XMC4300.c **** 
+ 129:../Startup/system_XMC4300.c **** /*
+ 130:../Startup/system_XMC4300.c **** //    <o> Backup clock calibration mode
+ 131:../Startup/system_XMC4300.c **** //       <0=> Factory calibration
+ 132:../Startup/system_XMC4300.c **** //       <1=> Automatic calibration
+ 133:../Startup/system_XMC4300.c **** //    <i> Default: Automatic calibration
+ 134:../Startup/system_XMC4300.c **** */
+ 135:../Startup/system_XMC4300.c **** #define FOFI_CALIBRATION_MODE 1
+ 136:../Startup/system_XMC4300.c **** #define FOFI_CALIBRATION_MODE_FACTORY 0
+ 137:../Startup/system_XMC4300.c **** #define FOFI_CALIBRATION_MODE_AUTOMATIC 1
+ 138:../Startup/system_XMC4300.c **** 
+ 139:../Startup/system_XMC4300.c **** /*
+ 140:../Startup/system_XMC4300.c **** //    <o> Standby clock (fSTDBY) source selection
+ 141:../Startup/system_XMC4300.c **** //       <0=> Internal slow oscillator (32768Hz)
+ 142:../Startup/system_XMC4300.c **** //       <1=> External crystal (32768Hz)
+ 143:../Startup/system_XMC4300.c **** //    <i> Default: Internal slow oscillator (32768Hz)
+ 144:../Startup/system_XMC4300.c **** */
+ 145:../Startup/system_XMC4300.c **** #define STDBY_CLOCK_SRC 0
+ 146:../Startup/system_XMC4300.c **** #define STDBY_CLOCK_SRC_OSI 0
+ 147:../Startup/system_XMC4300.c **** #define STDBY_CLOCK_SRC_OSCULP 1
+ 148:../Startup/system_XMC4300.c **** 
+ 149:../Startup/system_XMC4300.c **** /*
+ 150:../Startup/system_XMC4300.c **** //    <o> PLL clock source selection
+ 151:../Startup/system_XMC4300.c **** //       <0=> External crystal
+ 152:../Startup/system_XMC4300.c **** //       <1=> Internal fast oscillator
+ 153:../Startup/system_XMC4300.c **** //    <i> Default: External crystal
+ 154:../Startup/system_XMC4300.c **** */
+ 155:../Startup/system_XMC4300.c **** #define PLL_CLOCK_SRC 0
+ 156:../Startup/system_XMC4300.c **** #define PLL_CLOCK_SRC_EXT_XTAL 0
+ 157:../Startup/system_XMC4300.c **** #define PLL_CLOCK_SRC_OFI 1
+ 158:../Startup/system_XMC4300.c **** 
+ 159:../Startup/system_XMC4300.c **** /* PLL settings, fPLL = 288MHz */
+ 160:../Startup/system_XMC4300.c **** #if PLL_CLOCK_SRC == PLL_CLOCK_SRC_EXT_XTAL
+ 161:../Startup/system_XMC4300.c **** #if OSCHP_FREQUENCY == 8000000U
+ 162:../Startup/system_XMC4300.c **** #define PLL_PDIV (1U)
+ 163:../Startup/system_XMC4300.c **** #define PLL_NDIV (71U)
+ 164:../Startup/system_XMC4300.c **** #define PLL_K2DIV (0U)
+ 165:../Startup/system_XMC4300.c **** 
+ 166:../Startup/system_XMC4300.c **** #elif OSCHP_FREQUENCY == 12000000U
+ 167:../Startup/system_XMC4300.c **** #define PLL_PDIV (1U)
+ 168:../Startup/system_XMC4300.c **** #define PLL_NDIV (47U)
+ 169:../Startup/system_XMC4300.c **** #define PLL_K2DIV (0U)
+ 170:../Startup/system_XMC4300.c **** 
+ 171:../Startup/system_XMC4300.c **** #elif OSCHP_FREQUENCY == 16000000U
+ 172:../Startup/system_XMC4300.c **** #define PLL_PDIV (1U)
+ 173:../Startup/system_XMC4300.c **** #define PLL_NDIV (35U)
+ 174:../Startup/system_XMC4300.c **** #define PLL_K2DIV (0U)
+ 175:../Startup/system_XMC4300.c **** 
+ 176:../Startup/system_XMC4300.c **** #else
+ 177:../Startup/system_XMC4300.c **** #error "External crystal frequency not supported"
+ 178:../Startup/system_XMC4300.c **** 
+ 179:../Startup/system_XMC4300.c **** #endif
+ 180:../Startup/system_XMC4300.c **** 
+ 181:../Startup/system_XMC4300.c **** #define VCO ((OSCHP_FREQUENCY / (PLL_PDIV + 1UL)) * (PLL_NDIV + 1UL))
+ 182:../Startup/system_XMC4300.c **** 
+ 183:../Startup/system_XMC4300.c **** #else /* PLL_CLOCK_SRC == PLL_CLOCK_SRC_EXT_XTAL */
+ 184:../Startup/system_XMC4300.c **** #define PLL_PDIV (1U)
+ 185:../Startup/system_XMC4300.c **** #define PLL_NDIV (23U)
+ 186:../Startup/system_XMC4300.c **** #define PLL_K2DIV (0U)
+ 187:../Startup/system_XMC4300.c **** 
+ 188:../Startup/system_XMC4300.c **** #define VCO ((OFI_FREQUENCY / (PLL_PDIV + 1UL)) * (PLL_NDIV + 1UL))
+ 189:../Startup/system_XMC4300.c **** 
+ 190:../Startup/system_XMC4300.c **** #endif /* PLL_CLOCK_SRC == PLL_CLOCK_SRC_OFI */
+ 191:../Startup/system_XMC4300.c **** 
+ 192:../Startup/system_XMC4300.c **** #define PLL_K2DIV_24MHZ  ((VCO / OFI_FREQUENCY) - 1UL)
+ 193:../Startup/system_XMC4300.c **** #define PLL_K2DIV_48MHZ  ((VCO / 48000000U) - 1UL)
+ 194:../Startup/system_XMC4300.c **** #define PLL_K2DIV_72MHZ  ((VCO / 72000000U) - 1UL)
+ 195:../Startup/system_XMC4300.c **** #define PLL_K2DIV_96MHZ  ((VCO / 96000000U) - 1UL)
+ 196:../Startup/system_XMC4300.c **** #define PLL_K2DIV_120MHZ ((VCO / 120000000U) - 1UL)
+ 197:../Startup/system_XMC4300.c **** 
+ 198:../Startup/system_XMC4300.c **** #define SCU_CLK_CLKCLR_ENABLE_USBCLK SCU_CLK_CLKCLR_USBCDI_Msk
+ 199:../Startup/system_XMC4300.c **** #define SCU_CLK_CLKCLR_ENABLE_MMCCLK SCU_CLK_CLKCLR_MMCCDI_Msk
+ 200:../Startup/system_XMC4300.c **** #define SCU_CLK_CLKCLR_ENABLE_ETHCLK SCU_CLK_CLKCLR_ETH0CDI_Msk
+ 201:../Startup/system_XMC4300.c **** #define SCU_CLK_CLKCLR_ENABLE_EBUCLK SCU_CLK_CLKCLR_EBUCDI_Msk
+ 202:../Startup/system_XMC4300.c **** #define SCU_CLK_CLKCLR_ENABLE_CCUCLK SCU_CLK_CLKCLR_CCUCDI_Msk
+ 203:../Startup/system_XMC4300.c **** 
+ 204:../Startup/system_XMC4300.c **** #define SCU_CLK_SYSCLKCR_SYSSEL_OFI      (0U << SCU_CLK_SYSCLKCR_SYSSEL_Pos)
+ 205:../Startup/system_XMC4300.c **** #define SCU_CLK_SYSCLKCR_SYSSEL_PLL      (1U << SCU_CLK_SYSCLKCR_SYSSEL_Pos)
+ 206:../Startup/system_XMC4300.c **** 
+ 207:../Startup/system_XMC4300.c **** #define SCU_CLK_USBCLKCR_USBSEL_USBPLL   (0U << SCU_CLK_USBCLKCR_USBSEL_Pos)
+ 208:../Startup/system_XMC4300.c **** #define SCU_CLK_USBCLKCR_USBSEL_PLL      (1U << SCU_CLK_USBCLKCR_USBSEL_Pos)
+ 209:../Startup/system_XMC4300.c **** 
+ 210:../Startup/system_XMC4300.c **** #define SCU_CLK_ECATCLKCR_ECATSEL_USBPLL (0U << SCU_CLK_ECATCLKCR_ECATSEL_Pos)
+ 211:../Startup/system_XMC4300.c **** #define SCU_CLK_ECATCLKCR_ECATSEL_PLL    (1U << SCU_CLK_ECATCLKCR_ECATSEL_Pos)
+ 212:../Startup/system_XMC4300.c **** 
+ 213:../Startup/system_XMC4300.c **** #define SCU_CLK_WDTCLKCR_WDTSEL_OFI      (0U << SCU_CLK_WDTCLKCR_WDTSEL_Pos)
+ 214:../Startup/system_XMC4300.c **** #define SCU_CLK_WDTCLKCR_WDTSEL_STANDBY  (1U << SCU_CLK_WDTCLKCR_WDTSEL_Pos)
+ 215:../Startup/system_XMC4300.c **** #define SCU_CLK_WDTCLKCR_WDTSEL_PLL      (2U << SCU_CLK_WDTCLKCR_WDTSEL_Pos)
+ 216:../Startup/system_XMC4300.c **** 
+ 217:../Startup/system_XMC4300.c **** #define SCU_CLK_EXTCLKCR_ECKSEL_SYS      (0U << SCU_CLK_EXTCLKCR_ECKSEL_Pos)
+ 218:../Startup/system_XMC4300.c **** #define SCU_CLK_EXTCLKCR_ECKSEL_USBPLL   (2U << SCU_CLK_EXTCLKCR_ECKSEL_Pos)
+ 219:../Startup/system_XMC4300.c **** #define SCU_CLK_EXTCLKCR_ECKSEL_PLL      (3U << SCU_CLK_EXTCLKCR_ECKSEL_Pos)
+ 220:../Startup/system_XMC4300.c **** 
+ 221:../Startup/system_XMC4300.c **** #define EXTCLK_PIN_P0_8  (1)
+ 222:../Startup/system_XMC4300.c **** #define EXTCLK_PIN_P1_15 (2)
+ 223:../Startup/system_XMC4300.c **** 
+ 224:../Startup/system_XMC4300.c **** /*
+ 225:../Startup/system_XMC4300.c **** //    <h> Clock tree
+ 226:../Startup/system_XMC4300.c **** //        <o1.16> System clock source selection
+ 227:../Startup/system_XMC4300.c **** //                      <0=> fOFI
+ 228:../Startup/system_XMC4300.c **** //                      <1=> fPLL
+ 229:../Startup/system_XMC4300.c **** //                      <i> Default: fPLL
+ 230:../Startup/system_XMC4300.c **** //        <o1.0..7> System clock divider <1-256><#-1>
+ 231:../Startup/system_XMC4300.c **** //                      <i> Default: 2
+ 232:../Startup/system_XMC4300.c **** //        <o2.0> CPU clock divider
+ 233:../Startup/system_XMC4300.c **** //                      <0=> fCPU = fSYS
+ 234:../Startup/system_XMC4300.c **** //                      <1=> fCPU = fSYS / 2
+ 235:../Startup/system_XMC4300.c **** //                      <i> Default: fCPU = fSYS
+ 236:../Startup/system_XMC4300.c **** //        <o3.0>  Peripheral clock divider
+ 237:../Startup/system_XMC4300.c **** //                      <0=> fPB = fCPU
+ 238:../Startup/system_XMC4300.c **** //                      <1=> fPB = fCPU / 2
+ 239:../Startup/system_XMC4300.c **** //                      <i> Default: fPB = fCPU
+ 240:../Startup/system_XMC4300.c **** //        <o4.0>  CCU clock divider
+ 241:../Startup/system_XMC4300.c **** //                      <0=> fCCU = fCPU
+ 242:../Startup/system_XMC4300.c **** //                      <1=> fCCU = fCPU / 2
+ 243:../Startup/system_XMC4300.c **** //                      <i> Default: fCCU = fCPU
+ 244:../Startup/system_XMC4300.c **** //        <e.5> Enable WDT clock
+ 245:../Startup/system_XMC4300.c **** //             <o5.16..17> WDT clock source <0=> fOFI
+ 246:../Startup/system_XMC4300.c **** //                                          <1=> fSTDBY
+ 247:../Startup/system_XMC4300.c **** //                                          <2=> fPLL
+ 248:../Startup/system_XMC4300.c **** //                      <i> Default: fOFI
+ 249:../Startup/system_XMC4300.c **** //             <o5.0..7> WDT clock divider <1-256><#-1>
+ 250:../Startup/system_XMC4300.c **** //                      <i> Default: 1
+ 251:../Startup/system_XMC4300.c **** //        </e>
+ 252:../Startup/system_XMC4300.c **** //        <e.2> Enable ETH clock
+ 253:../Startup/system_XMC4300.c **** //        </e>
+ 254:../Startup/system_XMC4300.c **** //        <e.1> Enable MMC clock
+ 255:../Startup/system_XMC4300.c **** //        </e>
+ 256:../Startup/system_XMC4300.c **** //        <e.0> Enable USB clock
+ 257:../Startup/system_XMC4300.c **** //             <o6.16> USB clock source <0=> fUSBPLL
+ 258:../Startup/system_XMC4300.c **** //                                      <1=> fPLL
+ 259:../Startup/system_XMC4300.c **** //             <i> Default: fPLL
+ 260:../Startup/system_XMC4300.c **** //             <o6.0..2> USB clock source divider <1-8><#-1>
+ 261:../Startup/system_XMC4300.c **** //             <i> Default: 6
+ 262:../Startup/system_XMC4300.c **** //        </e>
+ 263:../Startup/system_XMC4300.c **** //        <o7.16..17> ECAT clock source <0=> fUSBPLL
+ 264:../Startup/system_XMC4300.c **** //                                      <1=> fPLL
+ 265:../Startup/system_XMC4300.c **** //             <i> Default: fUSBPLL
+ 266:../Startup/system_XMC4300.c **** //        <o7.0..1> ECAT clock divider <1-4><#-1>
+ 267:../Startup/system_XMC4300.c **** //             <i> Default: 2
+ 268:../Startup/system_XMC4300.c **** //        <e9> Enable external clock
+ 269:../Startup/system_XMC4300.c **** //             <o8.0..1> External Clock Source Selection
+ 270:../Startup/system_XMC4300.c **** //                  <0=> fSYS
+ 271:../Startup/system_XMC4300.c **** //                  <2=> fUSB
+ 272:../Startup/system_XMC4300.c **** //                  <3=> fPLL
+ 273:../Startup/system_XMC4300.c **** //                  <i> Default: fPLL
+ 274:../Startup/system_XMC4300.c **** //             <o8.16..24> External Clock divider <1-512><#-1>
+ 275:../Startup/system_XMC4300.c **** //                  <i> Default: 288
+ 276:../Startup/system_XMC4300.c **** //                  <i> Only valid for USB PLL and PLL clocks
+ 277:../Startup/system_XMC4300.c **** //             <o9.0> External Clock Pin Selection
+ 278:../Startup/system_XMC4300.c **** //                  <0=> Disabled
+ 279:../Startup/system_XMC4300.c **** //                  <1=> P0.8
+ 280:../Startup/system_XMC4300.c **** //                  <2=> P1.15
+ 281:../Startup/system_XMC4300.c **** //                  <i> Default: Disabled
+ 282:../Startup/system_XMC4300.c **** //        </e>
+ 283:../Startup/system_XMC4300.c **** //    </h>
+ 284:../Startup/system_XMC4300.c **** */
+ 285:../Startup/system_XMC4300.c **** #define __CLKSET    (0x00000000UL)
+ 286:../Startup/system_XMC4300.c **** #define __SYSCLKCR  (0x00010001UL)
+ 287:../Startup/system_XMC4300.c **** #define __CPUCLKCR  (0x00000000UL)
+ 288:../Startup/system_XMC4300.c **** #define __PBCLKCR   (0x00000000UL)
+ 289:../Startup/system_XMC4300.c **** #define __CCUCLKCR  (0x00000000UL)
+ 290:../Startup/system_XMC4300.c **** #define __WDTCLKCR  (0x00000000UL)
+ 291:../Startup/system_XMC4300.c **** #define __USBCLKCR  (0x00010005UL)
+ 292:../Startup/system_XMC4300.c **** #define __ECATCLKCR (0x00000001UL)
+ 293:../Startup/system_XMC4300.c **** 
+ 294:../Startup/system_XMC4300.c **** #define __EXTCLKCR (0x01200003UL)
+ 295:../Startup/system_XMC4300.c **** #define __EXTCLKPIN (0U)
+ 296:../Startup/system_XMC4300.c **** 
+ 297:../Startup/system_XMC4300.c **** /*
+ 298:../Startup/system_XMC4300.c **** // </h>
+ 299:../Startup/system_XMC4300.c **** */
+ 300:../Startup/system_XMC4300.c **** 
+ 301:../Startup/system_XMC4300.c **** /*
+ 302:../Startup/system_XMC4300.c **** //-------- <<< end of configuration section >>> ------------------
+ 303:../Startup/system_XMC4300.c **** */
+ 304:../Startup/system_XMC4300.c **** 
+ 305:../Startup/system_XMC4300.c **** #define ENABLE_PLL \
+ 306:../Startup/system_XMC4300.c ****     (((__SYSCLKCR & SCU_CLK_SYSCLKCR_SYSSEL_Msk) == SCU_CLK_SYSCLKCR_SYSSEL_PLL) || \
+ 307:../Startup/system_XMC4300.c ****      ((__ECATCLKCR & SCU_CLK_ECATCLKCR_ECATSEL_Msk) == SCU_CLK_ECATCLKCR_ECATSEL_PLL) || \
+ 308:../Startup/system_XMC4300.c ****      (((__CLKSET & SCU_CLK_CLKSET_USBCEN_Msk) != 0) && ((__USBCLKCR & SCU_CLK_USBCLKCR_USBSEL_Msk) 
+ 309:../Startup/system_XMC4300.c ****      (((__CLKSET & SCU_CLK_CLKSET_WDTCEN_Msk) != 0) && ((__WDTCLKCR & SCU_CLK_WDTCLKCR_WDTSEL_Msk) 
+ 310:../Startup/system_XMC4300.c **** 
+ 311:../Startup/system_XMC4300.c **** #define ENABLE_USBPLL \
+ 312:../Startup/system_XMC4300.c ****     (((__ECATCLKCR & SCU_CLK_ECATCLKCR_ECATSEL_Msk) == SCU_CLK_ECATCLKCR_ECATSEL_USBPLL) || \
+ 313:../Startup/system_XMC4300.c ****      (((__CLKSET & SCU_CLK_CLKSET_USBCEN_Msk) != 0) && ((__USBCLKCR & SCU_CLK_USBCLKCR_USBSEL_Msk) 
+ 314:../Startup/system_XMC4300.c ****      (((__CLKSET & SCU_CLK_CLKSET_MMCCEN_Msk) != 0) && ((__USBCLKCR & SCU_CLK_USBCLKCR_USBSEL_Msk) 
+ 315:../Startup/system_XMC4300.c **** 
+ 316:../Startup/system_XMC4300.c **** /*******************************************************************************
+ 317:../Startup/system_XMC4300.c ****  * GLOBAL VARIABLES
+ 318:../Startup/system_XMC4300.c ****  *******************************************************************************/
+ 319:../Startup/system_XMC4300.c **** #if defined ( __CC_ARM )
+ 320:../Startup/system_XMC4300.c **** uint32_t SystemCoreClock __attribute__((at(0x2000FFC0)));
+ 321:../Startup/system_XMC4300.c **** uint8_t g_chipid[16] __attribute__((at(0x2000FFC4)));
+ 322:../Startup/system_XMC4300.c **** #elif defined (__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+ 323:../Startup/system_XMC4300.c **** uint32_t SystemCoreClock __attribute__((section(".bss.ARM.__at_0x2000FFC0")));
+ 324:../Startup/system_XMC4300.c **** uint8_t g_chipid[16] __attribute__((section(".bss.ARM.__at_0x2000FFC4")));
+ 325:../Startup/system_XMC4300.c **** #elif defined ( __ICCARM__ )
+ 326:../Startup/system_XMC4300.c **** __no_init uint32_t SystemCoreClock;
+ 327:../Startup/system_XMC4300.c **** __no_init uint8_t g_chipid[16];
+ 328:../Startup/system_XMC4300.c **** #elif defined ( __GNUC__ )
+ 329:../Startup/system_XMC4300.c **** uint32_t SystemCoreClock __attribute__((section(".no_init")));
+ 330:../Startup/system_XMC4300.c **** uint8_t g_chipid[16] __attribute__((section(".no_init")));
+ 331:../Startup/system_XMC4300.c **** #elif defined ( __TASKING__ )
+ 332:../Startup/system_XMC4300.c **** uint32_t SystemCoreClock __at( 0x2000FFC0 );
+ 333:../Startup/system_XMC4300.c **** uint8_t g_chipid[16] __at( 0x2000FFC4 );
+ 334:../Startup/system_XMC4300.c **** #else
+ 335:../Startup/system_XMC4300.c **** #error "system_XMC4300.c: compiler not supported" 
+ 336:../Startup/system_XMC4300.c **** #endif    
+ 337:../Startup/system_XMC4300.c **** 
+ 338:../Startup/system_XMC4300.c **** extern uint32_t __Vectors;
+ 339:../Startup/system_XMC4300.c **** 
+ 340:../Startup/system_XMC4300.c **** /*******************************************************************************
+ 341:../Startup/system_XMC4300.c ****  * LOCAL FUNCTIONS
+ 342:../Startup/system_XMC4300.c ****  *******************************************************************************/
+ 343:../Startup/system_XMC4300.c **** static void delay(uint32_t cycles)
+ 344:../Startup/system_XMC4300.c **** {
+  40              	 .loc 1 344 0
+  41              	 .cfi_startproc
+  42              	 
+  43              	 
+  44              	 
+  45 0000 80B4     	 push {r7}
+  46              	.LCFI0:
+  47              	 .cfi_def_cfa_offset 4
+  48              	 .cfi_offset 7,-4
+  49 0002 85B0     	 sub sp,sp,#20
+  50              	.LCFI1:
+  51              	 .cfi_def_cfa_offset 24
+  52 0004 00AF     	 add r7,sp,#0
+  53              	.LCFI2:
+  54              	 .cfi_def_cfa_register 7
+  55 0006 7860     	 str r0,[r7,#4]
+ 345:../Startup/system_XMC4300.c ****   volatile uint32_t i;
+ 346:../Startup/system_XMC4300.c **** 
+ 347:../Startup/system_XMC4300.c ****   for(i = 0UL; i < cycles ;++i)
+  56              	 .loc 1 347 0
+  57 0008 0023     	 movs r3,#0
+  58 000a FB60     	 str r3,[r7,#12]
+  59 000c 03E0     	 b .L2
+  60              	.L3:
+ 348:../Startup/system_XMC4300.c ****   {
+ 349:../Startup/system_XMC4300.c ****     __NOP();
+  61              	 .loc 1 349 0 discriminator 3
+  62              	
+  63 000e 00BF     	 nop
+  64              	
+ 347:../Startup/system_XMC4300.c ****   {
+  65              	 .loc 1 347 0 discriminator 3
+  66              	 .thumb
+  67 0010 FB68     	 ldr r3,[r7,#12]
+  68 0012 0133     	 adds r3,r3,#1
+  69 0014 FB60     	 str r3,[r7,#12]
+  70              	.L2:
+ 347:../Startup/system_XMC4300.c ****   {
+  71              	 .loc 1 347 0 is_stmt 0 discriminator 1
+  72 0016 FA68     	 ldr r2,[r7,#12]
+  73 0018 7B68     	 ldr r3,[r7,#4]
+  74 001a 9A42     	 cmp r2,r3
+  75 001c F7D3     	 bcc .L3
+ 350:../Startup/system_XMC4300.c ****   }
+ 351:../Startup/system_XMC4300.c **** }
+  76              	 .loc 1 351 0 is_stmt 1
+  77 001e 1437     	 adds r7,r7,#20
+  78              	.LCFI3:
+  79              	 .cfi_def_cfa_offset 4
+  80 0020 BD46     	 mov sp,r7
+  81              	.LCFI4:
+  82              	 .cfi_def_cfa_register 13
+  83              	 
+  84 0022 5DF8047B 	 ldr r7,[sp],#4
+  85              	.LCFI5:
+  86              	 .cfi_restore 7
+  87              	 .cfi_def_cfa_offset 0
+  88 0026 7047     	 bx lr
+  89              	 .cfi_endproc
+  90              	.LFE132:
+  92              	 .section .text.SystemInit,"ax",%progbits
+  93              	 .align 2
+  94              	 .weak SystemInit
+  95              	 .thumb
+  96              	 .thumb_func
+  98              	SystemInit:
+  99              	.LFB133:
+ 352:../Startup/system_XMC4300.c **** 
+ 353:../Startup/system_XMC4300.c **** /*******************************************************************************
+ 354:../Startup/system_XMC4300.c ****  * API IMPLEMENTATION
+ 355:../Startup/system_XMC4300.c ****  *******************************************************************************/
+ 356:../Startup/system_XMC4300.c **** 
+ 357:../Startup/system_XMC4300.c **** __WEAK void SystemInit(void)
+ 358:../Startup/system_XMC4300.c **** {
+ 100              	 .loc 1 358 0
+ 101              	 .cfi_startproc
+ 102              	 
+ 103              	 
+ 104 0000 98B5     	 push {r3,r4,r7,lr}
+ 105              	.LCFI6:
+ 106              	 .cfi_def_cfa_offset 16
+ 107              	 .cfi_offset 3,-16
+ 108              	 .cfi_offset 4,-12
+ 109              	 .cfi_offset 7,-8
+ 110              	 .cfi_offset 14,-4
+ 111 0002 00AF     	 add r7,sp,#0
+ 112              	.LCFI7:
+ 113              	 .cfi_def_cfa_register 7
+ 359:../Startup/system_XMC4300.c ****   memcpy(g_chipid, CHIPID_LOC, 16);
+ 114              	 .loc 1 359 0
+ 115 0004 054A     	 ldr r2,.L5
+ 116 0006 4FF00053 	 mov r3,#536870912
+ 117 000a 1446     	 mov r4,r2
+ 118 000c 0FCB     	 ldmia r3,{r0,r1,r2,r3}
+ 119 000e 84E80F00 	 stmia r4,{r0,r1,r2,r3}
+ 360:../Startup/system_XMC4300.c **** 
+ 361:../Startup/system_XMC4300.c ****   SystemCoreSetup();
+ 120              	 .loc 1 361 0
+ 121 0012 FFF7FEFF 	 bl SystemCoreSetup
+ 362:../Startup/system_XMC4300.c ****   SystemCoreClockSetup();
+ 122              	 .loc 1 362 0
+ 123 0016 FFF7FEFF 	 bl SystemCoreClockSetup
+ 363:../Startup/system_XMC4300.c **** }
+ 124              	 .loc 1 363 0
+ 125 001a 98BD     	 pop {r3,r4,r7,pc}
+ 126              	.L6:
+ 127              	 .align 2
+ 128              	.L5:
+ 129 001c 00000000 	 .word g_chipid
+ 130              	 .cfi_endproc
+ 131              	.LFE133:
+ 133              	 .section .text.SystemCoreSetup,"ax",%progbits
+ 134              	 .align 2
+ 135              	 .weak SystemCoreSetup
+ 136              	 .thumb
+ 137              	 .thumb_func
+ 139              	SystemCoreSetup:
+ 140              	.LFB134:
+ 364:../Startup/system_XMC4300.c **** 
+ 365:../Startup/system_XMC4300.c **** __WEAK void SystemCoreSetup(void)
+ 366:../Startup/system_XMC4300.c **** {
+ 141              	 .loc 1 366 0
+ 142              	 .cfi_startproc
+ 143              	 
+ 144              	 
+ 145              	 
+ 146 0000 80B4     	 push {r7}
+ 147              	.LCFI8:
+ 148              	 .cfi_def_cfa_offset 4
+ 149              	 .cfi_offset 7,-4
+ 150 0002 83B0     	 sub sp,sp,#12
+ 151              	.LCFI9:
+ 152              	 .cfi_def_cfa_offset 16
+ 153 0004 00AF     	 add r7,sp,#0
+ 154              	.LCFI10:
+ 155              	 .cfi_def_cfa_register 7
+ 156              	.LBB8:
+ 157              	.LBB9:
+ 158              	 .file 2 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/cmsis_gcc.h"
+   1:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**************************************************************************//**
+   2:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  * @file     cmsis_gcc.h
+   3:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  * @brief    CMSIS compiler GCC header file
+   4:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  * @version  V5.2.0
+   5:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  * @date     08. May 2019
+   6:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  ******************************************************************************/
+   7:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /*
+   8:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  * Copyright (c) 2009-2019 Arm Limited. All rights reserved.
+   9:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  *
+  10:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  * SPDX-License-Identifier: Apache-2.0
+  11:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  *
+  12:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  * Licensed under the Apache License, Version 2.0 (the License); you may
+  13:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  * not use this file except in compliance with the License.
+  14:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  * You may obtain a copy of the License at
+  15:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  *
+  16:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  * www.apache.org/licenses/LICENSE-2.0
+  17:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  *
+  18:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  * Unless required by applicable law or agreed to in writing, software
+  19:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+  20:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  21:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  * See the License for the specific language governing permissions and
+  22:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  * limitations under the License.
+  23:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+  24:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+  25:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef __CMSIS_GCC_H
+  26:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #define __CMSIS_GCC_H
+  27:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+  28:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /* ignore some GCC warnings */
+  29:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #pragma GCC diagnostic push
+  30:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wsign-conversion"
+  31:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wconversion"
+  32:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wunused-parameter"
+  33:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+  34:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /* Fallback for __has_builtin */
+  35:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef __has_builtin
+  36:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #define __has_builtin(x) (0)
+  37:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+  38:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+  39:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /* CMSIS compiler specific defines */
+  40:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef   __ASM
+  41:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #define __ASM                                  __asm
+  42:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+  43:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef   __INLINE
+  44:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #define __INLINE                               inline
+  45:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+  46:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef   __STATIC_INLINE
+  47:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #define __STATIC_INLINE                        static inline
+  48:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+  49:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef   __STATIC_FORCEINLINE                 
+  50:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static inline
+  51:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif                                           
+  52:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef   __NO_RETURN
+  53:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #define __NO_RETURN                            __attribute__((__noreturn__))
+  54:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+  55:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef   __USED
+  56:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #define __USED                                 __attribute__((used))
+  57:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+  58:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef   __WEAK
+  59:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #define __WEAK                                 __attribute__((weak))
+  60:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+  61:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef   __PACKED
+  62:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #define __PACKED                               __attribute__((packed, aligned(1)))
+  63:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+  64:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef   __PACKED_STRUCT
+  65:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #define __PACKED_STRUCT                        struct __attribute__((packed, aligned(1)))
+  66:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+  67:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef   __PACKED_UNION
+  68:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #define __PACKED_UNION                         union __attribute__((packed, aligned(1)))
+  69:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+  70:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32        /* deprecated */
+  71:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #pragma GCC diagnostic push
+  72:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  73:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  74:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   struct __attribute__((packed)) T_UINT32 { uint32_t v; };
+  75:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  76:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #define __UNALIGNED_UINT32(x)                  (((struct T_UINT32 *)(x))->v)
+  77:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+  78:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_WRITE
+  79:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #pragma GCC diagnostic push
+  80:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  81:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  82:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };
+  83:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  84:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))-
+  85:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+  86:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_READ
+  87:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #pragma GCC diagnostic push
+  88:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  89:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  90:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_READ { uint16_t v; };
+  91:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  92:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #define __UNALIGNED_UINT16_READ(addr)          (((const struct T_UINT16_READ *)(const void *)(add
+  93:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+  94:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_WRITE
+  95:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #pragma GCC diagnostic push
+  96:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  97:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  98:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_WRITE { uint32_t v; };
+  99:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 100:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #define __UNALIGNED_UINT32_WRITE(addr, val)    (void)((((struct T_UINT32_WRITE *)(void *)(addr))-
+ 101:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 102:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_READ
+ 103:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #pragma GCC diagnostic push
+ 104:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+ 105:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+ 106:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_READ { uint32_t v; };
+ 107:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 108:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(add
+ 109:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 110:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef   __ALIGNED
+ 111:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #define __ALIGNED(x)                           __attribute__((aligned(x)))
+ 112:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 113:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef   __RESTRICT
+ 114:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #define __RESTRICT                             __restrict
+ 115:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 116:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef   __COMPILER_BARRIER
+ 117:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   #define __COMPILER_BARRIER()                   __ASM volatile("":::"memory")
+ 118:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 119:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 120:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /* #########################  Startup and Lowlevel Init  ######################## */
+ 121:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 122:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef __PROGRAM_START
+ 123:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 124:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 125:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Initializes data and bss sections
+ 126:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details This default implementations initialized all data and additional bss
+ 127:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****            sections relying on .copy.table and .zero.table specified properly
+ 128:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****            in the used linker script.
+ 129:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   
+ 130:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 131:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE __NO_RETURN void __cmsis_start(void)
+ 132:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 133:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   extern void _start(void) __NO_RETURN;
+ 134:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   
+ 135:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   typedef struct {
+ 136:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****     uint32_t const* src;
+ 137:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****     uint32_t* dest;
+ 138:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****     uint32_t  wlen;
+ 139:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   } __copy_table_t;
+ 140:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   
+ 141:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   typedef struct {
+ 142:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****     uint32_t* dest;
+ 143:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****     uint32_t  wlen;
+ 144:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   } __zero_table_t;
+ 145:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   
+ 146:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   extern const __copy_table_t __copy_table_start__;
+ 147:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   extern const __copy_table_t __copy_table_end__;
+ 148:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   extern const __zero_table_t __zero_table_start__;
+ 149:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   extern const __zero_table_t __zero_table_end__;
+ 150:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 151:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   for (__copy_table_t const* pTable = &__copy_table_start__; pTable < &__copy_table_end__; ++pTable
+ 152:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****     for(uint32_t i=0u; i<pTable->wlen; ++i) {
+ 153:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****       pTable->dest[i] = pTable->src[i];
+ 154:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****     }
+ 155:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   }
+ 156:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  
+ 157:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   for (__zero_table_t const* pTable = &__zero_table_start__; pTable < &__zero_table_end__; ++pTable
+ 158:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****     for(uint32_t i=0u; i<pTable->wlen; ++i) {
+ 159:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****       pTable->dest[i] = 0u;
+ 160:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****     }
+ 161:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   }
+ 162:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  
+ 163:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   _start();
+ 164:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 165:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   
+ 166:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #define __PROGRAM_START           __cmsis_start
+ 167:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 168:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 169:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef __INITIAL_SP
+ 170:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #define __INITIAL_SP              __StackTop
+ 171:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 172:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 173:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef __STACK_LIMIT
+ 174:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #define __STACK_LIMIT             __StackLimit
+ 175:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 176:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 177:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef __VECTOR_TABLE
+ 178:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #define __VECTOR_TABLE            __Vectors
+ 179:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 180:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 181:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #ifndef __VECTOR_TABLE_ATTRIBUTE
+ 182:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #define __VECTOR_TABLE_ATTRIBUTE  __attribute((used, section(".vectors")))
+ 183:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 184:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 185:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /* ###########################  Core Function Access  ########################### */
+ 186:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /** \ingroup  CMSIS_Core_FunctionInterface
+ 187:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****     \defgroup CMSIS_Core_RegAccFunctions CMSIS Core Register Access Functions
+ 188:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   @{
+ 189:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 190:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 191:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 192:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Enable IRQ Interrupts
+ 193:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Enables IRQ interrupts by clearing the I-bit in the CPSR.
+ 194:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 195:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 196:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __enable_irq(void)
+ 197:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 198:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("cpsie i" : : : "memory");
+ 199:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 200:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 201:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 202:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 203:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Disable IRQ Interrupts
+ 204:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Disables IRQ interrupts by setting the I-bit in the CPSR.
+ 205:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 206:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 207:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __disable_irq(void)
+ 208:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 209:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("cpsid i" : : : "memory");
+ 159              	 .loc 2 209 0
+ 160              	
+ 161 0006 72B6     	 cpsid i
+ 162              	
+ 163              	 .thumb
+ 164              	.LBE9:
+ 165              	.LBE8:
+ 367:../Startup/system_XMC4300.c ****   uint32_t temp;
+ 368:../Startup/system_XMC4300.c **** 
+ 369:../Startup/system_XMC4300.c ****   /* relocate vector table */
+ 370:../Startup/system_XMC4300.c ****   __disable_irq();
+ 371:../Startup/system_XMC4300.c ****   SCB->VTOR = (uint32_t)(&__Vectors);
+ 166              	 .loc 1 371 0
+ 167 0008 164B     	 ldr r3,.L8
+ 168 000a 174A     	 ldr r2,.L8+4
+ 169 000c 9A60     	 str r2,[r3,#8]
+ 170              	.LBB10:
+ 171              	.LBB11:
+ 210:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 211:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 212:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 213:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 214:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Get Control Register
+ 215:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Returns the content of the Control Register.
+ 216:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \return               Control Register value
+ 217:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 218:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_CONTROL(void)
+ 219:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 220:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   uint32_t result;
+ 221:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 222:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MRS %0, control" : "=r" (result) );
+ 223:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return(result);
+ 224:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 225:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 226:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 227:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+ 228:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 229:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Get Control Register (non-secure)
+ 230:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Returns the content of the non-secure Control Register when in secure mode.
+ 231:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \return               non-secure Control Register value
+ 232:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 233:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_CONTROL_NS(void)
+ 234:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 235:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   uint32_t result;
+ 236:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 237:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MRS %0, control_ns" : "=r" (result) );
+ 238:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return(result);
+ 239:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 240:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 241:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 242:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 243:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 244:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Set Control Register
+ 245:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Writes the given value to the Control Register.
+ 246:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \param [in]    control  Control Register value to set
+ 247:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 248:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_CONTROL(uint32_t control)
+ 249:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 250:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MSR control, %0" : : "r" (control) : "memory");
+ 251:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 252:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 253:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 254:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+ 255:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 256:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Set Control Register (non-secure)
+ 257:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Writes the given value to the non-secure Control Register when in secure state.
+ 258:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \param [in]    control  Control Register value to set
+ 259:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 260:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_CONTROL_NS(uint32_t control)
+ 261:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 262:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MSR control_ns, %0" : : "r" (control) : "memory");
+ 263:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 264:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 265:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 266:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 267:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 268:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Get IPSR Register
+ 269:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Returns the content of the IPSR Register.
+ 270:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \return               IPSR Register value
+ 271:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 272:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_IPSR(void)
+ 273:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 274:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   uint32_t result;
+ 275:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 276:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MRS %0, ipsr" : "=r" (result) );
+ 277:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return(result);
+ 278:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 279:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 280:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 281:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 282:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Get APSR Register
+ 283:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Returns the content of the APSR Register.
+ 284:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \return               APSR Register value
+ 285:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 286:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_APSR(void)
+ 287:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 288:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   uint32_t result;
+ 289:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 290:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MRS %0, apsr" : "=r" (result) );
+ 291:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return(result);
+ 292:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 293:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 294:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 295:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 296:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Get xPSR Register
+ 297:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Returns the content of the xPSR Register.
+ 298:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \return               xPSR Register value
+ 299:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 300:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_xPSR(void)
+ 301:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 302:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   uint32_t result;
+ 303:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 304:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MRS %0, xpsr" : "=r" (result) );
+ 305:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return(result);
+ 306:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 307:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 308:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 309:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 310:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Get Process Stack Pointer
+ 311:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Returns the current value of the Process Stack Pointer (PSP).
+ 312:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \return               PSP Register value
+ 313:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 314:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_PSP(void)
+ 315:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 316:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   uint32_t result;
+ 317:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 318:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MRS %0, psp"  : "=r" (result) );
+ 319:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return(result);
+ 320:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 321:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 322:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 323:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+ 324:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 325:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Get Process Stack Pointer (non-secure)
+ 326:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Returns the current value of the non-secure Process Stack Pointer (PSP) when in secure s
+ 327:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \return               PSP Register value
+ 328:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 329:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_PSP_NS(void)
+ 330:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 331:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   uint32_t result;
+ 332:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 333:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MRS %0, psp_ns"  : "=r" (result) );
+ 334:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return(result);
+ 335:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 336:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 337:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 338:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 339:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 340:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Set Process Stack Pointer
+ 341:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Assigns the given value to the Process Stack Pointer (PSP).
+ 342:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \param [in]    topOfProcStack  Process Stack Pointer value to set
+ 343:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 344:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_PSP(uint32_t topOfProcStack)
+ 345:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 346:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MSR psp, %0" : : "r" (topOfProcStack) : );
+ 347:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 348:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 349:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 350:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+ 351:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 352:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Set Process Stack Pointer (non-secure)
+ 353:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Assigns the given value to the non-secure Process Stack Pointer (PSP) when in secure sta
+ 354:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \param [in]    topOfProcStack  Process Stack Pointer value to set
+ 355:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 356:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_PSP_NS(uint32_t topOfProcStack)
+ 357:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 358:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MSR psp_ns, %0" : : "r" (topOfProcStack) : );
+ 359:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 360:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 361:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 362:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 363:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 364:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Get Main Stack Pointer
+ 365:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Returns the current value of the Main Stack Pointer (MSP).
+ 366:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \return               MSP Register value
+ 367:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 368:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_MSP(void)
+ 369:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 370:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   uint32_t result;
+ 371:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 372:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MRS %0, msp" : "=r" (result) );
+ 373:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return(result);
+ 374:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 375:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 376:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 377:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+ 378:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 379:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Get Main Stack Pointer (non-secure)
+ 380:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Returns the current value of the non-secure Main Stack Pointer (MSP) when in secure stat
+ 381:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \return               MSP Register value
+ 382:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 383:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_MSP_NS(void)
+ 384:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 385:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   uint32_t result;
+ 386:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 387:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MRS %0, msp_ns" : "=r" (result) );
+ 388:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return(result);
+ 389:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 390:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 391:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 392:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 393:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 394:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Set Main Stack Pointer
+ 395:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Assigns the given value to the Main Stack Pointer (MSP).
+ 396:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \param [in]    topOfMainStack  Main Stack Pointer value to set
+ 397:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 398:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_MSP(uint32_t topOfMainStack)
+ 399:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 400:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MSR msp, %0" : : "r" (topOfMainStack) : );
+ 401:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 402:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 403:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 404:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+ 405:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 406:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Set Main Stack Pointer (non-secure)
+ 407:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Assigns the given value to the non-secure Main Stack Pointer (MSP) when in secure state.
+ 408:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \param [in]    topOfMainStack  Main Stack Pointer value to set
+ 409:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 410:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_MSP_NS(uint32_t topOfMainStack)
+ 411:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 412:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MSR msp_ns, %0" : : "r" (topOfMainStack) : );
+ 413:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 414:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 415:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 416:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 417:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+ 418:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 419:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Get Stack Pointer (non-secure)
+ 420:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Returns the current value of the non-secure Stack Pointer (SP) when in secure state.
+ 421:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \return               SP Register value
+ 422:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 423:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_SP_NS(void)
+ 424:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 425:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   uint32_t result;
+ 426:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 427:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MRS %0, sp_ns" : "=r" (result) );
+ 428:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return(result);
+ 429:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 430:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 431:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 432:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 433:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Set Stack Pointer (non-secure)
+ 434:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Assigns the given value to the non-secure Stack Pointer (SP) when in secure state.
+ 435:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \param [in]    topOfStack  Stack Pointer value to set
+ 436:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 437:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_SP_NS(uint32_t topOfStack)
+ 438:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 439:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MSR sp_ns, %0" : : "r" (topOfStack) : );
+ 440:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 441:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 442:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 443:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 444:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 445:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Get Priority Mask
+ 446:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Returns the current state of the priority mask bit from the Priority Mask Register.
+ 447:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \return               Priority Mask value
+ 448:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 449:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_PRIMASK(void)
+ 450:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 451:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   uint32_t result;
+ 452:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 453:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MRS %0, primask" : "=r" (result) :: "memory");
+ 454:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return(result);
+ 455:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 456:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 457:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 458:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+ 459:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 460:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Get Priority Mask (non-secure)
+ 461:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Returns the current state of the non-secure priority mask bit from the Priority Mask Reg
+ 462:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \return               Priority Mask value
+ 463:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 464:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_PRIMASK_NS(void)
+ 465:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 466:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   uint32_t result;
+ 467:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 468:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MRS %0, primask_ns" : "=r" (result) :: "memory");
+ 469:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return(result);
+ 470:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 471:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 472:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 473:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 474:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 475:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Set Priority Mask
+ 476:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Assigns the given value to the Priority Mask Register.
+ 477:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \param [in]    priMask  Priority Mask
+ 478:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 479:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_PRIMASK(uint32_t priMask)
+ 480:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 481:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MSR primask, %0" : : "r" (priMask) : "memory");
+ 482:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 483:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 484:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 485:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+ 486:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 487:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Set Priority Mask (non-secure)
+ 488:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Assigns the given value to the non-secure Priority Mask Register when in secure state.
+ 489:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \param [in]    priMask  Priority Mask
+ 490:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 491:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_PRIMASK_NS(uint32_t priMask)
+ 492:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 493:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MSR primask_ns, %0" : : "r" (priMask) : "memory");
+ 494:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 495:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 496:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 497:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 498:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if ((defined (__ARM_ARCH_7M__      ) && (__ARM_ARCH_7M__      == 1)) || \
+ 499:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****      (defined (__ARM_ARCH_7EM__     ) && (__ARM_ARCH_7EM__     == 1)) || \
+ 500:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****      (defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1))    )
+ 501:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 502:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Enable FIQ
+ 503:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Enables FIQ interrupts by clearing the F-bit in the CPSR.
+ 504:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 505:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 506:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __enable_fault_irq(void)
+ 507:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 508:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("cpsie f" : : : "memory");
+ 509:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 510:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 511:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 512:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 513:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Disable FIQ
+ 514:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Disables FIQ interrupts by setting the F-bit in the CPSR.
+ 515:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 516:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 517:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __disable_fault_irq(void)
+ 518:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 519:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("cpsid f" : : : "memory");
+ 520:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 521:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 522:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 523:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 524:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Get Base Priority
+ 525:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Returns the current value of the Base Priority register.
+ 526:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \return               Base Priority register value
+ 527:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 528:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_BASEPRI(void)
+ 529:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 530:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   uint32_t result;
+ 531:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 532:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MRS %0, basepri" : "=r" (result) );
+ 533:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return(result);
+ 534:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 535:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 536:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 537:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+ 538:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 539:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Get Base Priority (non-secure)
+ 540:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Returns the current value of the non-secure Base Priority register when in secure state.
+ 541:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \return               Base Priority register value
+ 542:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 543:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_BASEPRI_NS(void)
+ 544:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 545:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   uint32_t result;
+ 546:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 547:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MRS %0, basepri_ns" : "=r" (result) );
+ 548:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return(result);
+ 549:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 550:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 551:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 552:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 553:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 554:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Set Base Priority
+ 555:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Assigns the given value to the Base Priority register.
+ 556:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \param [in]    basePri  Base Priority value to set
+ 557:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 558:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_BASEPRI(uint32_t basePri)
+ 559:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 560:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MSR basepri, %0" : : "r" (basePri) : "memory");
+ 561:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 562:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 563:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 564:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+ 565:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 566:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Set Base Priority (non-secure)
+ 567:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Assigns the given value to the non-secure Base Priority register when in secure state.
+ 568:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \param [in]    basePri  Base Priority value to set
+ 569:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 570:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_BASEPRI_NS(uint32_t basePri)
+ 571:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 572:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MSR basepri_ns, %0" : : "r" (basePri) : "memory");
+ 573:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 574:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 575:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 576:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 577:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 578:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Set Base Priority with condition
+ 579:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Assigns the given value to the Base Priority register only if BASEPRI masking is disable
+ 580:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****            or the new value increases the BASEPRI priority level.
+ 581:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \param [in]    basePri  Base Priority value to set
+ 582:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 583:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_BASEPRI_MAX(uint32_t basePri)
+ 584:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 585:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MSR basepri_max, %0" : : "r" (basePri) : "memory");
+ 586:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 587:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 588:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 589:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 590:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Get Fault Mask
+ 591:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Returns the current value of the Fault Mask register.
+ 592:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \return               Fault Mask register value
+ 593:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 594:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_FAULTMASK(void)
+ 595:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 596:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   uint32_t result;
+ 597:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 598:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MRS %0, faultmask" : "=r" (result) );
+ 599:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return(result);
+ 600:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 601:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 602:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 603:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+ 604:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 605:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Get Fault Mask (non-secure)
+ 606:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Returns the current value of the non-secure Fault Mask register when in secure state.
+ 607:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \return               Fault Mask register value
+ 608:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 609:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_FAULTMASK_NS(void)
+ 610:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 611:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   uint32_t result;
+ 612:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 613:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MRS %0, faultmask_ns" : "=r" (result) );
+ 614:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return(result);
+ 615:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 616:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 617:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 618:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 619:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 620:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Set Fault Mask
+ 621:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Assigns the given value to the Fault Mask register.
+ 622:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \param [in]    faultMask  Fault Mask value to set
+ 623:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 624:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_FAULTMASK(uint32_t faultMask)
+ 625:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 626:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MSR faultmask, %0" : : "r" (faultMask) : "memory");
+ 627:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 628:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 629:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 630:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+ 631:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 632:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Set Fault Mask (non-secure)
+ 633:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Assigns the given value to the non-secure Fault Mask register when in secure state.
+ 634:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \param [in]    faultMask  Fault Mask value to set
+ 635:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 636:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_FAULTMASK_NS(uint32_t faultMask)
+ 637:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 638:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MSR faultmask_ns, %0" : : "r" (faultMask) : "memory");
+ 639:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 640:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 641:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 642:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif /* ((defined (__ARM_ARCH_7M__      ) && (__ARM_ARCH_7M__      == 1)) || \
+ 643:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****            (defined (__ARM_ARCH_7EM__     ) && (__ARM_ARCH_7EM__     == 1)) || \
+ 644:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****            (defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1))    ) */
+ 645:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 646:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 647:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if ((defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) || \
+ 648:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****      (defined (__ARM_ARCH_8M_BASE__ ) && (__ARM_ARCH_8M_BASE__ == 1))    )
+ 649:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 650:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 651:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Get Process Stack Pointer Limit
+ 652:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   Devices without ARMv8-M Main Extensions (i.e. Cortex-M23) lack the non-secure
+ 653:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   Stack Pointer Limit register hence zero is returned always in non-secure
+ 654:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   mode.
+ 655:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   
+ 656:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Returns the current value of the Process Stack Pointer Limit (PSPLIM).
+ 657:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \return               PSPLIM Register value
+ 658:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 659:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_PSPLIM(void)
+ 660:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 661:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (!(defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) && \
+ 662:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****     (!defined (__ARM_FEATURE_CMSE) || (__ARM_FEATURE_CMSE < 3)))
+ 663:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****     // without main extensions, the non-secure PSPLIM is RAZ/WI
+ 664:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return 0U;
+ 665:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #else
+ 666:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   uint32_t result;
+ 667:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MRS %0, psplim"  : "=r" (result) );
+ 668:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return result;
+ 669:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 670:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 671:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 672:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3))
+ 673:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 674:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Get Process Stack Pointer Limit (non-secure)
+ 675:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   Devices without ARMv8-M Main Extensions (i.e. Cortex-M23) lack the non-secure
+ 676:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   Stack Pointer Limit register hence zero is returned always.
+ 677:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 678:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Returns the current value of the non-secure Process Stack Pointer Limit (PSPLIM) when in
+ 679:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \return               PSPLIM Register value
+ 680:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 681:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_PSPLIM_NS(void)
+ 682:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 683:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (!(defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)))
+ 684:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   // without main extensions, the non-secure PSPLIM is RAZ/WI
+ 685:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return 0U;
+ 686:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #else
+ 687:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   uint32_t result;
+ 688:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MRS %0, psplim_ns"  : "=r" (result) );
+ 689:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return result;
+ 690:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 691:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 692:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 693:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 694:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 695:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 696:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Set Process Stack Pointer Limit
+ 697:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   Devices without ARMv8-M Main Extensions (i.e. Cortex-M23) lack the non-secure
+ 698:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   Stack Pointer Limit register hence the write is silently ignored in non-secure
+ 699:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   mode.
+ 700:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   
+ 701:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Assigns the given value to the Process Stack Pointer Limit (PSPLIM).
+ 702:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \param [in]    ProcStackPtrLimit  Process Stack Pointer Limit value to set
+ 703:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 704:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_PSPLIM(uint32_t ProcStackPtrLimit)
+ 705:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 706:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (!(defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) && \
+ 707:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****     (!defined (__ARM_FEATURE_CMSE) || (__ARM_FEATURE_CMSE < 3)))
+ 708:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   // without main extensions, the non-secure PSPLIM is RAZ/WI
+ 709:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   (void)ProcStackPtrLimit;
+ 710:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #else
+ 711:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MSR psplim, %0" : : "r" (ProcStackPtrLimit));
+ 712:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 713:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 714:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 715:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 716:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE  ) && (__ARM_FEATURE_CMSE   == 3))
+ 717:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 718:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Set Process Stack Pointer (non-secure)
+ 719:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   Devices without ARMv8-M Main Extensions (i.e. Cortex-M23) lack the non-secure
+ 720:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   Stack Pointer Limit register hence the write is silently ignored.
+ 721:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 722:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Assigns the given value to the non-secure Process Stack Pointer Limit (PSPLIM) when in s
+ 723:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \param [in]    ProcStackPtrLimit  Process Stack Pointer Limit value to set
+ 724:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 725:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_PSPLIM_NS(uint32_t ProcStackPtrLimit)
+ 726:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 727:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (!(defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)))
+ 728:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   // without main extensions, the non-secure PSPLIM is RAZ/WI
+ 729:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   (void)ProcStackPtrLimit;
+ 730:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #else
+ 731:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MSR psplim_ns, %0\n" : : "r" (ProcStackPtrLimit));
+ 732:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 733:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 734:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 735:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 736:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 737:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 738:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Get Main Stack Pointer Limit
+ 739:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   Devices without ARMv8-M Main Extensions (i.e. Cortex-M23) lack the non-secure
+ 740:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   Stack Pointer Limit register hence zero is returned always in non-secure
+ 741:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   mode.
+ 742:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 743:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Returns the current value of the Main Stack Pointer Limit (MSPLIM).
+ 744:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \return               MSPLIM Register value
+ 745:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 746:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_MSPLIM(void)
+ 747:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 748:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (!(defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) && \
+ 749:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****     (!defined (__ARM_FEATURE_CMSE) || (__ARM_FEATURE_CMSE < 3)))
+ 750:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   // without main extensions, the non-secure MSPLIM is RAZ/WI
+ 751:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return 0U;
+ 752:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #else
+ 753:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   uint32_t result;
+ 754:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MRS %0, msplim" : "=r" (result) );
+ 755:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return result;
+ 756:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 757:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 758:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 759:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 760:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE  ) && (__ARM_FEATURE_CMSE   == 3))
+ 761:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 762:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Get Main Stack Pointer Limit (non-secure)
+ 763:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   Devices without ARMv8-M Main Extensions (i.e. Cortex-M23) lack the non-secure
+ 764:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   Stack Pointer Limit register hence zero is returned always.
+ 765:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 766:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Returns the current value of the non-secure Main Stack Pointer Limit(MSPLIM) when in sec
+ 767:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \return               MSPLIM Register value
+ 768:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 769:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_MSPLIM_NS(void)
+ 770:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 771:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (!(defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)))
+ 772:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   // without main extensions, the non-secure MSPLIM is RAZ/WI
+ 773:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return 0U;
+ 774:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #else
+ 775:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   uint32_t result;
+ 776:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MRS %0, msplim_ns" : "=r" (result) );
+ 777:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return result;
+ 778:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 779:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 780:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 781:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 782:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 783:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 784:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Set Main Stack Pointer Limit
+ 785:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   Devices without ARMv8-M Main Extensions (i.e. Cortex-M23) lack the non-secure
+ 786:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   Stack Pointer Limit register hence the write is silently ignored in non-secure
+ 787:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   mode.
+ 788:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 789:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Assigns the given value to the Main Stack Pointer Limit (MSPLIM).
+ 790:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \param [in]    MainStackPtrLimit  Main Stack Pointer Limit value to set
+ 791:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 792:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_MSPLIM(uint32_t MainStackPtrLimit)
+ 793:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 794:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (!(defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) && \
+ 795:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****     (!defined (__ARM_FEATURE_CMSE) || (__ARM_FEATURE_CMSE < 3)))
+ 796:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   // without main extensions, the non-secure MSPLIM is RAZ/WI
+ 797:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   (void)MainStackPtrLimit;
+ 798:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #else
+ 799:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MSR msplim, %0" : : "r" (MainStackPtrLimit));
+ 800:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 801:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 802:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 803:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 804:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE  ) && (__ARM_FEATURE_CMSE   == 3))
+ 805:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 806:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Set Main Stack Pointer Limit (non-secure)
+ 807:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   Devices without ARMv8-M Main Extensions (i.e. Cortex-M23) lack the non-secure
+ 808:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   Stack Pointer Limit register hence the write is silently ignored.
+ 809:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 810:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Assigns the given value to the non-secure Main Stack Pointer Limit (MSPLIM) when in secu
+ 811:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \param [in]    MainStackPtrLimit  Main Stack Pointer value to set
+ 812:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 813:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_MSPLIM_NS(uint32_t MainStackPtrLimit)
+ 814:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 815:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if (!(defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)))
+ 816:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   // without main extensions, the non-secure MSPLIM is RAZ/WI
+ 817:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   (void)MainStackPtrLimit;
+ 818:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #else
+ 819:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("MSR msplim_ns, %0" : : "r" (MainStackPtrLimit));
+ 820:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 821:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 822:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 823:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 824:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif /* ((defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) || \
+ 825:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****            (defined (__ARM_ARCH_8M_BASE__ ) && (__ARM_ARCH_8M_BASE__ == 1))    ) */
+ 826:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 827:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 828:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 829:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Get FPSCR
+ 830:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Returns the current value of the Floating Point Status/Control register.
+ 831:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \return               Floating Point Status/Control register value
+ 832:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 833:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_FPSCR(void)
+ 834:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 835:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if ((defined (__FPU_PRESENT) && (__FPU_PRESENT == 1U)) && \
+ 836:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****      (defined (__FPU_USED   ) && (__FPU_USED    == 1U))     )
+ 837:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if __has_builtin(__builtin_arm_get_fpscr) 
+ 838:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** // Re-enable using built-in when GCC has been fixed
+ 839:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** // || (__GNUC__ > 7) || (__GNUC__ == 7 && __GNUC_MINOR__ >= 2)
+ 840:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   /* see https://gcc.gnu.org/ml/gcc-patches/2017-04/msg00443.html */
+ 841:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return __builtin_arm_get_fpscr();
+ 842:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #else
+ 843:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   uint32_t result;
+ 844:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 845:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("VMRS %0, fpscr" : "=r" (result) );
+ 846:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return(result);
+ 847:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 848:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #else
+ 849:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   return(0U);
+ 850:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 851:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 852:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 853:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 854:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 855:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Set FPSCR
+ 856:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Assigns the given value to the Floating Point Status/Control register.
+ 857:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \param [in]    fpscr  Floating Point Status/Control value to set
+ 858:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 859:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_FPSCR(uint32_t fpscr)
+ 860:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 861:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if ((defined (__FPU_PRESENT) && (__FPU_PRESENT == 1U)) && \
+ 862:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****      (defined (__FPU_USED   ) && (__FPU_USED    == 1U))     )
+ 863:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if __has_builtin(__builtin_arm_set_fpscr)
+ 864:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** // Re-enable using built-in when GCC has been fixed
+ 865:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** // || (__GNUC__ > 7) || (__GNUC__ == 7 && __GNUC_MINOR__ >= 2)
+ 866:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   /* see https://gcc.gnu.org/ml/gcc-patches/2017-04/msg00443.html */
+ 867:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __builtin_arm_set_fpscr(fpscr);
+ 868:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #else
+ 869:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("VMSR fpscr, %0" : : "r" (fpscr) : "vfpcc", "memory");
+ 870:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 871:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #else
+ 872:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   (void)fpscr;
+ 873:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 874:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 875:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 876:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 877:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /*@} end of CMSIS_Core_RegAccFunctions */
+ 878:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 879:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 880:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /* ##########################  Core Instruction Access  ######################### */
+ 881:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /** \defgroup CMSIS_Core_InstructionInterface CMSIS Core Instruction Interface
+ 882:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   Access to dedicated instructions
+ 883:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   @{
+ 884:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** */
+ 885:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 886:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /* Define macros for porting to both thumb1 and thumb2.
+ 887:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  * For thumb1, use low register (r0-r7), specified by constraint "l"
+ 888:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  * Otherwise, use general registers, specified by constraint "r" */
+ 889:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #if defined (__thumb__) && !defined (__thumb2__)
+ 890:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #define __CMSIS_GCC_OUT_REG(r) "=l" (r)
+ 891:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #define __CMSIS_GCC_RW_REG(r) "+l" (r)
+ 892:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #define __CMSIS_GCC_USE_REG(r) "l" (r)
+ 893:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #else
+ 894:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #define __CMSIS_GCC_OUT_REG(r) "=r" (r)
+ 895:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #define __CMSIS_GCC_RW_REG(r) "+r" (r)
+ 896:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #define __CMSIS_GCC_USE_REG(r) "r" (r)
+ 897:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #endif
+ 898:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 899:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 900:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   No Operation
+ 901:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details No Operation does nothing. This instruction can be used for code alignment purposes.
+ 902:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 903:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #define __NOP()                             __ASM volatile ("nop")
+ 904:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 905:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 906:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Wait For Interrupt
+ 907:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Wait For Interrupt is a hint instruction that suspends execution until one of a number o
+ 908:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 909:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #define __WFI()                             __ASM volatile ("wfi")
+ 910:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 911:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 912:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 913:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Wait For Event
+ 914:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Wait For Event is a hint instruction that permits the processor to enter
+ 915:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****            a low-power state until one of a number of events occurs.
+ 916:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 917:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #define __WFE()                             __ASM volatile ("wfe")
+ 918:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 919:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 920:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 921:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Send Event
+ 922:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Send Event is a hint instruction. It causes an event to be signaled to the CPU.
+ 923:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 924:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** #define __SEV()                             __ASM volatile ("sev")
+ 925:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 926:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 927:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 928:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Instruction Synchronization Barrier
+ 929:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Instruction Synchronization Barrier flushes the pipeline in the processor,
+ 930:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****            so that all instructions following the ISB are fetched from cache or memory,
+ 931:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****            after the instruction has been completed.
+ 932:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 933:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __ISB(void)
+ 934:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 935:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("isb 0xF":::"memory");
+ 936:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 937:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 938:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** 
+ 939:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** /**
+ 940:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \brief   Data Synchronization Barrier
+ 941:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   \details Acts as a special kind of Data Memory Barrier.
+ 942:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****            It completes when all explicit memory accesses before this instruction complete.
+ 943:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****  */
+ 944:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** __STATIC_FORCEINLINE void __DSB(void)
+ 945:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** {
+ 946:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h ****   __ASM volatile ("dsb 0xF":::"memory");
+ 172              	 .loc 2 946 0
+ 173              	
+ 174 000e BFF34F8F 	 dsb 0xF
+ 175              	
+ 176              	 .thumb
+ 177              	.LBE11:
+ 178              	.LBE10:
+ 179              	.LBB12:
+ 180              	.LBB13:
+ 198:C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include\cmsis_gcc.h **** }
+ 181              	 .loc 2 198 0
+ 182              	
+ 183 0012 62B6     	 cpsie i
+ 184              	
+ 185              	 .thumb
+ 186              	.LBE13:
+ 187              	.LBE12:
+ 372:../Startup/system_XMC4300.c ****   __DSB();
+ 373:../Startup/system_XMC4300.c ****   __enable_irq();
+ 374:../Startup/system_XMC4300.c **** 
+ 375:../Startup/system_XMC4300.c ****   /* __FPU_PRESENT = 1 defined in device header file */
+ 376:../Startup/system_XMC4300.c ****   /* __FPU_USED value depends on compiler/linker options. */
+ 377:../Startup/system_XMC4300.c ****   /* __FPU_USED = 0 if -mfloat-abi=soft is selected */
+ 378:../Startup/system_XMC4300.c ****   /* __FPU_USED = 1 if -mfloat-abi=softfp or –mfloat-abi=hard */
+ 379:../Startup/system_XMC4300.c **** 
+ 380:../Startup/system_XMC4300.c **** #if ((__FPU_PRESENT == 1) && (__FPU_USED == 1))
+ 381:../Startup/system_XMC4300.c ****   SCB->CPACR |= ((3UL << 10*2) |                 /* set CP10 Full Access */
+ 188              	 .loc 1 381 0
+ 189 0014 134A     	 ldr r2,.L8
+ 190 0016 134B     	 ldr r3,.L8
+ 191 0018 D3F88830 	 ldr r3,[r3,#136]
+ 192 001c 43F47003 	 orr r3,r3,#15728640
+ 193 0020 C2F88830 	 str r3,[r2,#136]
+ 382:../Startup/system_XMC4300.c ****                  (3UL << 11*2)  );               /* set CP11 Full Access */
+ 383:../Startup/system_XMC4300.c **** #else
+ 384:../Startup/system_XMC4300.c ****   SCB->CPACR = 0;
+ 385:../Startup/system_XMC4300.c **** #endif
+ 386:../Startup/system_XMC4300.c **** 
+ 387:../Startup/system_XMC4300.c ****   /* Enable unaligned memory access - SCB_CCR.UNALIGN_TRP = 0 */
+ 388:../Startup/system_XMC4300.c ****   SCB->CCR &= ~(SCB_CCR_UNALIGN_TRP_Msk);
+ 194              	 .loc 1 388 0
+ 195 0024 0F4A     	 ldr r2,.L8
+ 196 0026 0F4B     	 ldr r3,.L8
+ 197 0028 5B69     	 ldr r3,[r3,#20]
+ 198 002a 23F00803 	 bic r3,r3,#8
+ 199 002e 5361     	 str r3,[r2,#20]
+ 389:../Startup/system_XMC4300.c **** 
+ 390:../Startup/system_XMC4300.c ****   temp = FLASH0->FCON;
+ 200              	 .loc 1 390 0
+ 201 0030 0E4B     	 ldr r3,.L8+8
+ 202 0032 03F58053 	 add r3,r3,#4096
+ 203 0036 1433     	 adds r3,r3,#20
+ 204 0038 1B68     	 ldr r3,[r3]
+ 205 003a 7B60     	 str r3,[r7,#4]
+ 391:../Startup/system_XMC4300.c ****   temp &= ~FLASH_FCON_WSPFLASH_Msk;
+ 206              	 .loc 1 391 0
+ 207 003c 7B68     	 ldr r3,[r7,#4]
+ 208 003e 23F00F03 	 bic r3,r3,#15
+ 209 0042 7B60     	 str r3,[r7,#4]
+ 392:../Startup/system_XMC4300.c ****   temp |= PMU_FLASH_WS;
+ 210              	 .loc 1 392 0
+ 211 0044 7B68     	 ldr r3,[r7,#4]
+ 212 0046 43F00403 	 orr r3,r3,#4
+ 213 004a 7B60     	 str r3,[r7,#4]
+ 393:../Startup/system_XMC4300.c ****   FLASH0->FCON = temp;
+ 214              	 .loc 1 393 0
+ 215 004c 074B     	 ldr r3,.L8+8
+ 216 004e 03F58053 	 add r3,r3,#4096
+ 217 0052 1433     	 adds r3,r3,#20
+ 218 0054 7A68     	 ldr r2,[r7,#4]
+ 219 0056 1A60     	 str r2,[r3]
+ 394:../Startup/system_XMC4300.c **** }
+ 220              	 .loc 1 394 0
+ 221 0058 0C37     	 adds r7,r7,#12
+ 222              	.LCFI11:
+ 223              	 .cfi_def_cfa_offset 4
+ 224 005a BD46     	 mov sp,r7
+ 225              	.LCFI12:
+ 226              	 .cfi_def_cfa_register 13
+ 227              	 
+ 228 005c 5DF8047B 	 ldr r7,[sp],#4
+ 229              	.LCFI13:
+ 230              	 .cfi_restore 7
+ 231              	 .cfi_def_cfa_offset 0
+ 232 0060 7047     	 bx lr
+ 233              	.L9:
+ 234 0062 00BF     	 .align 2
+ 235              	.L8:
+ 236 0064 00ED00E0 	 .word -536810240
+ 237 0068 00000000 	 .word __Vectors
+ 238 006c 00100058 	 .word 1476399104
+ 239              	 .cfi_endproc
+ 240              	.LFE134:
+ 242              	 .section .text.SystemCoreClockSetup,"ax",%progbits
+ 243              	 .align 2
+ 244              	 .weak SystemCoreClockSetup
+ 245              	 .thumb
+ 246              	 .thumb_func
+ 248              	SystemCoreClockSetup:
+ 249              	.LFB135:
+ 395:../Startup/system_XMC4300.c **** 
+ 396:../Startup/system_XMC4300.c **** __WEAK void SystemCoreClockSetup(void)
+ 397:../Startup/system_XMC4300.c **** {
+ 250              	 .loc 1 397 0
+ 251              	 .cfi_startproc
+ 252              	 
+ 253              	 
+ 254 0000 80B5     	 push {r7,lr}
+ 255              	.LCFI14:
+ 256              	 .cfi_def_cfa_offset 8
+ 257              	 .cfi_offset 7,-8
+ 258              	 .cfi_offset 14,-4
+ 259 0002 00AF     	 add r7,sp,#0
+ 260              	.LCFI15:
+ 261              	 .cfi_def_cfa_register 7
+ 398:../Startup/system_XMC4300.c **** #if FOFI_CALIBRATION_MODE == FOFI_CALIBRATION_MODE_FACTORY
+ 399:../Startup/system_XMC4300.c ****   /* Enable factory calibration */
+ 400:../Startup/system_XMC4300.c ****   SCU_PLL->PLLCON0 |= SCU_PLL_PLLCON0_FOTR_Msk;
+ 401:../Startup/system_XMC4300.c **** #else
+ 402:../Startup/system_XMC4300.c ****   /* Automatic calibration uses the fSTDBY */
+ 403:../Startup/system_XMC4300.c **** 
+ 404:../Startup/system_XMC4300.c ****   /* Enable HIB domain */
+ 405:../Startup/system_XMC4300.c ****   /* Power up HIB domain if and only if it is currently powered down */
+ 406:../Startup/system_XMC4300.c ****   if((SCU_POWER->PWRSTAT & SCU_POWER_PWRSTAT_HIBEN_Msk) == 0)
+ 262              	 .loc 1 406 0
+ 263 0004 A44B     	 ldr r3,.L22
+ 264 0006 1B68     	 ldr r3,[r3]
+ 265 0008 03F00103 	 and r3,r3,#1
+ 266 000c 002B     	 cmp r3,#0
+ 267 000e 0CD1     	 bne .L11
+ 407:../Startup/system_XMC4300.c ****   {
+ 408:../Startup/system_XMC4300.c ****     SCU_POWER->PWRSET |= SCU_POWER_PWRSET_HIB_Msk;
+ 268              	 .loc 1 408 0
+ 269 0010 A14A     	 ldr r2,.L22
+ 270 0012 A14B     	 ldr r3,.L22
+ 271 0014 5B68     	 ldr r3,[r3,#4]
+ 272 0016 43F00103 	 orr r3,r3,#1
+ 273 001a 5360     	 str r3,[r2,#4]
+ 409:../Startup/system_XMC4300.c **** 
+ 410:../Startup/system_XMC4300.c ****     while((SCU_POWER->PWRSTAT & SCU_POWER_PWRSTAT_HIBEN_Msk) == 0)
+ 274              	 .loc 1 410 0
+ 275 001c 00BF     	 nop
+ 276              	.L12:
+ 277              	 .loc 1 410 0 is_stmt 0 discriminator 1
+ 278 001e 9E4B     	 ldr r3,.L22
+ 279 0020 1B68     	 ldr r3,[r3]
+ 280 0022 03F00103 	 and r3,r3,#1
+ 281 0026 002B     	 cmp r3,#0
+ 282 0028 F9D0     	 beq .L12
+ 283              	.L11:
+ 411:../Startup/system_XMC4300.c ****     {
+ 412:../Startup/system_XMC4300.c ****       /* wait until HIB domain is enabled */
+ 413:../Startup/system_XMC4300.c ****     }
+ 414:../Startup/system_XMC4300.c ****   }
+ 415:../Startup/system_XMC4300.c **** 
+ 416:../Startup/system_XMC4300.c ****   /* Remove the reset only if HIB domain were in a state of reset */
+ 417:../Startup/system_XMC4300.c ****   if((SCU_RESET->RSTSTAT) & SCU_RESET_RSTSTAT_HIBRS_Msk)
+ 284              	 .loc 1 417 0 is_stmt 1
+ 285 002a 9C4B     	 ldr r3,.L22+4
+ 286 002c 1B68     	 ldr r3,[r3]
+ 287 002e 03F40073 	 and r3,r3,#512
+ 288 0032 002B     	 cmp r3,#0
+ 289 0034 09D0     	 beq .L13
+ 418:../Startup/system_XMC4300.c ****   {
+ 419:../Startup/system_XMC4300.c ****     SCU_RESET->RSTCLR |= SCU_RESET_RSTCLR_HIBRS_Msk;
+ 290              	 .loc 1 419 0
+ 291 0036 994A     	 ldr r2,.L22+4
+ 292 0038 984B     	 ldr r3,.L22+4
+ 293 003a 9B68     	 ldr r3,[r3,#8]
+ 294 003c 43F40073 	 orr r3,r3,#512
+ 295 0040 9360     	 str r3,[r2,#8]
+ 420:../Startup/system_XMC4300.c ****     delay(DELAY_CNT_150US_50MHZ);
+ 296              	 .loc 1 420 0
+ 297 0042 41F64C50 	 movw r0,#7500
+ 298 0046 FFF7FEFF 	 bl delay
+ 299              	.L13:
+ 421:../Startup/system_XMC4300.c ****   }
+ 422:../Startup/system_XMC4300.c **** 
+ 423:../Startup/system_XMC4300.c **** #if STDBY_CLOCK_SRC == STDBY_CLOCK_SRC_OSCULP
+ 424:../Startup/system_XMC4300.c ****   /* Enable OSC_ULP */
+ 425:../Startup/system_XMC4300.c ****   if ((SCU_HIBERNATE->OSCULCTRL & SCU_HIBERNATE_OSCULCTRL_MODE_Msk) != 0UL)
+ 426:../Startup/system_XMC4300.c ****   {
+ 427:../Startup/system_XMC4300.c ****     /*enable OSC_ULP*/
+ 428:../Startup/system_XMC4300.c ****     while (SCU_GENERAL->MIRRSTS & SCU_GENERAL_MIRRSTS_OSCULCTRL_Msk)
+ 429:../Startup/system_XMC4300.c ****     {
+ 430:../Startup/system_XMC4300.c ****       /* check SCU_MIRRSTS to ensure that no transfer over serial interface is pending */
+ 431:../Startup/system_XMC4300.c ****     }
+ 432:../Startup/system_XMC4300.c ****     SCU_HIBERNATE->OSCULCTRL &= ~SCU_HIBERNATE_OSCULCTRL_MODE_Msk;
+ 433:../Startup/system_XMC4300.c **** 
+ 434:../Startup/system_XMC4300.c ****     /* Check if the clock is OK using OSCULP Oscillator Watchdog*/
+ 435:../Startup/system_XMC4300.c ****     while (SCU_GENERAL->MIRRSTS & SCU_GENERAL_MIRRSTS_HDCR_Msk)
+ 436:../Startup/system_XMC4300.c ****     {
+ 437:../Startup/system_XMC4300.c ****       /* check SCU_MIRRSTS to ensure that no transfer over serial interface is pending */
+ 438:../Startup/system_XMC4300.c ****     }
+ 439:../Startup/system_XMC4300.c ****     SCU_HIBERNATE->HDCR |= SCU_HIBERNATE_HDCR_ULPWDGEN_Msk;
+ 440:../Startup/system_XMC4300.c **** 
+ 441:../Startup/system_XMC4300.c ****     /* wait till clock is stable */
+ 442:../Startup/system_XMC4300.c ****     do
+ 443:../Startup/system_XMC4300.c ****     {
+ 444:../Startup/system_XMC4300.c ****       while (SCU_GENERAL->MIRRSTS & SCU_GENERAL_MIRRSTS_HDCLR_Msk)
+ 445:../Startup/system_XMC4300.c ****       {
+ 446:../Startup/system_XMC4300.c ****         /* check SCU_MIRRSTS to ensure that no transfer over serial interface is pending */
+ 447:../Startup/system_XMC4300.c ****       }
+ 448:../Startup/system_XMC4300.c ****       SCU_HIBERNATE->HDCLR |= SCU_HIBERNATE_HDCLR_ULPWDG_Msk;
+ 449:../Startup/system_XMC4300.c **** 
+ 450:../Startup/system_XMC4300.c ****       delay(DELAY_CNT_50US_50MHZ);
+ 451:../Startup/system_XMC4300.c **** 
+ 452:../Startup/system_XMC4300.c ****     } while ((SCU_HIBERNATE->HDSTAT & SCU_HIBERNATE_HDSTAT_ULPWDG_Msk) != 0UL);
+ 453:../Startup/system_XMC4300.c **** 
+ 454:../Startup/system_XMC4300.c ****   }
+ 455:../Startup/system_XMC4300.c **** 
+ 456:../Startup/system_XMC4300.c ****   /* now OSC_ULP is running and can be used*/
+ 457:../Startup/system_XMC4300.c ****   /* Select OSC_ULP as the clock source for RTC and STDBY*/
+ 458:../Startup/system_XMC4300.c ****   while (SCU_GENERAL->MIRRSTS & SCU_GENERAL_MIRRSTS_HDCR_Msk)
+ 459:../Startup/system_XMC4300.c ****   {
+ 460:../Startup/system_XMC4300.c ****     /* check SCU_MIRRSTS to ensure that no transfer over serial interface is pending */
+ 461:../Startup/system_XMC4300.c ****   }
+ 462:../Startup/system_XMC4300.c ****   SCU_HIBERNATE->HDCR |= SCU_HIBERNATE_HDCR_RCS_Msk | SCU_HIBERNATE_HDCR_STDBYSEL_Msk;
+ 463:../Startup/system_XMC4300.c **** #endif /* STDBY_CLOCK_SRC == STDBY_CLOCK_SRC_OSCULP */
+ 464:../Startup/system_XMC4300.c **** 
+ 465:../Startup/system_XMC4300.c ****   /* Enable automatic calibration of internal fast oscillator */
+ 466:../Startup/system_XMC4300.c ****   SCU_PLL->PLLCON0 |= SCU_PLL_PLLCON0_AOTREN_Msk;
+ 300              	 .loc 1 466 0
+ 301 004a 954A     	 ldr r2,.L22+8
+ 302 004c 944B     	 ldr r3,.L22+8
+ 303 004e 5B68     	 ldr r3,[r3,#4]
+ 304 0050 43F40023 	 orr r3,r3,#524288
+ 305 0054 5360     	 str r3,[r2,#4]
+ 467:../Startup/system_XMC4300.c **** #endif /* FOFI_CALIBRATION_MODE == FOFI_CALIBRATION_MODE_AUTOMATIC */
+ 468:../Startup/system_XMC4300.c **** 
+ 469:../Startup/system_XMC4300.c ****   delay(DELAY_CNT_50US_50MHZ);
+ 306              	 .loc 1 469 0
+ 307 0056 40F6C410 	 movw r0,#2500
+ 308 005a FFF7FEFF 	 bl delay
+ 470:../Startup/system_XMC4300.c **** 
+ 471:../Startup/system_XMC4300.c **** #if ENABLE_PLL
+ 472:../Startup/system_XMC4300.c **** 
+ 473:../Startup/system_XMC4300.c ****   /* enable PLL */
+ 474:../Startup/system_XMC4300.c ****   SCU_PLL->PLLCON0 &= ~(SCU_PLL_PLLCON0_VCOPWD_Msk | SCU_PLL_PLLCON0_PLLPWD_Msk);
+ 309              	 .loc 1 474 0
+ 310 005e 904A     	 ldr r2,.L22+8
+ 311 0060 8F4B     	 ldr r3,.L22+8
+ 312 0062 5B68     	 ldr r3,[r3,#4]
+ 313 0064 23F48033 	 bic r3,r3,#65536
+ 314 0068 23F00203 	 bic r3,r3,#2
+ 315 006c 5360     	 str r3,[r2,#4]
+ 475:../Startup/system_XMC4300.c **** 
+ 476:../Startup/system_XMC4300.c **** #if PLL_CLOCK_SRC != PLL_CLOCK_SRC_OFI
+ 477:../Startup/system_XMC4300.c ****   /* enable OSC_HP */
+ 478:../Startup/system_XMC4300.c ****   if ((SCU_OSC->OSCHPCTRL & SCU_OSC_OSCHPCTRL_MODE_Msk) != 0U)
+ 316              	 .loc 1 478 0
+ 317 006e 8D4B     	 ldr r3,.L22+12
+ 318 0070 5B68     	 ldr r3,[r3,#4]
+ 319 0072 03F03003 	 and r3,r3,#48
+ 320 0076 002B     	 cmp r3,#0
+ 321 0078 29D0     	 beq .L14
+ 479:../Startup/system_XMC4300.c ****   {
+ 480:../Startup/system_XMC4300.c ****     SCU_OSC->OSCHPCTRL &= ~(SCU_OSC_OSCHPCTRL_MODE_Msk | SCU_OSC_OSCHPCTRL_OSCVAL_Msk);
+ 322              	 .loc 1 480 0
+ 323 007a 8A4A     	 ldr r2,.L22+12
+ 324 007c 894B     	 ldr r3,.L22+12
+ 325 007e 5B68     	 ldr r3,[r3,#4]
+ 326 0080 23F47023 	 bic r3,r3,#983040
+ 327 0084 23F03003 	 bic r3,r3,#48
+ 328 0088 5360     	 str r3,[r2,#4]
+ 481:../Startup/system_XMC4300.c ****     SCU_OSC->OSCHPCTRL |= ((OSCHP_GetFrequency() / FOSCREF) - 1UL) << SCU_OSC_OSCHPCTRL_OSCVAL_Pos;
+ 329              	 .loc 1 481 0
+ 330 008a FFF7FEFF 	 bl OSCHP_GetFrequency
+ 331 008e 0246     	 mov r2,r0
+ 332 0090 854B     	 ldr r3,.L22+16
+ 333 0092 A3FB0223 	 umull r2,r3,r3,r2
+ 334 0096 1B0D     	 lsrs r3,r3,#20
+ 335 0098 013B     	 subs r3,r3,#1
+ 336 009a 1B04     	 lsls r3,r3,#16
+ 337 009c 8149     	 ldr r1,.L22+12
+ 338 009e 814A     	 ldr r2,.L22+12
+ 339 00a0 5268     	 ldr r2,[r2,#4]
+ 340 00a2 1343     	 orrs r3,r3,r2
+ 341 00a4 4B60     	 str r3,[r1,#4]
+ 482:../Startup/system_XMC4300.c **** 
+ 483:../Startup/system_XMC4300.c ****     /* select OSC_HP clock as PLL input */
+ 484:../Startup/system_XMC4300.c ****     SCU_PLL->PLLCON2 &= ~SCU_PLL_PLLCON2_PINSEL_Msk;
+ 342              	 .loc 1 484 0
+ 343 00a6 7E4A     	 ldr r2,.L22+8
+ 344 00a8 7D4B     	 ldr r3,.L22+8
+ 345 00aa DB68     	 ldr r3,[r3,#12]
+ 346 00ac 23F00103 	 bic r3,r3,#1
+ 347 00b0 D360     	 str r3,[r2,#12]
+ 485:../Startup/system_XMC4300.c **** 
+ 486:../Startup/system_XMC4300.c ****     /* restart OSC Watchdog */
+ 487:../Startup/system_XMC4300.c ****     SCU_PLL->PLLCON0 &= ~SCU_PLL_PLLCON0_OSCRES_Msk;
+ 348              	 .loc 1 487 0
+ 349 00b2 7B4A     	 ldr r2,.L22+8
+ 350 00b4 7A4B     	 ldr r3,.L22+8
+ 351 00b6 5B68     	 ldr r3,[r3,#4]
+ 352 00b8 23F40033 	 bic r3,r3,#131072
+ 353 00bc 5360     	 str r3,[r2,#4]
+ 488:../Startup/system_XMC4300.c **** 
+ 489:../Startup/system_XMC4300.c ****     while ((SCU_PLL->PLLSTAT & SCU_PLL_PLLSTAT_OSC_USABLE) != SCU_PLL_PLLSTAT_OSC_USABLE)
+ 354              	 .loc 1 489 0
+ 355 00be 00BF     	 nop
+ 356              	.L15:
+ 357              	 .loc 1 489 0 is_stmt 0 discriminator 1
+ 358 00c0 774B     	 ldr r3,.L22+8
+ 359 00c2 1B68     	 ldr r3,[r3]
+ 360 00c4 03F46073 	 and r3,r3,#896
+ 361 00c8 B3F5607F 	 cmp r3,#896
+ 362 00cc F8D1     	 bne .L15
+ 363              	.L14:
+ 490:../Startup/system_XMC4300.c ****     {
+ 491:../Startup/system_XMC4300.c ****       /* wait till OSC_HP output frequency is usable */
+ 492:../Startup/system_XMC4300.c ****     }
+ 493:../Startup/system_XMC4300.c ****   }
+ 494:../Startup/system_XMC4300.c **** #else /* PLL_CLOCK_SRC != PLL_CLOCK_SRC_OFI */
+ 495:../Startup/system_XMC4300.c **** 
+ 496:../Startup/system_XMC4300.c ****   /* select backup clock as PLL input */
+ 497:../Startup/system_XMC4300.c ****   SCU_PLL->PLLCON2 |= SCU_PLL_PLLCON2_PINSEL_Msk;
+ 498:../Startup/system_XMC4300.c **** #endif
+ 499:../Startup/system_XMC4300.c **** 
+ 500:../Startup/system_XMC4300.c ****   /* Go to bypass the Main PLL */
+ 501:../Startup/system_XMC4300.c ****   SCU_PLL->PLLCON0 |= SCU_PLL_PLLCON0_VCOBYP_Msk;
+ 364              	 .loc 1 501 0 is_stmt 1
+ 365 00ce 744A     	 ldr r2,.L22+8
+ 366 00d0 734B     	 ldr r3,.L22+8
+ 367 00d2 5B68     	 ldr r3,[r3,#4]
+ 368 00d4 43F00103 	 orr r3,r3,#1
+ 369 00d8 5360     	 str r3,[r2,#4]
+ 502:../Startup/system_XMC4300.c **** 
+ 503:../Startup/system_XMC4300.c ****   /* disconnect Oscillator from PLL */
+ 504:../Startup/system_XMC4300.c ****   SCU_PLL->PLLCON0 |= SCU_PLL_PLLCON0_FINDIS_Msk;
+ 370              	 .loc 1 504 0
+ 371 00da 714A     	 ldr r2,.L22+8
+ 372 00dc 704B     	 ldr r3,.L22+8
+ 373 00de 5B68     	 ldr r3,[r3,#4]
+ 374 00e0 43F01003 	 orr r3,r3,#16
+ 375 00e4 5360     	 str r3,[r2,#4]
+ 505:../Startup/system_XMC4300.c **** 
+ 506:../Startup/system_XMC4300.c ****   /* Setup divider settings for main PLL */
+ 507:../Startup/system_XMC4300.c ****   SCU_PLL->PLLCON1 = ((PLL_NDIV << SCU_PLL_PLLCON1_NDIV_Pos) |
+ 376              	 .loc 1 507 0
+ 377 00e6 6E4B     	 ldr r3,.L22+8
+ 378 00e8 704A     	 ldr r2,.L22+20
+ 379 00ea 9A60     	 str r2,[r3,#8]
+ 508:../Startup/system_XMC4300.c ****                       (PLL_K2DIV_24MHZ << SCU_PLL_PLLCON1_K2DIV_Pos) |
+ 509:../Startup/system_XMC4300.c ****                       (PLL_PDIV << SCU_PLL_PLLCON1_PDIV_Pos));
+ 510:../Startup/system_XMC4300.c **** 
+ 511:../Startup/system_XMC4300.c ****   /* Set OSCDISCDIS */
+ 512:../Startup/system_XMC4300.c ****   SCU_PLL->PLLCON0 |= SCU_PLL_PLLCON0_OSCDISCDIS_Msk;
+ 380              	 .loc 1 512 0
+ 381 00ec 6C4A     	 ldr r2,.L22+8
+ 382 00ee 6C4B     	 ldr r3,.L22+8
+ 383 00f0 5B68     	 ldr r3,[r3,#4]
+ 384 00f2 43F04003 	 orr r3,r3,#64
+ 385 00f6 5360     	 str r3,[r2,#4]
+ 513:../Startup/system_XMC4300.c **** 
+ 514:../Startup/system_XMC4300.c ****   /* connect Oscillator to PLL */
+ 515:../Startup/system_XMC4300.c ****   SCU_PLL->PLLCON0 &= ~SCU_PLL_PLLCON0_FINDIS_Msk;
+ 386              	 .loc 1 515 0
+ 387 00f8 694A     	 ldr r2,.L22+8
+ 388 00fa 694B     	 ldr r3,.L22+8
+ 389 00fc 5B68     	 ldr r3,[r3,#4]
+ 390 00fe 23F01003 	 bic r3,r3,#16
+ 391 0102 5360     	 str r3,[r2,#4]
+ 516:../Startup/system_XMC4300.c **** 
+ 517:../Startup/system_XMC4300.c ****   /* restart PLL Lock detection */
+ 518:../Startup/system_XMC4300.c ****   SCU_PLL->PLLCON0 |= SCU_PLL_PLLCON0_RESLD_Msk;
+ 392              	 .loc 1 518 0
+ 393 0104 664A     	 ldr r2,.L22+8
+ 394 0106 664B     	 ldr r3,.L22+8
+ 395 0108 5B68     	 ldr r3,[r3,#4]
+ 396 010a 43F48023 	 orr r3,r3,#262144
+ 397 010e 5360     	 str r3,[r2,#4]
+ 519:../Startup/system_XMC4300.c **** 
+ 520:../Startup/system_XMC4300.c ****   while ((SCU_PLL->PLLSTAT & SCU_PLL_PLLSTAT_VCOLOCK_Msk) == 0U)
+ 398              	 .loc 1 520 0
+ 399 0110 00BF     	 nop
+ 400              	.L16:
+ 401              	 .loc 1 520 0 is_stmt 0 discriminator 1
+ 402 0112 634B     	 ldr r3,.L22+8
+ 403 0114 1B68     	 ldr r3,[r3]
+ 404 0116 03F00403 	 and r3,r3,#4
+ 405 011a 002B     	 cmp r3,#0
+ 406 011c F9D0     	 beq .L16
+ 521:../Startup/system_XMC4300.c ****   {
+ 522:../Startup/system_XMC4300.c ****     /* wait for PLL Lock at 24MHz*/
+ 523:../Startup/system_XMC4300.c ****   }
+ 524:../Startup/system_XMC4300.c **** 
+ 525:../Startup/system_XMC4300.c ****   /* Disable bypass- put PLL clock back */
+ 526:../Startup/system_XMC4300.c ****   SCU_PLL->PLLCON0 &= ~SCU_PLL_PLLCON0_VCOBYP_Msk;
+ 407              	 .loc 1 526 0 is_stmt 1
+ 408 011e 604A     	 ldr r2,.L22+8
+ 409 0120 5F4B     	 ldr r3,.L22+8
+ 410 0122 5B68     	 ldr r3,[r3,#4]
+ 411 0124 23F00103 	 bic r3,r3,#1
+ 412 0128 5360     	 str r3,[r2,#4]
+ 527:../Startup/system_XMC4300.c ****   while ((SCU_PLL->PLLSTAT & SCU_PLL_PLLSTAT_VCOBYST_Msk) != 0U)
+ 413              	 .loc 1 527 0
+ 414 012a 00BF     	 nop
+ 415              	.L17:
+ 416              	 .loc 1 527 0 is_stmt 0 discriminator 1
+ 417 012c 5C4B     	 ldr r3,.L22+8
+ 418 012e 1B68     	 ldr r3,[r3]
+ 419 0130 03F00103 	 and r3,r3,#1
+ 420 0134 002B     	 cmp r3,#0
+ 421 0136 F9D1     	 bne .L17
+ 528:../Startup/system_XMC4300.c ****   {
+ 529:../Startup/system_XMC4300.c ****     /* wait for normal mode */
+ 530:../Startup/system_XMC4300.c ****   }
+ 531:../Startup/system_XMC4300.c **** #endif /* ENABLE_PLL */
+ 532:../Startup/system_XMC4300.c **** 
+ 533:../Startup/system_XMC4300.c ****   /* Before scaling to final frequency we need to setup the clock dividers */
+ 534:../Startup/system_XMC4300.c ****   SCU_CLK->SYSCLKCR = __SYSCLKCR;
+ 422              	 .loc 1 534 0 is_stmt 1
+ 423 0138 5D4B     	 ldr r3,.L22+24
+ 424 013a 4FF00112 	 mov r2,#65537
+ 425 013e DA60     	 str r2,[r3,#12]
+ 535:../Startup/system_XMC4300.c ****   SCU_CLK->PBCLKCR = __PBCLKCR;
+ 426              	 .loc 1 535 0
+ 427 0140 5B4B     	 ldr r3,.L22+24
+ 428 0142 0022     	 movs r2,#0
+ 429 0144 5A61     	 str r2,[r3,#20]
+ 536:../Startup/system_XMC4300.c ****   SCU_CLK->CPUCLKCR = __CPUCLKCR;
+ 430              	 .loc 1 536 0
+ 431 0146 5A4B     	 ldr r3,.L22+24
+ 432 0148 0022     	 movs r2,#0
+ 433 014a 1A61     	 str r2,[r3,#16]
+ 537:../Startup/system_XMC4300.c ****   SCU_CLK->CCUCLKCR = __CCUCLKCR;
+ 434              	 .loc 1 537 0
+ 435 014c 584B     	 ldr r3,.L22+24
+ 436 014e 0022     	 movs r2,#0
+ 437 0150 1A62     	 str r2,[r3,#32]
+ 538:../Startup/system_XMC4300.c ****   SCU_CLK->WDTCLKCR = __WDTCLKCR;
+ 438              	 .loc 1 538 0
+ 439 0152 574B     	 ldr r3,.L22+24
+ 440 0154 0022     	 movs r2,#0
+ 441 0156 5A62     	 str r2,[r3,#36]
+ 539:../Startup/system_XMC4300.c ****   SCU_CLK->USBCLKCR = __USBCLKCR;
+ 442              	 .loc 1 539 0
+ 443 0158 554B     	 ldr r3,.L22+24
+ 444 015a 564A     	 ldr r2,.L22+28
+ 445 015c 9A61     	 str r2,[r3,#24]
+ 540:../Startup/system_XMC4300.c ****   SCU_CLK->ECATCLKCR = __ECATCLKCR;
+ 446              	 .loc 1 540 0
+ 447 015e 544B     	 ldr r3,.L22+24
+ 448 0160 0122     	 movs r2,#1
+ 449 0162 9A63     	 str r2,[r3,#56]
+ 541:../Startup/system_XMC4300.c ****   SCU_CLK->EXTCLKCR = __EXTCLKCR;
+ 450              	 .loc 1 541 0
+ 451 0164 524B     	 ldr r3,.L22+24
+ 452 0166 544A     	 ldr r2,.L22+32
+ 453 0168 9A62     	 str r2,[r3,#40]
+ 542:../Startup/system_XMC4300.c **** 
+ 543:../Startup/system_XMC4300.c **** #if ENABLE_PLL
+ 544:../Startup/system_XMC4300.c ****   /* PLL frequency stepping...*/
+ 545:../Startup/system_XMC4300.c ****   /* Reset OSCDISCDIS */
+ 546:../Startup/system_XMC4300.c ****   SCU_PLL->PLLCON0 &= ~SCU_PLL_PLLCON0_OSCDISCDIS_Msk;
+ 454              	 .loc 1 546 0
+ 455 016a 4D4A     	 ldr r2,.L22+8
+ 456 016c 4C4B     	 ldr r3,.L22+8
+ 457 016e 5B68     	 ldr r3,[r3,#4]
+ 458 0170 23F04003 	 bic r3,r3,#64
+ 459 0174 5360     	 str r3,[r2,#4]
+ 547:../Startup/system_XMC4300.c **** 
+ 548:../Startup/system_XMC4300.c ****   SCU_PLL->PLLCON1 = ((PLL_NDIV << SCU_PLL_PLLCON1_NDIV_Pos) |
+ 460              	 .loc 1 548 0
+ 461 0176 4A4B     	 ldr r3,.L22+8
+ 462 0178 504A     	 ldr r2,.L22+36
+ 463 017a 9A60     	 str r2,[r3,#8]
+ 549:../Startup/system_XMC4300.c **** 	                  (PLL_K2DIV_48MHZ << SCU_PLL_PLLCON1_K2DIV_Pos) |
+ 550:../Startup/system_XMC4300.c **** 	                  (PLL_PDIV << SCU_PLL_PLLCON1_PDIV_Pos));
+ 551:../Startup/system_XMC4300.c **** 
+ 552:../Startup/system_XMC4300.c ****   delay(DELAY_CNT_50US_48MHZ);
+ 464              	 .loc 1 552 0
+ 465 017c 4FF41660 	 mov r0,#2400
+ 466 0180 FFF7FEFF 	 bl delay
+ 553:../Startup/system_XMC4300.c **** 
+ 554:../Startup/system_XMC4300.c ****   SCU_PLL->PLLCON1 = ((PLL_NDIV << SCU_PLL_PLLCON1_NDIV_Pos) |
+ 467              	 .loc 1 554 0
+ 468 0184 464B     	 ldr r3,.L22+8
+ 469 0186 4E4A     	 ldr r2,.L22+40
+ 470 0188 9A60     	 str r2,[r3,#8]
+ 555:../Startup/system_XMC4300.c **** 	                  (PLL_K2DIV_72MHZ << SCU_PLL_PLLCON1_K2DIV_Pos) |
+ 556:../Startup/system_XMC4300.c **** 	                  (PLL_PDIV << SCU_PLL_PLLCON1_PDIV_Pos));
+ 557:../Startup/system_XMC4300.c **** 
+ 558:../Startup/system_XMC4300.c ****   delay(DELAY_CNT_50US_72MHZ);
+ 471              	 .loc 1 558 0
+ 472 018a 4FF46160 	 mov r0,#3600
+ 473 018e FFF7FEFF 	 bl delay
+ 559:../Startup/system_XMC4300.c **** 
+ 560:../Startup/system_XMC4300.c ****   SCU_PLL->PLLCON1 = ((PLL_NDIV << SCU_PLL_PLLCON1_NDIV_Pos) |
+ 474              	 .loc 1 560 0
+ 475 0192 434B     	 ldr r3,.L22+8
+ 476 0194 4B4A     	 ldr r2,.L22+44
+ 477 0196 9A60     	 str r2,[r3,#8]
+ 561:../Startup/system_XMC4300.c **** 	                  (PLL_K2DIV_96MHZ << SCU_PLL_PLLCON1_K2DIV_Pos) |
+ 562:../Startup/system_XMC4300.c **** 	                  (PLL_PDIV << SCU_PLL_PLLCON1_PDIV_Pos));
+ 563:../Startup/system_XMC4300.c **** 
+ 564:../Startup/system_XMC4300.c ****   delay(DELAY_CNT_50US_96MHZ);
+ 478              	 .loc 1 564 0
+ 479 0198 4FF49650 	 mov r0,#4800
+ 480 019c FFF7FEFF 	 bl delay
+ 565:../Startup/system_XMC4300.c **** 
+ 566:../Startup/system_XMC4300.c ****   SCU_PLL->PLLCON1 = ((PLL_NDIV << SCU_PLL_PLLCON1_NDIV_Pos) |
+ 481              	 .loc 1 566 0
+ 482 01a0 3F4B     	 ldr r3,.L22+8
+ 483 01a2 494A     	 ldr r2,.L22+48
+ 484 01a4 9A60     	 str r2,[r3,#8]
+ 567:../Startup/system_XMC4300.c **** 	                  (PLL_K2DIV_120MHZ << SCU_PLL_PLLCON1_K2DIV_Pos) |
+ 568:../Startup/system_XMC4300.c **** 	                  (PLL_PDIV << SCU_PLL_PLLCON1_PDIV_Pos));
+ 569:../Startup/system_XMC4300.c **** 
+ 570:../Startup/system_XMC4300.c ****   delay(DELAY_CNT_50US_120MHZ);
+ 485              	 .loc 1 570 0
+ 486 01a6 41F27070 	 movw r0,#6000
+ 487 01aa FFF7FEFF 	 bl delay
+ 571:../Startup/system_XMC4300.c **** 
+ 572:../Startup/system_XMC4300.c ****   SCU_PLL->PLLCON1 = ((PLL_NDIV << SCU_PLL_PLLCON1_NDIV_Pos) |
+ 488              	 .loc 1 572 0
+ 489 01ae 3C4B     	 ldr r3,.L22+8
+ 490 01b0 464A     	 ldr r2,.L22+52
+ 491 01b2 9A60     	 str r2,[r3,#8]
+ 573:../Startup/system_XMC4300.c **** 	                  (PLL_K2DIV << SCU_PLL_PLLCON1_K2DIV_Pos) |
+ 574:../Startup/system_XMC4300.c **** 	                  (PLL_PDIV << SCU_PLL_PLLCON1_PDIV_Pos));
+ 575:../Startup/system_XMC4300.c **** 
+ 576:../Startup/system_XMC4300.c ****   delay(DELAY_CNT_50US_144MHZ);
+ 492              	 .loc 1 576 0
+ 493 01b4 4FF4E150 	 mov r0,#7200
+ 494 01b8 FFF7FEFF 	 bl delay
+ 577:../Startup/system_XMC4300.c **** 
+ 578:../Startup/system_XMC4300.c **** #endif /* ENABLE_PLL */
+ 579:../Startup/system_XMC4300.c **** 
+ 580:../Startup/system_XMC4300.c **** #if ENABLE_USBPLL
+ 581:../Startup/system_XMC4300.c ****   /* enable USB PLL first */
+ 582:../Startup/system_XMC4300.c ****   SCU_PLL->USBPLLCON &= ~(SCU_PLL_USBPLLCON_VCOPWD_Msk | SCU_PLL_USBPLLCON_PLLPWD_Msk);
+ 495              	 .loc 1 582 0
+ 496 01bc 384A     	 ldr r2,.L22+8
+ 497 01be 384B     	 ldr r3,.L22+8
+ 498 01c0 5B69     	 ldr r3,[r3,#20]
+ 499 01c2 23F48033 	 bic r3,r3,#65536
+ 500 01c6 23F00203 	 bic r3,r3,#2
+ 501 01ca 5361     	 str r3,[r2,#20]
+ 583:../Startup/system_XMC4300.c **** 
+ 584:../Startup/system_XMC4300.c ****   /* USB PLL uses as clock input the OSC_HP */
+ 585:../Startup/system_XMC4300.c ****   /* check and if not already running enable OSC_HP */
+ 586:../Startup/system_XMC4300.c ****   if ((SCU_OSC->OSCHPCTRL & SCU_OSC_OSCHPCTRL_MODE_Msk) != 0U)
+ 502              	 .loc 1 586 0
+ 503 01cc 354B     	 ldr r3,.L22+12
+ 504 01ce 5B68     	 ldr r3,[r3,#4]
+ 505 01d0 03F03003 	 and r3,r3,#48
+ 506 01d4 002B     	 cmp r3,#0
+ 507 01d6 31D0     	 beq .L18
+ 587:../Startup/system_XMC4300.c ****   {
+ 588:../Startup/system_XMC4300.c ****     /* check if Main PLL is switched on for OSC WDG*/
+ 589:../Startup/system_XMC4300.c ****     if ((SCU_PLL->PLLCON0 &(SCU_PLL_PLLCON0_VCOPWD_Msk | SCU_PLL_PLLCON0_PLLPWD_Msk)) != 0UL)
+ 508              	 .loc 1 589 0
+ 509 01d8 314B     	 ldr r3,.L22+8
+ 510 01da 5A68     	 ldr r2,[r3,#4]
+ 511 01dc 3C4B     	 ldr r3,.L22+56
+ 512 01de 1340     	 ands r3,r3,r2
+ 513 01e0 002B     	 cmp r3,#0
+ 514 01e2 07D0     	 beq .L19
+ 590:../Startup/system_XMC4300.c ****     {
+ 591:../Startup/system_XMC4300.c ****       /* enable PLL first */
+ 592:../Startup/system_XMC4300.c ****       SCU_PLL->PLLCON0 &= ~(SCU_PLL_PLLCON0_VCOPWD_Msk | SCU_PLL_PLLCON0_PLLPWD_Msk);
+ 515              	 .loc 1 592 0
+ 516 01e4 2E4A     	 ldr r2,.L22+8
+ 517 01e6 2E4B     	 ldr r3,.L22+8
+ 518 01e8 5B68     	 ldr r3,[r3,#4]
+ 519 01ea 23F48033 	 bic r3,r3,#65536
+ 520 01ee 23F00203 	 bic r3,r3,#2
+ 521 01f2 5360     	 str r3,[r2,#4]
+ 522              	.L19:
+ 593:../Startup/system_XMC4300.c ****     }
+ 594:../Startup/system_XMC4300.c **** 
+ 595:../Startup/system_XMC4300.c ****     SCU_OSC->OSCHPCTRL &= ~(SCU_OSC_OSCHPCTRL_MODE_Msk | SCU_OSC_OSCHPCTRL_OSCVAL_Msk);
+ 523              	 .loc 1 595 0
+ 524 01f4 2B4A     	 ldr r2,.L22+12
+ 525 01f6 2B4B     	 ldr r3,.L22+12
+ 526 01f8 5B68     	 ldr r3,[r3,#4]
+ 527 01fa 23F47023 	 bic r3,r3,#983040
+ 528 01fe 23F03003 	 bic r3,r3,#48
+ 529 0202 5360     	 str r3,[r2,#4]
+ 596:../Startup/system_XMC4300.c ****     SCU_OSC->OSCHPCTRL |= ((OSCHP_GetFrequency() / FOSCREF) - 1UL) << SCU_OSC_OSCHPCTRL_OSCVAL_Pos;
+ 530              	 .loc 1 596 0
+ 531 0204 FFF7FEFF 	 bl OSCHP_GetFrequency
+ 532 0208 0246     	 mov r2,r0
+ 533 020a 274B     	 ldr r3,.L22+16
+ 534 020c A3FB0223 	 umull r2,r3,r3,r2
+ 535 0210 1B0D     	 lsrs r3,r3,#20
+ 536 0212 013B     	 subs r3,r3,#1
+ 537 0214 1B04     	 lsls r3,r3,#16
+ 538 0216 2349     	 ldr r1,.L22+12
+ 539 0218 224A     	 ldr r2,.L22+12
+ 540 021a 5268     	 ldr r2,[r2,#4]
+ 541 021c 1343     	 orrs r3,r3,r2
+ 542 021e 4B60     	 str r3,[r1,#4]
+ 597:../Startup/system_XMC4300.c **** 
+ 598:../Startup/system_XMC4300.c ****     /* restart OSC Watchdog */
+ 599:../Startup/system_XMC4300.c ****     SCU_PLL->PLLCON0 &= ~SCU_PLL_PLLCON0_OSCRES_Msk;
+ 543              	 .loc 1 599 0
+ 544 0220 1F4A     	 ldr r2,.L22+8
+ 545 0222 1F4B     	 ldr r3,.L22+8
+ 546 0224 5B68     	 ldr r3,[r3,#4]
+ 547 0226 23F40033 	 bic r3,r3,#131072
+ 548 022a 5360     	 str r3,[r2,#4]
+ 600:../Startup/system_XMC4300.c **** 
+ 601:../Startup/system_XMC4300.c ****     while ((SCU_PLL->PLLSTAT & SCU_PLL_PLLSTAT_OSC_USABLE) != SCU_PLL_PLLSTAT_OSC_USABLE)
+ 549              	 .loc 1 601 0
+ 550 022c 00BF     	 nop
+ 551              	.L20:
+ 552              	 .loc 1 601 0 is_stmt 0 discriminator 1
+ 553 022e 1C4B     	 ldr r3,.L22+8
+ 554 0230 1B68     	 ldr r3,[r3]
+ 555 0232 03F46073 	 and r3,r3,#896
+ 556 0236 B3F5607F 	 cmp r3,#896
+ 557 023a F8D1     	 bne .L20
+ 558              	.L18:
+ 602:../Startup/system_XMC4300.c ****     {
+ 603:../Startup/system_XMC4300.c ****       /* wait till OSC_HP output frequency is usable */
+ 604:../Startup/system_XMC4300.c ****     }
+ 605:../Startup/system_XMC4300.c ****   }
+ 606:../Startup/system_XMC4300.c **** 
+ 607:../Startup/system_XMC4300.c ****   /* Setup USB PLL */
+ 608:../Startup/system_XMC4300.c ****   /* Go to bypass the USB PLL */
+ 609:../Startup/system_XMC4300.c ****   SCU_PLL->USBPLLCON |= SCU_PLL_USBPLLCON_VCOBYP_Msk;
+ 559              	 .loc 1 609 0 is_stmt 1
+ 560 023c 184A     	 ldr r2,.L22+8
+ 561 023e 184B     	 ldr r3,.L22+8
+ 562 0240 5B69     	 ldr r3,[r3,#20]
+ 563 0242 43F00103 	 orr r3,r3,#1
+ 564 0246 5361     	 str r3,[r2,#20]
+ 610:../Startup/system_XMC4300.c **** 
+ 611:../Startup/system_XMC4300.c ****   /* disconnect Oscillator from USB PLL */
+ 612:../Startup/system_XMC4300.c ****   SCU_PLL->USBPLLCON |= SCU_PLL_USBPLLCON_FINDIS_Msk;
+ 565              	 .loc 1 612 0
+ 566 0248 154A     	 ldr r2,.L22+8
+ 567 024a 154B     	 ldr r3,.L22+8
+ 568 024c 5B69     	 ldr r3,[r3,#20]
+ 569 024e 43F01003 	 orr r3,r3,#16
+ 570 0252 5361     	 str r3,[r2,#20]
+ 613:../Startup/system_XMC4300.c **** 
+ 614:../Startup/system_XMC4300.c ****   /* Setup Divider settings for USB PLL */
+ 615:../Startup/system_XMC4300.c ****   SCU_PLL->USBPLLCON = ((USB_NDIV << SCU_PLL_USBPLLCON_NDIV_Pos) |
+ 571              	 .loc 1 615 0
+ 572 0254 124B     	 ldr r3,.L22+8
+ 573 0256 1F4A     	 ldr r2,.L22+60
+ 574 0258 5A61     	 str r2,[r3,#20]
+ 616:../Startup/system_XMC4300.c ****                         (USB_PDIV << SCU_PLL_USBPLLCON_PDIV_Pos));
+ 617:../Startup/system_XMC4300.c **** 
+ 618:../Startup/system_XMC4300.c ****   /* Set OSCDISCDIS */
+ 619:../Startup/system_XMC4300.c ****   SCU_PLL->USBPLLCON |= SCU_PLL_USBPLLCON_OSCDISCDIS_Msk;
+ 575              	 .loc 1 619 0
+ 576 025a 114A     	 ldr r2,.L22+8
+ 577 025c 104B     	 ldr r3,.L22+8
+ 578 025e 5B69     	 ldr r3,[r3,#20]
+ 579 0260 43F04003 	 orr r3,r3,#64
+ 580 0264 5361     	 str r3,[r2,#20]
+ 620:../Startup/system_XMC4300.c **** 
+ 621:../Startup/system_XMC4300.c ****   /* connect Oscillator to USB PLL */
+ 622:../Startup/system_XMC4300.c ****   SCU_PLL->USBPLLCON &= ~SCU_PLL_USBPLLCON_FINDIS_Msk;
+ 581              	 .loc 1 622 0
+ 582 0266 0E4A     	 ldr r2,.L22+8
+ 583 0268 0D4B     	 ldr r3,.L22+8
+ 584 026a 5B69     	 ldr r3,[r3,#20]
+ 585 026c 23F01003 	 bic r3,r3,#16
+ 586 0270 5361     	 str r3,[r2,#20]
+ 623:../Startup/system_XMC4300.c **** 
+ 624:../Startup/system_XMC4300.c ****   /* restart PLL Lock detection */
+ 625:../Startup/system_XMC4300.c ****   SCU_PLL->USBPLLCON |= SCU_PLL_USBPLLCON_RESLD_Msk;
+ 587              	 .loc 1 625 0
+ 588 0272 0B4A     	 ldr r2,.L22+8
+ 589 0274 0A4B     	 ldr r3,.L22+8
+ 590 0276 5B69     	 ldr r3,[r3,#20]
+ 591 0278 43F48023 	 orr r3,r3,#262144
+ 592 027c 5361     	 str r3,[r2,#20]
+ 626:../Startup/system_XMC4300.c **** 
+ 627:../Startup/system_XMC4300.c ****   while ((SCU_PLL->USBPLLSTAT & SCU_PLL_USBPLLSTAT_VCOLOCK_Msk) == 0U)
+ 593              	 .loc 1 627 0
+ 594 027e 00BF     	 nop
+ 595              	.L21:
+ 596              	 .loc 1 627 0 is_stmt 0 discriminator 1
+ 597 0280 074B     	 ldr r3,.L22+8
+ 598 0282 1B69     	 ldr r3,[r3,#16]
+ 599 0284 03F00403 	 and r3,r3,#4
+ 600 0288 002B     	 cmp r3,#0
+ 601 028a F9D0     	 beq .L21
+ 628:../Startup/system_XMC4300.c ****   {
+ 629:../Startup/system_XMC4300.c ****     /* wait for PLL Lock */
+ 630:../Startup/system_XMC4300.c ****   }
+ 631:../Startup/system_XMC4300.c **** #endif
+ 632:../Startup/system_XMC4300.c **** 
+ 633:../Startup/system_XMC4300.c ****   /* Enable selected clocks */
+ 634:../Startup/system_XMC4300.c ****   SCU_CLK->CLKSET = __CLKSET;
+ 602              	 .loc 1 634 0 is_stmt 1
+ 603 028c 084B     	 ldr r3,.L22+24
+ 604 028e 0022     	 movs r2,#0
+ 605 0290 5A60     	 str r2,[r3,#4]
+ 635:../Startup/system_XMC4300.c **** 
+ 636:../Startup/system_XMC4300.c **** #if __EXTCLKPIN != 0
+ 637:../Startup/system_XMC4300.c **** #if __EXTCLKPIN == EXTCLK_PIN_P1_15
+ 638:../Startup/system_XMC4300.c ****   /* P1.15 */
+ 639:../Startup/system_XMC4300.c ****   PORT1->PDR1 &= ~PORT1_PDR1_PD15_Msk;
+ 640:../Startup/system_XMC4300.c ****   PORT1->IOCR12 = (PORT1->IOCR12 & ~PORT0_IOCR12_PC15_Msk) | (0x11U << PORT0_IOCR12_PC15_Pos);
+ 641:../Startup/system_XMC4300.c **** #else
+ 642:../Startup/system_XMC4300.c ****   /* P0.8 */
+ 643:../Startup/system_XMC4300.c ****   PORT0->HWSEL &= ~PORT0_HWSEL_HW8_Msk;
+ 644:../Startup/system_XMC4300.c ****   PORT0->PDR1 &= ~PORT0_PDR1_PD8_Msk;
+ 645:../Startup/system_XMC4300.c ****   PORT0->IOCR8 = (PORT0->IOCR8 & ~PORT0_IOCR8_PC8_Msk) | (0x11U << PORT0_IOCR8_PC8_Pos);
+ 646:../Startup/system_XMC4300.c **** #endif
+ 647:../Startup/system_XMC4300.c **** #endif  /* ENABLE_EXTCLK == 1  */
+ 648:../Startup/system_XMC4300.c **** 
+ 649:../Startup/system_XMC4300.c ****   SystemCoreClockUpdate();
+ 606              	 .loc 1 649 0
+ 607 0292 FFF7FEFF 	 bl SystemCoreClockUpdate
+ 650:../Startup/system_XMC4300.c **** }
+ 608              	 .loc 1 650 0
+ 609 0296 80BD     	 pop {r7,pc}
+ 610              	.L23:
+ 611              	 .align 2
+ 612              	.L22:
+ 613 0298 00420050 	 .word 1342194176
+ 614 029c 00440050 	 .word 1342194688
+ 615 02a0 10470050 	 .word 1342195472
+ 616 02a4 00470050 	 .word 1342195456
+ 617 02a8 6BCA5F6B 	 .word 1801439851
+ 618 02ac 002F0B01 	 .word 17510144
+ 619 02b0 00460050 	 .word 1342195200
+ 620 02b4 05000100 	 .word 65541
+ 621 02b8 03002001 	 .word 18874371
+ 622 02bc 002F0501 	 .word 17116928
+ 623 02c0 002F0301 	 .word 16985856
+ 624 02c4 002F0201 	 .word 16920320
+ 625 02c8 002F0101 	 .word 16854784
+ 626 02cc 002F0001 	 .word 16789248
+ 627 02d0 02000100 	 .word 65538
+ 628 02d4 00630002 	 .word 33579776
+ 629              	 .cfi_endproc
+ 630              	.LFE135:
+ 632              	 .section .text.SystemCoreClockUpdate,"ax",%progbits
+ 633              	 .align 2
+ 634              	 .weak SystemCoreClockUpdate
+ 635              	 .thumb
+ 636              	 .thumb_func
+ 638              	SystemCoreClockUpdate:
+ 639              	.LFB136:
+ 651:../Startup/system_XMC4300.c **** 
+ 652:../Startup/system_XMC4300.c **** __WEAK void SystemCoreClockUpdate(void)
+ 653:../Startup/system_XMC4300.c **** {
+ 640              	 .loc 1 653 0
+ 641              	 .cfi_startproc
+ 642              	 
+ 643              	 
+ 644 0000 80B5     	 push {r7,lr}
+ 645              	.LCFI16:
+ 646              	 .cfi_def_cfa_offset 8
+ 647              	 .cfi_offset 7,-8
+ 648              	 .cfi_offset 14,-4
+ 649 0002 84B0     	 sub sp,sp,#16
+ 650              	.LCFI17:
+ 651              	 .cfi_def_cfa_offset 24
+ 652 0004 00AF     	 add r7,sp,#0
+ 653              	.LCFI18:
+ 654              	 .cfi_def_cfa_register 7
+ 654:../Startup/system_XMC4300.c ****   uint32_t pdiv;
+ 655:../Startup/system_XMC4300.c ****   uint32_t ndiv;
+ 656:../Startup/system_XMC4300.c ****   uint32_t kdiv;
+ 657:../Startup/system_XMC4300.c ****   uint32_t temp;
+ 658:../Startup/system_XMC4300.c **** 
+ 659:../Startup/system_XMC4300.c ****   if (SCU_CLK->SYSCLKCR & SCU_CLK_SYSCLKCR_SYSSEL_Msk)
+ 655              	 .loc 1 659 0
+ 656 0006 2F4B     	 ldr r3,.L31
+ 657 0008 DB68     	 ldr r3,[r3,#12]
+ 658 000a 03F48033 	 and r3,r3,#65536
+ 659 000e 002B     	 cmp r3,#0
+ 660 0010 3ED0     	 beq .L25
+ 660:../Startup/system_XMC4300.c ****   {
+ 661:../Startup/system_XMC4300.c ****     /* fPLL is clock source for fSYS */
+ 662:../Startup/system_XMC4300.c ****     if(SCU_PLL->PLLCON2 & SCU_PLL_PLLCON2_PINSEL_Msk)
+ 661              	 .loc 1 662 0
+ 662 0012 2D4B     	 ldr r3,.L31+4
+ 663 0014 DB68     	 ldr r3,[r3,#12]
+ 664 0016 03F00103 	 and r3,r3,#1
+ 665 001a 002B     	 cmp r3,#0
+ 666 001c 02D0     	 beq .L26
+ 663:../Startup/system_XMC4300.c ****     {
+ 664:../Startup/system_XMC4300.c ****       /* PLL input clock is the backup clock (fOFI) */
+ 665:../Startup/system_XMC4300.c ****       temp = OFI_FREQUENCY;
+ 667              	 .loc 1 665 0
+ 668 001e 2B4B     	 ldr r3,.L31+8
+ 669 0020 FB60     	 str r3,[r7,#12]
+ 670 0022 02E0     	 b .L27
+ 671              	.L26:
+ 666:../Startup/system_XMC4300.c ****     }
+ 667:../Startup/system_XMC4300.c ****     else
+ 668:../Startup/system_XMC4300.c ****     {
+ 669:../Startup/system_XMC4300.c ****       /* PLL input clock is the high performance osicllator (fOSCHP) */
+ 670:../Startup/system_XMC4300.c ****       temp = OSCHP_GetFrequency();
+ 672              	 .loc 1 670 0
+ 673 0024 FFF7FEFF 	 bl OSCHP_GetFrequency
+ 674 0028 F860     	 str r0,[r7,#12]
+ 675              	.L27:
+ 671:../Startup/system_XMC4300.c ****     }
+ 672:../Startup/system_XMC4300.c **** 
+ 673:../Startup/system_XMC4300.c ****     /* check if PLL is locked */
+ 674:../Startup/system_XMC4300.c ****     if (SCU_PLL->PLLSTAT & SCU_PLL_PLLSTAT_VCOLOCK_Msk)
+ 676              	 .loc 1 674 0
+ 677 002a 274B     	 ldr r3,.L31+4
+ 678 002c 1B68     	 ldr r3,[r3]
+ 679 002e 03F00403 	 and r3,r3,#4
+ 680 0032 002B     	 cmp r3,#0
+ 681 0034 20D0     	 beq .L28
+ 675:../Startup/system_XMC4300.c ****     {
+ 676:../Startup/system_XMC4300.c ****       /* PLL normal mode */
+ 677:../Startup/system_XMC4300.c ****       /* read back divider settings */
+ 678:../Startup/system_XMC4300.c ****       pdiv = ((SCU_PLL->PLLCON1 & SCU_PLL_PLLCON1_PDIV_Msk) >> SCU_PLL_PLLCON1_PDIV_Pos) + 1;
+ 682              	 .loc 1 678 0
+ 683 0036 244B     	 ldr r3,.L31+4
+ 684 0038 9B68     	 ldr r3,[r3,#8]
+ 685 003a 03F07063 	 and r3,r3,#251658240
+ 686 003e 1B0E     	 lsrs r3,r3,#24
+ 687 0040 0133     	 adds r3,r3,#1
+ 688 0042 BB60     	 str r3,[r7,#8]
+ 679:../Startup/system_XMC4300.c ****       ndiv = ((SCU_PLL->PLLCON1 & SCU_PLL_PLLCON1_NDIV_Msk) >> SCU_PLL_PLLCON1_NDIV_Pos) + 1;
+ 689              	 .loc 1 679 0
+ 690 0044 204B     	 ldr r3,.L31+4
+ 691 0046 9B68     	 ldr r3,[r3,#8]
+ 692 0048 03F4FE43 	 and r3,r3,#32512
+ 693 004c 1B0A     	 lsrs r3,r3,#8
+ 694 004e 0133     	 adds r3,r3,#1
+ 695 0050 7B60     	 str r3,[r7,#4]
+ 680:../Startup/system_XMC4300.c ****       kdiv = ((SCU_PLL->PLLCON1 & SCU_PLL_PLLCON1_K2DIV_Msk) >> SCU_PLL_PLLCON1_K2DIV_Pos) + 1;
+ 696              	 .loc 1 680 0
+ 697 0052 1D4B     	 ldr r3,.L31+4
+ 698 0054 9B68     	 ldr r3,[r3,#8]
+ 699 0056 03F4FE03 	 and r3,r3,#8323072
+ 700 005a 1B0C     	 lsrs r3,r3,#16
+ 701 005c 0133     	 adds r3,r3,#1
+ 702 005e 3B60     	 str r3,[r7]
+ 681:../Startup/system_XMC4300.c **** 
+ 682:../Startup/system_XMC4300.c ****       temp = (temp / (pdiv * kdiv)) * ndiv;
+ 703              	 .loc 1 682 0
+ 704 0060 BB68     	 ldr r3,[r7,#8]
+ 705 0062 3A68     	 ldr r2,[r7]
+ 706 0064 02FB03F3 	 mul r3,r2,r3
+ 707 0068 FA68     	 ldr r2,[r7,#12]
+ 708 006a B2FBF3F3 	 udiv r3,r2,r3
+ 709 006e 7A68     	 ldr r2,[r7,#4]
+ 710 0070 02FB03F3 	 mul r3,r2,r3
+ 711 0074 FB60     	 str r3,[r7,#12]
+ 712 0076 0DE0     	 b .L30
+ 713              	.L28:
+ 683:../Startup/system_XMC4300.c ****     }
+ 684:../Startup/system_XMC4300.c ****     else
+ 685:../Startup/system_XMC4300.c ****     {
+ 686:../Startup/system_XMC4300.c ****       /* PLL prescalar mode */
+ 687:../Startup/system_XMC4300.c ****       /* read back divider settings */
+ 688:../Startup/system_XMC4300.c ****       kdiv  = ((SCU_PLL->PLLCON1 & SCU_PLL_PLLCON1_K1DIV_Msk) >> SCU_PLL_PLLCON1_K1DIV_Pos) + 1;
+ 714              	 .loc 1 688 0
+ 715 0078 134B     	 ldr r3,.L31+4
+ 716 007a 9B68     	 ldr r3,[r3,#8]
+ 717 007c 03F07F03 	 and r3,r3,#127
+ 718 0080 0133     	 adds r3,r3,#1
+ 719 0082 3B60     	 str r3,[r7]
+ 689:../Startup/system_XMC4300.c **** 
+ 690:../Startup/system_XMC4300.c ****       temp = (temp / kdiv);
+ 720              	 .loc 1 690 0
+ 721 0084 FA68     	 ldr r2,[r7,#12]
+ 722 0086 3B68     	 ldr r3,[r7]
+ 723 0088 B2FBF3F3 	 udiv r3,r2,r3
+ 724 008c FB60     	 str r3,[r7,#12]
+ 725 008e 01E0     	 b .L30
+ 726              	.L25:
+ 691:../Startup/system_XMC4300.c ****     }
+ 692:../Startup/system_XMC4300.c ****   }
+ 693:../Startup/system_XMC4300.c ****   else
+ 694:../Startup/system_XMC4300.c ****   {
+ 695:../Startup/system_XMC4300.c ****     /* fOFI is clock source for fSYS */
+ 696:../Startup/system_XMC4300.c ****     temp = OFI_FREQUENCY;
+ 727              	 .loc 1 696 0
+ 728 0090 0E4B     	 ldr r3,.L31+8
+ 729 0092 FB60     	 str r3,[r7,#12]
+ 730              	.L30:
+ 697:../Startup/system_XMC4300.c ****   }
+ 698:../Startup/system_XMC4300.c **** 
+ 699:../Startup/system_XMC4300.c ****   temp = temp / ((SCU_CLK->SYSCLKCR & SCU_CLK_SYSCLKCR_SYSDIV_Msk) + 1);
+ 731              	 .loc 1 699 0
+ 732 0094 0B4B     	 ldr r3,.L31
+ 733 0096 DB68     	 ldr r3,[r3,#12]
+ 734 0098 DBB2     	 uxtb r3,r3
+ 735 009a 0133     	 adds r3,r3,#1
+ 736 009c FA68     	 ldr r2,[r7,#12]
+ 737 009e B2FBF3F3 	 udiv r3,r2,r3
+ 738 00a2 FB60     	 str r3,[r7,#12]
+ 700:../Startup/system_XMC4300.c ****   temp = temp / ((SCU_CLK->CPUCLKCR & SCU_CLK_CPUCLKCR_CPUDIV_Msk) + 1);
+ 739              	 .loc 1 700 0
+ 740 00a4 074B     	 ldr r3,.L31
+ 741 00a6 1B69     	 ldr r3,[r3,#16]
+ 742 00a8 03F00103 	 and r3,r3,#1
+ 743 00ac 0133     	 adds r3,r3,#1
+ 744 00ae FA68     	 ldr r2,[r7,#12]
+ 745 00b0 B2FBF3F3 	 udiv r3,r2,r3
+ 746 00b4 FB60     	 str r3,[r7,#12]
+ 701:../Startup/system_XMC4300.c **** 
+ 702:../Startup/system_XMC4300.c ****   SystemCoreClock = temp;
+ 747              	 .loc 1 702 0
+ 748 00b6 064A     	 ldr r2,.L31+12
+ 749 00b8 FB68     	 ldr r3,[r7,#12]
+ 750 00ba 1360     	 str r3,[r2]
+ 703:../Startup/system_XMC4300.c **** }
+ 751              	 .loc 1 703 0
+ 752 00bc 1037     	 adds r7,r7,#16
+ 753              	.LCFI19:
+ 754              	 .cfi_def_cfa_offset 8
+ 755 00be BD46     	 mov sp,r7
+ 756              	.LCFI20:
+ 757              	 .cfi_def_cfa_register 13
+ 758              	 
+ 759 00c0 80BD     	 pop {r7,pc}
+ 760              	.L32:
+ 761 00c2 00BF     	 .align 2
+ 762              	.L31:
+ 763 00c4 00460050 	 .word 1342195200
+ 764 00c8 10470050 	 .word 1342195472
+ 765 00cc 00366E01 	 .word 24000000
+ 766 00d0 00000000 	 .word SystemCoreClock
+ 767              	 .cfi_endproc
+ 768              	.LFE136:
+ 770              	 .section .text.OSCHP_GetFrequency,"ax",%progbits
+ 771              	 .align 2
+ 772              	 .weak OSCHP_GetFrequency
+ 773              	 .thumb
+ 774              	 .thumb_func
+ 776              	OSCHP_GetFrequency:
+ 777              	.LFB137:
+ 704:../Startup/system_XMC4300.c **** 
+ 705:../Startup/system_XMC4300.c **** __WEAK uint32_t OSCHP_GetFrequency(void)
+ 706:../Startup/system_XMC4300.c **** {
+ 778              	 .loc 1 706 0
+ 779              	 .cfi_startproc
+ 780              	 
+ 781              	 
+ 782              	 
+ 783 0000 80B4     	 push {r7}
+ 784              	.LCFI21:
+ 785              	 .cfi_def_cfa_offset 4
+ 786              	 .cfi_offset 7,-4
+ 787 0002 00AF     	 add r7,sp,#0
+ 788              	.LCFI22:
+ 789              	 .cfi_def_cfa_register 7
+ 707:../Startup/system_XMC4300.c ****   return OSCHP_FREQUENCY;
+ 790              	 .loc 1 707 0
+ 791 0004 024B     	 ldr r3,.L35
+ 708:../Startup/system_XMC4300.c **** }
+ 792              	 .loc 1 708 0
+ 793 0006 1846     	 mov r0,r3
+ 794 0008 BD46     	 mov sp,r7
+ 795              	.LCFI23:
+ 796              	 .cfi_def_cfa_register 13
+ 797              	 
+ 798 000a 5DF8047B 	 ldr r7,[sp],#4
+ 799              	.LCFI24:
+ 800              	 .cfi_restore 7
+ 801              	 .cfi_def_cfa_offset 0
+ 802 000e 7047     	 bx lr
+ 803              	.L36:
+ 804              	 .align 2
+ 805              	.L35:
+ 806 0010 001BB700 	 .word 12000000
+ 807              	 .cfi_endproc
+ 808              	.LFE137:
+ 810              	 .text
+ 811              	.Letext0:
+ 812              	 .file 3 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 813              	 .file 4 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 814              	 .file 5 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/core_cm4.h"
+ 815              	 .file 6 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Infineon/XMC4300_series/Include/XMC4300.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 system_XMC4300.c
+    {standard input}:24     .no_init:00000000 SystemCoreClock
+    {standard input}:21     .no_init:00000000 $d
+    {standard input}:30     .no_init:00000004 g_chipid
+    {standard input}:33     .text.delay:00000000 $t
+    {standard input}:37     .text.delay:00000000 delay
+    {standard input}:93     .text.SystemInit:00000000 $t
+    {standard input}:98     .text.SystemInit:00000000 SystemInit
+    {standard input}:139    .text.SystemCoreSetup:00000000 SystemCoreSetup
+    {standard input}:248    .text.SystemCoreClockSetup:00000000 SystemCoreClockSetup
+    {standard input}:129    .text.SystemInit:0000001c $d
+    {standard input}:134    .text.SystemCoreSetup:00000000 $t
+    {standard input}:236    .text.SystemCoreSetup:00000064 $d
+    {standard input}:243    .text.SystemCoreClockSetup:00000000 $t
+    {standard input}:776    .text.OSCHP_GetFrequency:00000000 OSCHP_GetFrequency
+    {standard input}:638    .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
+    {standard input}:613    .text.SystemCoreClockSetup:00000298 $d
+    {standard input}:633    .text.SystemCoreClockUpdate:00000000 $t
+    {standard input}:763    .text.SystemCoreClockUpdate:000000c4 $d
+    {standard input}:771    .text.OSCHP_GetFrequency:00000000 $t
+    {standard input}:806    .text.OSCHP_GetFrequency:00000010 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+__Vectors

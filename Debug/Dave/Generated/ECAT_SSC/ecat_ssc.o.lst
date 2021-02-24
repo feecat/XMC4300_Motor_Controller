@@ -1,0 +1,494 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "ecat_ssc.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .section .text.ECAT_SSC_GetAppVersion,"ax",%progbits
+  20              	 .align 2
+  21              	 .global ECAT_SSC_GetAppVersion
+  22              	 .thumb
+  23              	 .thumb_func
+  25              	ECAT_SSC_GetAppVersion:
+  26              	.LFB271:
+  27              	 .file 1 "../Dave/Generated/ECAT_SSC/ecat_ssc.c"
+   1:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** /**
+   2:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * @file ecat_ssc.c
+   3:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * @date 2016-02-05
+   4:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *
+   5:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * NOTE:
+   6:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * This file is copied by DAVE. Any manual modification done to this file will be lost when the cod
+   7:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *
+   8:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * @cond
+   9:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  **************************************************************************************************
+  10:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * ECAT_SSC v4.0.26 - ECAT_SSC APP initializes the XMC ESC and sets up the interface for Beckhoff E
+  11:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *
+  12:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * Copyright (c) 2016-2019, Infineon Technologies AG
+  13:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * All rights reserved.
+  14:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *
+  15:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
+  16:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * following conditions are met:
+  17:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *
+  18:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *   Redistributions of source code must retain the above copyright notice, this list of conditions
+  19:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *   disclaimer.
+  20:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *
+  21:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *   Redistributions in binary form must reproduce the above copyright notice, this list of conditi
+  22:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *   following disclaimer in the documentation and/or other materials provided with the distributio
+  23:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *
+  24:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *   Neither the name of the copyright holders nor the names of its contributors may be used to end
+  25:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *   products derived from this software without specific prior written permission.
+  26:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *
+  27:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
+  28:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
+  29:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
+  30:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
+  31:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
+  32:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+  33:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  34:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *
+  35:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
+  36:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * with Infineon Technologies AG (dave@infineon.com).
+  37:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  **************************************************************************************************
+  38:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *
+  39:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * Change History
+  40:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * --------------
+  41:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *
+  42:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * 2016-02-05:
+  43:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *     - Initial version
+  44:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *
+  45:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * 2016-09-27:
+  46:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *     - Added check to ensure the EEPROM size defined in SSC tool fits to the one defined E_EEPROM
+  47:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *     - Fixed initialization of EEPROM data taking into account size of EEPROM specified in SSC to
+  48:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *
+  49:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * 2018-07-03:
+  50:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *     - Fix initialization pAPPL_EEPROM_Reload and pAPPL_EEPROM_Write which is overwritten in Main
+  51:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *
+  52:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * @endcond
+  53:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  *
+  54:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  */
+  55:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** 
+  56:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** /**************************************************************************************************
+  57:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * HEADER FILES
+  58:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  **************************************************************************************************
+  59:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** #include "ecat_ssc.h"
+  60:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** #include "xmc_eschw.h"
+  61:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** 
+  62:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** #if ESC_EEPROM_SIZE > E_EEPROM_XMC4_DATA_BLOCK_SIZE
+  63:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** #error E_EEPROM_XMC4 size insufficient to hold requested ESC_EEPROM_SIZE from SSC tool. Check size 
+  64:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** #endif
+  65:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** 
+  66:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** /**************************************************************************************************
+  67:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * MACROS
+  68:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  **************************************************************************************************
+  69:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** 
+  70:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** /**************************************************************************************************
+  71:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * LOCAL DATA
+  72:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  **************************************************************************************************
+  73:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** 
+  74:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** /**************************************************************************************************
+  75:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * LOCAL ROUTINES
+  76:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  **************************************************************************************************
+  77:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** 
+  78:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** /**************************************************************************************************
+  79:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * API IMPLEMENTATION
+  80:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  **************************************************************************************************
+  81:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** 
+  82:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** /*
+  83:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * This function returns the driver version of the APP
+  84:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  */
+  85:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** DAVE_APP_VERSION_t ECAT_SSC_GetAppVersion(void)
+  86:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** {
+  28              	 .loc 1 86 0
+  29              	 .cfi_startproc
+  30              	 
+  31              	 
+  32              	 
+  33 0000 80B4     	 push {r7}
+  34              	.LCFI0:
+  35              	 .cfi_def_cfa_offset 4
+  36              	 .cfi_offset 7,-4
+  37 0002 83B0     	 sub sp,sp,#12
+  38              	.LCFI1:
+  39              	 .cfi_def_cfa_offset 16
+  40 0004 00AF     	 add r7,sp,#0
+  41              	.LCFI2:
+  42              	 .cfi_def_cfa_register 7
+  87:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****   DAVE_APP_VERSION_t version;
+  88:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** 
+  89:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****   version.major = ECAT_SSC_MAJOR_VERSION;
+  43              	 .loc 1 89 0
+  44 0006 0423     	 movs r3,#4
+  45 0008 3B70     	 strb r3,[r7]
+  90:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****   version.minor = ECAT_SSC_MINOR_VERSION;
+  46              	 .loc 1 90 0
+  47 000a 0023     	 movs r3,#0
+  48 000c 7B70     	 strb r3,[r7,#1]
+  91:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****   version.patch = ECAT_SSC_PATCH_VERSION;
+  49              	 .loc 1 91 0
+  50 000e 1A23     	 movs r3,#26
+  51 0010 BB70     	 strb r3,[r7,#2]
+  92:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** 
+  93:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****   return version;
+  52              	 .loc 1 93 0
+  53 0012 3B1D     	 adds r3,r7,#4
+  54 0014 3A46     	 mov r2,r7
+  55 0016 1268     	 ldr r2,[r2]
+  56 0018 1146     	 mov r1,r2
+  57 001a 1980     	 strh r1,[r3]
+  58 001c 0233     	 adds r3,r3,#2
+  59 001e 120C     	 lsrs r2,r2,#16
+  60 0020 1A70     	 strb r2,[r3]
+  61 0022 0023     	 movs r3,#0
+  62 0024 3A79     	 ldrb r2,[r7,#4]
+  63 0026 62F30703 	 bfi r3,r2,#0,#8
+  64 002a 7A79     	 ldrb r2,[r7,#5]
+  65 002c 62F30F23 	 bfi r3,r2,#8,#8
+  66 0030 BA79     	 ldrb r2,[r7,#6]
+  67 0032 62F31743 	 bfi r3,r2,#16,#8
+  94:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** }
+  68              	 .loc 1 94 0
+  69 0036 1846     	 mov r0,r3
+  70 0038 0C37     	 adds r7,r7,#12
+  71              	.LCFI3:
+  72              	 .cfi_def_cfa_offset 4
+  73 003a BD46     	 mov sp,r7
+  74              	.LCFI4:
+  75              	 .cfi_def_cfa_register 13
+  76              	 
+  77 003c 5DF8047B 	 ldr r7,[sp],#4
+  78              	.LCFI5:
+  79              	 .cfi_restore 7
+  80              	 .cfi_def_cfa_offset 0
+  81 0040 7047     	 bx lr
+  82              	 .cfi_endproc
+  83              	.LFE271:
+  85 0042 00BF     	 .section .text.ECAT_SSC_Init,"ax",%progbits
+  86              	 .align 2
+  87              	 .global ECAT_SSC_Init
+  88              	 .thumb
+  89              	 .thumb_func
+  91              	ECAT_SSC_Init:
+  92              	.LFB272:
+  95:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** 
+  96:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** /*
+  97:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  * This function intialize's the EtherCAT slave controller.
+  98:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****  */
+  99:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** ECAT_SSC_STATUS_t ECAT_SSC_Init(ECAT_SSC_t *handle)
+ 100:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** {
+  93              	 .loc 1 100 0
+  94              	 .cfi_startproc
+  95              	 
+  96              	 
+  97 0000 80B5     	 push {r7,lr}
+  98              	.LCFI6:
+  99              	 .cfi_def_cfa_offset 8
+ 100              	 .cfi_offset 7,-8
+ 101              	 .cfi_offset 14,-4
+ 102 0002 84B0     	 sub sp,sp,#16
+ 103              	.LCFI7:
+ 104              	 .cfi_def_cfa_offset 24
+ 105 0004 00AF     	 add r7,sp,#0
+ 106              	.LCFI8:
+ 107              	 .cfi_def_cfa_register 7
+ 108 0006 7860     	 str r0,[r7,#4]
+ 101:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****   uint32_t status;
+ 102:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** 
+ 103:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****   status = (uint32_t)ECAT_SSC_STATUS_FAILURE;
+ 109              	 .loc 1 103 0
+ 110 0008 0123     	 movs r3,#1
+ 111 000a FB60     	 str r3,[r7,#12]
+ 104:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** 
+ 105:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****   /* Initialize the Flash Emulated EEPROM and copy the latest content to the internal working RAM b
+ 106:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****   status = (uint32_t)E_EEPROM_XMC4_Init(handle->eeprom);
+ 112              	 .loc 1 106 0
+ 113 000c 7B68     	 ldr r3,[r7,#4]
+ 114 000e 1B68     	 ldr r3,[r3]
+ 115 0010 1846     	 mov r0,r3
+ 116 0012 FFF7FEFF 	 bl E_EEPROM_XMC4_Init
+ 117 0016 0346     	 mov r3,r0
+ 118 0018 FB60     	 str r3,[r7,#12]
+ 107:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** 
+ 108:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****   if (status == (uint32_t)ECAT_SSC_STATUS_SUCCESS)
+ 119              	 .loc 1 108 0
+ 120 001a FB68     	 ldr r3,[r7,#12]
+ 121 001c 002B     	 cmp r3,#0
+ 122 001e 47D1     	 bne .L4
+ 109:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****   {
+ 110:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****     /* Check if the slave configuration data is available in the Flash Emulated EEPROM*/
+ 111:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****     if (E_EEPROM_XMC4_IsFlashEmpty())
+ 123              	 .loc 1 111 0
+ 124 0020 FFF7FEFF 	 bl E_EEPROM_XMC4_IsFlashEmpty
+ 125 0024 0346     	 mov r3,r0
+ 126 0026 002B     	 cmp r3,#0
+ 127 0028 0AD0     	 beq .L5
+ 112:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****     {
+ 113:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****       /* Prepare the default configuration out of the SSC for EEPROM */
+ 114:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****       E_EEPROM_XMC4_WriteArray(0U, aEepromData, (uint16_t)ESC_EEPROM_SIZE);
+ 128              	 .loc 1 114 0
+ 129 002a 0020     	 movs r0,#0
+ 130 002c 2349     	 ldr r1,.L8
+ 131 002e 4FF40062 	 mov r2,#2048
+ 132 0032 FFF7FEFF 	 bl E_EEPROM_XMC4_WriteArray
+ 115:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** 
+ 116:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****       /* Program the RAM contents to Emulated EEPROM*/
+ 117:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****       status = (uint32_t)E_EEPROM_XMC4_UpdateFlashContents();
+ 133              	 .loc 1 117 0
+ 134 0036 FFF7FEFF 	 bl E_EEPROM_XMC4_UpdateFlashContents
+ 135 003a 0346     	 mov r3,r0
+ 136 003c FB60     	 str r3,[r7,#12]
+ 137 003e 05E0     	 b .L6
+ 138              	.L5:
+ 118:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****     }
+ 119:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****     else
+ 120:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****     {
+ 121:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****       /* Read the latest contents from RAM buffer which has the latest contents of EEPROM */
+ 122:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****       E_EEPROM_XMC4_ReadArray(0U,aEepromData,(uint16_t)ESC_EEPROM_SIZE);
+ 139              	 .loc 1 122 0
+ 140 0040 0020     	 movs r0,#0
+ 141 0042 1E49     	 ldr r1,.L8
+ 142 0044 4FF40062 	 mov r2,#2048
+ 143 0048 FFF7FEFF 	 bl E_EEPROM_XMC4_ReadArray
+ 144              	.L6:
+ 123:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****     }
+ 124:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** 
+ 125:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****     /* Initialize the 1 millisecond timer module*/
+ 126:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****     if (status == (uint32_t)ECAT_SSC_STATUS_SUCCESS)
+ 145              	 .loc 1 126 0
+ 146 004c FB68     	 ldr r3,[r7,#12]
+ 147 004e 002B     	 cmp r3,#0
+ 148 0050 2ED1     	 bne .L4
+ 127:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****     {
+ 128:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****       status = (uint32_t)TIMER_Init(handle->timer);
+ 149              	 .loc 1 128 0
+ 150 0052 7B68     	 ldr r3,[r7,#4]
+ 151 0054 5B68     	 ldr r3,[r3,#4]
+ 152 0056 1846     	 mov r0,r3
+ 153 0058 FFF7FEFF 	 bl TIMER_Init
+ 154 005c 0346     	 mov r3,r0
+ 155 005e FB60     	 str r3,[r7,#12]
+ 129:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****       /* Initialize the timer interrupt handler*/
+ 130:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****       if (status == (uint32_t)ECAT_SSC_STATUS_SUCCESS)
+ 156              	 .loc 1 130 0
+ 157 0060 FB68     	 ldr r3,[r7,#12]
+ 158 0062 002B     	 cmp r3,#0
+ 159 0064 24D1     	 bne .L4
+ 131:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****       {
+ 132:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****         status = (uint32_t)INTERRUPT_Init(handle->timer_irqhandler);
+ 160              	 .loc 1 132 0
+ 161 0066 7B68     	 ldr r3,[r7,#4]
+ 162 0068 9B68     	 ldr r3,[r3,#8]
+ 163 006a 1846     	 mov r0,r3
+ 164 006c FFF7FEFF 	 bl INTERRUPT_Init
+ 165 0070 0346     	 mov r3,r0
+ 166 0072 FB60     	 str r3,[r7,#12]
+ 133:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****         /* Call Beckhoff HW abstraction layer API to initialize the XMC4800 ESC and supporting func
+ 134:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****         if (status == (uint32_t)ECAT_SSC_STATUS_SUCCESS)
+ 167              	 .loc 1 134 0
+ 168 0074 FB68     	 ldr r3,[r7,#12]
+ 169 0076 002B     	 cmp r3,#0
+ 170 0078 1AD1     	 bne .L4
+ 135:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****         {
+ 136:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****           status = HW_Init();
+ 171              	 .loc 1 136 0
+ 172 007a FFF7FEFF 	 bl HW_Init
+ 173 007e 0346     	 mov r3,r0
+ 174 0080 FB60     	 str r3,[r7,#12]
+ 137:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****           /* Call Beckhoff HW abstraction layer API to start the stack interface initialization*/
+ 138:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****           if (status == (uint32_t)ECAT_SSC_STATUS_SUCCESS)
+ 175              	 .loc 1 138 0
+ 176 0082 FB68     	 ldr r3,[r7,#12]
+ 177 0084 002B     	 cmp r3,#0
+ 178 0086 13D1     	 bne .L4
+ 139:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****           {
+ 140:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****             status = MainInit();
+ 179              	 .loc 1 140 0
+ 180 0088 FFF7FEFF 	 bl MainInit
+ 181 008c 0346     	 mov r3,r0
+ 182 008e FB60     	 str r3,[r7,#12]
+ 141:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****             if (status == (uint32_t)ECAT_SSC_STATUS_SUCCESS)
+ 183              	 .loc 1 141 0
+ 184 0090 FB68     	 ldr r3,[r7,#12]
+ 185 0092 002B     	 cmp r3,#0
+ 186 0094 0CD1     	 bne .L4
+ 142:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****             {
+ 143:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****            	  pAPPL_EEPROM_Reload = HW_EepromReload;
+ 187              	 .loc 1 143 0
+ 188 0096 0A4B     	 ldr r3,.L8+4
+ 189 0098 0A4A     	 ldr r2,.L8+8
+ 190 009a 1A60     	 str r2,[r3]
+ 144:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****               pAPPL_EEPROM_Write  = HW_EepromWrite;
+ 191              	 .loc 1 144 0
+ 192 009c 0A4B     	 ldr r3,.L8+12
+ 193 009e 0B4A     	 ldr r2,.L8+16
+ 194 00a0 1A60     	 str r2,[r3]
+ 145:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** 
+ 146:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****               /*Start the 1 millisec timer*/
+ 147:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****               status = (uint32_t)TIMER_Start(handle->timer);
+ 195              	 .loc 1 147 0
+ 196 00a2 7B68     	 ldr r3,[r7,#4]
+ 197 00a4 5B68     	 ldr r3,[r3,#4]
+ 198 00a6 1846     	 mov r0,r3
+ 199 00a8 FFF7FEFF 	 bl TIMER_Start
+ 200 00ac 0346     	 mov r3,r0
+ 201 00ae FB60     	 str r3,[r7,#12]
+ 202              	.L4:
+ 148:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****             }
+ 149:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****           }
+ 150:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****         }
+ 151:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****       }
+ 152:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****     }
+ 153:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****   }
+ 154:../Dave/Generated/ECAT_SSC/ecat_ssc.c ****   return ((ECAT_SSC_STATUS_t)status);
+ 203              	 .loc 1 154 0
+ 204 00b0 FB68     	 ldr r3,[r7,#12]
+ 205 00b2 DBB2     	 uxtb r3,r3
+ 155:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** }
+ 206              	 .loc 1 155 0
+ 207 00b4 1846     	 mov r0,r3
+ 208 00b6 1037     	 adds r7,r7,#16
+ 209              	.LCFI9:
+ 210              	 .cfi_def_cfa_offset 8
+ 211 00b8 BD46     	 mov sp,r7
+ 212              	.LCFI10:
+ 213              	 .cfi_def_cfa_register 13
+ 214              	 
+ 215 00ba 80BD     	 pop {r7,pc}
+ 216              	.L9:
+ 217              	 .align 2
+ 218              	.L8:
+ 219 00bc 00000000 	 .word aEepromData
+ 220 00c0 00000000 	 .word pAPPL_EEPROM_Reload
+ 221 00c4 00000000 	 .word HW_EepromReload
+ 222 00c8 00000000 	 .word pAPPL_EEPROM_Write
+ 223 00cc 00000000 	 .word HW_EepromWrite
+ 224              	 .cfi_endproc
+ 225              	.LFE272:
+ 227              	 .section .text.ENABLE_ESC_INT_USER,"ax",%progbits
+ 228              	 .align 2
+ 229              	 .weak ENABLE_ESC_INT_USER
+ 230              	 .thumb
+ 231              	 .thumb_func
+ 233              	ENABLE_ESC_INT_USER:
+ 234              	.LFB273:
+ 156:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** 
+ 157:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** __WEAK void ENABLE_ESC_INT_USER(void)
+ 158:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** {
+ 235              	 .loc 1 158 0
+ 236              	 .cfi_startproc
+ 237              	 
+ 238              	 
+ 239              	 
+ 240 0000 80B4     	 push {r7}
+ 241              	.LCFI11:
+ 242              	 .cfi_def_cfa_offset 4
+ 243              	 .cfi_offset 7,-4
+ 244 0002 00AF     	 add r7,sp,#0
+ 245              	.LCFI12:
+ 246              	 .cfi_def_cfa_register 7
+ 159:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** }
+ 247              	 .loc 1 159 0
+ 248 0004 BD46     	 mov sp,r7
+ 249              	.LCFI13:
+ 250              	 .cfi_def_cfa_register 13
+ 251              	 
+ 252 0006 5DF8047B 	 ldr r7,[sp],#4
+ 253              	.LCFI14:
+ 254              	 .cfi_restore 7
+ 255              	 .cfi_def_cfa_offset 0
+ 256 000a 7047     	 bx lr
+ 257              	 .cfi_endproc
+ 258              	.LFE273:
+ 260              	 .section .text.DISABLE_ESC_INT_USER,"ax",%progbits
+ 261              	 .align 2
+ 262              	 .weak DISABLE_ESC_INT_USER
+ 263              	 .thumb
+ 264              	 .thumb_func
+ 266              	DISABLE_ESC_INT_USER:
+ 267              	.LFB274:
+ 160:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** 
+ 161:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** __WEAK void DISABLE_ESC_INT_USER(void)
+ 162:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** {
+ 268              	 .loc 1 162 0
+ 269              	 .cfi_startproc
+ 270              	 
+ 271              	 
+ 272              	 
+ 273 0000 80B4     	 push {r7}
+ 274              	.LCFI15:
+ 275              	 .cfi_def_cfa_offset 4
+ 276              	 .cfi_offset 7,-4
+ 277 0002 00AF     	 add r7,sp,#0
+ 278              	.LCFI16:
+ 279              	 .cfi_def_cfa_register 7
+ 163:../Dave/Generated/ECAT_SSC/ecat_ssc.c **** }
+ 280              	 .loc 1 163 0
+ 281 0004 BD46     	 mov sp,r7
+ 282              	.LCFI17:
+ 283              	 .cfi_def_cfa_register 13
+ 284              	 
+ 285 0006 5DF8047B 	 ldr r7,[sp],#4
+ 286              	.LCFI18:
+ 287              	 .cfi_restore 7
+ 288              	 .cfi_def_cfa_offset 0
+ 289 000a 7047     	 bx lr
+ 290              	 .cfi_endproc
+ 291              	.LFE274:
+ 293              	 .text
+ 294              	.Letext0:
+ 295              	 .file 2 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 296              	 .file 3 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 297              	 .file 4 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Infineon/XMC4300_series/Include/XMC4300.h"
+ 298              	 .file 5 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/DAVE_common.h"
+ 299              	 .file 6 "c:\\users\\admin\\daveworkspaces\\xmc4300_pwmtest\\dave\\generated\\e_eeprom_xmc4\\e_eeprom_xmc4.h"
+ 300              	 .file 7 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc/xmc_ccu4.h"
+ 301              	 .file 8 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc/xmc4_scu.h"
+ 302              	 .file 9 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/GLOBAL_CCU4/global_ccu4.h"
+ 303              	 .file 10 "../Dave/Generated/ECAT_SSC/../TIMER/timer.h"
+ 304              	 .file 11 "../Dave/Generated/ECAT_SSC/../INTERRUPT/interrupt.h"
+ 305              	 .file 12 "../Dave/Generated/ECAT_SSC/ecat_ssc.h"
+ 306              	 .file 13 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 307              	 .file 14 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/core_cm4.h"
+ 308              	 .file 15 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Infineon/XMC4300_series/Include/system_XMC4300.h"
+ 309              	 .file 16 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Dave/Generated/ECAT_SSC/xmc_eschw.h"
+ 310              	 .file 17 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/SSC/Src/applInterface.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 ecat_ssc.c
+    {standard input}:20     .text.ECAT_SSC_GetAppVersion:00000000 $t
+    {standard input}:25     .text.ECAT_SSC_GetAppVersion:00000000 ECAT_SSC_GetAppVersion
+    {standard input}:86     .text.ECAT_SSC_Init:00000000 $t
+    {standard input}:91     .text.ECAT_SSC_Init:00000000 ECAT_SSC_Init
+    {standard input}:219    .text.ECAT_SSC_Init:000000bc $d
+    {standard input}:228    .text.ENABLE_ESC_INT_USER:00000000 $t
+    {standard input}:233    .text.ENABLE_ESC_INT_USER:00000000 ENABLE_ESC_INT_USER
+    {standard input}:261    .text.DISABLE_ESC_INT_USER:00000000 $t
+    {standard input}:266    .text.DISABLE_ESC_INT_USER:00000000 DISABLE_ESC_INT_USER
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+E_EEPROM_XMC4_Init
+E_EEPROM_XMC4_IsFlashEmpty
+E_EEPROM_XMC4_WriteArray
+E_EEPROM_XMC4_UpdateFlashContents
+E_EEPROM_XMC4_ReadArray
+TIMER_Init
+INTERRUPT_Init
+HW_Init
+MainInit
+TIMER_Start
+aEepromData
+pAPPL_EEPROM_Reload
+HW_EepromReload
+pAPPL_EEPROM_Write
+HW_EepromWrite

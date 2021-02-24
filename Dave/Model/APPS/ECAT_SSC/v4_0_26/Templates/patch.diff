@@ -1,0 +1,111 @@
+diff -Naur Src/coeappl.c Src_30082018/coeappl.c
+--- Src/coeappl.c	2018-09-10 22:26:02.826077000 +0200
++++ Src_30082018/coeappl.c	2018-09-10 22:37:14.552218400 +0200
+@@ -407,7 +407,7 @@
+  *
+  */
+  /*ECATCHANGE_START(V5.12)*/
+-TOBJ1C00 sSyncmanagertype = {0x04, {0x0102, 0x0304}};
++TOBJ1C00 sSyncmanagertype = {0x04, {0x0201, 0x0403}};
+ /*ECATCHANGE_END(V5.12)*/
+ 
+ 
+diff -Naur Src/ecatslv.c Src_30082018/ecatslv.c
+--- Src/ecatslv.c	2018-09-10 22:26:02.976092000 +0200
++++ Src_30082018/ecatslv.c	2018-09-10 23:19:38.297409200 +0200
+@@ -219,6 +219,7 @@
+ ------
+ -----------------------------------------------------------------------------------------*/
+ UINT16    u16ALEventMask;                      // Value which will be written to the 0x204 register (AL event mask) during the state transition PreOP to SafeOP
++UINT16      u16IdValue;
+ 
+ /*Dummy variable to trigger read or writes events in the ESC*/
+     VARVOLATILE UINT8 u8dummy;
+@@ -1374,10 +1375,22 @@
+         nAlStatus = alStatus;
+     }
+ 
++#if EXPLICIT_DEVICE_ID
++    /*Handle Explicit Device ID is requested*/
++    if(bExplicitDevIdRequested && !(nAlStatus & STATE_CHANGE) && alStatusCode == 0 && ((nAlStatus & STATE_MASK) != STATE_BOOT))
++    {
++        Value = u16IdValue;
++        nAlStatus |= STATE_DEVID;
++    }
++    else
++    {
++        nAlStatus &= ~STATE_DEVID;
++    }
++#endif
+ 
+     if (alStatusCode != 0xFFFF)
+     {
+-        Value = SWAPWORD(Value);
++    	Value = SWAPWORD(Value);
+ 
+         HW_EscWriteWord(Value,ESC_AL_STATUS_CODE_OFFSET);
+     }
+@@ -1603,11 +1616,31 @@
+                     APPL_StopInputHandler();
+                 }
+ 
+-                StopInputHandler();
++             StopInputHandler();
+             }
+             break;
+ 
+         case SAFEOP_2_OP:
++
++            /*enable SM if error was acknowledged*/
++            if (bErrAck)
++            {
++#if MAX_PD_OUTPUT_SIZE > 0
++               if (nPdOutputSize > 0)
++               {
++                    EnableSyncManChannel(PROCESS_DATA_OUT);
++               }
++#if MAX_PD_INPUT_SIZE > 0
++               else
++#endif
++#endif //#if MAX_PD_OUTPUT_SIZE > 0
++#if MAX_PD_INPUT_SIZE > 0
++                    if (nPdInputSize > 0)
++                    {
++                        EnableSyncManChannel(PROCESS_DATA_IN);
++                    }
++#endif //#if MAX_PD_INPUT_SIZE > 0
++            }
+             /* start the output handler (function is defined above) */
+             result = StartOutputHandler();
+             if(result == 0)
+@@ -2495,13 +2528,29 @@
+         HW_EscReadByte( EscAlControl, ESC_AL_CONTROL_OFFSET);
+         EscAlControl = SWAPWORD(EscAlControl);
+ 
++#if EXPLICIT_DEVICE_ID
++        /*Evaluate if register 0x120 Bit5 (Request Explicit DeviceID) is set*/
++        if ((EscAlControl & (UINT16)STATE_DEVID) == STATE_DEVID)
++        {
++            if (bExplicitDevIdRequested == FALSE)
++            {
++                u16IdValue = APPL_GetDeviceID();
++            }
++
++            bExplicitDevIdRequested = TRUE;
++        }
++        else
++        {
++            bExplicitDevIdRequested = FALSE;
++        }
++#endif
+ 
+         /* reset AL Control event and the SM Change event (because the Sync Manager settings will be checked
+            in AL_ControlInd, too)*/
+         ALEventReg &= ~((AL_CONTROL_EVENT) | (SM_CHANGE_EVENT));
+ 
+         AL_ControlInd((UINT8)EscAlControl, 0); /* in AL_ControlInd the state transition will be checked and done */
+-        
++
+         /* SM-Change-Event was handled too */
+     }
+ 

@@ -1,0 +1,60 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "global_ccu4_conf.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .global GLOBAL_CCU4_0
+  20              	 .section .data.GLOBAL_CCU4_0,"aw",%progbits
+  21              	 .align 2
+  24              	GLOBAL_CCU4_0:
+  25 0000 00449508 	 .word 144000000
+  26 0004 0200     	 .short 2
+  27 0006 0000     	 .space 2
+  28 0008 00000140 	 .word 1073807360
+  29 000c 00       	 .byte 0
+  30 000d 00       	 .byte 0
+  31 000e 0000     	 .space 2
+  32              	 .global GLOBAL_CCU4_1
+  33              	 .section .data.GLOBAL_CCU4_1,"aw",%progbits
+  34              	 .align 2
+  37              	GLOBAL_CCU4_1:
+  38 0000 00449508 	 .word 144000000
+  39 0004 0100     	 .short 1
+  40 0006 0000     	 .space 2
+  41 0008 00C00040 	 .word 1073790976
+  42 000c 00       	 .byte 0
+  43 000d 00       	 .byte 0
+  44 000e 0000     	 .space 2
+  45              	 .text
+  46              	.Letext0:
+  47              	 .file 1 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+  48              	 .file 2 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+  49              	 .file 3 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Infineon/XMC4300_series/Include/XMC4300.h"
+  50              	 .file 4 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc/xmc_ccu4.h"
+  51              	 .file 5 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/XMCLib/inc/xmc4_scu.h"
+  52              	 .file 6 "../Dave/Generated/GLOBAL_CCU4/global_ccu4.h"
+  53              	 .file 7 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/cmsis_gcc.h"
+  54              	 .file 8 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Include/core_cm4.h"
+  55              	 .file 9 "C:/Users/Admin/DaveWorkspaces/XMC4300_PWMTest/Libraries/CMSIS/Infineon/XMC4300_series/Include/system_XMC4300.h"
+  56              	 .file 10 "../Dave/Generated/GLOBAL_CCU4/global_ccu4_conf.c"
+DEFINED SYMBOLS
+                            *ABS*:00000000 global_ccu4_conf.c
+    {standard input}:24     .data.GLOBAL_CCU4_0:00000000 GLOBAL_CCU4_0
+    {standard input}:21     .data.GLOBAL_CCU4_0:00000000 $d
+    {standard input}:37     .data.GLOBAL_CCU4_1:00000000 GLOBAL_CCU4_1
+    {standard input}:34     .data.GLOBAL_CCU4_1:00000000 $d
+
+NO UNDEFINED SYMBOLS

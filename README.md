@@ -1,5 +1,7 @@
 # XMC4300_Motor_Controller
- 3 Axis Pulse Controller based on XMC4300_EtherCAT_CoreBoard
+ 3 Axis Pulse Controller based on [XMC4300_EtherCAT_CoreBoard](https://github.com/feecat/XMC4300_EtherCAT_CoreBoard)  
+   
+ ![](Docs/header_0.png)
 
 ----------
 
@@ -9,10 +11,10 @@ This is not CiA402 standand repositories, but similar. honestly, I dont know how
 I have already test it with cheap step driver, I hope you can got more driver to test it.  
 
 ## How to use  
-Connect Power and Driver by 4 wire: ENA, PWM, DIR, GND.  
+Connect with Driver by 4 wire: ENA, PWM, DIR, GND.  
 Set ProfilePosition( CHx_Mode = 1) or ProfileVelocity( CHx_Mode = 3) in EtherCAT Master:  
-In ProfilePosition Mode, Set the CHx_ProfilePosition, CHx_ProfileVelocity, CHx_ProfileACC in EtherCAT Master, Then it will output pulse.  
-In ProfileVelocity Mode, Set the CHx_ProfileVelocity, CHx_ProfileACC in EtherCAT, Then it will output pulse.  
+In ProfilePosition Mode, Set the CHx_ProfilePosition, CHx_ProfileVelocity, CHx_ProfileACC, Then it will output pulse and automaticly stop at profile position.  
+In ProfileVelocity Mode, Set the CHx_ProfileVelocity, CHx_ProfileACC, Then it will output pulse continually.  
 
 PINOUT:  
 | # | PINOUT | # |

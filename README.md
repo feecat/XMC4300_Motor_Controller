@@ -30,6 +30,12 @@ PINOUT:
 The Enable is Config.0, its just connect to P0.0, not global enable signal.  
 The SmoothTime is Config.16~Config.31, Smooth Enable is Config.2, Im not sure...  
 
+## Prices  
+Normally we can got a ethercat step driver by 600 rmb. But we can got a pulse step driver by 100 rmb.  
+In servo driver its take more cost in ethercat protocol.  
+So just use this controller to control pulse driver at simple use.  
+
 ## Hardware  
 There need XMC4300_EtherCAT_CoreBoard and XMC4300_Motor_Controller, And one or more step motor driver.  
 More information is in construction. Please see here later.  
+

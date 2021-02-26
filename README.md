@@ -31,7 +31,7 @@ The Enable is Config.0, its just connect to P0.0, not global enable signal.
 The SmoothTime is Config.16~Config.31, Smooth Enable is Config.2, Im not sure...  
 
 ## Prices  
-Normally we can got a ethercat step driver by 600 rmb. But we can got a pulse step driver by 100 rmb.  
+Normally we can got a ethercat step driver by 600 rmb( [DM3E-556](https://detail.tmall.com/item.htm?id=630197660852&skuId=4487299420139)). But we can got a pulse step driver by 50 rmb( [DM542](https://item.taobao.com/item.htm?id=579401847502)).  
 In servo driver its take more cost in ethercat protocol.  
 So just use this controller to control pulse driver at simple use.  
 

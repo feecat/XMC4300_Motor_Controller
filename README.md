@@ -19,7 +19,7 @@ Example:
 A linear module with DM542 Stepperdriver. pitch is 4mm. Set pulse/rev to 3200.  
 Set Mode to 1 to use position mode.  
 Set ProfileVelocity to 64000 = 20r/s = 80mm/s = 4.8M/MIN  
-Set ProfileACC to 320 = 0.1r/ms2 = 400mm/s2 = 0.4M/S2 = 0.4G  
+Set ProfileACC to 3200 = 1r/ms2 = 4000mm/s2 = 4M/S2 = 0.4G  
 Set ProfilePosition to 64000 = 20r = 80mm  
 
 PINOUT:  

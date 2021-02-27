@@ -20,6 +20,7 @@
 
 #include <DAVE.h>               //Declarations from DAVE Code Generation (includes SFR declaration)
 #include "SSC/Src/XMC_ESCObjects.h"
+#include <MATH.h>
 
 int32_t ActPos[3];
 int32_t ActVel[3];
@@ -53,7 +54,7 @@ uint16_t SmoothTime;
 		uint8_t n = 0;
 		ActPos[n] = (Dir[n]==0)?ActPos[n]+1:ActPos[n]-1;
 		if ((Mode[n] == 1) && (ActPos[0] == TarPos[n])){
-			ActVel[0] = 0;
+			ActVel[n] = 0;
 			CtrlVel[n] = 0;
 			TarVel[n] = 0;
 			PWM_CCU4_Stop(&PWM_0);
@@ -98,6 +99,7 @@ uint16_t SmoothTime;
 //Position Control
 	int32_t PosCtrl(uint8_t Channel)
 	{
+		/*
 		int32_t time = abs(ActVel[Channel]) / Acc[Channel];
 		int32_t accpos;
 		// #FIXME IDK why but it works fine for me, The pulse in down range is not ideal. add some time will fix it.
@@ -123,6 +125,49 @@ uint16_t SmoothTime;
 		}
 		//StandStill
 		return 0;
+		*/
+		/*
+		 * v=at => t=v/a
+		 * s=(v*t)/2 = (v*(v/a))/2 = (v*v)/(2*a) => v*v=2*a*s => v=SQRT(2*a*s);
+		 */
+		int64_t s = abs(TarPos[Channel] - ActPos[Channel]);
+		int64_t temp = 2000 * Acc[Channel] * s;
+		int32_t v = sqrt(temp);
+
+		if (TarPos[Channel] > ActPos[Channel]){//Position Movement
+			if ((v >= TarVel[Channel]) || (ActVel[Channel] <= v)){
+				v = ActVel[Channel] + Acc[Channel];
+				if (v > TarVel[Channel]){
+					return TarVel[Channel];
+				}else{
+					return v;
+				}
+			}else{
+				if (abs(v)<20){
+					return 20;
+				}else{
+					return v;
+				}
+			}
+		}else if (TarPos[Channel] < ActPos[Channel]){//Negative Movement
+			v = -v;
+			if ((v <= -TarVel[Channel]) || (ActVel[Channel] >= v)){
+				v = ActVel[Channel] - Acc[Channel];
+				if (v < -TarVel[Channel]){
+					return -TarVel[Channel];
+				}else{
+					return v;
+				}
+			}else{
+				if (abs(v) < 20){
+					return -20;
+				}else{
+					return v;
+				}
+			}
+		}
+		//StandStill
+		return 0;
 	}
 
 //Tick
@@ -132,7 +177,7 @@ uint16_t SmoothTime;
 		for (uint8_t i=0; i<3; i++){
 			if (Mode[i] == 1){
 				CtrlVel[i] = PosCtrl(i);
-				ActVel[i] = ramp(CtrlVel[i], ActVel[i], Acc[i]);//Profile Position
+				ActVel[i] = CtrlVel[i];//Profile Position
 			}else if (Mode[i] == 3){
 				ActVel[i] = ramp(TarVel[i], ActVel[i], Acc[i]);//Profile Velocity
 			}else{
@@ -200,6 +245,16 @@ uint16_t SmoothTime;
 		XMC_GPIO_Init(P1_5,&output);
 		XMC_GPIO_Init(P3_5,&output);
 	}
+//Limit
+	uint32_t limit(uint32_t in, uint32_t min, uint32_t max){
+		if (in < min){
+			return min;
+		}else if (in > max){
+			return max;
+		}else{
+			return in;
+		}
+	}
 
 
 void process_app(TOBJ7000 *OUT_GENERIC, TOBJ6000 *IN_GENERIC)
@@ -219,18 +274,18 @@ void process_app(TOBJ7000 *OUT_GENERIC, TOBJ6000 *IN_GENERIC)
 	IN_GENERIC->ActualConfig		= Config;
 
 	if (outenable){
-		TarVel[0] 	= OUT_GENERIC->CH0_ProfileVelocity;
-		Acc[0] 		= OUT_GENERIC->CH0_ProfileACC;
+		TarVel[0] 	= limit(OUT_GENERIC->CH0_ProfileVelocity,0,220000);
+		Acc[0] 		= limit(OUT_GENERIC->CH0_ProfileACC,0,220000);
 		Mode[0] 	= OUT_GENERIC->CH0_Mode;
 		TarPos[0] 	= OUT_GENERIC->CH0_ProfilePosition;
 
-		TarVel[1] 	= OUT_GENERIC->CH1_ProfileVelocity;
-		Acc[1] 		= OUT_GENERIC->CH1_ProfileACC;
+		TarVel[1] 	= limit(OUT_GENERIC->CH1_ProfileVelocity,0,220000);
+		Acc[1] 		= limit(OUT_GENERIC->CH1_ProfileACC,0,220000);
 		Mode[1] 	= OUT_GENERIC->CH1_Mode;
 		TarPos[1] 	= OUT_GENERIC->CH1_ProfilePosition;
 
-		TarVel[2] 	= OUT_GENERIC->CH2_ProfileVelocity;
-		Acc[2] 		= OUT_GENERIC->CH2_ProfileACC;
+		TarVel[2] 	= limit(OUT_GENERIC->CH2_ProfileVelocity,0,220000);
+		Acc[2] 		= limit(OUT_GENERIC->CH2_ProfileACC,0,220000);
 		Mode[2] 	= OUT_GENERIC->CH2_Mode;
 		TarPos[2] 	= OUT_GENERIC->CH2_ProfilePosition;
 

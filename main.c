@@ -35,7 +35,8 @@ uint8_t Dir[3];
 int32_t StartPos[3];
 int32_t ProcessPos[3];
 int32_t Config;
-uint16_t SmoothTime;
+
+uint8_t clspos_enable;
 
 //Output Enable
 	uint8_t outenable;
@@ -226,8 +227,19 @@ uint16_t SmoothTime;
 		}else{
 			PWM_CCU4_Stop(&PWM_2);
 		}
+
 		//ENABLE
 		digitalWrite(P0_0, Config >> 0 & 0x1);
+
+		//Position clear
+		if ((Config >> 1 & 0x1) && (clspos_enable == 1)){
+			clspos_enable = 0;
+			ActPos[0] = 0;
+			ActPos[1] = 0;
+			ActPos[2] = 0;
+		}else if (!(Config >> 1 & 0x1)){
+			clspos_enable = 1;
+		}
 	}
 
 //GPIO INIT

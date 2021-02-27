@@ -3434,7 +3434,7 @@
  298              	 .comm StartPos,12,4
  299              	 .comm ProcessPos,12,4
  300              	 .comm Config,4,4
- 301              	 .comm SmoothTime,2,2
+ 301              	 .comm clspos_enable,1,1
  302              	 .comm outenable,1,1
  303 001a 00BF     	 .section .text.process_stopoutput,"ax",%progbits
  304              	 .align 2
@@ -3481,12 +3481,13 @@
   35:../main.c     **** int32_t StartPos[3];
   36:../main.c     **** int32_t ProcessPos[3];
   37:../main.c     **** int32_t Config;
-  38:../main.c     **** uint16_t SmoothTime;
-  39:../main.c     **** 
-  40:../main.c     **** //Output Enable
-  41:../main.c     **** 	uint8_t outenable;
-  42:../main.c     **** 	void process_stopoutput(){outenable=false;}
- 312              	 .loc 5 42 0
+  38:../main.c     **** 
+  39:../main.c     **** uint8_t clspos_enable;
+  40:../main.c     **** 
+  41:../main.c     **** //Output Enable
+  42:../main.c     **** 	uint8_t outenable;
+  43:../main.c     **** 	void process_stopoutput(){outenable=false;}
+ 312              	 .loc 5 43 0
  313              	 .cfi_startproc
  314              	 
  315              	 
@@ -3498,7 +3499,7 @@
  321 0002 00AF     	 add r7,sp,#0
  322              	.LCFI29:
  323              	 .cfi_def_cfa_register 7
- 324              	 .loc 5 42 0
+ 324              	 .loc 5 43 0
  325 0004 034B     	 ldr r3,.L13
  326 0006 0022     	 movs r2,#0
  327 0008 1A70     	 strb r2,[r3]
@@ -3524,8 +3525,8 @@
  348              	 .thumb_func
  350              	process_startoutput:
  351              	.LFB353:
-  43:../main.c     **** 	void process_startoutput(){outenable=true;}
- 352              	 .loc 5 43 0
+  44:../main.c     **** 	void process_startoutput(){outenable=true;}
+ 352              	 .loc 5 44 0
  353              	 .cfi_startproc
  354              	 
  355              	 
@@ -3537,7 +3538,7 @@
  361 0002 00AF     	 add r7,sp,#0
  362              	.LCFI33:
  363              	 .cfi_def_cfa_register 7
- 364              	 .loc 5 43 0
+ 364              	 .loc 5 44 0
  365 0004 034B     	 ldr r3,.L16
  366 0006 0122     	 movs r2,#1
  367 0008 1A70     	 strb r2,[r3]
@@ -3563,11 +3564,11 @@
  388              	 .thumb_func
  390              	digitalWrite:
  391              	.LFB354:
-  44:../main.c     **** 
-  45:../main.c     **** //I Love ARDUINO
-  46:../main.c     **** 	void digitalWrite(XMC_GPIO_PORT_t *const port, const uint8_t pin,uint8_t value)
-  47:../main.c     **** 	{
- 392              	 .loc 5 47 0
+  45:../main.c     **** 
+  46:../main.c     **** //I Love ARDUINO
+  47:../main.c     **** 	void digitalWrite(XMC_GPIO_PORT_t *const port, const uint8_t pin,uint8_t value)
+  48:../main.c     **** 	{
+ 392              	 .loc 5 48 0
  393              	 .cfi_startproc
  394              	 
  395              	 
@@ -3587,31 +3588,31 @@
  409 000a FB70     	 strb r3,[r7,#3]
  410 000c 1346     	 mov r3,r2
  411 000e BB70     	 strb r3,[r7,#2]
-  48:../main.c     **** 		XMC_GPIO_SetOutputLevel(port,pin,(value==0||value==false)?XMC_GPIO_OUTPUT_LEVEL_LOW:XMC_GPIO_OUTP
- 412              	 .loc 5 48 0
+  49:../main.c     **** 		XMC_GPIO_SetOutputLevel(port,pin,(value==0||value==false)?XMC_GPIO_OUTPUT_LEVEL_LOW:XMC_GPIO_OUTP
+ 412              	 .loc 5 49 0
  413 0010 BB78     	 ldrb r3,[r7,#2]
  414 0012 002B     	 cmp r3,#0
  415 0014 02D0     	 beq .L19
- 416              	 .loc 5 48 0 is_stmt 0 discriminator 2
+ 416              	 .loc 5 49 0 is_stmt 0 discriminator 2
  417 0016 BB78     	 ldrb r3,[r7,#2]
  418 0018 002B     	 cmp r3,#0
  419 001a 02D1     	 bne .L20
  420              	.L19:
- 421              	 .loc 5 48 0 discriminator 3
+ 421              	 .loc 5 49 0 discriminator 3
  422 001c 4FF48033 	 mov r3,#65536
  423 0020 00E0     	 b .L21
  424              	.L20:
- 425              	 .loc 5 48 0 discriminator 4
+ 425              	 .loc 5 49 0 discriminator 4
  426 0022 0123     	 movs r3,#1
  427              	.L21:
- 428              	 .loc 5 48 0 discriminator 6
+ 428              	 .loc 5 49 0 discriminator 6
  429 0024 FA78     	 ldrb r2,[r7,#3]
  430 0026 7868     	 ldr r0,[r7,#4]
  431 0028 1146     	 mov r1,r2
  432 002a 1A46     	 mov r2,r3
  433 002c FFF7FEFF 	 bl XMC_GPIO_SetOutputLevel
-  49:../main.c     **** 	}
- 434              	 .loc 5 49 0 is_stmt 1 discriminator 6
+  50:../main.c     **** 	}
+ 434              	 .loc 5 50 0 is_stmt 1 discriminator 6
  435 0030 0837     	 adds r7,r7,#8
  436              	.LCFI39:
  437              	 .cfi_def_cfa_offset 8
@@ -3629,11 +3630,11 @@
  450              	 .thumb_func
  452              	CCU41_3_IRQHandler:
  453              	.LFB355:
-  50:../main.c     **** 
-  51:../main.c     **** //PWM Interrupt
-  52:../main.c     **** 	void PWM_Counter_0()
-  53:../main.c     **** 	{
- 454              	 .loc 5 53 0
+  51:../main.c     **** 
+  52:../main.c     **** //PWM Interrupt
+  53:../main.c     **** 	void PWM_Counter_0()
+  54:../main.c     **** 	{
+ 454              	 .loc 5 54 0
  455              	 .cfi_startproc
  456              	 
  457              	 
@@ -3648,42 +3649,42 @@
  466 0004 00AF     	 add r7,sp,#0
  467              	.LCFI43:
  468              	 .cfi_def_cfa_register 7
-  54:../main.c     **** 		uint8_t n = 0;
- 469              	 .loc 5 54 0
+  55:../main.c     **** 		uint8_t n = 0;
+ 469              	 .loc 5 55 0
  470 0006 0023     	 movs r3,#0
  471 0008 FB71     	 strb r3,[r7,#7]
-  55:../main.c     **** 		ActPos[n] = (Dir[n]==0)?ActPos[n]+1:ActPos[n]-1;
- 472              	 .loc 5 55 0
+  56:../main.c     **** 		ActPos[n] = (Dir[n]==0)?ActPos[n]+1:ActPos[n]-1;
+ 472              	 .loc 5 56 0
  473 000a FA79     	 ldrb r2,[r7,#7]
  474 000c FB79     	 ldrb r3,[r7,#7]
  475 000e 1A49     	 ldr r1,.L26
  476 0010 CB5C     	 ldrb r3,[r1,r3]
  477 0012 002B     	 cmp r3,#0
  478 0014 05D1     	 bne .L23
- 479              	 .loc 5 55 0 is_stmt 0 discriminator 1
+ 479              	 .loc 5 56 0 is_stmt 0 discriminator 1
  480 0016 FB79     	 ldrb r3,[r7,#7]
  481 0018 1849     	 ldr r1,.L26+4
  482 001a 51F82330 	 ldr r3,[r1,r3,lsl#2]
  483 001e 0133     	 adds r3,r3,#1
  484 0020 04E0     	 b .L24
  485              	.L23:
- 486              	 .loc 5 55 0 discriminator 2
+ 486              	 .loc 5 56 0 discriminator 2
  487 0022 FB79     	 ldrb r3,[r7,#7]
  488 0024 1549     	 ldr r1,.L26+4
  489 0026 51F82330 	 ldr r3,[r1,r3,lsl#2]
  490 002a 013B     	 subs r3,r3,#1
  491              	.L24:
- 492              	 .loc 5 55 0 discriminator 4
+ 492              	 .loc 5 56 0 discriminator 4
  493 002c 1349     	 ldr r1,.L26+4
  494 002e 41F82230 	 str r3,[r1,r2,lsl#2]
-  56:../main.c     **** 		if ((Mode[n] == 1) && (ActPos[0] == TarPos[n])){
- 495              	 .loc 5 56 0 is_stmt 1 discriminator 4
+  57:../main.c     **** 		if ((Mode[n] == 1) && (ActPos[0] == TarPos[n])){
+ 495              	 .loc 5 57 0 is_stmt 1 discriminator 4
  496 0032 FB79     	 ldrb r3,[r7,#7]
  497 0034 124A     	 ldr r2,.L26+8
  498 0036 52F82330 	 ldr r3,[r2,r3,lsl#2]
  499 003a 012B     	 cmp r3,#1
  500 003c 19D1     	 bne .L22
- 501              	 .loc 5 56 0 is_stmt 0 discriminator 1
+ 501              	 .loc 5 57 0 is_stmt 0 discriminator 1
  502 003e 0F4B     	 ldr r3,.L26+4
  503 0040 1A68     	 ldr r2,[r3]
  504 0042 FB79     	 ldrb r3,[r7,#7]
@@ -3691,32 +3692,32 @@
  506 0046 51F82330 	 ldr r3,[r1,r3,lsl#2]
  507 004a 9A42     	 cmp r2,r3
  508 004c 11D1     	 bne .L22
-  57:../main.c     **** 			ActVel[n] = 0;
- 509              	 .loc 5 57 0 is_stmt 1
+  58:../main.c     **** 			ActVel[n] = 0;
+ 509              	 .loc 5 58 0 is_stmt 1
  510 004e FB79     	 ldrb r3,[r7,#7]
  511 0050 0D4A     	 ldr r2,.L26+16
  512 0052 0021     	 movs r1,#0
  513 0054 42F82310 	 str r1,[r2,r3,lsl#2]
-  58:../main.c     **** 			CtrlVel[n] = 0;
- 514              	 .loc 5 58 0
+  59:../main.c     **** 			CtrlVel[n] = 0;
+ 514              	 .loc 5 59 0
  515 0058 FB79     	 ldrb r3,[r7,#7]
  516 005a 0C4A     	 ldr r2,.L26+20
  517 005c 0021     	 movs r1,#0
  518 005e 42F82310 	 str r1,[r2,r3,lsl#2]
-  59:../main.c     **** 			TarVel[n] = 0;
- 519              	 .loc 5 59 0
+  60:../main.c     **** 			TarVel[n] = 0;
+ 519              	 .loc 5 60 0
  520 0062 FB79     	 ldrb r3,[r7,#7]
  521 0064 0A4A     	 ldr r2,.L26+24
  522 0066 0021     	 movs r1,#0
  523 0068 42F82310 	 str r1,[r2,r3,lsl#2]
-  60:../main.c     **** 			PWM_CCU4_Stop(&PWM_0);
- 524              	 .loc 5 60 0
+  61:../main.c     **** 			PWM_CCU4_Stop(&PWM_0);
+ 524              	 .loc 5 61 0
  525 006c 0948     	 ldr r0,.L26+28
  526 006e FFF7FEFF 	 bl PWM_CCU4_Stop
  527              	.L22:
-  61:../main.c     **** 		}
-  62:../main.c     **** 	}
- 528              	 .loc 5 62 0
+  62:../main.c     **** 		}
+  63:../main.c     **** 	}
+ 528              	 .loc 5 63 0
  529 0072 0837     	 adds r7,r7,#8
  530              	.LCFI44:
  531              	 .cfi_def_cfa_offset 8
@@ -3745,10 +3746,10 @@
  555              	 .thumb_func
  557              	CCU41_1_IRQHandler:
  558              	.LFB356:
-  63:../main.c     **** 
-  64:../main.c     **** 	void PWM_Counter_1()
-  65:../main.c     **** 	{
- 559              	 .loc 5 65 0
+  64:../main.c     **** 
+  65:../main.c     **** 	void PWM_Counter_1()
+  66:../main.c     **** 	{
+ 559              	 .loc 5 66 0
  560              	 .cfi_startproc
  561              	 
  562              	 
@@ -3763,42 +3764,42 @@
  571 0004 00AF     	 add r7,sp,#0
  572              	.LCFI48:
  573              	 .cfi_def_cfa_register 7
-  66:../main.c     **** 		uint8_t n = 1;
- 574              	 .loc 5 66 0
+  67:../main.c     **** 		uint8_t n = 1;
+ 574              	 .loc 5 67 0
  575 0006 0123     	 movs r3,#1
  576 0008 FB71     	 strb r3,[r7,#7]
-  67:../main.c     **** 		ActPos[n] = (Dir[n]==0)?ActPos[n]+1:ActPos[n]-1;
- 577              	 .loc 5 67 0
+  68:../main.c     **** 		ActPos[n] = (Dir[n]==0)?ActPos[n]+1:ActPos[n]-1;
+ 577              	 .loc 5 68 0
  578 000a FA79     	 ldrb r2,[r7,#7]
  579 000c FB79     	 ldrb r3,[r7,#7]
  580 000e 1A49     	 ldr r1,.L32
  581 0010 CB5C     	 ldrb r3,[r1,r3]
  582 0012 002B     	 cmp r3,#0
  583 0014 05D1     	 bne .L29
- 584              	 .loc 5 67 0 is_stmt 0 discriminator 1
+ 584              	 .loc 5 68 0 is_stmt 0 discriminator 1
  585 0016 FB79     	 ldrb r3,[r7,#7]
  586 0018 1849     	 ldr r1,.L32+4
  587 001a 51F82330 	 ldr r3,[r1,r3,lsl#2]
  588 001e 0133     	 adds r3,r3,#1
  589 0020 04E0     	 b .L30
  590              	.L29:
- 591              	 .loc 5 67 0 discriminator 2
+ 591              	 .loc 5 68 0 discriminator 2
  592 0022 FB79     	 ldrb r3,[r7,#7]
  593 0024 1549     	 ldr r1,.L32+4
  594 0026 51F82330 	 ldr r3,[r1,r3,lsl#2]
  595 002a 013B     	 subs r3,r3,#1
  596              	.L30:
- 597              	 .loc 5 67 0 discriminator 4
+ 597              	 .loc 5 68 0 discriminator 4
  598 002c 1349     	 ldr r1,.L32+4
  599 002e 41F82230 	 str r3,[r1,r2,lsl#2]
-  68:../main.c     **** 		if ((Mode[n] == 1) && (ActPos[0] == TarPos[n])){
- 600              	 .loc 5 68 0 is_stmt 1 discriminator 4
+  69:../main.c     **** 		if ((Mode[n] == 1) && (ActPos[0] == TarPos[n])){
+ 600              	 .loc 5 69 0 is_stmt 1 discriminator 4
  601 0032 FB79     	 ldrb r3,[r7,#7]
  602 0034 124A     	 ldr r2,.L32+8
  603 0036 52F82330 	 ldr r3,[r2,r3,lsl#2]
  604 003a 012B     	 cmp r3,#1
  605 003c 19D1     	 bne .L28
- 606              	 .loc 5 68 0 is_stmt 0 discriminator 1
+ 606              	 .loc 5 69 0 is_stmt 0 discriminator 1
  607 003e 0F4B     	 ldr r3,.L32+4
  608 0040 1A68     	 ldr r2,[r3]
  609 0042 FB79     	 ldrb r3,[r7,#7]
@@ -3806,32 +3807,32 @@
  611 0046 51F82330 	 ldr r3,[r1,r3,lsl#2]
  612 004a 9A42     	 cmp r2,r3
  613 004c 11D1     	 bne .L28
-  69:../main.c     **** 			ActVel[n] = 0;
- 614              	 .loc 5 69 0 is_stmt 1
+  70:../main.c     **** 			ActVel[n] = 0;
+ 614              	 .loc 5 70 0 is_stmt 1
  615 004e FB79     	 ldrb r3,[r7,#7]
  616 0050 0D4A     	 ldr r2,.L32+16
  617 0052 0021     	 movs r1,#0
  618 0054 42F82310 	 str r1,[r2,r3,lsl#2]
-  70:../main.c     **** 			CtrlVel[n] = 0;
- 619              	 .loc 5 70 0
+  71:../main.c     **** 			CtrlVel[n] = 0;
+ 619              	 .loc 5 71 0
  620 0058 FB79     	 ldrb r3,[r7,#7]
  621 005a 0C4A     	 ldr r2,.L32+20
  622 005c 0021     	 movs r1,#0
  623 005e 42F82310 	 str r1,[r2,r3,lsl#2]
-  71:../main.c     **** 			TarVel[n] = 0;
- 624              	 .loc 5 71 0
+  72:../main.c     **** 			TarVel[n] = 0;
+ 624              	 .loc 5 72 0
  625 0062 FB79     	 ldrb r3,[r7,#7]
  626 0064 0A4A     	 ldr r2,.L32+24
  627 0066 0021     	 movs r1,#0
  628 0068 42F82310 	 str r1,[r2,r3,lsl#2]
-  72:../main.c     **** 			PWM_CCU4_Stop(&PWM_1);
- 629              	 .loc 5 72 0
+  73:../main.c     **** 			PWM_CCU4_Stop(&PWM_1);
+ 629              	 .loc 5 73 0
  630 006c 0948     	 ldr r0,.L32+28
  631 006e FFF7FEFF 	 bl PWM_CCU4_Stop
  632              	.L28:
-  73:../main.c     **** 		}
-  74:../main.c     **** 	}
- 633              	 .loc 5 74 0
+  74:../main.c     **** 		}
+  75:../main.c     **** 	}
+ 633              	 .loc 5 75 0
  634 0072 0837     	 adds r7,r7,#8
  635              	.LCFI49:
  636              	 .cfi_def_cfa_offset 8
@@ -3860,10 +3861,10 @@
  660              	 .thumb_func
  662              	CCU41_0_IRQHandler:
  663              	.LFB357:
-  75:../main.c     **** 
-  76:../main.c     **** 	void PWM_Counter_2()
-  77:../main.c     **** 	{
- 664              	 .loc 5 77 0
+  76:../main.c     **** 
+  77:../main.c     **** 	void PWM_Counter_2()
+  78:../main.c     **** 	{
+ 664              	 .loc 5 78 0
  665              	 .cfi_startproc
  666              	 
  667              	 
@@ -3878,42 +3879,42 @@
  676 0004 00AF     	 add r7,sp,#0
  677              	.LCFI53:
  678              	 .cfi_def_cfa_register 7
-  78:../main.c     **** 		uint8_t n = 2;
- 679              	 .loc 5 78 0
+  79:../main.c     **** 		uint8_t n = 2;
+ 679              	 .loc 5 79 0
  680 0006 0223     	 movs r3,#2
  681 0008 FB71     	 strb r3,[r7,#7]
-  79:../main.c     **** 		ActPos[n] = (Dir[n]==0)?ActPos[n]+1:ActPos[n]-1;
- 682              	 .loc 5 79 0
+  80:../main.c     **** 		ActPos[n] = (Dir[n]==0)?ActPos[n]+1:ActPos[n]-1;
+ 682              	 .loc 5 80 0
  683 000a FA79     	 ldrb r2,[r7,#7]
  684 000c FB79     	 ldrb r3,[r7,#7]
  685 000e 1A49     	 ldr r1,.L38
  686 0010 CB5C     	 ldrb r3,[r1,r3]
  687 0012 002B     	 cmp r3,#0
  688 0014 05D1     	 bne .L35
- 689              	 .loc 5 79 0 is_stmt 0 discriminator 1
+ 689              	 .loc 5 80 0 is_stmt 0 discriminator 1
  690 0016 FB79     	 ldrb r3,[r7,#7]
  691 0018 1849     	 ldr r1,.L38+4
  692 001a 51F82330 	 ldr r3,[r1,r3,lsl#2]
  693 001e 0133     	 adds r3,r3,#1
  694 0020 04E0     	 b .L36
  695              	.L35:
- 696              	 .loc 5 79 0 discriminator 2
+ 696              	 .loc 5 80 0 discriminator 2
  697 0022 FB79     	 ldrb r3,[r7,#7]
  698 0024 1549     	 ldr r1,.L38+4
  699 0026 51F82330 	 ldr r3,[r1,r3,lsl#2]
  700 002a 013B     	 subs r3,r3,#1
  701              	.L36:
- 702              	 .loc 5 79 0 discriminator 4
+ 702              	 .loc 5 80 0 discriminator 4
  703 002c 1349     	 ldr r1,.L38+4
  704 002e 41F82230 	 str r3,[r1,r2,lsl#2]
-  80:../main.c     **** 		if ((Mode[n] == 1) && (ActPos[0] == TarPos[n])){
- 705              	 .loc 5 80 0 is_stmt 1 discriminator 4
+  81:../main.c     **** 		if ((Mode[n] == 1) && (ActPos[0] == TarPos[n])){
+ 705              	 .loc 5 81 0 is_stmt 1 discriminator 4
  706 0032 FB79     	 ldrb r3,[r7,#7]
  707 0034 124A     	 ldr r2,.L38+8
  708 0036 52F82330 	 ldr r3,[r2,r3,lsl#2]
  709 003a 012B     	 cmp r3,#1
  710 003c 19D1     	 bne .L34
- 711              	 .loc 5 80 0 is_stmt 0 discriminator 1
+ 711              	 .loc 5 81 0 is_stmt 0 discriminator 1
  712 003e 0F4B     	 ldr r3,.L38+4
  713 0040 1A68     	 ldr r2,[r3]
  714 0042 FB79     	 ldrb r3,[r7,#7]
@@ -3921,32 +3922,32 @@
  716 0046 51F82330 	 ldr r3,[r1,r3,lsl#2]
  717 004a 9A42     	 cmp r2,r3
  718 004c 11D1     	 bne .L34
-  81:../main.c     **** 			ActVel[n] = 0;
- 719              	 .loc 5 81 0 is_stmt 1
+  82:../main.c     **** 			ActVel[n] = 0;
+ 719              	 .loc 5 82 0 is_stmt 1
  720 004e FB79     	 ldrb r3,[r7,#7]
  721 0050 0D4A     	 ldr r2,.L38+16
  722 0052 0021     	 movs r1,#0
  723 0054 42F82310 	 str r1,[r2,r3,lsl#2]
-  82:../main.c     **** 			CtrlVel[n] = 0;
- 724              	 .loc 5 82 0
+  83:../main.c     **** 			CtrlVel[n] = 0;
+ 724              	 .loc 5 83 0
  725 0058 FB79     	 ldrb r3,[r7,#7]
  726 005a 0C4A     	 ldr r2,.L38+20
  727 005c 0021     	 movs r1,#0
  728 005e 42F82310 	 str r1,[r2,r3,lsl#2]
-  83:../main.c     **** 			TarVel[n] = 0;
- 729              	 .loc 5 83 0
+  84:../main.c     **** 			TarVel[n] = 0;
+ 729              	 .loc 5 84 0
  730 0062 FB79     	 ldrb r3,[r7,#7]
  731 0064 0A4A     	 ldr r2,.L38+24
  732 0066 0021     	 movs r1,#0
  733 0068 42F82310 	 str r1,[r2,r3,lsl#2]
-  84:../main.c     **** 			PWM_CCU4_Stop(&PWM_2);
- 734              	 .loc 5 84 0
+  85:../main.c     **** 			PWM_CCU4_Stop(&PWM_2);
+ 734              	 .loc 5 85 0
  735 006c 0948     	 ldr r0,.L38+28
  736 006e FFF7FEFF 	 bl PWM_CCU4_Stop
  737              	.L34:
-  85:../main.c     **** 		}
-  86:../main.c     **** 	}
- 738              	 .loc 5 86 0
+  86:../main.c     **** 		}
+  87:../main.c     **** 	}
+ 738              	 .loc 5 87 0
  739 0072 0837     	 adds r7,r7,#8
  740              	.LCFI54:
  741              	 .cfi_def_cfa_offset 8
@@ -3975,10 +3976,10 @@
  765              	 .thumb_func
  767              	ramp:
  768              	.LFB358:
-  87:../main.c     **** 
-  88:../main.c     **** //RAMP
-  89:../main.c     **** 	int32_t ramp(int32_t targetvel, int32_t actualvel, int32_t acc){
- 769              	 .loc 5 89 0
+  88:../main.c     **** 
+  89:../main.c     **** //RAMP
+  90:../main.c     **** 	int32_t ramp(int32_t targetvel, int32_t actualvel, int32_t acc){
+ 769              	 .loc 5 90 0
  770              	 .cfi_startproc
  771              	 
  772              	 
@@ -3996,44 +3997,44 @@
  784 0006 F860     	 str r0,[r7,#12]
  785 0008 B960     	 str r1,[r7,#8]
  786 000a 7A60     	 str r2,[r7,#4]
-  90:../main.c     **** 		if (targetvel > (actualvel + acc)){
- 787              	 .loc 5 90 0
+  91:../main.c     **** 		if (targetvel > (actualvel + acc)){
+ 787              	 .loc 5 91 0
  788 000c BA68     	 ldr r2,[r7,#8]
  789 000e 7B68     	 ldr r3,[r7,#4]
  790 0010 1A44     	 add r2,r2,r3
  791 0012 FB68     	 ldr r3,[r7,#12]
  792 0014 9A42     	 cmp r2,r3
  793 0016 03DA     	 bge .L41
-  91:../main.c     **** 			return (actualvel + acc);
- 794              	 .loc 5 91 0
+  92:../main.c     **** 			return (actualvel + acc);
+ 794              	 .loc 5 92 0
  795 0018 BA68     	 ldr r2,[r7,#8]
  796 001a 7B68     	 ldr r3,[r7,#4]
  797 001c 1344     	 add r3,r3,r2
  798 001e 0AE0     	 b .L42
  799              	.L41:
-  92:../main.c     **** 		}else if (targetvel < (actualvel - acc)){
- 800              	 .loc 5 92 0
+  93:../main.c     **** 		}else if (targetvel < (actualvel - acc)){
+ 800              	 .loc 5 93 0
  801 0020 BA68     	 ldr r2,[r7,#8]
  802 0022 7B68     	 ldr r3,[r7,#4]
  803 0024 D21A     	 subs r2,r2,r3
  804 0026 FB68     	 ldr r3,[r7,#12]
  805 0028 9A42     	 cmp r2,r3
  806 002a 03DD     	 ble .L43
-  93:../main.c     **** 			return (actualvel - acc);
- 807              	 .loc 5 93 0
+  94:../main.c     **** 			return (actualvel - acc);
+ 807              	 .loc 5 94 0
  808 002c BA68     	 ldr r2,[r7,#8]
  809 002e 7B68     	 ldr r3,[r7,#4]
  810 0030 D31A     	 subs r3,r2,r3
  811 0032 00E0     	 b .L42
  812              	.L43:
-  94:../main.c     **** 		}else{
-  95:../main.c     **** 			return (targetvel);
- 813              	 .loc 5 95 0
+  95:../main.c     **** 		}else{
+  96:../main.c     **** 			return (targetvel);
+ 813              	 .loc 5 96 0
  814 0034 FB68     	 ldr r3,[r7,#12]
  815              	.L42:
-  96:../main.c     **** 		}
-  97:../main.c     **** 	}
- 816              	 .loc 5 97 0
+  97:../main.c     **** 		}
+  98:../main.c     **** 	}
+ 816              	 .loc 5 98 0
  817 0036 1846     	 mov r0,r3
  818 0038 1437     	 adds r7,r7,#20
  819              	.LCFI59:
@@ -4058,11 +4059,11 @@
  839              	 .thumb_func
  841              	PosCtrl:
  842              	.LFB359:
-  98:../main.c     **** 
-  99:../main.c     **** //Position Control
- 100:../main.c     **** 	int32_t PosCtrl(uint8_t Channel)
- 101:../main.c     **** 	{
- 843              	 .loc 5 101 0
+  99:../main.c     **** 
+ 100:../main.c     **** //Position Control
+ 101:../main.c     **** 	int32_t PosCtrl(uint8_t Channel)
+ 102:../main.c     **** 	{
+ 843              	 .loc 5 102 0
  844              	 .cfi_startproc
  845              	 
  846              	 
@@ -4079,39 +4080,39 @@
  857              	 .cfi_def_cfa_register 7
  858 0006 0346     	 mov r3,r0
  859 0008 FB71     	 strb r3,[r7,#7]
- 102:../main.c     **** 		/*
- 103:../main.c     **** 		int32_t time = abs(ActVel[Channel]) / Acc[Channel];
- 104:../main.c     **** 		int32_t accpos;
- 105:../main.c     **** 		// #FIXME IDK why but it works fine for me, The pulse in down range is not ideal. add some time w
- 106:../main.c     **** 		if (Config >> 1 & 0x1){
- 107:../main.c     **** 			SmoothTime = Config >> 16;
- 108:../main.c     **** 			accpos = ((time + SmoothTime)* abs(ActVel[Channel]) ) / 2000;
- 109:../main.c     **** 		}else{
- 110:../main.c     **** 			accpos = ((time + 20)* abs(ActVel[Channel]) ) / 2000;
- 111:../main.c     **** 		}
- 112:../main.c     **** 
- 113:../main.c     **** 		if (TarPos[Channel] > ActPos[Channel]){//Position Movement
- 114:../main.c     **** 			if (TarPos[Channel] < (ActPos[Channel] + accpos)){
- 115:../main.c     **** 				return 30;
- 116:../main.c     **** 			}else{
- 117:../main.c     **** 				return TarVel[Channel];
- 118:../main.c     **** 			}
- 119:../main.c     **** 		}else if (TarPos[Channel] < ActPos[Channel]){//Negative Movement
- 120:../main.c     **** 			if (TarPos[Channel] > (ActPos[Channel] - accpos)){
- 121:../main.c     **** 				return -30;
- 122:../main.c     **** 			}else{
- 123:../main.c     **** 				return (-TarVel[Channel]);
- 124:../main.c     **** 			}
- 125:../main.c     **** 		}
- 126:../main.c     **** 		//StandStill
- 127:../main.c     **** 		return 0;
- 128:../main.c     **** 		*/
- 129:../main.c     **** 		/*
- 130:../main.c     **** 		 * v=at => t=v/a
- 131:../main.c     **** 		 * s=(v*t)/2 = (v*(v/a))/2 = (v*v)/(2*a) => v*v=2*a*s => v=SQRT(2*a*s);
- 132:../main.c     **** 		 */
- 133:../main.c     **** 		int64_t s = abs(TarPos[Channel] - ActPos[Channel]);
- 860              	 .loc 5 133 0
+ 103:../main.c     **** 		/*
+ 104:../main.c     **** 		int32_t time = abs(ActVel[Channel]) / Acc[Channel];
+ 105:../main.c     **** 		int32_t accpos;
+ 106:../main.c     **** 		// #FIXME IDK why but it works fine for me, The pulse in down range is not ideal. add some time w
+ 107:../main.c     **** 		if (Config >> 1 & 0x1){
+ 108:../main.c     **** 			SmoothTime = Config >> 16;
+ 109:../main.c     **** 			accpos = ((time + SmoothTime)* abs(ActVel[Channel]) ) / 2000;
+ 110:../main.c     **** 		}else{
+ 111:../main.c     **** 			accpos = ((time + 20)* abs(ActVel[Channel]) ) / 2000;
+ 112:../main.c     **** 		}
+ 113:../main.c     **** 
+ 114:../main.c     **** 		if (TarPos[Channel] > ActPos[Channel]){//Position Movement
+ 115:../main.c     **** 			if (TarPos[Channel] < (ActPos[Channel] + accpos)){
+ 116:../main.c     **** 				return 30;
+ 117:../main.c     **** 			}else{
+ 118:../main.c     **** 				return TarVel[Channel];
+ 119:../main.c     **** 			}
+ 120:../main.c     **** 		}else if (TarPos[Channel] < ActPos[Channel]){//Negative Movement
+ 121:../main.c     **** 			if (TarPos[Channel] > (ActPos[Channel] - accpos)){
+ 122:../main.c     **** 				return -30;
+ 123:../main.c     **** 			}else{
+ 124:../main.c     **** 				return (-TarVel[Channel]);
+ 125:../main.c     **** 			}
+ 126:../main.c     **** 		}
+ 127:../main.c     **** 		//StandStill
+ 128:../main.c     **** 		return 0;
+ 129:../main.c     **** 		*/
+ 130:../main.c     **** 		/*
+ 131:../main.c     **** 		 * v=at => t=v/a
+ 132:../main.c     **** 		 * s=(v*t)/2 = (v*(v/a))/2 = (v*v)/(2*a) => v*v=2*a*s => v=SQRT(2*a*s);
+ 133:../main.c     **** 		 */
+ 134:../main.c     **** 		int64_t s = abs(TarPos[Channel] - ActPos[Channel]);
+ 860              	 .loc 5 134 0
  861 000a FB79     	 ldrb r3,[r7,#7]
  862 000c 5F4A     	 ldr r2,.L56
  863 000e 52F82320 	 ldr r2,[r2,r3,lsl#2]
@@ -4125,8 +4126,8 @@
  871 0022 1A46     	 mov r2,r3
  872 0024 4FEAE273 	 asr r3,r2,#31
  873 0028 C7E90623 	 strd r2,[r7,#24]
- 134:../main.c     **** 		int64_t temp = 2000 * Acc[Channel] * s;
- 874              	 .loc 5 134 0
+ 135:../main.c     **** 		int64_t temp = 2000 * Acc[Channel] * s;
+ 874              	 .loc 5 135 0
  875 002c FB79     	 ldrb r3,[r7,#7]
  876 002e 594A     	 ldr r2,.L56+8
  877 0030 52F82330 	 ldr r3,[r2,r3,lsl#2]
@@ -4145,8 +4146,8 @@
  890 0058 0B46     	 mov r3,r1
  891 005a C7E90423 	 strd r2,[r7,#16]
  892 005e C7E90423 	 strd r2,[r7,#16]
- 135:../main.c     **** 		int32_t v = sqrt(temp);
- 893              	 .loc 5 135 0
+ 136:../main.c     **** 		int32_t v = sqrt(temp);
+ 893              	 .loc 5 136 0
  894 0062 D7E90401 	 ldrd r0,[r7,#16]
  895 0066 FFF7FEFF 	 bl __aeabi_l2d
  896 006a 0246     	 mov r2,r0
@@ -4161,9 +4162,9 @@
  905 007e FFF7FEFF 	 bl __aeabi_d2iz
  906 0082 0346     	 mov r3,r0
  907 0084 FB60     	 str r3,[r7,#12]
- 136:../main.c     **** 
- 137:../main.c     **** 		if (TarPos[Channel] > ActPos[Channel]){//Position Movement
- 908              	 .loc 5 137 0
+ 137:../main.c     **** 
+ 138:../main.c     **** 		if (TarPos[Channel] > ActPos[Channel]){//Position Movement
+ 908              	 .loc 5 138 0
  909 0086 FB79     	 ldrb r3,[r7,#7]
  910 0088 404A     	 ldr r2,.L56
  911 008a 52F82320 	 ldr r2,[r2,r3,lsl#2]
@@ -4172,15 +4173,15 @@
  914 0092 51F82330 	 ldr r3,[r1,r3,lsl#2]
  915 0096 9A42     	 cmp r2,r3
  916 0098 30DD     	 ble .L45
- 138:../main.c     **** 			if ((v >= TarVel[Channel]) || (ActVel[Channel] <= v)){
- 917              	 .loc 5 138 0
+ 139:../main.c     **** 			if ((v >= TarVel[Channel]) || (ActVel[Channel] <= v)){
+ 917              	 .loc 5 139 0
  918 009a FB79     	 ldrb r3,[r7,#7]
  919 009c 3E4A     	 ldr r2,.L56+12
  920 009e 52F82320 	 ldr r2,[r2,r3,lsl#2]
  921 00a2 FB68     	 ldr r3,[r7,#12]
  922 00a4 9A42     	 cmp r2,r3
  923 00a6 06DD     	 ble .L46
- 924              	 .loc 5 138 0 is_stmt 0 discriminator 1
+ 924              	 .loc 5 139 0 is_stmt 0 discriminator 1
  925 00a8 FB79     	 ldrb r3,[r7,#7]
  926 00aa 3C4A     	 ldr r2,.L56+16
  927 00ac 52F82320 	 ldr r2,[r2,r3,lsl#2]
@@ -4188,8 +4189,8 @@
  929 00b2 9A42     	 cmp r2,r3
  930 00b4 17DC     	 bgt .L47
  931              	.L46:
- 139:../main.c     **** 				v = ActVel[Channel] + Acc[Channel];
- 932              	 .loc 5 139 0 is_stmt 1
+ 140:../main.c     **** 				v = ActVel[Channel] + Acc[Channel];
+ 932              	 .loc 5 140 0 is_stmt 1
  933 00b6 FB79     	 ldrb r3,[r7,#7]
  934 00b8 384A     	 ldr r2,.L56+16
  935 00ba 52F82320 	 ldr r2,[r2,r3,lsl#2]
@@ -4198,53 +4199,53 @@
  938 00c2 51F82330 	 ldr r3,[r1,r3,lsl#2]
  939 00c6 1344     	 add r3,r3,r2
  940 00c8 FB60     	 str r3,[r7,#12]
- 140:../main.c     **** 				if (v > TarVel[Channel]){
- 941              	 .loc 5 140 0
+ 141:../main.c     **** 				if (v > TarVel[Channel]){
+ 941              	 .loc 5 141 0
  942 00ca FB79     	 ldrb r3,[r7,#7]
  943 00cc 324A     	 ldr r2,.L56+12
  944 00ce 52F82320 	 ldr r2,[r2,r3,lsl#2]
  945 00d2 FB68     	 ldr r3,[r7,#12]
  946 00d4 9A42     	 cmp r2,r3
  947 00d6 04DA     	 bge .L48
- 141:../main.c     **** 					return TarVel[Channel];
- 948              	 .loc 5 141 0
+ 142:../main.c     **** 					return TarVel[Channel];
+ 948              	 .loc 5 142 0
  949 00d8 FB79     	 ldrb r3,[r7,#7]
  950 00da 2F4A     	 ldr r2,.L56+12
  951 00dc 52F82330 	 ldr r3,[r2,r3,lsl#2]
  952 00e0 4FE0     	 b .L49
  953              	.L48:
- 142:../main.c     **** 				}else{
- 143:../main.c     **** 					return v;
- 954              	 .loc 5 143 0
+ 143:../main.c     **** 				}else{
+ 144:../main.c     **** 					return v;
+ 954              	 .loc 5 144 0
  955 00e2 FB68     	 ldr r3,[r7,#12]
  956 00e4 4DE0     	 b .L49
  957              	.L47:
- 144:../main.c     **** 				}
- 145:../main.c     **** 			}else{
- 146:../main.c     **** 				if (abs(v)<20){
- 958              	 .loc 5 146 0
+ 145:../main.c     **** 				}
+ 146:../main.c     **** 			}else{
+ 147:../main.c     **** 				if (abs(v)<20){
+ 958              	 .loc 5 147 0
  959 00e6 FB68     	 ldr r3,[r7,#12]
  960 00e8 13F1130F 	 cmn r3,#19
  961 00ec 04DB     	 blt .L50
- 962              	 .loc 5 146 0 is_stmt 0 discriminator 1
+ 962              	 .loc 5 147 0 is_stmt 0 discriminator 1
  963 00ee FB68     	 ldr r3,[r7,#12]
  964 00f0 132B     	 cmp r3,#19
  965 00f2 01DC     	 bgt .L50
- 147:../main.c     **** 					return 20;
- 966              	 .loc 5 147 0 is_stmt 1
+ 148:../main.c     **** 					return 20;
+ 966              	 .loc 5 148 0 is_stmt 1
  967 00f4 1423     	 movs r3,#20
  968 00f6 44E0     	 b .L49
  969              	.L50:
- 148:../main.c     **** 				}else{
- 149:../main.c     **** 					return v;
- 970              	 .loc 5 149 0
+ 149:../main.c     **** 				}else{
+ 150:../main.c     **** 					return v;
+ 970              	 .loc 5 150 0
  971 00f8 FB68     	 ldr r3,[r7,#12]
  972 00fa 42E0     	 b .L49
  973              	.L45:
- 150:../main.c     **** 				}
- 151:../main.c     **** 			}
- 152:../main.c     **** 		}else if (TarPos[Channel] < ActPos[Channel]){//Negative Movement
- 974              	 .loc 5 152 0
+ 151:../main.c     **** 				}
+ 152:../main.c     **** 			}
+ 153:../main.c     **** 		}else if (TarPos[Channel] < ActPos[Channel]){//Negative Movement
+ 974              	 .loc 5 153 0
  975 00fc FB79     	 ldrb r3,[r7,#7]
  976 00fe 234A     	 ldr r2,.L56
  977 0100 52F82320 	 ldr r2,[r2,r3,lsl#2]
@@ -4253,13 +4254,13 @@
  980 0108 51F82330 	 ldr r3,[r1,r3,lsl#2]
  981 010c 9A42     	 cmp r2,r3
  982 010e 37DA     	 bge .L51
- 153:../main.c     **** 			v = -v;
- 983              	 .loc 5 153 0
+ 154:../main.c     **** 			v = -v;
+ 983              	 .loc 5 154 0
  984 0110 FB68     	 ldr r3,[r7,#12]
  985 0112 5B42     	 negs r3,r3
  986 0114 FB60     	 str r3,[r7,#12]
- 154:../main.c     **** 			if ((v <= -TarVel[Channel]) || (ActVel[Channel] >= v)){
- 987              	 .loc 5 154 0
+ 155:../main.c     **** 			if ((v <= -TarVel[Channel]) || (ActVel[Channel] >= v)){
+ 987              	 .loc 5 155 0
  988 0116 FB79     	 ldrb r3,[r7,#7]
  989 0118 1F4A     	 ldr r2,.L56+12
  990 011a 52F82330 	 ldr r3,[r2,r3,lsl#2]
@@ -4267,7 +4268,7 @@
  992 0120 FB68     	 ldr r3,[r7,#12]
  993 0122 9A42     	 cmp r2,r3
  994 0124 06DA     	 bge .L52
- 995              	 .loc 5 154 0 is_stmt 0 discriminator 1
+ 995              	 .loc 5 155 0 is_stmt 0 discriminator 1
  996 0126 FB79     	 ldrb r3,[r7,#7]
  997 0128 1C4A     	 ldr r2,.L56+16
  998 012a 52F82320 	 ldr r2,[r2,r3,lsl#2]
@@ -4275,8 +4276,8 @@
  1000 0130 9A42     	 cmp r2,r3
  1001 0132 19DB     	 blt .L53
  1002              	.L52:
- 155:../main.c     **** 				v = ActVel[Channel] - Acc[Channel];
- 1003              	 .loc 5 155 0 is_stmt 1
+ 156:../main.c     **** 				v = ActVel[Channel] - Acc[Channel];
+ 1003              	 .loc 5 156 0 is_stmt 1
  1004 0134 FB79     	 ldrb r3,[r7,#7]
  1005 0136 194A     	 ldr r2,.L56+16
  1006 0138 52F82320 	 ldr r2,[r2,r3,lsl#2]
@@ -4285,8 +4286,8 @@
  1009 0140 51F82330 	 ldr r3,[r1,r3,lsl#2]
  1010 0144 D31A     	 subs r3,r2,r3
  1011 0146 FB60     	 str r3,[r7,#12]
- 156:../main.c     **** 				if (v < -TarVel[Channel]){
- 1012              	 .loc 5 156 0
+ 157:../main.c     **** 				if (v < -TarVel[Channel]){
+ 1012              	 .loc 5 157 0
  1013 0148 FB79     	 ldrb r3,[r7,#7]
  1014 014a 134A     	 ldr r2,.L56+12
  1015 014c 52F82330 	 ldr r3,[r2,r3,lsl#2]
@@ -4294,52 +4295,52 @@
  1017 0152 FB68     	 ldr r3,[r7,#12]
  1018 0154 9A42     	 cmp r2,r3
  1019 0156 05DD     	 ble .L54
- 157:../main.c     **** 					return -TarVel[Channel];
- 1020              	 .loc 5 157 0
+ 158:../main.c     **** 					return -TarVel[Channel];
+ 1020              	 .loc 5 158 0
  1021 0158 FB79     	 ldrb r3,[r7,#7]
  1022 015a 0F4A     	 ldr r2,.L56+12
  1023 015c 52F82330 	 ldr r3,[r2,r3,lsl#2]
  1024 0160 5B42     	 negs r3,r3
  1025 0162 0EE0     	 b .L49
  1026              	.L54:
- 158:../main.c     **** 				}else{
- 159:../main.c     **** 					return v;
- 1027              	 .loc 5 159 0
+ 159:../main.c     **** 				}else{
+ 160:../main.c     **** 					return v;
+ 1027              	 .loc 5 160 0
  1028 0164 FB68     	 ldr r3,[r7,#12]
  1029 0166 0CE0     	 b .L49
  1030              	.L53:
- 160:../main.c     **** 				}
- 161:../main.c     **** 			}else{
- 162:../main.c     **** 				if (abs(v) < 20){
- 1031              	 .loc 5 162 0
+ 161:../main.c     **** 				}
+ 162:../main.c     **** 			}else{
+ 163:../main.c     **** 				if (abs(v) < 20){
+ 1031              	 .loc 5 163 0
  1032 0168 FB68     	 ldr r3,[r7,#12]
  1033 016a 13F1130F 	 cmn r3,#19
  1034 016e 05DB     	 blt .L55
- 1035              	 .loc 5 162 0 is_stmt 0 discriminator 1
+ 1035              	 .loc 5 163 0 is_stmt 0 discriminator 1
  1036 0170 FB68     	 ldr r3,[r7,#12]
  1037 0172 132B     	 cmp r3,#19
  1038 0174 02DC     	 bgt .L55
- 163:../main.c     **** 					return -20;
- 1039              	 .loc 5 163 0 is_stmt 1
+ 164:../main.c     **** 					return -20;
+ 1039              	 .loc 5 164 0 is_stmt 1
  1040 0176 6FF01303 	 mvn r3,#19
  1041 017a 02E0     	 b .L49
  1042              	.L55:
- 164:../main.c     **** 				}else{
- 165:../main.c     **** 					return v;
- 1043              	 .loc 5 165 0
+ 165:../main.c     **** 				}else{
+ 166:../main.c     **** 					return v;
+ 1043              	 .loc 5 166 0
  1044 017c FB68     	 ldr r3,[r7,#12]
  1045 017e 00E0     	 b .L49
  1046              	.L51:
- 166:../main.c     **** 				}
- 167:../main.c     **** 			}
- 168:../main.c     **** 		}
- 169:../main.c     **** 		//StandStill
- 170:../main.c     **** 		return 0;
- 1047              	 .loc 5 170 0
+ 167:../main.c     **** 				}
+ 168:../main.c     **** 			}
+ 169:../main.c     **** 		}
+ 170:../main.c     **** 		//StandStill
+ 171:../main.c     **** 		return 0;
+ 1047              	 .loc 5 171 0
  1048 0180 0023     	 movs r3,#0
  1049              	.L49:
- 171:../main.c     **** 	}
- 1050              	 .loc 5 171 0
+ 172:../main.c     **** 	}
+ 1050              	 .loc 5 172 0
  1051 0182 1846     	 mov r0,r3
  1052 0184 2037     	 adds r7,r7,#32
  1053              	.LCFI65:
@@ -4366,11 +4367,11 @@
  1075              	 .thumb_func
  1077              	CCU40_2_IRQHandler:
  1078              	.LFB360:
- 172:../main.c     **** 
- 173:../main.c     **** //Tick
- 174:../main.c     **** 	void Tick()
- 175:../main.c     **** 	{
- 1079              	 .loc 5 175 0
+ 173:../main.c     **** 
+ 174:../main.c     **** //Tick
+ 175:../main.c     **** 	void Tick()
+ 176:../main.c     **** 	{
+ 1079              	 .loc 5 176 0
  1080              	 .cfi_startproc
  1081              	 
  1082              	 
@@ -4387,1050 +4388,1105 @@
  1093              	.LCFI69:
  1094              	 .cfi_def_cfa_register 7
  1095              	.LBB10:
- 176:../main.c     **** 		//Run every millisecond;
- 177:../main.c     **** 		for (uint8_t i=0; i<3; i++){
- 1096              	 .loc 5 177 0
+ 177:../main.c     **** 		//Run every millisecond;
+ 178:../main.c     **** 		for (uint8_t i=0; i<3; i++){
+ 1096              	 .loc 5 178 0
  1097 0006 0023     	 movs r3,#0
  1098 0008 FB71     	 strb r3,[r7,#7]
  1099 000a 3AE0     	 b .L59
  1100              	.L63:
- 178:../main.c     **** 			if (Mode[i] == 1){
- 1101              	 .loc 5 178 0
+ 179:../main.c     **** 			if (Mode[i] == 1){
+ 1101              	 .loc 5 179 0
  1102 000c FB79     	 ldrb r3,[r7,#7]
- 1103 000e 694A     	 ldr r2,.L73
+ 1103 000e 7A4A     	 ldr r2,.L75
  1104 0010 52F82330 	 ldr r3,[r2,r3,lsl#2]
  1105 0014 012B     	 cmp r3,#1
  1106 0016 11D1     	 bne .L60
- 179:../main.c     **** 				CtrlVel[i] = PosCtrl(i);
- 1107              	 .loc 5 179 0
+ 180:../main.c     **** 				CtrlVel[i] = PosCtrl(i);
+ 1107              	 .loc 5 180 0
  1108 0018 FC79     	 ldrb r4,[r7,#7]
  1109 001a FB79     	 ldrb r3,[r7,#7]
  1110 001c 1846     	 mov r0,r3
  1111 001e FFF7FEFF 	 bl PosCtrl
  1112 0022 0246     	 mov r2,r0
- 1113 0024 644B     	 ldr r3,.L73+4
+ 1113 0024 754B     	 ldr r3,.L75+4
  1114 0026 43F82420 	 str r2,[r3,r4,lsl#2]
- 180:../main.c     **** 				ActVel[i] = CtrlVel[i];//Profile Position
- 1115              	 .loc 5 180 0
+ 181:../main.c     **** 				ActVel[i] = CtrlVel[i];//Profile Position
+ 1115              	 .loc 5 181 0
  1116 002a FB79     	 ldrb r3,[r7,#7]
  1117 002c FA79     	 ldrb r2,[r7,#7]
- 1118 002e 6249     	 ldr r1,.L73+4
+ 1118 002e 7349     	 ldr r1,.L75+4
  1119 0030 51F82220 	 ldr r2,[r1,r2,lsl#2]
- 1120 0034 6149     	 ldr r1,.L73+8
+ 1120 0034 7249     	 ldr r1,.L75+8
  1121 0036 41F82320 	 str r2,[r1,r3,lsl#2]
  1122 003a 1FE0     	 b .L61
  1123              	.L60:
- 181:../main.c     **** 			}else if (Mode[i] == 3){
- 1124              	 .loc 5 181 0
+ 182:../main.c     **** 			}else if (Mode[i] == 3){
+ 1124              	 .loc 5 182 0
  1125 003c FB79     	 ldrb r3,[r7,#7]
- 1126 003e 5D4A     	 ldr r2,.L73
+ 1126 003e 6E4A     	 ldr r2,.L75
  1127 0040 52F82330 	 ldr r3,[r2,r3,lsl#2]
  1128 0044 032B     	 cmp r3,#3
  1129 0046 14D1     	 bne .L62
- 182:../main.c     **** 				ActVel[i] = ramp(TarVel[i], ActVel[i], Acc[i]);//Profile Velocity
- 1130              	 .loc 5 182 0
+ 183:../main.c     **** 				ActVel[i] = ramp(TarVel[i], ActVel[i], Acc[i]);//Profile Velocity
+ 1130              	 .loc 5 183 0
  1131 0048 FC79     	 ldrb r4,[r7,#7]
  1132 004a FB79     	 ldrb r3,[r7,#7]
- 1133 004c 5C4A     	 ldr r2,.L73+12
+ 1133 004c 6D4A     	 ldr r2,.L75+12
  1134 004e 52F82300 	 ldr r0,[r2,r3,lsl#2]
  1135 0052 FB79     	 ldrb r3,[r7,#7]
- 1136 0054 594A     	 ldr r2,.L73+8
+ 1136 0054 6A4A     	 ldr r2,.L75+8
  1137 0056 52F82310 	 ldr r1,[r2,r3,lsl#2]
  1138 005a FB79     	 ldrb r3,[r7,#7]
- 1139 005c 594A     	 ldr r2,.L73+16
+ 1139 005c 6A4A     	 ldr r2,.L75+16
  1140 005e 52F82330 	 ldr r3,[r2,r3,lsl#2]
  1141 0062 1A46     	 mov r2,r3
  1142 0064 FFF7FEFF 	 bl ramp
  1143 0068 0246     	 mov r2,r0
- 1144 006a 544B     	 ldr r3,.L73+8
+ 1144 006a 654B     	 ldr r3,.L75+8
  1145 006c 43F82420 	 str r2,[r3,r4,lsl#2]
  1146 0070 04E0     	 b .L61
  1147              	.L62:
- 183:../main.c     **** 			}else{
- 184:../main.c     **** 				ActVel[i] = 0;
- 1148              	 .loc 5 184 0
+ 184:../main.c     **** 			}else{
+ 185:../main.c     **** 				ActVel[i] = 0;
+ 1148              	 .loc 5 185 0
  1149 0072 FB79     	 ldrb r3,[r7,#7]
- 1150 0074 514A     	 ldr r2,.L73+8
+ 1150 0074 624A     	 ldr r2,.L75+8
  1151 0076 0021     	 movs r1,#0
  1152 0078 42F82310 	 str r1,[r2,r3,lsl#2]
  1153              	.L61:
- 177:../main.c     **** 			if (Mode[i] == 1){
- 1154              	 .loc 5 177 0 discriminator 2
+ 178:../main.c     **** 			if (Mode[i] == 1){
+ 1154              	 .loc 5 178 0 discriminator 2
  1155 007c FB79     	 ldrb r3,[r7,#7]
  1156 007e 0133     	 adds r3,r3,#1
  1157 0080 FB71     	 strb r3,[r7,#7]
  1158              	.L59:
- 177:../main.c     **** 			if (Mode[i] == 1){
- 1159              	 .loc 5 177 0 is_stmt 0 discriminator 1
+ 178:../main.c     **** 			if (Mode[i] == 1){
+ 1159              	 .loc 5 178 0 is_stmt 0 discriminator 1
  1160 0082 FB79     	 ldrb r3,[r7,#7]
  1161 0084 022B     	 cmp r3,#2
  1162 0086 C1D9     	 bls .L63
  1163              	.LBE10:
- 185:../main.c     **** 			}
- 186:../main.c     **** 		}
- 187:../main.c     **** 
- 188:../main.c     **** 		//Channel 0
- 189:../main.c     **** 		PWM_CCU4_SetFreq(&PWM_0, abs(ActVel[0]));
- 1164              	 .loc 5 189 0 is_stmt 1
- 1165 0088 4C4B     	 ldr r3,.L73+8
+ 186:../main.c     **** 			}
+ 187:../main.c     **** 		}
+ 188:../main.c     **** 
+ 189:../main.c     **** 		//Channel 0
+ 190:../main.c     **** 		PWM_CCU4_SetFreq(&PWM_0, abs(ActVel[0]));
+ 1164              	 .loc 5 190 0 is_stmt 1
+ 1165 0088 5D4B     	 ldr r3,.L75+8
  1166 008a 1B68     	 ldr r3,[r3]
  1167 008c 002B     	 cmp r3,#0
  1168 008e B8BF     	 it lt
  1169 0090 5B42     	 rsblt r3,r3,#0
- 1170 0092 4D48     	 ldr r0,.L73+20
+ 1170 0092 5E48     	 ldr r0,.L75+20
  1171 0094 1946     	 mov r1,r3
  1172 0096 FFF7FEFF 	 bl PWM_CCU4_SetFreq
- 190:../main.c     **** 		if (ActVel[0] > 20){
- 1173              	 .loc 5 190 0
- 1174 009a 484B     	 ldr r3,.L73+8
+ 191:../main.c     **** 		if (ActVel[0] > 20){
+ 1173              	 .loc 5 191 0
+ 1174 009a 594B     	 ldr r3,.L75+8
  1175 009c 1B68     	 ldr r3,[r3]
  1176 009e 142B     	 cmp r3,#20
  1177 00a0 0BDD     	 ble .L64
- 191:../main.c     **** 			digitalWrite(P1_5, false);//Write to GPIO before start
- 1178              	 .loc 5 191 0
- 1179 00a2 4A48     	 ldr r0,.L73+24
+ 192:../main.c     **** 			digitalWrite(P1_5, false);//Write to GPIO before start
+ 1178              	 .loc 5 192 0
+ 1179 00a2 5B48     	 ldr r0,.L75+24
  1180 00a4 0521     	 movs r1,#5
  1181 00a6 0022     	 movs r2,#0
  1182 00a8 FFF7FEFF 	 bl digitalWrite
- 192:../main.c     **** 			Dir[0] = 0;
- 1183              	 .loc 5 192 0
- 1184 00ac 484B     	 ldr r3,.L73+28
+ 193:../main.c     **** 			Dir[0] = 0;
+ 1183              	 .loc 5 193 0
+ 1184 00ac 594B     	 ldr r3,.L75+28
  1185 00ae 0022     	 movs r2,#0
  1186 00b0 1A70     	 strb r2,[r3]
- 193:../main.c     **** 			PWM_CCU4_Start(&PWM_0);
- 1187              	 .loc 5 193 0
- 1188 00b2 4548     	 ldr r0,.L73+20
+ 194:../main.c     **** 			PWM_CCU4_Start(&PWM_0);
+ 1187              	 .loc 5 194 0
+ 1188 00b2 5648     	 ldr r0,.L75+20
  1189 00b4 FFF7FEFF 	 bl PWM_CCU4_Start
  1190 00b8 13E0     	 b .L65
  1191              	.L64:
- 194:../main.c     **** 		}else if (ActVel[0] < -20){
- 1192              	 .loc 5 194 0
- 1193 00ba 404B     	 ldr r3,.L73+8
+ 195:../main.c     **** 		}else if (ActVel[0] < -20){
+ 1192              	 .loc 5 195 0
+ 1193 00ba 514B     	 ldr r3,.L75+8
  1194 00bc 1B68     	 ldr r3,[r3]
  1195 00be 13F1140F 	 cmn r3,#20
  1196 00c2 0BDA     	 bge .L66
- 195:../main.c     **** 			digitalWrite(P1_5, true);
- 1197              	 .loc 5 195 0
- 1198 00c4 4148     	 ldr r0,.L73+24
+ 196:../main.c     **** 			digitalWrite(P1_5, true);
+ 1197              	 .loc 5 196 0
+ 1198 00c4 5248     	 ldr r0,.L75+24
  1199 00c6 0521     	 movs r1,#5
  1200 00c8 0122     	 movs r2,#1
  1201 00ca FFF7FEFF 	 bl digitalWrite
- 196:../main.c     **** 			Dir[0] = 1;
- 1202              	 .loc 5 196 0
- 1203 00ce 404B     	 ldr r3,.L73+28
+ 197:../main.c     **** 			Dir[0] = 1;
+ 1202              	 .loc 5 197 0
+ 1203 00ce 514B     	 ldr r3,.L75+28
  1204 00d0 0122     	 movs r2,#1
  1205 00d2 1A70     	 strb r2,[r3]
- 197:../main.c     **** 			PWM_CCU4_Start(&PWM_0);
- 1206              	 .loc 5 197 0
- 1207 00d4 3C48     	 ldr r0,.L73+20
+ 198:../main.c     **** 			PWM_CCU4_Start(&PWM_0);
+ 1206              	 .loc 5 198 0
+ 1207 00d4 4D48     	 ldr r0,.L75+20
  1208 00d6 FFF7FEFF 	 bl PWM_CCU4_Start
  1209 00da 02E0     	 b .L65
  1210              	.L66:
- 198:../main.c     **** 		}else{
- 199:../main.c     **** 			PWM_CCU4_Stop(&PWM_0);
- 1211              	 .loc 5 199 0
- 1212 00dc 3A48     	 ldr r0,.L73+20
+ 199:../main.c     **** 		}else{
+ 200:../main.c     **** 			PWM_CCU4_Stop(&PWM_0);
+ 1211              	 .loc 5 200 0
+ 1212 00dc 4B48     	 ldr r0,.L75+20
  1213 00de FFF7FEFF 	 bl PWM_CCU4_Stop
  1214              	.L65:
- 200:../main.c     **** 		}
- 201:../main.c     **** 
- 202:../main.c     **** 		//Channel 1
- 203:../main.c     **** 		PWM_CCU4_SetFreq(&PWM_1, abs(ActVel[1]));
- 1215              	 .loc 5 203 0
- 1216 00e2 364B     	 ldr r3,.L73+8
+ 201:../main.c     **** 		}
+ 202:../main.c     **** 
+ 203:../main.c     **** 		//Channel 1
+ 204:../main.c     **** 		PWM_CCU4_SetFreq(&PWM_1, abs(ActVel[1]));
+ 1215              	 .loc 5 204 0
+ 1216 00e2 474B     	 ldr r3,.L75+8
  1217 00e4 5B68     	 ldr r3,[r3,#4]
  1218 00e6 002B     	 cmp r3,#0
  1219 00e8 B8BF     	 it lt
  1220 00ea 5B42     	 rsblt r3,r3,#0
- 1221 00ec 3948     	 ldr r0,.L73+32
+ 1221 00ec 4A48     	 ldr r0,.L75+32
  1222 00ee 1946     	 mov r1,r3
  1223 00f0 FFF7FEFF 	 bl PWM_CCU4_SetFreq
- 204:../main.c     **** 		if (ActVel[1] > 20){
- 1224              	 .loc 5 204 0
- 1225 00f4 314B     	 ldr r3,.L73+8
+ 205:../main.c     **** 		if (ActVel[1] > 20){
+ 1224              	 .loc 5 205 0
+ 1225 00f4 424B     	 ldr r3,.L75+8
  1226 00f6 5B68     	 ldr r3,[r3,#4]
  1227 00f8 142B     	 cmp r3,#20
  1228 00fa 0BDD     	 ble .L67
- 205:../main.c     **** 			digitalWrite(P3_5, false);//Write to GPIO before start
- 1229              	 .loc 5 205 0
- 1230 00fc 3648     	 ldr r0,.L73+36
+ 206:../main.c     **** 			digitalWrite(P3_5, false);//Write to GPIO before start
+ 1229              	 .loc 5 206 0
+ 1230 00fc 4748     	 ldr r0,.L75+36
  1231 00fe 0521     	 movs r1,#5
  1232 0100 0022     	 movs r2,#0
  1233 0102 FFF7FEFF 	 bl digitalWrite
- 206:../main.c     **** 			Dir[1] = 0;
- 1234              	 .loc 5 206 0
- 1235 0106 324B     	 ldr r3,.L73+28
+ 207:../main.c     **** 			Dir[1] = 0;
+ 1234              	 .loc 5 207 0
+ 1235 0106 434B     	 ldr r3,.L75+28
  1236 0108 0022     	 movs r2,#0
  1237 010a 5A70     	 strb r2,[r3,#1]
- 207:../main.c     **** 			PWM_CCU4_Start(&PWM_1);
- 1238              	 .loc 5 207 0
- 1239 010c 3148     	 ldr r0,.L73+32
+ 208:../main.c     **** 			PWM_CCU4_Start(&PWM_1);
+ 1238              	 .loc 5 208 0
+ 1239 010c 4248     	 ldr r0,.L75+32
  1240 010e FFF7FEFF 	 bl PWM_CCU4_Start
  1241 0112 13E0     	 b .L68
  1242              	.L67:
- 208:../main.c     **** 		}else if (ActVel[1] < -20){
- 1243              	 .loc 5 208 0
- 1244 0114 294B     	 ldr r3,.L73+8
+ 209:../main.c     **** 		}else if (ActVel[1] < -20){
+ 1243              	 .loc 5 209 0
+ 1244 0114 3A4B     	 ldr r3,.L75+8
  1245 0116 5B68     	 ldr r3,[r3,#4]
  1246 0118 13F1140F 	 cmn r3,#20
  1247 011c 0BDA     	 bge .L69
- 209:../main.c     **** 			digitalWrite(P3_5, true);
- 1248              	 .loc 5 209 0
- 1249 011e 2E48     	 ldr r0,.L73+36
+ 210:../main.c     **** 			digitalWrite(P3_5, true);
+ 1248              	 .loc 5 210 0
+ 1249 011e 3F48     	 ldr r0,.L75+36
  1250 0120 0521     	 movs r1,#5
  1251 0122 0122     	 movs r2,#1
  1252 0124 FFF7FEFF 	 bl digitalWrite
- 210:../main.c     **** 			Dir[1] = 1;
- 1253              	 .loc 5 210 0
- 1254 0128 294B     	 ldr r3,.L73+28
+ 211:../main.c     **** 			Dir[1] = 1;
+ 1253              	 .loc 5 211 0
+ 1254 0128 3A4B     	 ldr r3,.L75+28
  1255 012a 0122     	 movs r2,#1
  1256 012c 5A70     	 strb r2,[r3,#1]
- 211:../main.c     **** 			PWM_CCU4_Start(&PWM_1);
- 1257              	 .loc 5 211 0
- 1258 012e 2948     	 ldr r0,.L73+32
+ 212:../main.c     **** 			PWM_CCU4_Start(&PWM_1);
+ 1257              	 .loc 5 212 0
+ 1258 012e 3A48     	 ldr r0,.L75+32
  1259 0130 FFF7FEFF 	 bl PWM_CCU4_Start
  1260 0134 02E0     	 b .L68
  1261              	.L69:
- 212:../main.c     **** 		}else{
- 213:../main.c     **** 			PWM_CCU4_Stop(&PWM_1);
- 1262              	 .loc 5 213 0
- 1263 0136 2748     	 ldr r0,.L73+32
+ 213:../main.c     **** 		}else{
+ 214:../main.c     **** 			PWM_CCU4_Stop(&PWM_1);
+ 1262              	 .loc 5 214 0
+ 1263 0136 3848     	 ldr r0,.L75+32
  1264 0138 FFF7FEFF 	 bl PWM_CCU4_Stop
  1265              	.L68:
- 214:../main.c     **** 		}
- 215:../main.c     **** 
- 216:../main.c     **** 		//Channel 2
- 217:../main.c     **** 		PWM_CCU4_SetFreq(&PWM_2, abs(ActVel[2]));
- 1266              	 .loc 5 217 0
- 1267 013c 1F4B     	 ldr r3,.L73+8
+ 215:../main.c     **** 		}
+ 216:../main.c     **** 
+ 217:../main.c     **** 		//Channel 2
+ 218:../main.c     **** 		PWM_CCU4_SetFreq(&PWM_2, abs(ActVel[2]));
+ 1266              	 .loc 5 218 0
+ 1267 013c 304B     	 ldr r3,.L75+8
  1268 013e 9B68     	 ldr r3,[r3,#8]
  1269 0140 002B     	 cmp r3,#0
  1270 0142 B8BF     	 it lt
  1271 0144 5B42     	 rsblt r3,r3,#0
- 1272 0146 2548     	 ldr r0,.L73+40
+ 1272 0146 3648     	 ldr r0,.L75+40
  1273 0148 1946     	 mov r1,r3
  1274 014a FFF7FEFF 	 bl PWM_CCU4_SetFreq
- 218:../main.c     **** 		if (ActVel[2] > 20){
- 1275              	 .loc 5 218 0
- 1276 014e 1B4B     	 ldr r3,.L73+8
+ 219:../main.c     **** 		if (ActVel[2] > 20){
+ 1275              	 .loc 5 219 0
+ 1276 014e 2C4B     	 ldr r3,.L75+8
  1277 0150 9B68     	 ldr r3,[r3,#8]
  1278 0152 142B     	 cmp r3,#20
  1279 0154 0BDD     	 ble .L70
- 219:../main.c     **** 			digitalWrite(P5_0, false);//Write to GPIO before start
- 1280              	 .loc 5 219 0
- 1281 0156 2248     	 ldr r0,.L73+44
+ 220:../main.c     **** 			digitalWrite(P5_0, false);//Write to GPIO before start
+ 1280              	 .loc 5 220 0
+ 1281 0156 3348     	 ldr r0,.L75+44
  1282 0158 0021     	 movs r1,#0
  1283 015a 0022     	 movs r2,#0
  1284 015c FFF7FEFF 	 bl digitalWrite
- 220:../main.c     **** 			Dir[2] = 0;
- 1285              	 .loc 5 220 0
- 1286 0160 1B4B     	 ldr r3,.L73+28
+ 221:../main.c     **** 			Dir[2] = 0;
+ 1285              	 .loc 5 221 0
+ 1286 0160 2C4B     	 ldr r3,.L75+28
  1287 0162 0022     	 movs r2,#0
  1288 0164 9A70     	 strb r2,[r3,#2]
- 221:../main.c     **** 			PWM_CCU4_Start(&PWM_2);
- 1289              	 .loc 5 221 0
- 1290 0166 1D48     	 ldr r0,.L73+40
+ 222:../main.c     **** 			PWM_CCU4_Start(&PWM_2);
+ 1289              	 .loc 5 222 0
+ 1290 0166 2E48     	 ldr r0,.L75+40
  1291 0168 FFF7FEFF 	 bl PWM_CCU4_Start
  1292 016c 13E0     	 b .L71
  1293              	.L70:
- 222:../main.c     **** 		}else if (ActVel[2] < -20){
- 1294              	 .loc 5 222 0
- 1295 016e 134B     	 ldr r3,.L73+8
+ 223:../main.c     **** 		}else if (ActVel[2] < -20){
+ 1294              	 .loc 5 223 0
+ 1295 016e 244B     	 ldr r3,.L75+8
  1296 0170 9B68     	 ldr r3,[r3,#8]
  1297 0172 13F1140F 	 cmn r3,#20
  1298 0176 0BDA     	 bge .L72
- 223:../main.c     **** 			digitalWrite(P5_0, true);
- 1299              	 .loc 5 223 0
- 1300 0178 1948     	 ldr r0,.L73+44
+ 224:../main.c     **** 			digitalWrite(P5_0, true);
+ 1299              	 .loc 5 224 0
+ 1300 0178 2A48     	 ldr r0,.L75+44
  1301 017a 0021     	 movs r1,#0
  1302 017c 0122     	 movs r2,#1
  1303 017e FFF7FEFF 	 bl digitalWrite
- 224:../main.c     **** 			Dir[2] = 1;
- 1304              	 .loc 5 224 0
- 1305 0182 134B     	 ldr r3,.L73+28
+ 225:../main.c     **** 			Dir[2] = 1;
+ 1304              	 .loc 5 225 0
+ 1305 0182 244B     	 ldr r3,.L75+28
  1306 0184 0122     	 movs r2,#1
  1307 0186 9A70     	 strb r2,[r3,#2]
- 225:../main.c     **** 			PWM_CCU4_Start(&PWM_2);
- 1308              	 .loc 5 225 0
- 1309 0188 1448     	 ldr r0,.L73+40
+ 226:../main.c     **** 			PWM_CCU4_Start(&PWM_2);
+ 1308              	 .loc 5 226 0
+ 1309 0188 2548     	 ldr r0,.L75+40
  1310 018a FFF7FEFF 	 bl PWM_CCU4_Start
  1311 018e 02E0     	 b .L71
  1312              	.L72:
- 226:../main.c     **** 		}else{
- 227:../main.c     **** 			PWM_CCU4_Stop(&PWM_2);
- 1313              	 .loc 5 227 0
- 1314 0190 1248     	 ldr r0,.L73+40
+ 227:../main.c     **** 		}else{
+ 228:../main.c     **** 			PWM_CCU4_Stop(&PWM_2);
+ 1313              	 .loc 5 228 0
+ 1314 0190 2348     	 ldr r0,.L75+40
  1315 0192 FFF7FEFF 	 bl PWM_CCU4_Stop
  1316              	.L71:
- 228:../main.c     **** 		}
- 229:../main.c     **** 		//ENABLE
- 230:../main.c     **** 		digitalWrite(P0_0, Config >> 0 & 0x1);
- 1317              	 .loc 5 230 0
- 1318 0196 134B     	 ldr r3,.L73+48
+ 229:../main.c     **** 		}
+ 230:../main.c     **** 
+ 231:../main.c     **** 		//ENABLE
+ 232:../main.c     **** 		digitalWrite(P0_0, Config >> 0 & 0x1);
+ 1317              	 .loc 5 232 0
+ 1318 0196 244B     	 ldr r3,.L75+48
  1319 0198 1B68     	 ldr r3,[r3]
  1320 019a DBB2     	 uxtb r3,r3
  1321 019c 03F00103 	 and r3,r3,#1
  1322 01a0 DBB2     	 uxtb r3,r3
- 1323 01a2 1148     	 ldr r0,.L73+52
+ 1323 01a2 2248     	 ldr r0,.L75+52
  1324 01a4 0021     	 movs r1,#0
  1325 01a6 1A46     	 mov r2,r3
  1326 01a8 FFF7FEFF 	 bl digitalWrite
- 231:../main.c     **** 	}
- 1327              	 .loc 5 231 0
- 1328 01ac 0C37     	 adds r7,r7,#12
- 1329              	.LCFI70:
- 1330              	 .cfi_def_cfa_offset 12
- 1331 01ae BD46     	 mov sp,r7
- 1332              	.LCFI71:
- 1333              	 .cfi_def_cfa_register 13
- 1334              	 
- 1335 01b0 90BD     	 pop {r4,r7,pc}
- 1336              	.L74:
- 1337 01b2 00BF     	 .align 2
- 1338              	.L73:
- 1339 01b4 00000000 	 .word Mode
- 1340 01b8 00000000 	 .word CtrlVel
- 1341 01bc 00000000 	 .word ActVel
- 1342 01c0 00000000 	 .word TarVel
- 1343 01c4 00000000 	 .word Acc
- 1344 01c8 00000000 	 .word PWM_0
- 1345 01cc 00810248 	 .word 1208123648
- 1346 01d0 00000000 	 .word Dir
- 1347 01d4 00000000 	 .word PWM_1
- 1348 01d8 00830248 	 .word 1208124160
- 1349 01dc 00000000 	 .word PWM_2
- 1350 01e0 00850248 	 .word 1208124672
- 1351 01e4 00000000 	 .word Config
- 1352 01e8 00800248 	 .word 1208123392
- 1353              	 .cfi_endproc
- 1354              	.LFE360:
- 1356              	 .section .text.Init_GPIO,"ax",%progbits
- 1357              	 .align 2
- 1358              	 .global Init_GPIO
- 1359              	 .thumb
- 1360              	 .thumb_func
- 1362              	Init_GPIO:
- 1363              	.LFB361:
- 232:../main.c     **** 
- 233:../main.c     **** //GPIO INIT
- 234:../main.c     **** 	void Init_GPIO()
- 235:../main.c     **** 	{
- 1364              	 .loc 5 235 0
- 1365              	 .cfi_startproc
- 1366              	 
- 1367              	 
- 1368 0000 80B5     	 push {r7,lr}
- 1369              	.LCFI72:
- 1370              	 .cfi_def_cfa_offset 8
- 1371              	 .cfi_offset 7,-8
- 1372              	 .cfi_offset 14,-4
- 1373 0002 86B0     	 sub sp,sp,#24
- 1374              	.LCFI73:
- 1375              	 .cfi_def_cfa_offset 32
- 1376 0004 00AF     	 add r7,sp,#0
- 1377              	.LCFI74:
- 1378              	 .cfi_def_cfa_register 7
- 236:../main.c     **** 		XMC_GPIO_CONFIG_t output = {.mode=XMC_GPIO_MODE_OUTPUT_PUSH_PULL};
- 1379              	 .loc 5 236 0
- 1380 0006 07F10C03 	 add r3,r7,#12
- 1381 000a 0022     	 movs r2,#0
- 1382 000c 1A60     	 str r2,[r3]
- 1383 000e 0433     	 adds r3,r3,#4
- 1384 0010 0022     	 movs r2,#0
- 1385 0012 1A60     	 str r2,[r3]
- 1386 0014 0433     	 adds r3,r3,#4
- 1387 0016 0022     	 movs r2,#0
- 1388 0018 1A60     	 str r2,[r3]
- 1389 001a 0433     	 adds r3,r3,#4
- 1390 001c 8023     	 movs r3,#128
- 1391 001e 3B73     	 strb r3,[r7,#12]
- 237:../main.c     **** 		XMC_GPIO_CONFIG_t input = {.mode=XMC_GPIO_MODE_INPUT_TRISTATE};
- 1392              	 .loc 5 237 0
- 1393 0020 3B46     	 mov r3,r7
- 1394 0022 0022     	 movs r2,#0
- 1395 0024 1A60     	 str r2,[r3]
- 1396 0026 0433     	 adds r3,r3,#4
- 1397 0028 0022     	 movs r2,#0
- 1398 002a 1A60     	 str r2,[r3]
- 1399 002c 0433     	 adds r3,r3,#4
- 1400 002e 0022     	 movs r2,#0
- 1401 0030 1A60     	 str r2,[r3]
- 1402 0032 0433     	 adds r3,r3,#4
- 238:../main.c     **** 
- 239:../main.c     **** 		//P0_8 is DB_TRST,Must INIT Digital Function.Others pin is normal.
- 240:../main.c     **** 		XMC_GPIO_Init(P2_14,&input);
- 1403              	 .loc 5 240 0
- 1404 0034 3B46     	 mov r3,r7
- 1405 0036 1548     	 ldr r0,.L76
- 1406 0038 0E21     	 movs r1,#14
- 1407 003a 1A46     	 mov r2,r3
- 1408 003c FFF7FEFF 	 bl XMC_GPIO_Init
- 241:../main.c     **** 		XMC_GPIO_Init(P2_9,&input);
- 1409              	 .loc 5 241 0
- 1410 0040 3B46     	 mov r3,r7
- 1411 0042 1248     	 ldr r0,.L76
- 1412 0044 0921     	 movs r1,#9
- 1413 0046 1A46     	 mov r2,r3
- 1414 0048 FFF7FEFF 	 bl XMC_GPIO_Init
- 242:../main.c     **** 
- 243:../main.c     **** 		XMC_GPIO_Init(P5_0,&output);
- 1415              	 .loc 5 243 0
- 1416 004c 07F10C03 	 add r3,r7,#12
- 1417 0050 0F48     	 ldr r0,.L76+4
- 1418 0052 0021     	 movs r1,#0
- 1419 0054 1A46     	 mov r2,r3
- 1420 0056 FFF7FEFF 	 bl XMC_GPIO_Init
- 244:../main.c     **** 		XMC_GPIO_Init(P0_0,&output);
- 1421              	 .loc 5 244 0
- 1422 005a 07F10C03 	 add r3,r7,#12
- 1423 005e 0D48     	 ldr r0,.L76+8
- 1424 0060 0021     	 movs r1,#0
- 1425 0062 1A46     	 mov r2,r3
- 1426 0064 FFF7FEFF 	 bl XMC_GPIO_Init
- 245:../main.c     **** 		XMC_GPIO_Init(P1_5,&output);
- 1427              	 .loc 5 245 0
- 1428 0068 07F10C03 	 add r3,r7,#12
- 1429 006c 0A48     	 ldr r0,.L76+12
- 1430 006e 0521     	 movs r1,#5
- 1431 0070 1A46     	 mov r2,r3
- 1432 0072 FFF7FEFF 	 bl XMC_GPIO_Init
- 246:../main.c     **** 		XMC_GPIO_Init(P3_5,&output);
- 1433              	 .loc 5 246 0
- 1434 0076 07F10C03 	 add r3,r7,#12
- 1435 007a 0848     	 ldr r0,.L76+16
- 1436 007c 0521     	 movs r1,#5
- 1437 007e 1A46     	 mov r2,r3
- 1438 0080 FFF7FEFF 	 bl XMC_GPIO_Init
- 247:../main.c     **** 	}
- 1439              	 .loc 5 247 0
- 1440 0084 1837     	 adds r7,r7,#24
- 1441              	.LCFI75:
- 1442              	 .cfi_def_cfa_offset 8
- 1443 0086 BD46     	 mov sp,r7
- 1444              	.LCFI76:
- 1445              	 .cfi_def_cfa_register 13
- 1446              	 
- 1447 0088 80BD     	 pop {r7,pc}
- 1448              	.L77:
- 1449 008a 00BF     	 .align 2
- 1450              	.L76:
- 1451 008c 00820248 	 .word 1208123904
- 1452 0090 00850248 	 .word 1208124672
- 1453 0094 00800248 	 .word 1208123392
- 1454 0098 00810248 	 .word 1208123648
- 1455 009c 00830248 	 .word 1208124160
- 1456              	 .cfi_endproc
- 1457              	.LFE361:
- 1459              	 .section .text.limit,"ax",%progbits
- 1460              	 .align 2
- 1461              	 .global limit
- 1462              	 .thumb
- 1463              	 .thumb_func
- 1465              	limit:
- 1466              	.LFB362:
- 248:../main.c     **** //Limit
- 249:../main.c     **** 	uint32_t limit(uint32_t in, uint32_t min, uint32_t max){
- 1467              	 .loc 5 249 0
- 1468              	 .cfi_startproc
- 1469              	 
- 1470              	 
- 1471              	 
- 1472 0000 80B4     	 push {r7}
- 1473              	.LCFI77:
- 1474              	 .cfi_def_cfa_offset 4
- 1475              	 .cfi_offset 7,-4
- 1476 0002 85B0     	 sub sp,sp,#20
- 1477              	.LCFI78:
- 1478              	 .cfi_def_cfa_offset 24
- 1479 0004 00AF     	 add r7,sp,#0
- 1480              	.LCFI79:
- 1481              	 .cfi_def_cfa_register 7
- 1482 0006 F860     	 str r0,[r7,#12]
- 1483 0008 B960     	 str r1,[r7,#8]
- 1484 000a 7A60     	 str r2,[r7,#4]
- 250:../main.c     **** 		if (in < min){
- 1485              	 .loc 5 250 0
- 1486 000c FA68     	 ldr r2,[r7,#12]
- 1487 000e BB68     	 ldr r3,[r7,#8]
- 1488 0010 9A42     	 cmp r2,r3
- 1489 0012 01D2     	 bcs .L79
- 251:../main.c     **** 			return min;
- 1490              	 .loc 5 251 0
- 1491 0014 BB68     	 ldr r3,[r7,#8]
- 1492 0016 06E0     	 b .L80
- 1493              	.L79:
- 252:../main.c     **** 		}else if (in > max){
- 1494              	 .loc 5 252 0
- 1495 0018 FA68     	 ldr r2,[r7,#12]
- 1496 001a 7B68     	 ldr r3,[r7,#4]
- 1497 001c 9A42     	 cmp r2,r3
- 1498 001e 01D9     	 bls .L81
- 253:../main.c     **** 			return max;
- 1499              	 .loc 5 253 0
- 1500 0020 7B68     	 ldr r3,[r7,#4]
- 1501 0022 00E0     	 b .L80
- 1502              	.L81:
- 254:../main.c     **** 		}else{
- 255:../main.c     **** 			return in;
- 1503              	 .loc 5 255 0
- 1504 0024 FB68     	 ldr r3,[r7,#12]
- 1505              	.L80:
- 256:../main.c     **** 		}
- 257:../main.c     **** 	}
- 1506              	 .loc 5 257 0
- 1507 0026 1846     	 mov r0,r3
- 1508 0028 1437     	 adds r7,r7,#20
- 1509              	.LCFI80:
- 1510              	 .cfi_def_cfa_offset 4
- 1511 002a BD46     	 mov sp,r7
- 1512              	.LCFI81:
- 1513              	 .cfi_def_cfa_register 13
+ 233:../main.c     **** 
+ 234:../main.c     **** 		//Position clear
+ 235:../main.c     **** 		if ((Config >> 1 & 0x1) && (clspos_enable == 1)){
+ 1327              	 .loc 5 235 0
+ 1328 01ac 1E4B     	 ldr r3,.L75+48
+ 1329 01ae 1B68     	 ldr r3,[r3]
+ 1330 01b0 5B10     	 asrs r3,r3,#1
+ 1331 01b2 03F00103 	 and r3,r3,#1
+ 1332 01b6 002B     	 cmp r3,#0
+ 1333 01b8 10D0     	 beq .L73
+ 1334              	 .loc 5 235 0 is_stmt 0 discriminator 1
+ 1335 01ba 1D4B     	 ldr r3,.L75+56
+ 1336 01bc 1B78     	 ldrb r3,[r3]
+ 1337 01be 012B     	 cmp r3,#1
+ 1338 01c0 0CD1     	 bne .L73
+ 236:../main.c     **** 			clspos_enable = 0;
+ 1339              	 .loc 5 236 0 is_stmt 1
+ 1340 01c2 1B4B     	 ldr r3,.L75+56
+ 1341 01c4 0022     	 movs r2,#0
+ 1342 01c6 1A70     	 strb r2,[r3]
+ 237:../main.c     **** 			ActPos[0] = 0;
+ 1343              	 .loc 5 237 0
+ 1344 01c8 1A4B     	 ldr r3,.L75+60
+ 1345 01ca 0022     	 movs r2,#0
+ 1346 01cc 1A60     	 str r2,[r3]
+ 238:../main.c     **** 			ActPos[1] = 0;
+ 1347              	 .loc 5 238 0
+ 1348 01ce 194B     	 ldr r3,.L75+60
+ 1349 01d0 0022     	 movs r2,#0
+ 1350 01d2 5A60     	 str r2,[r3,#4]
+ 239:../main.c     **** 			ActPos[2] = 0;
+ 1351              	 .loc 5 239 0
+ 1352 01d4 174B     	 ldr r3,.L75+60
+ 1353 01d6 0022     	 movs r2,#0
+ 1354 01d8 9A60     	 str r2,[r3,#8]
+ 1355 01da 09E0     	 b .L58
+ 1356              	.L73:
+ 240:../main.c     **** 		}else if (!(Config >> 1 & 0x1)){
+ 1357              	 .loc 5 240 0
+ 1358 01dc 124B     	 ldr r3,.L75+48
+ 1359 01de 1B68     	 ldr r3,[r3]
+ 1360 01e0 5B10     	 asrs r3,r3,#1
+ 1361 01e2 03F00103 	 and r3,r3,#1
+ 1362 01e6 002B     	 cmp r3,#0
+ 1363 01e8 02D1     	 bne .L58
+ 241:../main.c     **** 			clspos_enable = 1;
+ 1364              	 .loc 5 241 0
+ 1365 01ea 114B     	 ldr r3,.L75+56
+ 1366 01ec 0122     	 movs r2,#1
+ 1367 01ee 1A70     	 strb r2,[r3]
+ 1368              	.L58:
+ 242:../main.c     **** 		}
+ 243:../main.c     **** 	}
+ 1369              	 .loc 5 243 0
+ 1370 01f0 0C37     	 adds r7,r7,#12
+ 1371              	.LCFI70:
+ 1372              	 .cfi_def_cfa_offset 12
+ 1373 01f2 BD46     	 mov sp,r7
+ 1374              	.LCFI71:
+ 1375              	 .cfi_def_cfa_register 13
+ 1376              	 
+ 1377 01f4 90BD     	 pop {r4,r7,pc}
+ 1378              	.L76:
+ 1379 01f6 00BF     	 .align 2
+ 1380              	.L75:
+ 1381 01f8 00000000 	 .word Mode
+ 1382 01fc 00000000 	 .word CtrlVel
+ 1383 0200 00000000 	 .word ActVel
+ 1384 0204 00000000 	 .word TarVel
+ 1385 0208 00000000 	 .word Acc
+ 1386 020c 00000000 	 .word PWM_0
+ 1387 0210 00810248 	 .word 1208123648
+ 1388 0214 00000000 	 .word Dir
+ 1389 0218 00000000 	 .word PWM_1
+ 1390 021c 00830248 	 .word 1208124160
+ 1391 0220 00000000 	 .word PWM_2
+ 1392 0224 00850248 	 .word 1208124672
+ 1393 0228 00000000 	 .word Config
+ 1394 022c 00800248 	 .word 1208123392
+ 1395 0230 00000000 	 .word clspos_enable
+ 1396 0234 00000000 	 .word ActPos
+ 1397              	 .cfi_endproc
+ 1398              	.LFE360:
+ 1400              	 .section .text.Init_GPIO,"ax",%progbits
+ 1401              	 .align 2
+ 1402              	 .global Init_GPIO
+ 1403              	 .thumb
+ 1404              	 .thumb_func
+ 1406              	Init_GPIO:
+ 1407              	.LFB361:
+ 244:../main.c     **** 
+ 245:../main.c     **** //GPIO INIT
+ 246:../main.c     **** 	void Init_GPIO()
+ 247:../main.c     **** 	{
+ 1408              	 .loc 5 247 0
+ 1409              	 .cfi_startproc
+ 1410              	 
+ 1411              	 
+ 1412 0000 80B5     	 push {r7,lr}
+ 1413              	.LCFI72:
+ 1414              	 .cfi_def_cfa_offset 8
+ 1415              	 .cfi_offset 7,-8
+ 1416              	 .cfi_offset 14,-4
+ 1417 0002 86B0     	 sub sp,sp,#24
+ 1418              	.LCFI73:
+ 1419              	 .cfi_def_cfa_offset 32
+ 1420 0004 00AF     	 add r7,sp,#0
+ 1421              	.LCFI74:
+ 1422              	 .cfi_def_cfa_register 7
+ 248:../main.c     **** 		XMC_GPIO_CONFIG_t output = {.mode=XMC_GPIO_MODE_OUTPUT_PUSH_PULL};
+ 1423              	 .loc 5 248 0
+ 1424 0006 07F10C03 	 add r3,r7,#12
+ 1425 000a 0022     	 movs r2,#0
+ 1426 000c 1A60     	 str r2,[r3]
+ 1427 000e 0433     	 adds r3,r3,#4
+ 1428 0010 0022     	 movs r2,#0
+ 1429 0012 1A60     	 str r2,[r3]
+ 1430 0014 0433     	 adds r3,r3,#4
+ 1431 0016 0022     	 movs r2,#0
+ 1432 0018 1A60     	 str r2,[r3]
+ 1433 001a 0433     	 adds r3,r3,#4
+ 1434 001c 8023     	 movs r3,#128
+ 1435 001e 3B73     	 strb r3,[r7,#12]
+ 249:../main.c     **** 		XMC_GPIO_CONFIG_t input = {.mode=XMC_GPIO_MODE_INPUT_TRISTATE};
+ 1436              	 .loc 5 249 0
+ 1437 0020 3B46     	 mov r3,r7
+ 1438 0022 0022     	 movs r2,#0
+ 1439 0024 1A60     	 str r2,[r3]
+ 1440 0026 0433     	 adds r3,r3,#4
+ 1441 0028 0022     	 movs r2,#0
+ 1442 002a 1A60     	 str r2,[r3]
+ 1443 002c 0433     	 adds r3,r3,#4
+ 1444 002e 0022     	 movs r2,#0
+ 1445 0030 1A60     	 str r2,[r3]
+ 1446 0032 0433     	 adds r3,r3,#4
+ 250:../main.c     **** 
+ 251:../main.c     **** 		//P0_8 is DB_TRST,Must INIT Digital Function.Others pin is normal.
+ 252:../main.c     **** 		XMC_GPIO_Init(P2_14,&input);
+ 1447              	 .loc 5 252 0
+ 1448 0034 3B46     	 mov r3,r7
+ 1449 0036 1548     	 ldr r0,.L78
+ 1450 0038 0E21     	 movs r1,#14
+ 1451 003a 1A46     	 mov r2,r3
+ 1452 003c FFF7FEFF 	 bl XMC_GPIO_Init
+ 253:../main.c     **** 		XMC_GPIO_Init(P2_9,&input);
+ 1453              	 .loc 5 253 0
+ 1454 0040 3B46     	 mov r3,r7
+ 1455 0042 1248     	 ldr r0,.L78
+ 1456 0044 0921     	 movs r1,#9
+ 1457 0046 1A46     	 mov r2,r3
+ 1458 0048 FFF7FEFF 	 bl XMC_GPIO_Init
+ 254:../main.c     **** 
+ 255:../main.c     **** 		XMC_GPIO_Init(P5_0,&output);
+ 1459              	 .loc 5 255 0
+ 1460 004c 07F10C03 	 add r3,r7,#12
+ 1461 0050 0F48     	 ldr r0,.L78+4
+ 1462 0052 0021     	 movs r1,#0
+ 1463 0054 1A46     	 mov r2,r3
+ 1464 0056 FFF7FEFF 	 bl XMC_GPIO_Init
+ 256:../main.c     **** 		XMC_GPIO_Init(P0_0,&output);
+ 1465              	 .loc 5 256 0
+ 1466 005a 07F10C03 	 add r3,r7,#12
+ 1467 005e 0D48     	 ldr r0,.L78+8
+ 1468 0060 0021     	 movs r1,#0
+ 1469 0062 1A46     	 mov r2,r3
+ 1470 0064 FFF7FEFF 	 bl XMC_GPIO_Init
+ 257:../main.c     **** 		XMC_GPIO_Init(P1_5,&output);
+ 1471              	 .loc 5 257 0
+ 1472 0068 07F10C03 	 add r3,r7,#12
+ 1473 006c 0A48     	 ldr r0,.L78+12
+ 1474 006e 0521     	 movs r1,#5
+ 1475 0070 1A46     	 mov r2,r3
+ 1476 0072 FFF7FEFF 	 bl XMC_GPIO_Init
+ 258:../main.c     **** 		XMC_GPIO_Init(P3_5,&output);
+ 1477              	 .loc 5 258 0
+ 1478 0076 07F10C03 	 add r3,r7,#12
+ 1479 007a 0848     	 ldr r0,.L78+16
+ 1480 007c 0521     	 movs r1,#5
+ 1481 007e 1A46     	 mov r2,r3
+ 1482 0080 FFF7FEFF 	 bl XMC_GPIO_Init
+ 259:../main.c     **** 	}
+ 1483              	 .loc 5 259 0
+ 1484 0084 1837     	 adds r7,r7,#24
+ 1485              	.LCFI75:
+ 1486              	 .cfi_def_cfa_offset 8
+ 1487 0086 BD46     	 mov sp,r7
+ 1488              	.LCFI76:
+ 1489              	 .cfi_def_cfa_register 13
+ 1490              	 
+ 1491 0088 80BD     	 pop {r7,pc}
+ 1492              	.L79:
+ 1493 008a 00BF     	 .align 2
+ 1494              	.L78:
+ 1495 008c 00820248 	 .word 1208123904
+ 1496 0090 00850248 	 .word 1208124672
+ 1497 0094 00800248 	 .word 1208123392
+ 1498 0098 00810248 	 .word 1208123648
+ 1499 009c 00830248 	 .word 1208124160
+ 1500              	 .cfi_endproc
+ 1501              	.LFE361:
+ 1503              	 .section .text.limit,"ax",%progbits
+ 1504              	 .align 2
+ 1505              	 .global limit
+ 1506              	 .thumb
+ 1507              	 .thumb_func
+ 1509              	limit:
+ 1510              	.LFB362:
+ 260:../main.c     **** //Limit
+ 261:../main.c     **** 	uint32_t limit(uint32_t in, uint32_t min, uint32_t max){
+ 1511              	 .loc 5 261 0
+ 1512              	 .cfi_startproc
+ 1513              	 
  1514              	 
- 1515 002c 5DF8047B 	 ldr r7,[sp],#4
- 1516              	.LCFI82:
- 1517              	 .cfi_restore 7
- 1518              	 .cfi_def_cfa_offset 0
- 1519 0030 7047     	 bx lr
- 1520              	 .cfi_endproc
- 1521              	.LFE362:
- 1523 0032 00BF     	 .section .text.process_app,"ax",%progbits
- 1524              	 .align 2
- 1525              	 .global process_app
- 1526              	 .thumb
- 1527              	 .thumb_func
- 1529              	process_app:
- 1530              	.LFB363:
- 258:../main.c     **** 
- 259:../main.c     **** 
- 260:../main.c     **** void process_app(TOBJ7000 *OUT_GENERIC, TOBJ6000 *IN_GENERIC)
- 261:../main.c     **** {
- 1531              	 .loc 5 261 0
- 1532              	 .cfi_startproc
- 1533              	 
- 1534              	 
- 1535 0000 80B5     	 push {r7,lr}
- 1536              	.LCFI83:
- 1537              	 .cfi_def_cfa_offset 8
- 1538              	 .cfi_offset 7,-8
- 1539              	 .cfi_offset 14,-4
- 1540 0002 84B0     	 sub sp,sp,#16
- 1541              	.LCFI84:
- 1542              	 .cfi_def_cfa_offset 24
- 1543 0004 00AF     	 add r7,sp,#0
- 1544              	.LCFI85:
- 1545              	 .cfi_def_cfa_register 7
- 1546 0006 7860     	 str r0,[r7,#4]
- 1547 0008 3960     	 str r1,[r7]
- 262:../main.c     **** 	IN_GENERIC->CH0_ActualMode 		= Mode[0];
- 1548              	 .loc 5 262 0
- 1549 000a 574B     	 ldr r3,.L87
- 1550 000c 1A68     	 ldr r2,[r3]
- 1551 000e 3B68     	 ldr r3,[r7]
- 1552 0010 9A60     	 str r2,[r3,#8]
- 263:../main.c     **** 	IN_GENERIC->CH0_ActualPosition 	= ActPos[0];
- 1553              	 .loc 5 263 0
- 1554 0012 564B     	 ldr r3,.L87+4
- 1555 0014 1A68     	 ldr r2,[r3]
- 1556 0016 3B68     	 ldr r3,[r7]
- 1557 0018 DA60     	 str r2,[r3,#12]
- 264:../main.c     **** 	IN_GENERIC->CH0_ActualVelocity	= ActVel[0];
- 1558              	 .loc 5 264 0
- 1559 001a 554B     	 ldr r3,.L87+8
- 1560 001c 1A68     	 ldr r2,[r3]
- 1561 001e 3B68     	 ldr r3,[r7]
- 1562 0020 1A61     	 str r2,[r3,#16]
- 265:../main.c     **** 
- 266:../main.c     **** 	IN_GENERIC->CH1_ActualMode 		= Mode[1];
- 1563              	 .loc 5 266 0
- 1564 0022 514B     	 ldr r3,.L87
- 1565 0024 5A68     	 ldr r2,[r3,#4]
- 1566 0026 3B68     	 ldr r3,[r7]
- 1567 0028 5A61     	 str r2,[r3,#20]
- 267:../main.c     **** 	IN_GENERIC->CH1_ActualPosition 	= ActPos[1];
- 1568              	 .loc 5 267 0
- 1569 002a 504B     	 ldr r3,.L87+4
- 1570 002c 5A68     	 ldr r2,[r3,#4]
- 1571 002e 3B68     	 ldr r3,[r7]
- 1572 0030 9A61     	 str r2,[r3,#24]
- 268:../main.c     **** 	IN_GENERIC->CH1_ActualVelocity 	= ActVel[1];
- 1573              	 .loc 5 268 0
- 1574 0032 4F4B     	 ldr r3,.L87+8
- 1575 0034 5A68     	 ldr r2,[r3,#4]
- 1576 0036 3B68     	 ldr r3,[r7]
- 1577 0038 DA61     	 str r2,[r3,#28]
- 269:../main.c     **** 
- 270:../main.c     **** 	IN_GENERIC->CH2_ActualMode		= Mode[2];
- 1578              	 .loc 5 270 0
- 1579 003a 4B4B     	 ldr r3,.L87
- 1580 003c 9A68     	 ldr r2,[r3,#8]
- 1581 003e 3B68     	 ldr r3,[r7]
- 1582 0040 1A62     	 str r2,[r3,#32]
- 271:../main.c     **** 	IN_GENERIC->CH2_ActualPosition 	= ActPos[2];
- 1583              	 .loc 5 271 0
- 1584 0042 4A4B     	 ldr r3,.L87+4
- 1585 0044 9A68     	 ldr r2,[r3,#8]
- 1586 0046 3B68     	 ldr r3,[r7]
- 1587 0048 5A62     	 str r2,[r3,#36]
- 272:../main.c     **** 	IN_GENERIC->CH2_ActualVelocity 	= ActVel[2];
- 1588              	 .loc 5 272 0
- 1589 004a 494B     	 ldr r3,.L87+8
- 1590 004c 9A68     	 ldr r2,[r3,#8]
- 1591 004e 3B68     	 ldr r3,[r7]
- 1592 0050 9A62     	 str r2,[r3,#40]
- 273:../main.c     **** 
- 274:../main.c     **** 	IN_GENERIC->ActualConfig		= Config;
- 1593              	 .loc 5 274 0
- 1594 0052 484B     	 ldr r3,.L87+12
- 1595 0054 1A68     	 ldr r2,[r3]
- 1596 0056 3B68     	 ldr r3,[r7]
- 1597 0058 5A60     	 str r2,[r3,#4]
- 275:../main.c     **** 
- 276:../main.c     **** 	if (outenable){
- 1598              	 .loc 5 276 0
- 1599 005a 474B     	 ldr r3,.L87+16
- 1600 005c 1B78     	 ldrb r3,[r3]
- 1601 005e 002B     	 cmp r3,#0
- 1602 0060 5ED0     	 beq .L83
- 277:../main.c     **** 		TarVel[0] 	= limit(OUT_GENERIC->CH0_ProfileVelocity,0,220000);
- 1603              	 .loc 5 277 0
- 1604 0062 7B68     	 ldr r3,[r7,#4]
- 1605 0064 1B69     	 ldr r3,[r3,#16]
- 1606 0066 1846     	 mov r0,r3
- 1607 0068 0021     	 movs r1,#0
- 1608 006a 444A     	 ldr r2,.L87+20
- 1609 006c FFF7FEFF 	 bl limit
- 1610 0070 0346     	 mov r3,r0
- 1611 0072 1A46     	 mov r2,r3
- 1612 0074 424B     	 ldr r3,.L87+24
- 1613 0076 1A60     	 str r2,[r3]
- 278:../main.c     **** 		Acc[0] 		= limit(OUT_GENERIC->CH0_ProfileACC,0,220000);
- 1614              	 .loc 5 278 0
- 1615 0078 7B68     	 ldr r3,[r7,#4]
- 1616 007a 5B69     	 ldr r3,[r3,#20]
- 1617 007c 1846     	 mov r0,r3
- 1618 007e 0021     	 movs r1,#0
- 1619 0080 3E4A     	 ldr r2,.L87+20
- 1620 0082 FFF7FEFF 	 bl limit
- 1621 0086 0346     	 mov r3,r0
- 1622 0088 1A46     	 mov r2,r3
- 1623 008a 3E4B     	 ldr r3,.L87+28
- 1624 008c 1A60     	 str r2,[r3]
- 279:../main.c     **** 		Mode[0] 	= OUT_GENERIC->CH0_Mode;
- 1625              	 .loc 5 279 0
- 1626 008e 7B68     	 ldr r3,[r7,#4]
- 1627 0090 9B68     	 ldr r3,[r3,#8]
- 1628 0092 354A     	 ldr r2,.L87
- 1629 0094 1360     	 str r3,[r2]
- 280:../main.c     **** 		TarPos[0] 	= OUT_GENERIC->CH0_ProfilePosition;
- 1630              	 .loc 5 280 0
- 1631 0096 7B68     	 ldr r3,[r7,#4]
- 1632 0098 DB68     	 ldr r3,[r3,#12]
- 1633 009a 3B4A     	 ldr r2,.L87+32
- 1634 009c 1360     	 str r3,[r2]
+ 1515              	 
+ 1516 0000 80B4     	 push {r7}
+ 1517              	.LCFI77:
+ 1518              	 .cfi_def_cfa_offset 4
+ 1519              	 .cfi_offset 7,-4
+ 1520 0002 85B0     	 sub sp,sp,#20
+ 1521              	.LCFI78:
+ 1522              	 .cfi_def_cfa_offset 24
+ 1523 0004 00AF     	 add r7,sp,#0
+ 1524              	.LCFI79:
+ 1525              	 .cfi_def_cfa_register 7
+ 1526 0006 F860     	 str r0,[r7,#12]
+ 1527 0008 B960     	 str r1,[r7,#8]
+ 1528 000a 7A60     	 str r2,[r7,#4]
+ 262:../main.c     **** 		if (in < min){
+ 1529              	 .loc 5 262 0
+ 1530 000c FA68     	 ldr r2,[r7,#12]
+ 1531 000e BB68     	 ldr r3,[r7,#8]
+ 1532 0010 9A42     	 cmp r2,r3
+ 1533 0012 01D2     	 bcs .L81
+ 263:../main.c     **** 			return min;
+ 1534              	 .loc 5 263 0
+ 1535 0014 BB68     	 ldr r3,[r7,#8]
+ 1536 0016 06E0     	 b .L82
+ 1537              	.L81:
+ 264:../main.c     **** 		}else if (in > max){
+ 1538              	 .loc 5 264 0
+ 1539 0018 FA68     	 ldr r2,[r7,#12]
+ 1540 001a 7B68     	 ldr r3,[r7,#4]
+ 1541 001c 9A42     	 cmp r2,r3
+ 1542 001e 01D9     	 bls .L83
+ 265:../main.c     **** 			return max;
+ 1543              	 .loc 5 265 0
+ 1544 0020 7B68     	 ldr r3,[r7,#4]
+ 1545 0022 00E0     	 b .L82
+ 1546              	.L83:
+ 266:../main.c     **** 		}else{
+ 267:../main.c     **** 			return in;
+ 1547              	 .loc 5 267 0
+ 1548 0024 FB68     	 ldr r3,[r7,#12]
+ 1549              	.L82:
+ 268:../main.c     **** 		}
+ 269:../main.c     **** 	}
+ 1550              	 .loc 5 269 0
+ 1551 0026 1846     	 mov r0,r3
+ 1552 0028 1437     	 adds r7,r7,#20
+ 1553              	.LCFI80:
+ 1554              	 .cfi_def_cfa_offset 4
+ 1555 002a BD46     	 mov sp,r7
+ 1556              	.LCFI81:
+ 1557              	 .cfi_def_cfa_register 13
+ 1558              	 
+ 1559 002c 5DF8047B 	 ldr r7,[sp],#4
+ 1560              	.LCFI82:
+ 1561              	 .cfi_restore 7
+ 1562              	 .cfi_def_cfa_offset 0
+ 1563 0030 7047     	 bx lr
+ 1564              	 .cfi_endproc
+ 1565              	.LFE362:
+ 1567 0032 00BF     	 .section .text.process_app,"ax",%progbits
+ 1568              	 .align 2
+ 1569              	 .global process_app
+ 1570              	 .thumb
+ 1571              	 .thumb_func
+ 1573              	process_app:
+ 1574              	.LFB363:
+ 270:../main.c     **** 
+ 271:../main.c     **** 
+ 272:../main.c     **** void process_app(TOBJ7000 *OUT_GENERIC, TOBJ6000 *IN_GENERIC)
+ 273:../main.c     **** {
+ 1575              	 .loc 5 273 0
+ 1576              	 .cfi_startproc
+ 1577              	 
+ 1578              	 
+ 1579 0000 80B5     	 push {r7,lr}
+ 1580              	.LCFI83:
+ 1581              	 .cfi_def_cfa_offset 8
+ 1582              	 .cfi_offset 7,-8
+ 1583              	 .cfi_offset 14,-4
+ 1584 0002 84B0     	 sub sp,sp,#16
+ 1585              	.LCFI84:
+ 1586              	 .cfi_def_cfa_offset 24
+ 1587 0004 00AF     	 add r7,sp,#0
+ 1588              	.LCFI85:
+ 1589              	 .cfi_def_cfa_register 7
+ 1590 0006 7860     	 str r0,[r7,#4]
+ 1591 0008 3960     	 str r1,[r7]
+ 274:../main.c     **** 	IN_GENERIC->CH0_ActualMode 		= Mode[0];
+ 1592              	 .loc 5 274 0
+ 1593 000a 574B     	 ldr r3,.L89
+ 1594 000c 1A68     	 ldr r2,[r3]
+ 1595 000e 3B68     	 ldr r3,[r7]
+ 1596 0010 9A60     	 str r2,[r3,#8]
+ 275:../main.c     **** 	IN_GENERIC->CH0_ActualPosition 	= ActPos[0];
+ 1597              	 .loc 5 275 0
+ 1598 0012 564B     	 ldr r3,.L89+4
+ 1599 0014 1A68     	 ldr r2,[r3]
+ 1600 0016 3B68     	 ldr r3,[r7]
+ 1601 0018 DA60     	 str r2,[r3,#12]
+ 276:../main.c     **** 	IN_GENERIC->CH0_ActualVelocity	= ActVel[0];
+ 1602              	 .loc 5 276 0
+ 1603 001a 554B     	 ldr r3,.L89+8
+ 1604 001c 1A68     	 ldr r2,[r3]
+ 1605 001e 3B68     	 ldr r3,[r7]
+ 1606 0020 1A61     	 str r2,[r3,#16]
+ 277:../main.c     **** 
+ 278:../main.c     **** 	IN_GENERIC->CH1_ActualMode 		= Mode[1];
+ 1607              	 .loc 5 278 0
+ 1608 0022 514B     	 ldr r3,.L89
+ 1609 0024 5A68     	 ldr r2,[r3,#4]
+ 1610 0026 3B68     	 ldr r3,[r7]
+ 1611 0028 5A61     	 str r2,[r3,#20]
+ 279:../main.c     **** 	IN_GENERIC->CH1_ActualPosition 	= ActPos[1];
+ 1612              	 .loc 5 279 0
+ 1613 002a 504B     	 ldr r3,.L89+4
+ 1614 002c 5A68     	 ldr r2,[r3,#4]
+ 1615 002e 3B68     	 ldr r3,[r7]
+ 1616 0030 9A61     	 str r2,[r3,#24]
+ 280:../main.c     **** 	IN_GENERIC->CH1_ActualVelocity 	= ActVel[1];
+ 1617              	 .loc 5 280 0
+ 1618 0032 4F4B     	 ldr r3,.L89+8
+ 1619 0034 5A68     	 ldr r2,[r3,#4]
+ 1620 0036 3B68     	 ldr r3,[r7]
+ 1621 0038 DA61     	 str r2,[r3,#28]
  281:../main.c     **** 
- 282:../main.c     **** 		TarVel[1] 	= limit(OUT_GENERIC->CH1_ProfileVelocity,0,220000);
- 1635              	 .loc 5 282 0
- 1636 009e 7B68     	 ldr r3,[r7,#4]
- 1637 00a0 1B6A     	 ldr r3,[r3,#32]
- 1638 00a2 1846     	 mov r0,r3
- 1639 00a4 0021     	 movs r1,#0
- 1640 00a6 354A     	 ldr r2,.L87+20
- 1641 00a8 FFF7FEFF 	 bl limit
- 1642 00ac 0346     	 mov r3,r0
- 1643 00ae 1A46     	 mov r2,r3
- 1644 00b0 334B     	 ldr r3,.L87+24
- 1645 00b2 5A60     	 str r2,[r3,#4]
- 283:../main.c     **** 		Acc[1] 		= limit(OUT_GENERIC->CH1_ProfileACC,0,220000);
- 1646              	 .loc 5 283 0
- 1647 00b4 7B68     	 ldr r3,[r7,#4]
- 1648 00b6 5B6A     	 ldr r3,[r3,#36]
- 1649 00b8 1846     	 mov r0,r3
- 1650 00ba 0021     	 movs r1,#0
- 1651 00bc 2F4A     	 ldr r2,.L87+20
- 1652 00be FFF7FEFF 	 bl limit
- 1653 00c2 0346     	 mov r3,r0
- 1654 00c4 1A46     	 mov r2,r3
- 1655 00c6 2F4B     	 ldr r3,.L87+28
- 1656 00c8 5A60     	 str r2,[r3,#4]
- 284:../main.c     **** 		Mode[1] 	= OUT_GENERIC->CH1_Mode;
- 1657              	 .loc 5 284 0
- 1658 00ca 7B68     	 ldr r3,[r7,#4]
- 1659 00cc 9B69     	 ldr r3,[r3,#24]
- 1660 00ce 264A     	 ldr r2,.L87
- 1661 00d0 5360     	 str r3,[r2,#4]
- 285:../main.c     **** 		TarPos[1] 	= OUT_GENERIC->CH1_ProfilePosition;
- 1662              	 .loc 5 285 0
- 1663 00d2 7B68     	 ldr r3,[r7,#4]
- 1664 00d4 DB69     	 ldr r3,[r3,#28]
- 1665 00d6 2C4A     	 ldr r2,.L87+32
- 1666 00d8 5360     	 str r3,[r2,#4]
- 286:../main.c     **** 
- 287:../main.c     **** 		TarVel[2] 	= limit(OUT_GENERIC->CH2_ProfileVelocity,0,220000);
- 1667              	 .loc 5 287 0
- 1668 00da 7B68     	 ldr r3,[r7,#4]
- 1669 00dc 1B6B     	 ldr r3,[r3,#48]
- 1670 00de 1846     	 mov r0,r3
- 1671 00e0 0021     	 movs r1,#0
- 1672 00e2 264A     	 ldr r2,.L87+20
- 1673 00e4 FFF7FEFF 	 bl limit
- 1674 00e8 0346     	 mov r3,r0
- 1675 00ea 1A46     	 mov r2,r3
- 1676 00ec 244B     	 ldr r3,.L87+24
- 1677 00ee 9A60     	 str r2,[r3,#8]
- 288:../main.c     **** 		Acc[2] 		= limit(OUT_GENERIC->CH2_ProfileACC,0,220000);
- 1678              	 .loc 5 288 0
- 1679 00f0 7B68     	 ldr r3,[r7,#4]
- 1680 00f2 5B6B     	 ldr r3,[r3,#52]
- 1681 00f4 1846     	 mov r0,r3
- 1682 00f6 0021     	 movs r1,#0
- 1683 00f8 204A     	 ldr r2,.L87+20
- 1684 00fa FFF7FEFF 	 bl limit
- 1685 00fe 0346     	 mov r3,r0
- 1686 0100 1A46     	 mov r2,r3
- 1687 0102 204B     	 ldr r3,.L87+28
- 1688 0104 9A60     	 str r2,[r3,#8]
- 289:../main.c     **** 		Mode[2] 	= OUT_GENERIC->CH2_Mode;
- 1689              	 .loc 5 289 0
- 1690 0106 7B68     	 ldr r3,[r7,#4]
- 1691 0108 9B6A     	 ldr r3,[r3,#40]
- 1692 010a 174A     	 ldr r2,.L87
- 1693 010c 9360     	 str r3,[r2,#8]
- 290:../main.c     **** 		TarPos[2] 	= OUT_GENERIC->CH2_ProfilePosition;
- 1694              	 .loc 5 290 0
- 1695 010e 7B68     	 ldr r3,[r7,#4]
- 1696 0110 DB6A     	 ldr r3,[r3,#44]
- 1697 0112 1D4A     	 ldr r2,.L87+32
- 1698 0114 9360     	 str r3,[r2,#8]
- 291:../main.c     **** 
- 292:../main.c     **** 		Config 		= OUT_GENERIC->Config;
- 1699              	 .loc 5 292 0
- 1700 0116 7B68     	 ldr r3,[r7,#4]
- 1701 0118 5B68     	 ldr r3,[r3,#4]
- 1702 011a 164A     	 ldr r2,.L87+12
- 1703 011c 1360     	 str r3,[r2]
- 1704 011e 1FE0     	 b .L82
- 1705              	.L83:
- 293:../main.c     **** 	}else{
- 294:../main.c     **** 		Config 		= 0;
- 1706              	 .loc 5 294 0
- 1707 0120 144B     	 ldr r3,.L87+12
- 1708 0122 0022     	 movs r2,#0
- 1709 0124 1A60     	 str r2,[r3]
- 1710              	.LBB11:
- 295:../main.c     **** 		for (uint8_t i=0; i<3; i++){
- 1711              	 .loc 5 295 0
- 1712 0126 0023     	 movs r3,#0
- 1713 0128 FB73     	 strb r3,[r7,#15]
- 1714 012a 16E0     	 b .L85
- 1715              	.L86:
- 296:../main.c     **** 			TarVel[i] = 0;
- 1716              	 .loc 5 296 0 discriminator 3
- 1717 012c FB7B     	 ldrb r3,[r7,#15]
- 1718 012e 144A     	 ldr r2,.L87+24
- 1719 0130 0021     	 movs r1,#0
- 1720 0132 42F82310 	 str r1,[r2,r3,lsl#2]
- 297:../main.c     **** 			Acc[i] = 0;
- 1721              	 .loc 5 297 0 discriminator 3
- 1722 0136 FB7B     	 ldrb r3,[r7,#15]
- 1723 0138 124A     	 ldr r2,.L87+28
- 1724 013a 0021     	 movs r1,#0
- 1725 013c 42F82310 	 str r1,[r2,r3,lsl#2]
- 298:../main.c     **** 			Mode[i] = 0;
- 1726              	 .loc 5 298 0 discriminator 3
- 1727 0140 FB7B     	 ldrb r3,[r7,#15]
- 1728 0142 094A     	 ldr r2,.L87
- 1729 0144 0021     	 movs r1,#0
- 1730 0146 42F82310 	 str r1,[r2,r3,lsl#2]
- 299:../main.c     **** 			TarPos[i] = 0;
- 1731              	 .loc 5 299 0 discriminator 3
- 1732 014a FB7B     	 ldrb r3,[r7,#15]
- 1733 014c 0E4A     	 ldr r2,.L87+32
- 1734 014e 0021     	 movs r1,#0
- 1735 0150 42F82310 	 str r1,[r2,r3,lsl#2]
- 295:../main.c     **** 			TarVel[i] = 0;
- 1736              	 .loc 5 295 0 discriminator 3
- 1737 0154 FB7B     	 ldrb r3,[r7,#15]
- 1738 0156 0133     	 adds r3,r3,#1
- 1739 0158 FB73     	 strb r3,[r7,#15]
- 1740              	.L85:
- 295:../main.c     **** 			TarVel[i] = 0;
- 1741              	 .loc 5 295 0 is_stmt 0 discriminator 1
- 1742 015a FB7B     	 ldrb r3,[r7,#15]
- 1743 015c 022B     	 cmp r3,#2
- 1744 015e E5D9     	 bls .L86
- 1745              	.L82:
- 1746              	.LBE11:
- 300:../main.c     **** 		}
- 301:../main.c     **** 	}
- 302:../main.c     **** }
- 1747              	 .loc 5 302 0 is_stmt 1
- 1748 0160 1037     	 adds r7,r7,#16
- 1749              	.LCFI86:
- 1750              	 .cfi_def_cfa_offset 8
- 1751 0162 BD46     	 mov sp,r7
- 1752              	.LCFI87:
- 1753              	 .cfi_def_cfa_register 13
- 1754              	 
- 1755 0164 80BD     	 pop {r7,pc}
- 1756              	.L88:
- 1757 0166 00BF     	 .align 2
- 1758              	.L87:
- 1759 0168 00000000 	 .word Mode
- 1760 016c 00000000 	 .word ActPos
- 1761 0170 00000000 	 .word ActVel
- 1762 0174 00000000 	 .word Config
- 1763 0178 00000000 	 .word outenable
- 1764 017c 605B0300 	 .word 220000
- 1765 0180 00000000 	 .word TarVel
- 1766 0184 00000000 	 .word Acc
- 1767 0188 00000000 	 .word TarPos
- 1768              	 .cfi_endproc
- 1769              	.LFE363:
- 1771              	 .section .text.main,"ax",%progbits
- 1772              	 .align 2
- 1773              	 .global main
- 1774              	 .thumb
- 1775              	 .thumb_func
- 1777              	main:
- 1778              	.LFB364:
+ 282:../main.c     **** 	IN_GENERIC->CH2_ActualMode		= Mode[2];
+ 1622              	 .loc 5 282 0
+ 1623 003a 4B4B     	 ldr r3,.L89
+ 1624 003c 9A68     	 ldr r2,[r3,#8]
+ 1625 003e 3B68     	 ldr r3,[r7]
+ 1626 0040 1A62     	 str r2,[r3,#32]
+ 283:../main.c     **** 	IN_GENERIC->CH2_ActualPosition 	= ActPos[2];
+ 1627              	 .loc 5 283 0
+ 1628 0042 4A4B     	 ldr r3,.L89+4
+ 1629 0044 9A68     	 ldr r2,[r3,#8]
+ 1630 0046 3B68     	 ldr r3,[r7]
+ 1631 0048 5A62     	 str r2,[r3,#36]
+ 284:../main.c     **** 	IN_GENERIC->CH2_ActualVelocity 	= ActVel[2];
+ 1632              	 .loc 5 284 0
+ 1633 004a 494B     	 ldr r3,.L89+8
+ 1634 004c 9A68     	 ldr r2,[r3,#8]
+ 1635 004e 3B68     	 ldr r3,[r7]
+ 1636 0050 9A62     	 str r2,[r3,#40]
+ 285:../main.c     **** 
+ 286:../main.c     **** 	IN_GENERIC->ActualConfig		= Config;
+ 1637              	 .loc 5 286 0
+ 1638 0052 484B     	 ldr r3,.L89+12
+ 1639 0054 1A68     	 ldr r2,[r3]
+ 1640 0056 3B68     	 ldr r3,[r7]
+ 1641 0058 5A60     	 str r2,[r3,#4]
+ 287:../main.c     **** 
+ 288:../main.c     **** 	if (outenable){
+ 1642              	 .loc 5 288 0
+ 1643 005a 474B     	 ldr r3,.L89+16
+ 1644 005c 1B78     	 ldrb r3,[r3]
+ 1645 005e 002B     	 cmp r3,#0
+ 1646 0060 5ED0     	 beq .L85
+ 289:../main.c     **** 		TarVel[0] 	= limit(OUT_GENERIC->CH0_ProfileVelocity,0,220000);
+ 1647              	 .loc 5 289 0
+ 1648 0062 7B68     	 ldr r3,[r7,#4]
+ 1649 0064 1B69     	 ldr r3,[r3,#16]
+ 1650 0066 1846     	 mov r0,r3
+ 1651 0068 0021     	 movs r1,#0
+ 1652 006a 444A     	 ldr r2,.L89+20
+ 1653 006c FFF7FEFF 	 bl limit
+ 1654 0070 0346     	 mov r3,r0
+ 1655 0072 1A46     	 mov r2,r3
+ 1656 0074 424B     	 ldr r3,.L89+24
+ 1657 0076 1A60     	 str r2,[r3]
+ 290:../main.c     **** 		Acc[0] 		= limit(OUT_GENERIC->CH0_ProfileACC,0,220000);
+ 1658              	 .loc 5 290 0
+ 1659 0078 7B68     	 ldr r3,[r7,#4]
+ 1660 007a 5B69     	 ldr r3,[r3,#20]
+ 1661 007c 1846     	 mov r0,r3
+ 1662 007e 0021     	 movs r1,#0
+ 1663 0080 3E4A     	 ldr r2,.L89+20
+ 1664 0082 FFF7FEFF 	 bl limit
+ 1665 0086 0346     	 mov r3,r0
+ 1666 0088 1A46     	 mov r2,r3
+ 1667 008a 3E4B     	 ldr r3,.L89+28
+ 1668 008c 1A60     	 str r2,[r3]
+ 291:../main.c     **** 		Mode[0] 	= OUT_GENERIC->CH0_Mode;
+ 1669              	 .loc 5 291 0
+ 1670 008e 7B68     	 ldr r3,[r7,#4]
+ 1671 0090 9B68     	 ldr r3,[r3,#8]
+ 1672 0092 354A     	 ldr r2,.L89
+ 1673 0094 1360     	 str r3,[r2]
+ 292:../main.c     **** 		TarPos[0] 	= OUT_GENERIC->CH0_ProfilePosition;
+ 1674              	 .loc 5 292 0
+ 1675 0096 7B68     	 ldr r3,[r7,#4]
+ 1676 0098 DB68     	 ldr r3,[r3,#12]
+ 1677 009a 3B4A     	 ldr r2,.L89+32
+ 1678 009c 1360     	 str r3,[r2]
+ 293:../main.c     **** 
+ 294:../main.c     **** 		TarVel[1] 	= limit(OUT_GENERIC->CH1_ProfileVelocity,0,220000);
+ 1679              	 .loc 5 294 0
+ 1680 009e 7B68     	 ldr r3,[r7,#4]
+ 1681 00a0 1B6A     	 ldr r3,[r3,#32]
+ 1682 00a2 1846     	 mov r0,r3
+ 1683 00a4 0021     	 movs r1,#0
+ 1684 00a6 354A     	 ldr r2,.L89+20
+ 1685 00a8 FFF7FEFF 	 bl limit
+ 1686 00ac 0346     	 mov r3,r0
+ 1687 00ae 1A46     	 mov r2,r3
+ 1688 00b0 334B     	 ldr r3,.L89+24
+ 1689 00b2 5A60     	 str r2,[r3,#4]
+ 295:../main.c     **** 		Acc[1] 		= limit(OUT_GENERIC->CH1_ProfileACC,0,220000);
+ 1690              	 .loc 5 295 0
+ 1691 00b4 7B68     	 ldr r3,[r7,#4]
+ 1692 00b6 5B6A     	 ldr r3,[r3,#36]
+ 1693 00b8 1846     	 mov r0,r3
+ 1694 00ba 0021     	 movs r1,#0
+ 1695 00bc 2F4A     	 ldr r2,.L89+20
+ 1696 00be FFF7FEFF 	 bl limit
+ 1697 00c2 0346     	 mov r3,r0
+ 1698 00c4 1A46     	 mov r2,r3
+ 1699 00c6 2F4B     	 ldr r3,.L89+28
+ 1700 00c8 5A60     	 str r2,[r3,#4]
+ 296:../main.c     **** 		Mode[1] 	= OUT_GENERIC->CH1_Mode;
+ 1701              	 .loc 5 296 0
+ 1702 00ca 7B68     	 ldr r3,[r7,#4]
+ 1703 00cc 9B69     	 ldr r3,[r3,#24]
+ 1704 00ce 264A     	 ldr r2,.L89
+ 1705 00d0 5360     	 str r3,[r2,#4]
+ 297:../main.c     **** 		TarPos[1] 	= OUT_GENERIC->CH1_ProfilePosition;
+ 1706              	 .loc 5 297 0
+ 1707 00d2 7B68     	 ldr r3,[r7,#4]
+ 1708 00d4 DB69     	 ldr r3,[r3,#28]
+ 1709 00d6 2C4A     	 ldr r2,.L89+32
+ 1710 00d8 5360     	 str r3,[r2,#4]
+ 298:../main.c     **** 
+ 299:../main.c     **** 		TarVel[2] 	= limit(OUT_GENERIC->CH2_ProfileVelocity,0,220000);
+ 1711              	 .loc 5 299 0
+ 1712 00da 7B68     	 ldr r3,[r7,#4]
+ 1713 00dc 1B6B     	 ldr r3,[r3,#48]
+ 1714 00de 1846     	 mov r0,r3
+ 1715 00e0 0021     	 movs r1,#0
+ 1716 00e2 264A     	 ldr r2,.L89+20
+ 1717 00e4 FFF7FEFF 	 bl limit
+ 1718 00e8 0346     	 mov r3,r0
+ 1719 00ea 1A46     	 mov r2,r3
+ 1720 00ec 244B     	 ldr r3,.L89+24
+ 1721 00ee 9A60     	 str r2,[r3,#8]
+ 300:../main.c     **** 		Acc[2] 		= limit(OUT_GENERIC->CH2_ProfileACC,0,220000);
+ 1722              	 .loc 5 300 0
+ 1723 00f0 7B68     	 ldr r3,[r7,#4]
+ 1724 00f2 5B6B     	 ldr r3,[r3,#52]
+ 1725 00f4 1846     	 mov r0,r3
+ 1726 00f6 0021     	 movs r1,#0
+ 1727 00f8 204A     	 ldr r2,.L89+20
+ 1728 00fa FFF7FEFF 	 bl limit
+ 1729 00fe 0346     	 mov r3,r0
+ 1730 0100 1A46     	 mov r2,r3
+ 1731 0102 204B     	 ldr r3,.L89+28
+ 1732 0104 9A60     	 str r2,[r3,#8]
+ 301:../main.c     **** 		Mode[2] 	= OUT_GENERIC->CH2_Mode;
+ 1733              	 .loc 5 301 0
+ 1734 0106 7B68     	 ldr r3,[r7,#4]
+ 1735 0108 9B6A     	 ldr r3,[r3,#40]
+ 1736 010a 174A     	 ldr r2,.L89
+ 1737 010c 9360     	 str r3,[r2,#8]
+ 302:../main.c     **** 		TarPos[2] 	= OUT_GENERIC->CH2_ProfilePosition;
+ 1738              	 .loc 5 302 0
+ 1739 010e 7B68     	 ldr r3,[r7,#4]
+ 1740 0110 DB6A     	 ldr r3,[r3,#44]
+ 1741 0112 1D4A     	 ldr r2,.L89+32
+ 1742 0114 9360     	 str r3,[r2,#8]
  303:../main.c     **** 
- 304:../main.c     **** int main(void)
- 305:../main.c     **** {
- 1779              	 .loc 5 305 0
- 1780              	 .cfi_startproc
- 1781              	 
- 1782              	 
- 1783 0000 80B5     	 push {r7,lr}
- 1784              	.LCFI88:
- 1785              	 .cfi_def_cfa_offset 8
- 1786              	 .cfi_offset 7,-8
- 1787              	 .cfi_offset 14,-4
- 1788 0002 82B0     	 sub sp,sp,#8
- 1789              	.LCFI89:
- 1790              	 .cfi_def_cfa_offset 16
- 1791 0004 00AF     	 add r7,sp,#0
- 1792              	.LCFI90:
- 1793              	 .cfi_def_cfa_register 7
- 306:../main.c     ****   DAVE_STATUS_t status;
- 307:../main.c     ****   status = DAVE_Init();                     /* Initialization of DAVE APPs  */
- 1794              	 .loc 5 307 0
- 1795 0006 FFF7FEFF 	 bl DAVE_Init
- 1796 000a 0346     	 mov r3,r0
- 1797 000c FB71     	 strb r3,[r7,#7]
- 308:../main.c     ****   Init_GPIO();                   /* Initialize GPIO */
- 1798              	 .loc 5 308 0
- 1799 000e FFF7FEFF 	 bl Init_GPIO
- 309:../main.c     ****   if(status == DAVE_STATUS_FAILURE)
- 1800              	 .loc 5 309 0
- 1801 0012 FB79     	 ldrb r3,[r7,#7]
- 1802 0014 012B     	 cmp r3,#1
- 1803 0016 00D1     	 bne .L90
- 1804              	.L91:
- 310:../main.c     ****   {
- 311:../main.c     ****     /* Placeholder for error handler code. The while loop below can be replaced with an user error 
- 312:../main.c     ****     XMC_DEBUG("DAVE APPs initialization failed\n");
- 313:../main.c     ****     while(1U)
- 314:../main.c     ****     {
- 315:../main.c     ****     }
- 1805              	 .loc 5 315 0 discriminator 1
- 1806 0018 FEE7     	 b .L91
- 1807              	.L90:
- 316:../main.c     ****   }
- 317:../main.c     ****   /* Placeholder for user application code. The while loop below can be replaced with user applicat
- 318:../main.c     ****   while(1U)
- 319:../main.c     ****   {
- 320:../main.c     ****     MainLoop();
- 1808              	 .loc 5 320 0 discriminator 1
- 1809 001a FFF7FEFF 	 bl MainLoop
- 321:../main.c     ****   }
- 1810              	 .loc 5 321 0 discriminator 1
- 1811 001e FCE7     	 b .L90
+ 304:../main.c     **** 		Config 		= OUT_GENERIC->Config;
+ 1743              	 .loc 5 304 0
+ 1744 0116 7B68     	 ldr r3,[r7,#4]
+ 1745 0118 5B68     	 ldr r3,[r3,#4]
+ 1746 011a 164A     	 ldr r2,.L89+12
+ 1747 011c 1360     	 str r3,[r2]
+ 1748 011e 1FE0     	 b .L84
+ 1749              	.L85:
+ 305:../main.c     **** 	}else{
+ 306:../main.c     **** 		Config 		= 0;
+ 1750              	 .loc 5 306 0
+ 1751 0120 144B     	 ldr r3,.L89+12
+ 1752 0122 0022     	 movs r2,#0
+ 1753 0124 1A60     	 str r2,[r3]
+ 1754              	.LBB11:
+ 307:../main.c     **** 		for (uint8_t i=0; i<3; i++){
+ 1755              	 .loc 5 307 0
+ 1756 0126 0023     	 movs r3,#0
+ 1757 0128 FB73     	 strb r3,[r7,#15]
+ 1758 012a 16E0     	 b .L87
+ 1759              	.L88:
+ 308:../main.c     **** 			TarVel[i] = 0;
+ 1760              	 .loc 5 308 0 discriminator 3
+ 1761 012c FB7B     	 ldrb r3,[r7,#15]
+ 1762 012e 144A     	 ldr r2,.L89+24
+ 1763 0130 0021     	 movs r1,#0
+ 1764 0132 42F82310 	 str r1,[r2,r3,lsl#2]
+ 309:../main.c     **** 			Acc[i] = 0;
+ 1765              	 .loc 5 309 0 discriminator 3
+ 1766 0136 FB7B     	 ldrb r3,[r7,#15]
+ 1767 0138 124A     	 ldr r2,.L89+28
+ 1768 013a 0021     	 movs r1,#0
+ 1769 013c 42F82310 	 str r1,[r2,r3,lsl#2]
+ 310:../main.c     **** 			Mode[i] = 0;
+ 1770              	 .loc 5 310 0 discriminator 3
+ 1771 0140 FB7B     	 ldrb r3,[r7,#15]
+ 1772 0142 094A     	 ldr r2,.L89
+ 1773 0144 0021     	 movs r1,#0
+ 1774 0146 42F82310 	 str r1,[r2,r3,lsl#2]
+ 311:../main.c     **** 			TarPos[i] = 0;
+ 1775              	 .loc 5 311 0 discriminator 3
+ 1776 014a FB7B     	 ldrb r3,[r7,#15]
+ 1777 014c 0E4A     	 ldr r2,.L89+32
+ 1778 014e 0021     	 movs r1,#0
+ 1779 0150 42F82310 	 str r1,[r2,r3,lsl#2]
+ 307:../main.c     **** 			TarVel[i] = 0;
+ 1780              	 .loc 5 307 0 discriminator 3
+ 1781 0154 FB7B     	 ldrb r3,[r7,#15]
+ 1782 0156 0133     	 adds r3,r3,#1
+ 1783 0158 FB73     	 strb r3,[r7,#15]
+ 1784              	.L87:
+ 307:../main.c     **** 			TarVel[i] = 0;
+ 1785              	 .loc 5 307 0 is_stmt 0 discriminator 1
+ 1786 015a FB7B     	 ldrb r3,[r7,#15]
+ 1787 015c 022B     	 cmp r3,#2
+ 1788 015e E5D9     	 bls .L88
+ 1789              	.L84:
+ 1790              	.LBE11:
+ 312:../main.c     **** 		}
+ 313:../main.c     **** 	}
+ 314:../main.c     **** }
+ 1791              	 .loc 5 314 0 is_stmt 1
+ 1792 0160 1037     	 adds r7,r7,#16
+ 1793              	.LCFI86:
+ 1794              	 .cfi_def_cfa_offset 8
+ 1795 0162 BD46     	 mov sp,r7
+ 1796              	.LCFI87:
+ 1797              	 .cfi_def_cfa_register 13
+ 1798              	 
+ 1799 0164 80BD     	 pop {r7,pc}
+ 1800              	.L90:
+ 1801 0166 00BF     	 .align 2
+ 1802              	.L89:
+ 1803 0168 00000000 	 .word Mode
+ 1804 016c 00000000 	 .word ActPos
+ 1805 0170 00000000 	 .word ActVel
+ 1806 0174 00000000 	 .word Config
+ 1807 0178 00000000 	 .word outenable
+ 1808 017c 605B0300 	 .word 220000
+ 1809 0180 00000000 	 .word TarVel
+ 1810 0184 00000000 	 .word Acc
+ 1811 0188 00000000 	 .word TarPos
  1812              	 .cfi_endproc
- 1813              	.LFE364:
- 1815              	 .section .text.ERU1_3_IRQHandler,"ax",%progbits
+ 1813              	.LFE363:
+ 1815              	 .section .text.main,"ax",%progbits
  1816              	 .align 2
- 1817              	 .global ERU1_3_IRQHandler
+ 1817              	 .global main
  1818              	 .thumb
  1819              	 .thumb_func
- 1821              	ERU1_3_IRQHandler:
- 1822              	.LFB365:
- 322:../main.c     **** }
- 323:../main.c     **** 
- 324:../main.c     **** /**
- 325:../main.c     **** 
- 326:../main.c     ****  * @brief SYNC0IRQHandler() - EtherCAT Interrupt Routine for SYNC0
- 327:../main.c     ****  *
- 328:../main.c     ****  * <b>Details of function</b><br>
- 329:../main.c     ****  * This routine is handling the SYNC0 Interrupts and need to call the SSC Stack
- 330:../main.c     ****  */
- 331:../main.c     **** void SYNC0IRQHandler (void)
- 332:../main.c     **** {
- 1823              	 .loc 5 332 0
+ 1821              	main:
+ 1822              	.LFB364:
+ 315:../main.c     **** 
+ 316:../main.c     **** int main(void)
+ 317:../main.c     **** {
+ 1823              	 .loc 5 317 0
  1824              	 .cfi_startproc
  1825              	 
  1826              	 
  1827 0000 80B5     	 push {r7,lr}
- 1828              	.LCFI91:
+ 1828              	.LCFI88:
  1829              	 .cfi_def_cfa_offset 8
  1830              	 .cfi_offset 7,-8
  1831              	 .cfi_offset 14,-4
- 1832 0002 00AF     	 add r7,sp,#0
- 1833              	.LCFI92:
- 1834              	 .cfi_def_cfa_register 7
- 333:../main.c     **** 	Sync0_Isr();
- 1835              	 .loc 5 333 0
- 1836 0004 FFF7FEFF 	 bl Sync0_Isr
+ 1832 0002 82B0     	 sub sp,sp,#8
+ 1833              	.LCFI89:
+ 1834              	 .cfi_def_cfa_offset 16
+ 1835 0004 00AF     	 add r7,sp,#0
+ 1836              	.LCFI90:
+ 1837              	 .cfi_def_cfa_register 7
+ 318:../main.c     ****   DAVE_STATUS_t status;
+ 319:../main.c     ****   status = DAVE_Init();                     /* Initialization of DAVE APPs  */
+ 1838              	 .loc 5 319 0
+ 1839 0006 FFF7FEFF 	 bl DAVE_Init
+ 1840 000a 0346     	 mov r3,r0
+ 1841 000c FB71     	 strb r3,[r7,#7]
+ 320:../main.c     ****   Init_GPIO();                   /* Initialize GPIO */
+ 1842              	 .loc 5 320 0
+ 1843 000e FFF7FEFF 	 bl Init_GPIO
+ 321:../main.c     ****   if(status == DAVE_STATUS_FAILURE)
+ 1844              	 .loc 5 321 0
+ 1845 0012 FB79     	 ldrb r3,[r7,#7]
+ 1846 0014 012B     	 cmp r3,#1
+ 1847 0016 00D1     	 bne .L92
+ 1848              	.L93:
+ 322:../main.c     ****   {
+ 323:../main.c     ****     /* Placeholder for error handler code. The while loop below can be replaced with an user error 
+ 324:../main.c     ****     XMC_DEBUG("DAVE APPs initialization failed\n");
+ 325:../main.c     ****     while(1U)
+ 326:../main.c     ****     {
+ 327:../main.c     ****     }
+ 1849              	 .loc 5 327 0 discriminator 1
+ 1850 0018 FEE7     	 b .L93
+ 1851              	.L92:
+ 328:../main.c     ****   }
+ 329:../main.c     ****   /* Placeholder for user application code. The while loop below can be replaced with user applicat
+ 330:../main.c     ****   while(1U)
+ 331:../main.c     ****   {
+ 332:../main.c     ****     MainLoop();
+ 1852              	 .loc 5 332 0 discriminator 1
+ 1853 001a FFF7FEFF 	 bl MainLoop
+ 333:../main.c     ****   }
+ 1854              	 .loc 5 333 0 discriminator 1
+ 1855 001e FCE7     	 b .L92
+ 1856              	 .cfi_endproc
+ 1857              	.LFE364:
+ 1859              	 .section .text.ERU1_3_IRQHandler,"ax",%progbits
+ 1860              	 .align 2
+ 1861              	 .global ERU1_3_IRQHandler
+ 1862              	 .thumb
+ 1863              	 .thumb_func
+ 1865              	ERU1_3_IRQHandler:
+ 1866              	.LFB365:
  334:../main.c     **** }
- 1837              	 .loc 5 334 0
- 1838 0008 80BD     	 pop {r7,pc}
- 1839              	 .cfi_endproc
- 1840              	.LFE365:
- 1842 000a 00BF     	 .section .text.ERU1_0_IRQHandler,"ax",%progbits
- 1843              	 .align 2
- 1844              	 .global ERU1_0_IRQHandler
- 1845              	 .thumb
- 1846              	 .thumb_func
- 1848              	ERU1_0_IRQHandler:
- 1849              	.LFB366:
  335:../main.c     **** 
  336:../main.c     **** /**
  337:../main.c     **** 
- 338:../main.c     ****  * @brief SYNC1IRQHandler() - EtherCAT Interrupt Routine for SYNC1
+ 338:../main.c     ****  * @brief SYNC0IRQHandler() - EtherCAT Interrupt Routine for SYNC0
  339:../main.c     ****  *
  340:../main.c     ****  * <b>Details of function</b><br>
- 341:../main.c     ****  * This routine is handling the SYNC1 Interrupts and need to call the SSC Stack
+ 341:../main.c     ****  * This routine is handling the SYNC0 Interrupts and need to call the SSC Stack
  342:../main.c     ****  */
- 343:../main.c     **** void SYNC1IRQHandler (void)
+ 343:../main.c     **** void SYNC0IRQHandler (void)
  344:../main.c     **** {
- 1850              	 .loc 5 344 0
- 1851              	 .cfi_startproc
- 1852              	 
- 1853              	 
- 1854 0000 80B5     	 push {r7,lr}
- 1855              	.LCFI93:
- 1856              	 .cfi_def_cfa_offset 8
- 1857              	 .cfi_offset 7,-8
- 1858              	 .cfi_offset 14,-4
- 1859 0002 00AF     	 add r7,sp,#0
- 1860              	.LCFI94:
- 1861              	 .cfi_def_cfa_register 7
- 345:../main.c     **** 	Sync1_Isr();
- 1862              	 .loc 5 345 0
- 1863 0004 FFF7FEFF 	 bl Sync1_Isr
+ 1867              	 .loc 5 344 0
+ 1868              	 .cfi_startproc
+ 1869              	 
+ 1870              	 
+ 1871 0000 80B5     	 push {r7,lr}
+ 1872              	.LCFI91:
+ 1873              	 .cfi_def_cfa_offset 8
+ 1874              	 .cfi_offset 7,-8
+ 1875              	 .cfi_offset 14,-4
+ 1876 0002 00AF     	 add r7,sp,#0
+ 1877              	.LCFI92:
+ 1878              	 .cfi_def_cfa_register 7
+ 345:../main.c     **** 	Sync0_Isr();
+ 1879              	 .loc 5 345 0
+ 1880 0004 FFF7FEFF 	 bl Sync0_Isr
  346:../main.c     **** }
- 1864              	 .loc 5 346 0
- 1865 0008 80BD     	 pop {r7,pc}
- 1866              	 .cfi_endproc
- 1867              	.LFE366:
- 1869 000a 00BF     	 .section .text.ENABLE_ESC_INT_USER,"ax",%progbits
- 1870              	 .align 2
- 1871              	 .global ENABLE_ESC_INT_USER
- 1872              	 .thumb
- 1873              	 .thumb_func
- 1875              	ENABLE_ESC_INT_USER:
- 1876              	.LFB367:
+ 1881              	 .loc 5 346 0
+ 1882 0008 80BD     	 pop {r7,pc}
+ 1883              	 .cfi_endproc
+ 1884              	.LFE365:
+ 1886 000a 00BF     	 .section .text.ERU1_0_IRQHandler,"ax",%progbits
+ 1887              	 .align 2
+ 1888              	 .global ERU1_0_IRQHandler
+ 1889              	 .thumb
+ 1890              	 .thumb_func
+ 1892              	ERU1_0_IRQHandler:
+ 1893              	.LFB366:
  347:../main.c     **** 
  348:../main.c     **** /**
  349:../main.c     **** 
- 350:../main.c     ****  * @brief ENABLE_ESC_INT_USER() - Enabling of user specific EtherCAT Interrupt Routines
+ 350:../main.c     ****  * @brief SYNC1IRQHandler() - EtherCAT Interrupt Routine for SYNC1
  351:../main.c     ****  *
  352:../main.c     ****  * <b>Details of function</b><br>
- 353:../main.c     ****  * This routine is called from ECAT_APP on request of SSC stack once interrupts (sync1/sync0) need 
+ 353:../main.c     ****  * This routine is handling the SYNC1 Interrupts and need to call the SSC Stack
  354:../main.c     ****  */
- 355:../main.c     **** void ENABLE_ESC_INT_USER()
+ 355:../main.c     **** void SYNC1IRQHandler (void)
  356:../main.c     **** {
- 1877              	 .loc 5 356 0
- 1878              	 .cfi_startproc
- 1879              	 
- 1880              	 
- 1881 0000 80B5     	 push {r7,lr}
- 1882              	.LCFI95:
- 1883              	 .cfi_def_cfa_offset 8
- 1884              	 .cfi_offset 7,-8
- 1885              	 .cfi_offset 14,-4
- 1886 0002 00AF     	 add r7,sp,#0
- 1887              	.LCFI96:
- 1888              	 .cfi_def_cfa_register 7
- 357:../main.c     **** 	INTERRUPT_Enable(&INT_SYNC0);
- 1889              	 .loc 5 357 0
- 1890 0004 0348     	 ldr r0,.L95
- 1891 0006 FFF7FEFF 	 bl INTERRUPT_Enable
- 358:../main.c     **** 	INTERRUPT_Enable(&INT_SYNC1);
- 1892              	 .loc 5 358 0
- 1893 000a 0348     	 ldr r0,.L95+4
- 1894 000c FFF7FEFF 	 bl INTERRUPT_Enable
- 359:../main.c     **** }
- 1895              	 .loc 5 359 0
- 1896 0010 80BD     	 pop {r7,pc}
- 1897              	.L96:
- 1898 0012 00BF     	 .align 2
- 1899              	.L95:
- 1900 0014 00000000 	 .word INT_SYNC0
- 1901 0018 00000000 	 .word INT_SYNC1
- 1902              	 .cfi_endproc
- 1903              	.LFE367:
- 1905              	 .section .text.DISABLE_ESC_INT_USER,"ax",%progbits
- 1906              	 .align 2
- 1907              	 .global DISABLE_ESC_INT_USER
- 1908              	 .thumb
- 1909              	 .thumb_func
- 1911              	DISABLE_ESC_INT_USER:
- 1912              	.LFB368:
- 360:../main.c     **** 
- 361:../main.c     **** /**
- 362:../main.c     **** 
- 363:../main.c     ****  * @brief DISABLE_ESC_INT_USER() - Disabling of user specific EtherCAT Interrupt Routines
- 364:../main.c     ****  *
- 365:../main.c     ****  * <b>Details of function</b><br>
- 366:../main.c     ****  * This routine is called from ECAT_APP on request of SSC stack once interrupts (sync1/sync0) need 
- 367:../main.c     ****  */
- 368:../main.c     **** void DISABLE_ESC_INT_USER()
- 369:../main.c     **** {
- 1913              	 .loc 5 369 0
- 1914              	 .cfi_startproc
- 1915              	 
- 1916              	 
- 1917 0000 80B5     	 push {r7,lr}
- 1918              	.LCFI97:
- 1919              	 .cfi_def_cfa_offset 8
- 1920              	 .cfi_offset 7,-8
- 1921              	 .cfi_offset 14,-4
- 1922 0002 00AF     	 add r7,sp,#0
- 1923              	.LCFI98:
- 1924              	 .cfi_def_cfa_register 7
- 370:../main.c     **** 	INTERRUPT_Disable(&INT_SYNC0);
- 1925              	 .loc 5 370 0
- 1926 0004 0348     	 ldr r0,.L98
- 1927 0006 FFF7FEFF 	 bl INTERRUPT_Disable
- 371:../main.c     **** 	INTERRUPT_Disable(&INT_SYNC1);
- 1928              	 .loc 5 371 0
- 1929 000a 0348     	 ldr r0,.L98+4
- 1930 000c FFF7FEFF 	 bl INTERRUPT_Disable
- 372:../main.c     **** }
- 1931              	 .loc 5 372 0
- 1932 0010 80BD     	 pop {r7,pc}
- 1933              	.L99:
- 1934 0012 00BF     	 .align 2
- 1935              	.L98:
- 1936 0014 00000000 	 .word INT_SYNC0
- 1937 0018 00000000 	 .word INT_SYNC1
- 1938              	 .cfi_endproc
- 1939              	.LFE368:
- 1941              	 .text
- 1942              	.Letext0:
- 1943              	 .file 6 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
- 1944              	 .file 7 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
- 1945              	 .file 8 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Infineon/XMC4300_series/Include/XMC4300.h"
- 1946              	 .file 9 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc/xmc4_scu.h"
- 1947              	 .file 10 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc/xmc4_gpio.h"
- 1948              	 .file 11 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc/xmc_ccu4.h"
- 1949              	 .file 12 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/GLOBAL_CCU4/global_ccu4.h"
- 1950              	 .file 13 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/PWM_CCU4/pwm_ccu4.h"
- 1951              	 .file 14 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/DAVE.h"
- 1952              	 .file 15 "../SSC/Src/XMC_ESCObjects.h"
- 1953              	 .file 16 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Infineon/XMC4300_series/Include/system_XMC4300.h"
- 1954              	 .file 17 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/INTERRUPT/interrupt_extern.h"
- 1955              	 .file 18 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/PWM_CCU4/pwm_ccu4_extern.h"
+ 1894              	 .loc 5 356 0
+ 1895              	 .cfi_startproc
+ 1896              	 
+ 1897              	 
+ 1898 0000 80B5     	 push {r7,lr}
+ 1899              	.LCFI93:
+ 1900              	 .cfi_def_cfa_offset 8
+ 1901              	 .cfi_offset 7,-8
+ 1902              	 .cfi_offset 14,-4
+ 1903 0002 00AF     	 add r7,sp,#0
+ 1904              	.LCFI94:
+ 1905              	 .cfi_def_cfa_register 7
+ 357:../main.c     **** 	Sync1_Isr();
+ 1906              	 .loc 5 357 0
+ 1907 0004 FFF7FEFF 	 bl Sync1_Isr
+ 358:../main.c     **** }
+ 1908              	 .loc 5 358 0
+ 1909 0008 80BD     	 pop {r7,pc}
+ 1910              	 .cfi_endproc
+ 1911              	.LFE366:
+ 1913 000a 00BF     	 .section .text.ENABLE_ESC_INT_USER,"ax",%progbits
+ 1914              	 .align 2
+ 1915              	 .global ENABLE_ESC_INT_USER
+ 1916              	 .thumb
+ 1917              	 .thumb_func
+ 1919              	ENABLE_ESC_INT_USER:
+ 1920              	.LFB367:
+ 359:../main.c     **** 
+ 360:../main.c     **** /**
+ 361:../main.c     **** 
+ 362:../main.c     ****  * @brief ENABLE_ESC_INT_USER() - Enabling of user specific EtherCAT Interrupt Routines
+ 363:../main.c     ****  *
+ 364:../main.c     ****  * <b>Details of function</b><br>
+ 365:../main.c     ****  * This routine is called from ECAT_APP on request of SSC stack once interrupts (sync1/sync0) need 
+ 366:../main.c     ****  */
+ 367:../main.c     **** void ENABLE_ESC_INT_USER()
+ 368:../main.c     **** {
+ 1921              	 .loc 5 368 0
+ 1922              	 .cfi_startproc
+ 1923              	 
+ 1924              	 
+ 1925 0000 80B5     	 push {r7,lr}
+ 1926              	.LCFI95:
+ 1927              	 .cfi_def_cfa_offset 8
+ 1928              	 .cfi_offset 7,-8
+ 1929              	 .cfi_offset 14,-4
+ 1930 0002 00AF     	 add r7,sp,#0
+ 1931              	.LCFI96:
+ 1932              	 .cfi_def_cfa_register 7
+ 369:../main.c     **** 	INTERRUPT_Enable(&INT_SYNC0);
+ 1933              	 .loc 5 369 0
+ 1934 0004 0348     	 ldr r0,.L97
+ 1935 0006 FFF7FEFF 	 bl INTERRUPT_Enable
+ 370:../main.c     **** 	INTERRUPT_Enable(&INT_SYNC1);
+ 1936              	 .loc 5 370 0
+ 1937 000a 0348     	 ldr r0,.L97+4
+ 1938 000c FFF7FEFF 	 bl INTERRUPT_Enable
+ 371:../main.c     **** }
+ 1939              	 .loc 5 371 0
+ 1940 0010 80BD     	 pop {r7,pc}
+ 1941              	.L98:
+ 1942 0012 00BF     	 .align 2
+ 1943              	.L97:
+ 1944 0014 00000000 	 .word INT_SYNC0
+ 1945 0018 00000000 	 .word INT_SYNC1
+ 1946              	 .cfi_endproc
+ 1947              	.LFE367:
+ 1949              	 .section .text.DISABLE_ESC_INT_USER,"ax",%progbits
+ 1950              	 .align 2
+ 1951              	 .global DISABLE_ESC_INT_USER
+ 1952              	 .thumb
+ 1953              	 .thumb_func
+ 1955              	DISABLE_ESC_INT_USER:
+ 1956              	.LFB368:
+ 372:../main.c     **** 
+ 373:../main.c     **** /**
+ 374:../main.c     **** 
+ 375:../main.c     ****  * @brief DISABLE_ESC_INT_USER() - Disabling of user specific EtherCAT Interrupt Routines
+ 376:../main.c     ****  *
+ 377:../main.c     ****  * <b>Details of function</b><br>
+ 378:../main.c     ****  * This routine is called from ECAT_APP on request of SSC stack once interrupts (sync1/sync0) need 
+ 379:../main.c     ****  */
+ 380:../main.c     **** void DISABLE_ESC_INT_USER()
+ 381:../main.c     **** {
+ 1957              	 .loc 5 381 0
+ 1958              	 .cfi_startproc
+ 1959              	 
+ 1960              	 
+ 1961 0000 80B5     	 push {r7,lr}
+ 1962              	.LCFI97:
+ 1963              	 .cfi_def_cfa_offset 8
+ 1964              	 .cfi_offset 7,-8
+ 1965              	 .cfi_offset 14,-4
+ 1966 0002 00AF     	 add r7,sp,#0
+ 1967              	.LCFI98:
+ 1968              	 .cfi_def_cfa_register 7
+ 382:../main.c     **** 	INTERRUPT_Disable(&INT_SYNC0);
+ 1969              	 .loc 5 382 0
+ 1970 0004 0348     	 ldr r0,.L100
+ 1971 0006 FFF7FEFF 	 bl INTERRUPT_Disable
+ 383:../main.c     **** 	INTERRUPT_Disable(&INT_SYNC1);
+ 1972              	 .loc 5 383 0
+ 1973 000a 0348     	 ldr r0,.L100+4
+ 1974 000c FFF7FEFF 	 bl INTERRUPT_Disable
+ 384:../main.c     **** }
+ 1975              	 .loc 5 384 0
+ 1976 0010 80BD     	 pop {r7,pc}
+ 1977              	.L101:
+ 1978 0012 00BF     	 .align 2
+ 1979              	.L100:
+ 1980 0014 00000000 	 .word INT_SYNC0
+ 1981 0018 00000000 	 .word INT_SYNC1
+ 1982              	 .cfi_endproc
+ 1983              	.LFE368:
+ 1985              	 .text
+ 1986              	.Letext0:
+ 1987              	 .file 6 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 1988              	 .file 7 "c:\\tools\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 1989              	 .file 8 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Infineon/XMC4300_series/Include/XMC4300.h"
+ 1990              	 .file 9 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc/xmc4_scu.h"
+ 1991              	 .file 10 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc/xmc4_gpio.h"
+ 1992              	 .file 11 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/XMCLib/inc/xmc_ccu4.h"
+ 1993              	 .file 12 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/GLOBAL_CCU4/global_ccu4.h"
+ 1994              	 .file 13 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/PWM_CCU4/pwm_ccu4.h"
+ 1995              	 .file 14 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/DAVE.h"
+ 1996              	 .file 15 "../SSC/Src/XMC_ESCObjects.h"
+ 1997              	 .file 16 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Libraries/CMSIS/Infineon/XMC4300_series/Include/system_XMC4300.h"
+ 1998              	 .file 17 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/INTERRUPT/interrupt_extern.h"
+ 1999              	 .file 18 "C:/Users/Admin/DaveWorkspaces/XMC4300_Motor_Controller/Dave/Generated/PWM_CCU4/pwm_ccu4_extern.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
     {standard input}:20     .text.__NVIC_EnableIRQ:00000000 $t
@@ -5456,7 +5512,7 @@ DEFINED SYMBOLS
                             *COM*:0000000c StartPos
                             *COM*:0000000c ProcessPos
                             *COM*:00000004 Config
-                            *COM*:00000002 SmoothTime
+                            *COM*:00000001 clspos_enable
                             *COM*:00000001 outenable
     {standard input}:304    .text.process_stopoutput:00000000 $t
     {standard input}:309    .text.process_stopoutput:00000000 process_stopoutput
@@ -5482,27 +5538,27 @@ DEFINED SYMBOLS
     {standard input}:1063   .text.PosCtrl:0000018c $d
     {standard input}:1072   .text.CCU40_2_IRQHandler:00000000 $t
     {standard input}:1077   .text.CCU40_2_IRQHandler:00000000 CCU40_2_IRQHandler
-    {standard input}:1339   .text.CCU40_2_IRQHandler:000001b4 $d
-    {standard input}:1357   .text.Init_GPIO:00000000 $t
-    {standard input}:1362   .text.Init_GPIO:00000000 Init_GPIO
-    {standard input}:1451   .text.Init_GPIO:0000008c $d
-    {standard input}:1460   .text.limit:00000000 $t
-    {standard input}:1465   .text.limit:00000000 limit
-    {standard input}:1524   .text.process_app:00000000 $t
-    {standard input}:1529   .text.process_app:00000000 process_app
-    {standard input}:1759   .text.process_app:00000168 $d
-    {standard input}:1772   .text.main:00000000 $t
-    {standard input}:1777   .text.main:00000000 main
-    {standard input}:1816   .text.ERU1_3_IRQHandler:00000000 $t
-    {standard input}:1821   .text.ERU1_3_IRQHandler:00000000 ERU1_3_IRQHandler
-    {standard input}:1843   .text.ERU1_0_IRQHandler:00000000 $t
-    {standard input}:1848   .text.ERU1_0_IRQHandler:00000000 ERU1_0_IRQHandler
-    {standard input}:1870   .text.ENABLE_ESC_INT_USER:00000000 $t
-    {standard input}:1875   .text.ENABLE_ESC_INT_USER:00000000 ENABLE_ESC_INT_USER
-    {standard input}:1900   .text.ENABLE_ESC_INT_USER:00000014 $d
-    {standard input}:1906   .text.DISABLE_ESC_INT_USER:00000000 $t
-    {standard input}:1911   .text.DISABLE_ESC_INT_USER:00000000 DISABLE_ESC_INT_USER
-    {standard input}:1936   .text.DISABLE_ESC_INT_USER:00000014 $d
+    {standard input}:1381   .text.CCU40_2_IRQHandler:000001f8 $d
+    {standard input}:1401   .text.Init_GPIO:00000000 $t
+    {standard input}:1406   .text.Init_GPIO:00000000 Init_GPIO
+    {standard input}:1495   .text.Init_GPIO:0000008c $d
+    {standard input}:1504   .text.limit:00000000 $t
+    {standard input}:1509   .text.limit:00000000 limit
+    {standard input}:1568   .text.process_app:00000000 $t
+    {standard input}:1573   .text.process_app:00000000 process_app
+    {standard input}:1803   .text.process_app:00000168 $d
+    {standard input}:1816   .text.main:00000000 $t
+    {standard input}:1821   .text.main:00000000 main
+    {standard input}:1860   .text.ERU1_3_IRQHandler:00000000 $t
+    {standard input}:1865   .text.ERU1_3_IRQHandler:00000000 ERU1_3_IRQHandler
+    {standard input}:1887   .text.ERU1_0_IRQHandler:00000000 $t
+    {standard input}:1892   .text.ERU1_0_IRQHandler:00000000 ERU1_0_IRQHandler
+    {standard input}:1914   .text.ENABLE_ESC_INT_USER:00000000 $t
+    {standard input}:1919   .text.ENABLE_ESC_INT_USER:00000000 ENABLE_ESC_INT_USER
+    {standard input}:1944   .text.ENABLE_ESC_INT_USER:00000014 $d
+    {standard input}:1950   .text.DISABLE_ESC_INT_USER:00000000 $t
+    {standard input}:1955   .text.DISABLE_ESC_INT_USER:00000000 DISABLE_ESC_INT_USER
+    {standard input}:1980   .text.DISABLE_ESC_INT_USER:00000014 $d
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS

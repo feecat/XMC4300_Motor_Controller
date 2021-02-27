@@ -15,6 +15,12 @@ Connect with Driver by 4 wire: ENA, PWM, DIR, GND.
 Set ProfilePosition( CHx_Mode = 1) or ProfileVelocity( CHx_Mode = 3) in EtherCAT Master:  
 In ProfilePosition Mode, Set the CHx_ProfilePosition, CHx_ProfileVelocity, CHx_ProfileACC, Then it will output pulse and automaticly stop at profile position.  
 In ProfileVelocity Mode, Set the CHx_ProfileVelocity, CHx_ProfileACC, Then it will output pulse continually.  
+Example:  
+A linear module with DM542 Stepperdriver. pitch is 4mm. Set pulse/rev to 3200.  
+Set Mode to 1 to use position mode.  
+Set ProfileVelocity to 64000 = 20r/s = 80mm/s = 4.8M/MIN
+Set ProfileACC to 320 = 0.1r/ms2 = 400mm/s2 = 0.4M/S2 = 0.4G
+Set ProfilePosition to 64000 = 20r = 80mm
 
 PINOUT:  
 | # | PINOUT | # |
@@ -28,7 +34,7 @@ PINOUT:
 ||DIR|P5.0|
 
 The Enable is Config.0, its just connect to P0.0, not global enable signal.  
-The SmoothTime is Config.16~Config.31, Smooth Enable is Config.2, Im not sure...  
+The position clear is Config.1, Trigger it to clear position...  
 
 ## Prices  
 Normally we can got a ethercat step driver by 600 rmb( [DM3E-556](https://detail.tmall.com/item.htm?id=630197660852&skuId=4487299420139)). But we can got a pulse step driver by 50 rmb( [DM542](https://item.taobao.com/item.htm?id=579401847502)).  

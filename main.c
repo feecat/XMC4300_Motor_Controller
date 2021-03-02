@@ -54,7 +54,7 @@ uint8_t clspos_enable;
 	{
 		uint8_t n = 0;
 		ActPos[n] = (Dir[n]==0)?ActPos[n]+1:ActPos[n]-1;
-		if ((Mode[n] == 1) && (ActPos[0] == TarPos[n])){
+		if ((Mode[n] == 1) && (ActPos[n] == TarPos[n])){
 			ActVel[n] = 0;
 			CtrlVel[n] = 0;
 			TarVel[n] = 0;
@@ -66,7 +66,7 @@ uint8_t clspos_enable;
 	{
 		uint8_t n = 1;
 		ActPos[n] = (Dir[n]==0)?ActPos[n]+1:ActPos[n]-1;
-		if ((Mode[n] == 1) && (ActPos[0] == TarPos[n])){
+		if ((Mode[n] == 1) && (ActPos[n] == TarPos[n])){
 			ActVel[n] = 0;
 			CtrlVel[n] = 0;
 			TarVel[n] = 0;
@@ -78,7 +78,7 @@ uint8_t clspos_enable;
 	{
 		uint8_t n = 2;
 		ActPos[n] = (Dir[n]==0)?ActPos[n]+1:ActPos[n]-1;
-		if ((Mode[n] == 1) && (ActPos[0] == TarPos[n])){
+		if ((Mode[n] == 1) && (ActPos[n] == TarPos[n])){
 			ActVel[n] = 0;
 			CtrlVel[n] = 0;
 			TarVel[n] = 0;

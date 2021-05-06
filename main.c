@@ -258,7 +258,7 @@ uint8_t clspos_enable;
 		XMC_GPIO_Init(P3_5,&output);
 	}
 //Limit
-	uint32_t limit(uint32_t in, uint32_t min, uint32_t max){
+	int32_t limit(int32_t in, int32_t min, int32_t max){
 		if (in < min){
 			return min;
 		}else if (in > max){
@@ -286,17 +286,18 @@ void process_app(TOBJ7000 *OUT_GENERIC, TOBJ6000 *IN_GENERIC)
 	IN_GENERIC->ActualConfig		= Config;
 
 	if (outenable){
-		TarVel[0] 	= limit(OUT_GENERIC->CH0_ProfileVelocity,0,220000);
+
+		TarVel[0] 	= limit(OUT_GENERIC->CH0_ProfileVelocity,-220000,220000);
 		Acc[0] 		= limit(OUT_GENERIC->CH0_ProfileACC,0,220000);
 		Mode[0] 	= OUT_GENERIC->CH0_Mode;
 		TarPos[0] 	= OUT_GENERIC->CH0_ProfilePosition;
 
-		TarVel[1] 	= limit(OUT_GENERIC->CH1_ProfileVelocity,0,220000);
+		TarVel[1] 	= limit(OUT_GENERIC->CH1_ProfileVelocity,-220000,220000);
 		Acc[1] 		= limit(OUT_GENERIC->CH1_ProfileACC,0,220000);
 		Mode[1] 	= OUT_GENERIC->CH1_Mode;
 		TarPos[1] 	= OUT_GENERIC->CH1_ProfilePosition;
 
-		TarVel[2] 	= limit(OUT_GENERIC->CH2_ProfileVelocity,0,220000);
+		TarVel[2] 	= limit(OUT_GENERIC->CH2_ProfileVelocity,-220000,220000);
 		Acc[2] 		= limit(OUT_GENERIC->CH2_ProfileACC,0,220000);
 		Mode[2] 	= OUT_GENERIC->CH2_Mode;
 		TarPos[2] 	= OUT_GENERIC->CH2_ProfilePosition;
